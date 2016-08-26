@@ -1,14 +1,14 @@
 //
-//  NDLocalizer.swift
+//  NBLocalizer.swift
 //  NoodleBox
 //
-//  Created by Thom Morgan on 8/18/16.
+//  Created by NoodleOfDeath on 8/18/16.
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
 import Foundation
 
-public struct NDLocalizer {
+public struct NBLocalizer {
     
     public static func pluralize(string: String, _ count: Int) -> String {
         return String.localizedStringWithFormat(NSLocalizedString(string, comment: ""), count)

@@ -2,8 +2,8 @@
 //  NSMetadataResult.swift
 //  NoodleBox
 //
-//  Created by Thom Morgan on 6/19/16.
-//  Copyright © 2016 NoodleOfDeath. All rights reserved.
+//  Created by NoodleOfDeath on 6/19/16.
+//  Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import UIKit

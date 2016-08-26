@@ -1,8 +1,8 @@
 //
-//  NDStackView.swift
+//  NBStackView.swift
 //  NoodleBox
 //
-//  Created by Thom Morgan on 8/14/16.
+//  Created by NoodleOfDeath on 8/14/16.
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
@@ -12,15 +12,15 @@ import Foundation
 
 // MARK: - ** Public Constants **
 
-// MARK: - NDStackViewAlignment Enumeration
+// MARK: - NBStackViewAlignment Enumeration
 
-/// Possible stacking alignments for a `NDStackView`.
-public enum NDStackViewAlignment : Int {
+/// Possible stacking alignments for a `NBStackView`.
+public enum NBStackViewAlignment : Int {
     case Horizontal
     case Vertical
 }
 
-// MARK: - ** NDStackView Class ** -
+// MARK: - ** NBStackView Class ** -
 
 /// A `UIView` subclass that stacks subviews using auto-layout.
 ///
@@ -46,7 +46,7 @@ public enum NDStackViewAlignment : Int {
 ///     label.text = "This is a label"
 ///     label.addConstraint(label.widthLayoutConstraint(100.0))
 ///
-///     let stack = NDStackView()
+///     let stack = NBStackView()
 ///     stack.push(viewA, viewB, label)
 ///
 ///     view.addSubview(stack)
@@ -54,7 +54,7 @@ public enum NDStackViewAlignment : Int {
 /// }
 /// ...
 /// ````
-public class NDStackView : UIView {
+public class NBStackView : UIView {
     
     // MARK: - ** Static Properties ** -
     
@@ -69,7 +69,7 @@ public class NDStackView : UIView {
     // MARK: - Get-Only
     
     /// Horizontal or Vertical stacking of views.
-    public let alignment: NDStackViewAlignment
+    public let alignment: NBStackViewAlignment
     
     // MARK: - ** Private Properties **
     
@@ -89,20 +89,20 @@ public class NDStackView : UIView {
     
     public required init?(coder aDecoder: NSCoder) {
         guard let alignment =
-            NDStackViewAlignment(rawValue:
+            NBStackViewAlignment(rawValue:
                 aDecoder.decodeIntegerForKey(CodingKeys.Alignment))
             else { return nil }
         self.alignment = alignment
         super.init(coder: aDecoder)
     }
     
-    /// Instantiates a new `NDStackView` that stacks subviews according to
+    /// Instantiates a new `NBStackView` that stacks subviews according to
     /// `alignment`.
     /// - parameter alignment: The orientation the stack view should stack
     /// subviews.
-    /// - returns: A `NDStackView` instance that stacks subviews according to
+    /// - returns: A `NBStackView` instance that stacks subviews according to
     /// `alignment`.
-    public required init(alignment: NDStackViewAlignment = .Horizontal) {
+    public required init(alignment: NBStackViewAlignment = .Horizontal) {
         self.alignment = alignment
         super.init(frame: CGRectZero)
     }

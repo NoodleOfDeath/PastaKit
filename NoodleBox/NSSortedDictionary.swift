@@ -1,9 +1,9 @@
 //
 //  QuickSortArray.swift
-//  ByteMe
+//  NoodleBox
 //
-//  Created by Thom Morgan on 6/23/16.
-//  Copyright © 2016 Muxcode. All rights reserved.
+//  Created by NoodleOfDeath on 6/23/16.
+//  Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation

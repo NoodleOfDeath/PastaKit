@@ -1,6 +1,6 @@
 # NoodleBox
 
-[![CI Status](http://img.shields.io/travis/Thom Morgan/NoodleBox.svg?style=flat)](https://travis-ci.org/Thom Morgan/NoodleBox)
+[![CI Status](http://img.shields.io/travis/NoodleOfDeath/NoodleBox.svg?style=flat)](https://travis-ci.org/NoodleOfDeath/NoodleBox)
 [![Version](https://img.shields.io/cocoapods/v/NoodleBox.svg?style=flat)](http://cocoapods.org/pods/NoodleBox)
 [![License](https://img.shields.io/cocoapods/l/NoodleBox.svg?style=flat)](http://cocoapods.org/pods/NoodleBox)
 [![Platform](https://img.shields.io/cocoapods/p/NoodleBox.svg?style=flat)](http://cocoapods.org/pods/NoodleBox)

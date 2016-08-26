@@ -3,7 +3,7 @@
 //  NoodleBox
 //
 //  Created by NoodleOfDeath on 3/5/16.
-//  Copyright © 2016 NoodleOfDeath. All rights reserved.
+//  Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation
@@ -629,7 +629,7 @@ public struct NSDataSize : CustomStringConvertible {
             var units = " " + suffix[0]
             units = options.contains(.Capitalized) ? 
                 units.capitalizedString : units
-            return NDLocalizer.pluralize("%.2f \(units)", size.asFloat)
+            return NBLocalizer.pluralize("%.2f \(units)", size.asFloat)
         }
     }
     

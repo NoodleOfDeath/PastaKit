@@ -2,8 +2,8 @@
 //  UITextInput.swift
 //  NoodleBox
 //
-//  Created by Thom Morgan on 7/22/16.
-//  Copyright © 2016 NoodleOfDeath. All rights reserved.
+//  Created by NoodleOfDeath on 7/22/16.
+//  Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import UIKit

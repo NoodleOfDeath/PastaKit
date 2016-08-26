@@ -13,8 +13,8 @@
 		CD2907EA1D627C88000DD8B7 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */; };
 		CD3894F01D662BF000E03CDC /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3894EF1D662BF000E03CDC /* NSString.swift */; };
 		CD3894F81D66381B00E03CDC /* NDLocalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3894F71D66381B00E03CDC /* NDLocalizer.swift */; };
-		CD39BE9D1D60E01500E8FB50 /* NDStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9C1D60E01500E8FB50 /* NDStackView.swift */; };
-		CD39BE9F1D60E25E00E8FB50 /* NDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9E1D60E25E00E8FB50 /* NDFileManager.swift */; };
+		CD39BE9D1D60E01500E8FB50 /* NBStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */; };
+		CD39BE9F1D60E25E00E8FB50 /* NBFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */; };
 		CD39BED81D6110F700E8FB50 /* UIZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */; };
 		CD4EA8BA1D6BE519003B45E4 /* NSSortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4EA8B91D6BE519003B45E4 /* NSSortedArray.swift */; };
 		CD4EA8BD1D6BE52A003B45E4 /* TryOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4EA8BB1D6BE52A003B45E4 /* TryOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,15 +75,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFRepresentable.swift; sourceTree = "<group>"; };
+		CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CFRepresentable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CD2907E51D627836000DD8B7 /* NSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCoder.swift; sourceTree = "<group>"; };
 		CD2907E71D627C61000DD8B7 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
 		CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedDictionary.swift; sourceTree = "<group>"; };
 		CD3894EB1D66294700E03CDC /* UIInterfaceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientation.swift; sourceTree = "<group>"; };
 		CD3894EF1D662BF000E03CDC /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
 		CD3894F71D66381B00E03CDC /* NDLocalizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDLocalizer.swift; sourceTree = "<group>"; };
-		CD39BE9C1D60E01500E8FB50 /* NDStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDStackView.swift; sourceTree = "<group>"; };
-		CD39BE9E1D60E25E00E8FB50 /* NDFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFileManager.swift; sourceTree = "<group>"; };
+		CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBStackView.swift; sourceTree = "<group>"; };
+		CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBFileManager.swift; sourceTree = "<group>"; };
 		CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIZoomingScrollView.swift; sourceTree = "<group>"; };
 		CD4EA8B91D6BE519003B45E4 /* NSSortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSortedArray.swift; sourceTree = "<group>"; };
 		CD4EA8BB1D6BE52A003B45E4 /* TryOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TryOperation.h; sourceTree = "<group>"; };
@@ -91,18 +91,19 @@
 		CD4EA8C01D6BE556003B45E4 /* NSSortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSortedDictionary.swift; sourceTree = "<group>"; };
 		CD4EA91A1D6BE86A003B45E4 /* UIPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddedTextField.swift; sourceTree = "<group>"; };
 		CD4EA91D1D6D0962003B45E4 /* NSAttributeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributeName.swift; sourceTree = "<group>"; };
-		CDBBB1A01D6E784700093684 /* NoodleBox.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NoodleBox.podspec; sourceTree = SOURCE_ROOT; };
-		CDBBB1A21D6E794900093684 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		CDBBB1A01D6E784700093684 /* NoodleBox.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NoodleBox.podspec; sourceTree = "<group>"; };
+		CDBBB1A21D6E794900093684 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CDBBB1E61D6EA27C00093684 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CDD115F41D592A93004A9DBC /* Any.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Any.swift; sourceTree = "<group>"; };
 		CDD115F51D592A93004A9DBC /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		CDD115F61D592A93004A9DBC /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
-		CDD115F71D592A93004A9DBC /* CGColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGColor.swift; sourceTree = "<group>"; };
-		CDD115F81D592A93004A9DBC /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		CDD115F71D592A93004A9DBC /* CGColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CGColor.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		CDD115F81D592A93004A9DBC /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CGPoint.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CDD115F91D592A93004A9DBC /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		CDD115FA1D592A93004A9DBC /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		CDD115FB1D592A93004A9DBC /* NoodleBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleBox.h; sourceTree = "<group>"; };
 		CDD115FD1D592A93004A9DBC /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
-		CDD115FE1D592A93004A9DBC /* Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hashable.swift; sourceTree = "<group>"; };
+		CDD115FE1D592A93004A9DBC /* Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Hashable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CDD115FF1D592A93004A9DBC /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		CDD116001D592A93004A9DBC /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		CDD116011D592A93004A9DBC /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
@@ -160,6 +161,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				CDBBB1E51D6EA21D00093684 /* CocoaPod Files */,
 				CDD116711D592B95004A9DBC /* NoodleBox */,
 				CDD116F91D592CFD004A9DBC /* Products */,
 			);
@@ -187,12 +189,12 @@
 			isa = PBXGroup;
 			children = (
 				CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */,
-				CD39BE9E1D60E25E00E8FB50 /* NDFileManager.swift */,
+				CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */,
 				CDD1161E1D592A93004A9DBC /* UIFilterView.swift */,
 				CDD116131D592A93004A9DBC /* Operators.swift */,
 				CD2907EB1D627CCA000DD8B7 /* Sorted Array */,
 				CD2907EC1D627CD0000DD8B7 /* Sorted Dictionary */,
-				CD39BE9C1D60E01500E8FB50 /* NDStackView.swift */,
+				CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */,
 				CDD116231D592A93004A9DBC /* UInt256.swift */,
 				CDD1162B1D592A93004A9DBC /* UTCoreTypes.swift */,
 				CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */,
@@ -220,6 +222,16 @@
 			);
 			name = "Sorted Dictionary";
 			sourceTree = "<group>";
+		};
+		CDBBB1E51D6EA21D00093684 /* CocoaPod Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDBBB1E61D6EA27C00093684 /* LICENSE */,
+				CDBBB1A21D6E794900093684 /* README.md */,
+				CDBBB1A01D6E784700093684 /* NoodleBox.podspec */,
+			);
+			name = "CocoaPod Files";
+			sourceTree = SOURCE_ROOT;
 		};
 		CDD116641D592A9D004A9DBC /* Foundation */ = {
 			isa = PBXGroup;
@@ -337,12 +349,10 @@
 		CDD116B41D592C52004A9DBC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CDBBB1A21D6E794900093684 /* README.md */,
-				CDBBB1A01D6E784700093684 /* NoodleBox.podspec */,
 				CDD116BE1D592C9F004A9DBC /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
 		CDD116F91D592CFD004A9DBC /* Products */ = {
 			isa = PBXGroup;
@@ -350,7 +360,7 @@
 				CDD116BA1D592C9F004A9DBC /* NoodleBox.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -391,7 +401,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = NN;
+				CLASSPREFIX = NB;
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = NoodleNation;
@@ -481,12 +491,12 @@
 				CD4EA8D01D6BE607003B45E4 /* UIScreen.swift in Sources */,
 				CD4EA8D41D6BE607003B45E4 /* UIToolbar.swift in Sources */,
 				CDD116DC1D592CDD004A9DBC /* CGColor.swift in Sources */,
-				CD39BE9F1D60E25E00E8FB50 /* NDFileManager.swift in Sources */,
+				CD39BE9F1D60E25E00E8FB50 /* NBFileManager.swift in Sources */,
 				CD4EA91E1D6D0962003B45E4 /* NSAttributeName.swift in Sources */,
 				CD4EA8D21D6BE607003B45E4 /* UITextInput.swift in Sources */,
 				CD4EA8C81D6BE607003B45E4 /* UIBarButtonItem.swift in Sources */,
 				CD4EA8C91D6BE607003B45E4 /* UIColor.swift in Sources */,
-				CD39BE9D1D60E01500E8FB50 /* NDStackView.swift in Sources */,
+				CD39BE9D1D60E01500E8FB50 /* NBStackView.swift in Sources */,
 				CDD116CF1D592CDB004A9DBC /* NSFileManager.swift in Sources */,
 				CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */,
 				CD4EA8CA1D6BE607003B45E4 /* UIDevice.swift in Sources */,
@@ -600,7 +610,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NoodleBox/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -625,7 +635,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NoodleBox/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

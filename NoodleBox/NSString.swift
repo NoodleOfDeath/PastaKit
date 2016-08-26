@@ -2,7 +2,7 @@
 //  NSString.swift
 //  NoodleBox
 //
-//  Created by Thom Morgan on 8/18/16.
+//  Created by NoodleOfDeath on 8/18/16.
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 

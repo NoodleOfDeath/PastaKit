@@ -1,9 +1,9 @@
 //
-//  NDFileManager.swift
-//  ByteMe
+//  NBFileManager.swift
+//  NoodleBox
 //
-//  Created by Thom Morgan on 6/19/16.
-//  Copyright © 2016 Muxcode. All rights reserved.
+//  Created by NoodleOfDeath on 6/19/16.
+//  Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 // MARK: - ** Import Modules **
@@ -16,14 +16,14 @@ import UIKit
 
 /// File writing actions
 public enum NSOverwriteAction : Int {
-    /// Indicates to the `NDFileManager` that if a file already exists that is
+    /// Indicates to the `NBFileManager` that if a file already exists that is
     /// trying to be saved or moved, to do nothing causing the file action to
     /// fail.
     case None = 0
-    /// Indicates to the `NDFileManager` that if a file already exists that is
+    /// Indicates to the `NBFileManager` that if a file already exists that is
     /// trying to be saved or moved, to overwrite that file.
     case Overwrite
-    /// Indicates to the `NDFileManager` that if a file already exists that is
+    /// Indicates to the `NBFileManager` that if a file already exists that is
     /// trying to be saved or moved, to use an alternate name instead.
     case UseAlternateName
 }
@@ -35,7 +35,7 @@ public enum NSOverwriteAction : Int {
 /// such as checking whether, or not, a file exists at a particular path/url,
 /// _before_ trying to use any of the static methods provided by this data 
 /// structure commit an action on the item at the target path/url.
-public struct NDFileManager {
+public struct NBFileManager {
     
     // MARK: -- ** Public Static Properties ** -
     
@@ -96,7 +96,7 @@ public struct NDFileManager {
 
 // MARK: - ** File Exists Methods ** -
 
-extension NDFileManager {
+extension NBFileManager {
     
     /// Alternate way to check if a file exists at `url`.
     /// - parameter url: The url of the target file.
@@ -116,7 +116,7 @@ extension NDFileManager {
 
 // MARK: - ** Fetch Directory Contents Methods ** -
 
-extension NDFileManager {
+extension NBFileManager {
     
     /// Performs a shallow search of the specified directory and returns 
     /// URLs for the contained items.
@@ -169,7 +169,7 @@ extension NDFileManager {
 
 // MARK: - ** Create Directory Methods ** -
 
-extension NDFileManager {
+extension NBFileManager {
     
     /// Creates a directory with the given attributes at the specified URL.
     ///
@@ -213,7 +213,7 @@ extension NDFileManager {
 
 // MARK: - ** Create Symbolic Link Methods ** -
 
-extension NDFileManager {
+extension NBFileManager {
     
     /// Creates a symbolic link at the specified URL that points to an item at the given URL.
     ///
@@ -253,7 +253,7 @@ extension NDFileManager {
 
 // MARK: - ** Move File Methods **
 
-extension NDFileManager {
+extension NBFileManager {
     
     /// Moves the file or directory at the specified URL to a new location synchronously.
     ///
@@ -290,7 +290,7 @@ extension NDFileManager {
 
 // MARK: - ** Copy File Methods **
 
-extension NDFileManager {
+extension NBFileManager {
     
     /// Copies the file at the specified URL to a new location synchronously.
     ///
@@ -328,7 +328,7 @@ extension NDFileManager {
 
 // MARK: - ** Remove File Methods **
 
-extension NDFileManager {
+extension NBFileManager {
     
     /// Removes the file or directory at the specified URL.
     ///
@@ -362,7 +362,7 @@ extension NDFileManager {
 
 private var FileManagerDidPresentWarning = false
 
-extension NDFileManager {
+extension NBFileManager {
     
     /// Default error handler.
     /// - parameter error: The error to handle
@@ -372,7 +372,7 @@ extension NDFileManager {
         get { return
             { (error: ErrorType) -> () in
                 if !FileManagerDidPresentWarning {
-                    print("WARNING: Using the default error handler! Your application should override this static property of the NDFileManager class. This warning will only be presented once per session.")
+                    print("WARNING: Using the default error handler! Your application should override this static property of the NBFileManager class. This warning will only be presented once per session.")
                     FileManagerDidPresentWarning = true
                 }
                 let error = error as NSError

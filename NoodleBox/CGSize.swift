@@ -3,7 +3,7 @@
 //  NoodleBox
 //
 //  Created by NoodleOfDeath on 6/6/16.
-//  Copyright © 2016 NoodleOfDeath. All rights reserved.
+//  Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import CoreGraphics
