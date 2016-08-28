@@ -68,8 +68,23 @@ public class NBStackView : UIView {
     
     // MARK: - Get-Only
     
-    /// Horizontal or Vertical stacking of views.
+    /// `Horizontal` or `Vertical` stacking of views. Default is `Horizontal`.
     public let alignment: NBStackViewAlignment
+    
+    // MARK: - Stored
+    
+    public var margin: CGFloat = 10.0 {
+        didSet {
+            let views = subviews
+            for view in views {
+                view.removeFromSuperview()
+            }
+            push(views)
+            UIView.animateWithDuration(0.25) { 
+                self.setNeedsLayout()
+            }
+        }
+    }
     
     // MARK: - ** Private Properties **
     
@@ -120,39 +135,41 @@ public class NBStackView : UIView {
     
     /// Pushes a subview onto the end of stack.
     /// - parameter view: The subview to push onto the stack.
-    public func pushSubview(view: UIView) {
+    public func pushSubview(subview: UIView) {
         
         let first = subviews.first
         let last = subviews.last
         
-        addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(subview)
+        subview.translatesAutoresizingMaskIntoConstraints = false
         
         if alignment == .Horizontal {
-            addConstraint(view.topLayoutConstraintRelativeToView(self))
-            addConstraint(view.bottomLayoutConstraintRelativeToView(self))
+            addConstraint(subview.topLayoutConstraintRelativeToView(self))
+            addConstraint(subview.bottomLayoutConstraintRelativeToView(self))
+            addConstraint(subview.centerYLayoutConstraintRelativeToView(self))
         } else {
-            addConstraint(view.leftLayoutConstraintRelativeToView(self))
-            addConstraint(view.rightLayoutConstraintRelativeToView(self))
+            addConstraint(subview.leftLayoutConstraintRelativeToView(self))
+            addConstraint(subview.rightLayoutConstraintRelativeToView(self))
+            addConstraint(subview.centerXLayoutConstraintRelativeToView(self))
         }
         
         if first == nil {
             constraintA = alignment == .Horizontal ?
-                view.leftLayoutConstraintRelativeToView(self) :
-                view.topLayoutConstraintRelativeToView(self)
+                subview.leftLayoutConstraintRelativeToView(self) :
+                subview.topLayoutConstraintRelativeToView(self)
             addConstraint(constraintA)
         }
         
-        if let subview = last {
+        if let last = last {
             removeConstraint(constraintB)
             addConstraint(alignment == .Horizontal ?
-                subview.horizontalSpacingLayoutConstraintRelativeToView(view) :
-                subview.verticalSpacingLayoutConstraintRelativeToView(view))
+                last.horizontalSpacingLayoutConstraintRelativeToView(subview, constant: -margin) :
+                last.verticalSpacingLayoutConstraintRelativeToView(subview, constant: -margin))
         }
         
         constraintB = alignment == .Horizontal ?
-            view.rightLayoutConstraintRelativeToView(self) :
-            view.bottomLayoutConstraintRelativeToView(self)
+            subview.rightLayoutConstraintRelativeToView(self) :
+            subview.bottomLayoutConstraintRelativeToView(self)
         addConstraint(constraintB)
         
     }
@@ -161,6 +178,13 @@ public class NBStackView : UIView {
     /// stack in FIFO order
     /// - parameter views: The subviews to push onto the end of the stack
     public func push(views: UIView...) {
+        for view in views { pushSubview(view) }
+    }
+    
+    /// Convenience method that pushes an array of subviews onto the end of the
+    /// stack in FIFO order
+    /// - parameter views: The subviews to push onto the end of the stack
+    public func push(views: [UIView]) {
         for view in views { pushSubview(view) }
     }
     

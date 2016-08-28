@@ -236,7 +236,6 @@
 		CDD116641D592A9D004A9DBC /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				CDD116AF1D592C08004A9DBC /* Swift Native */,
 				CDD116001D592A93004A9DBC /* NSAttributedString.swift */,
 				CDD116011D592A93004A9DBC /* NSBundle.swift */,
 				CD2907E51D627836000DD8B7 /* NSCoder.swift */,
@@ -253,6 +252,7 @@
 				CDD1160E1D592A93004A9DBC /* NSStringLineEnding.swift */,
 				CDD1160F1D592A93004A9DBC /* NSURL.swift */,
 				CDD116101D592A93004A9DBC /* NSUserDefaults.swift */,
+				CDD116AF1D592C08004A9DBC /* Swift Native */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";

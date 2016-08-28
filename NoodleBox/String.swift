@@ -422,7 +422,8 @@ extension String {
         return str as String
     }
     
-    ///
+    /// Generates a regular expression from `self` that would match `self`
+    /// by escaping regular expression characters.
     public var regexPattern: String {
         let pattern = NSMutableString(string: self)
         let expr = try! NSRegularExpression(pattern: "([\\{\\}\\(\\)\\[\\]\\*\\|\\.\\:\\?\\!\\<\\>\\=\\+\\$\\^])", options: [])
