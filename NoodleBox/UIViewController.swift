@@ -9,16 +9,19 @@
 import Foundation
 
 extension UIViewController {
-
+    
+    /// 
     public var index: Int {
         guard let index = navigationController?.viewControllers.indexOf(self) else { return NSNotFound }
         return index
     }
-
+    
+    /// 
     public var isRootViewController: Bool {
         return index == 0
     }
 
+    /// 
     public var backButtonTitle: String? {
         get {
             if index < 1 { return nil }
@@ -31,7 +34,8 @@ extension UIViewController {
             button.title = newValue
         }
     }
-
+    
+    /// 
     public func embeddedInsideNavigationController() -> UINavigationController {
         return UINavigationController(rootViewController: self)
     }
