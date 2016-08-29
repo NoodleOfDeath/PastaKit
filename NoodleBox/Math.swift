@@ -629,7 +629,7 @@ public struct NSDataSize : CustomStringConvertible {
             var units = " " + suffix[0]
             units = options.contains(.Capitalized) ? 
                 units.capitalizedString : units
-            return NBLocalizer.pluralize("%.2f \(units)", size.asFloat)
+            return String.pluralize("%.2f \(units)", size.asFloat)
         }
     }
     

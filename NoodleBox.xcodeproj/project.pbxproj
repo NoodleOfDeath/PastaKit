@@ -12,7 +12,6 @@
 		CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E71D627C61000DD8B7 /* SortedArray.swift */; };
 		CD2907EA1D627C88000DD8B7 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */; };
 		CD3894F01D662BF000E03CDC /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3894EF1D662BF000E03CDC /* NSString.swift */; };
-		CD3894F81D66381B00E03CDC /* NDLocalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3894F71D66381B00E03CDC /* NDLocalizer.swift */; };
 		CD39BE9D1D60E01500E8FB50 /* NBStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */; };
 		CD39BE9F1D60E25E00E8FB50 /* NBFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */; };
 		CD39BED81D6110F700E8FB50 /* UIZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */; };
@@ -81,7 +80,6 @@
 		CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedDictionary.swift; sourceTree = "<group>"; };
 		CD3894EB1D66294700E03CDC /* UIInterfaceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientation.swift; sourceTree = "<group>"; };
 		CD3894EF1D662BF000E03CDC /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
-		CD3894F71D66381B00E03CDC /* NDLocalizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDLocalizer.swift; sourceTree = "<group>"; };
 		CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBStackView.swift; sourceTree = "<group>"; };
 		CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBFileManager.swift; sourceTree = "<group>"; };
 		CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIZoomingScrollView.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 				CDD116231D592A93004A9DBC /* UInt256.swift */,
 				CDD1162B1D592A93004A9DBC /* UTCoreTypes.swift */,
 				CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */,
-				CD3894F71D66381B00E03CDC /* NDLocalizer.swift */,
 				CD4EA91A1D6BE86A003B45E4 /* UIPaddedTextField.swift */,
 				CD4EA91D1D6D0962003B45E4 /* NSAttributeName.swift */,
 			);
@@ -482,7 +479,6 @@
 				CD4EA8CD1D6BE607003B45E4 /* UIInterfaceOrientation.swift in Sources */,
 				CDD116C91D592CDB004A9DBC /* OptionSetType.swift in Sources */,
 				CD4EA8CF1D6BE607003B45E4 /* UINavigationController.swift in Sources */,
-				CD3894F81D66381B00E03CDC /* NDLocalizer.swift in Sources */,
 				CDD116D81D592CDB004A9DBC /* NSStringEncoding.swift in Sources */,
 				CD3894F01D662BF000E03CDC /* NSString.swift in Sources */,
 				CDD116CB1D592CDB004A9DBC /* NSAttributedString.swift in Sources */,

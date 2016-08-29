@@ -10,7 +10,7 @@ import CoreGraphics
 
 // MARK: - ** Convenicence CGPoint Construction from 2-tuple **
 
-public postfix func ~ (argument: (x: Int, y: Int)) -> CGPoint {
+public postfix func * (argument: (x: Int, y: Int)) -> CGPoint {
     return CGPointMake(CGFloat(argument.x), CGFloat(argument.y))
 }
 

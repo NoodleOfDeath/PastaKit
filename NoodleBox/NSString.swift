@@ -25,7 +25,7 @@ extension String {
     
     public var localizedCapitalizedString: String {
         if #available(iOS 9, *) {
-            return self~.localizedCapitalizedString
+            return self*.localizedCapitalizedString
         }
         return capitalizedStringWithLocale(NSLocale.autoupdatingCurrentLocale())
     }

@@ -11,27 +11,24 @@ import Foundation
 extension UIViewController {
     
     /// 
-    public var index: Int {
+    public var ordinal: Int {
         guard let index = navigationController?.viewControllers.indexOf(self) else { return NSNotFound }
         return index
     }
     
     /// 
     public var isRootViewController: Bool {
-        return index == 0
+        return ordinal == 0
     }
 
-    /// 
+    /// Sets the text for the back button in the navigation controller.
     public var backButtonTitle: String? {
         get {
-            if index < 1 { return nil }
-            guard let button = navigationController?.navigationBar.items?[index - 1] else { return nil }
+            guard let button = navigationItem.backBarButtonItem else { return nil }
             return button.title
         }
         set {
-            if index < 1 { return }
-            guard let button = navigationController?.navigationBar.items?[index - 1] else { return }
-            button.title = newValue
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: newValue)
         }
     }
     

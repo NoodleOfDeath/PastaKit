@@ -124,7 +124,7 @@ public func += <Key, Value> (inout lhs: [Key : Value], rhs: [Key : Value]) {
 }
 
 /// Bridging from `Dictionary` to `NSDictionary`
-public postfix func ~ <T: DictionaryLiteralConvertible>(argument: T) -> NSDictionary {
+public postfix func * <T: DictionaryLiteralConvertible>(argument: T) -> NSDictionary {
     return argument as! NSDictionary
 }
 

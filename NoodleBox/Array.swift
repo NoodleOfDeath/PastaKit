@@ -33,12 +33,12 @@ public func + <T>(lhs: [T]?, rhs: [T]?) -> [T]? {
 }
 
 ///
-public postfix func ~ <T: AnyObject>(argument: [T]) -> NSArray {
+public postfix func * <T: AnyObject>(argument: [T]) -> NSArray {
     return argument
 }
 
 ///
-public postfix func ~ <T: AnyObject>(argument: [T]?) -> NSArray? {
+public postfix func * <T: AnyObject>(argument: [T]?) -> NSArray? {
     return argument
 }
 

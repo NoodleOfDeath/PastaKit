@@ -10,11 +10,11 @@ import Foundation
 
 public typealias IntRange = Range<Int>
 
-public postfix func ~ (argument: IntRange) -> NSRange {
+public postfix func * (argument: IntRange) -> NSRange {
     return NSMakeRange(argument.startIndex, argument.length)
 }
 
-public postfix func ~ (argument: NSRange) -> IntRange {
+public postfix func * (argument: NSRange) -> IntRange {
     return argument.location ..< argument.maxRange
 }
 

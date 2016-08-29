@@ -17,22 +17,22 @@ import UIKit
 // MARK: - Briding Between `String` and `NSString`
 
 /// 
-public postfix func ~ (argument: String?) -> NSString? {
+public postfix func * (argument: String?) -> NSString? {
     return argument
 }
 
 /// 
-public postfix func ~ (argument: String) -> NSString {
+public postfix func * (argument: String) -> NSString {
     return argument
 }
 
 /// 
-public postfix func ~ (argument: NSString?) -> String? {
+public postfix func * (argument: NSString?) -> String? {
     return argument as? String
 }
 
 /// 
-public postfix func ~ (argument: NSString) -> String {
+public postfix func * (argument: NSString) -> String {
     return argument as String
 }
 
@@ -120,7 +120,7 @@ extension String {
     
     /// The length of this string when represented as an `NSString`
     public var length: Int {
-        return self~.length
+        return self*.length
     }
     
     ///  The range representation of this string.
@@ -147,17 +147,17 @@ extension String {
 
     ///
     public var lastPathComponent: String {
-        return self~.lastPathComponent
+        return self*.lastPathComponent
     }
 
     ///
     public var pathExtension: String {
-        return self~.pathExtension
+        return self*.pathExtension
     }
 
     ///
     public var pathComponents: [String] {
-        return self~.pathComponents
+        return self*.pathComponents
     }
     
 }
@@ -301,7 +301,7 @@ extension String {
     /// Raises an NSRangeException if (anIndex - 1) lies beyond the end of the receiver.
     /// - returns: A new string containing the characters of the receiver from the one at `anIndex` to the end.
     public func substringFromIndex(anIndex: Int) -> String {
-        return self~.substringFromIndex(anIndex)
+        return self*.substringFromIndex(anIndex)
     }
     
     /// Returns a new string containing the characters of the receiver up to, but not including, the one at a given index.
@@ -312,7 +312,7 @@ extension String {
     /// Raises an NSRangeException if (anIndex - 1) lies beyond the end of the receiver.
     /// - returns: A new string containing the characters of the receiver up to, but not including, the one at `anIndex`.
     public func substringToIndex(anIndex: Int) -> String {
-        return self~.substringToIndex(anIndex)
+        return self*.substringToIndex(anIndex)
     }
     
     /// Returns a string object containing the characters of the receiver that lie within a given range.
@@ -325,8 +325,8 @@ extension String {
     /// Raises an NSRangeException if (aRange.location - 1) or (aRange.location + aRange.length - 1) lies beyond the end of the receiver.
     /// - returns: A string object containing the characters of the receiver that lie within `aRange`.
     public func substringWithRange(aRange: IntRange) -> String {
-        guard self.range.contains(aRange~) else { return "" }
-        return self~.substringWithRange(aRange~)
+        guard self.range.contains(aRange*) else { return "" }
+        return self*.substringWithRange(aRange*)
     }
     
     /// Returns a string object containing the characters of the receiver that lie within a given range.
@@ -340,7 +340,7 @@ extension String {
     /// - returns: A string object containing the characters of the receiver that lie within `aRange`.
     public func substringWithRange(range: NSRange) -> String {
         guard self.range.contains(range) else { return "" }
-        return self~.substringWithRange(range)
+        return self*.substringWithRange(range)
     }
     
 }
@@ -351,13 +351,13 @@ extension String {
     
     ///
     public func paragraphRangeForRange(range: IntRange) -> NSRange {
-        return self~.paragraphRangeForRange(range~)
+        return self*.paragraphRangeForRange(range*)
     }
     
     ///
     public func paragraphRangeForRange(range: NSRange) -> NSRange {
         guard self.range.contains(range) else { return range }
-        return self~.paragraphRangeForRange(range)
+        return self*.paragraphRangeForRange(range)
     }
     
 }
@@ -368,12 +368,12 @@ extension String {
     
     ///
     public func enumerateSubstringsInRange(range: NSRange, options opts: NSStringEnumerationOptions, usingBlock block: (String?, NSRange, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void) {
-        self~.enumerateSubstringsInRange(range, options: opts, usingBlock: block)
+        self*.enumerateSubstringsInRange(range, options: opts, usingBlock: block)
     }
     
     ///
     public func enumerateSubstringsInRange(range: IntRange, options opts: NSStringEnumerationOptions, usingBlock block: (String?, NSRange, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void) {
-        self~.enumerateSubstringsInRange(range~, options: opts, usingBlock: block)
+        self*.enumerateSubstringsInRange(range*, options: opts, usingBlock: block)
     }
     
 }
@@ -384,7 +384,7 @@ extension String {
     
     ///
     public func stringByReplacingOccurrencesOfString(string: String, withString: String, options: NSStringCompareOptions, range: NSRange) -> String {
-        return self~.stringByReplacingOccurrencesOfString(string, withString: withString, options: options, range: range)
+        return self*.stringByReplacingOccurrencesOfString(string, withString: withString, options: options, range: range)
     }
     
 }
@@ -453,7 +453,7 @@ extension String {
     
     ///
     public func rangeOfString(string: String, options: NSStringCompareOptions, range: NSRange) -> NSRange? {
-        let foundRange = self~.rangeOfString(string, options: options, range: range)
+        let foundRange = self*.rangeOfString(string, options: options, range: range)
         if foundRange.location == NSNotFound { return nil }
         return foundRange
     }
@@ -484,12 +484,12 @@ extension String {
 
     ///
     public var stringByDeletingLastPathComponent: String {
-        return self~.stringByDeletingLastPathComponent
+        return self*.stringByDeletingLastPathComponent
     }
 
     ///
     public var stringByDeletingPathExtension: String {
-        return self~.stringByDeletingPathExtension
+        return self*.stringByDeletingPathExtension
     }
     
     ///
@@ -518,14 +518,14 @@ extension String {
     /// - parameter path: The path component to append
     /// - returns: A path string with the appended path component adding slashes where necessary
     public func stringByAppendingPathComponent(path: String) -> String {
-        return self~.stringByAppendingPathComponent(path)
+        return self*.stringByAppendingPathComponent(path)
     }
 
     ///
     /// - parameter ext: The extension to append
     /// - returns: A path string with the appended extension
     public func stringByAppendingPathExtension(ext: String) -> String? {
-        return self~.stringByAppendingPathExtension(ext)
+        return self*.stringByAppendingPathExtension(ext)
     }
     
 }
@@ -551,7 +551,7 @@ extension String {
     // MARK: Dimension Methods
     
     public func sizeWithAttributes(attrs: PropertyList) -> CGSize {
-        return self~.sizeWithAttributes(attrs)
+        return self*.sizeWithAttributes(attrs)
     }
 
     /**
@@ -562,7 +562,7 @@ extension String {
     public func width(whenConstrainedToHeight height: CGFloat = .max, withAttributes attrs: PropertyList? = nil) -> CGFloat {
         let attrs = attrs ?? [NSFontAttributeName : UIFont.systemFont()]
         let constraintRect = CGSize(width: height, height: .max)
-        let boundingBox = self~.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: attrs, context: nil)
+        let boundingBox = self*.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: attrs, context: nil)
         return boundingBox.width
     }
 
@@ -574,7 +574,7 @@ extension String {
     public func height(whenConstrainedToWidth width: CGFloat = .max, withAttributes attrs: PropertyList? = nil) -> CGFloat {
         let attrs = attrs ?? [NSFontAttributeName : UIFont.systemFont()]
         let constraintRect = CGSize(width: width, height: .max)
-        let boundingBox = self~.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: attrs, context: nil)
+        let boundingBox = self*.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: attrs, context: nil)
         return boundingBox.height
     }
 
@@ -585,7 +585,7 @@ extension String {
 extension String {
     
     public func stringByReplacingCharactersInRange(range: NSRange, withString string: String) -> String {
-        return self~.stringByReplacingCharactersInRange(range, withString: string)
+        return self*.stringByReplacingCharactersInRange(range, withString: string)
     }
     
     public mutating func replaceRange(range: NSRange, withString string: String) {
@@ -605,7 +605,7 @@ extension String {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
         
         // draw in context, you can use also drawInRect:withFont:
-        self~.drawAtPoint(CGPointMake(0.0, 0.0), withAttributes: attrs)
+        self*.drawAtPoint(CGPointMake(0.0, 0.0), withAttributes: attrs)
         
         // transfer image
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -618,12 +618,12 @@ extension String {
     public func imageWithSize(size: CGSize) -> UIImage {
     
         let font = UIFont.systemFont()  
-        let size = self~.boundingRectWithSize(size, options: [], attributes: [NSFontAttributeName : font], context: nil).size
+        let size = self*.boundingRectWithSize(size, options: [], attributes: [NSFontAttributeName : font], context: nil).size
         
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
         
         // draw in context, you can use also drawInRect:withFont:
-        self~.drawAtPoint(CGPointMake(0.0, 0.0), withAttributes: [NSFontAttributeName : font])
+        self*.drawAtPoint(CGPointMake(0.0, 0.0), withAttributes: [NSFontAttributeName : font])
         
         // transfer image
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -661,6 +661,24 @@ extension String {
     
     public mutating func replaceOccurrencesOfString(target: String, withString replacement: String) {
         self = self.stringByReplacingOccurrencesOfString(target, withString: replacement)
+    }
+    
+}
+
+// MARK: - ** String Localization **
+
+extension String {
+    
+    public static func pluralize(string: String, _ count: Int) -> String {
+        return String.localizedStringWithFormat(NSLocalizedString(string, comment: ""), count)
+    }
+    
+    public static func pluralize(string: String, _ count: Double) -> String {
+        return String.localizedStringWithFormat(NSLocalizedString(string, comment: ""), count)
+    }
+    
+    public static func pluralize(string: String, _ count: Float) -> String {
+        return String.localizedStringWithFormat(NSLocalizedString(string, comment: ""), count)
     }
     
 }
