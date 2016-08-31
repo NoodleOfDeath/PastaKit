@@ -122,7 +122,7 @@ public class NBStackView : UIView {
         super.init(frame: CGRectZero)
     }
     
-    // MARK: - ** Superclass Methods **
+    // MARK: - ** Superclass/Protocol Methods **
     
     // MARK: - NSCoding
     

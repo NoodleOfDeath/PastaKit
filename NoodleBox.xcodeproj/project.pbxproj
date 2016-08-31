@@ -11,6 +11,8 @@
 		CD2907E61D627836000DD8B7 /* NSCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E51D627836000DD8B7 /* NSCoder.swift */; };
 		CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E71D627C61000DD8B7 /* SortedArray.swift */; };
 		CD2907EA1D627C88000DD8B7 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */; };
+		CD30FDC11D74DC200087E68F /* NBPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30FDC01D74DC200087E68F /* NBPopoverViewController.swift */; };
+		CD30FDC31D74DC470087E68F /* Localized Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30FDC21D74DC470087E68F /* Localized Strings.swift */; };
 		CD3894F01D662BF000E03CDC /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3894EF1D662BF000E03CDC /* NSString.swift */; };
 		CD39BE9D1D60E01500E8FB50 /* NBStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */; };
 		CD39BE9F1D60E25E00E8FB50 /* NBFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */; };
@@ -78,6 +80,8 @@
 		CD2907E51D627836000DD8B7 /* NSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCoder.swift; sourceTree = "<group>"; };
 		CD2907E71D627C61000DD8B7 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
 		CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedDictionary.swift; sourceTree = "<group>"; };
+		CD30FDC01D74DC200087E68F /* NBPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBPopoverViewController.swift; sourceTree = "<group>"; };
+		CD30FDC21D74DC470087E68F /* Localized Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Localized Strings.swift"; sourceTree = "<group>"; };
 		CD3894EB1D66294700E03CDC /* UIInterfaceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientation.swift; sourceTree = "<group>"; };
 		CD3894EF1D662BF000E03CDC /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
 		CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBStackView.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		CD0F81401D5F782C00736E69 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CD30FDBB1D749EBE0087E68F /* ObjC */,
 				CD0F81411D5F783B00736E69 /* Swift */,
 			);
 			name = Extensions;
@@ -196,7 +201,9 @@
 				CDD116231D592A93004A9DBC /* UInt256.swift */,
 				CDD1162B1D592A93004A9DBC /* UTCoreTypes.swift */,
 				CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */,
+				CD30FDC01D74DC200087E68F /* NBPopoverViewController.swift */,
 				CD4EA91A1D6BE86A003B45E4 /* UIPaddedTextField.swift */,
+				CD30FDC21D74DC470087E68F /* Localized Strings.swift */,
 				CD4EA91D1D6D0962003B45E4 /* NSAttributeName.swift */,
 			);
 			name = Swift;
@@ -218,6 +225,13 @@
 				CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */,
 			);
 			name = "Sorted Dictionary";
+			sourceTree = "<group>";
+		};
+		CD30FDBB1D749EBE0087E68F /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ObjC;
 			sourceTree = "<group>";
 		};
 		CDBBB1E51D6EA21D00093684 /* CocoaPod Files */ = {
@@ -460,6 +474,7 @@
 				CDD116E01D592CDF004A9DBC /* Operators.swift in Sources */,
 				CDD116C21D592CDB004A9DBC /* String.swift in Sources */,
 				CDD116D31D592CDB004A9DBC /* NSObject.swift in Sources */,
+				CD30FDC31D74DC470087E68F /* Localized Strings.swift in Sources */,
 				CD4EA8BE1D6BE52A003B45E4 /* TryOperation.m in Sources */,
 				CDD116D21D592CDB004A9DBC /* NSMutableAttributedString.swift in Sources */,
 				CDD116CA1D592CDB004A9DBC /* Math.swift in Sources */,
@@ -488,6 +503,7 @@
 				CD4EA8D41D6BE607003B45E4 /* UIToolbar.swift in Sources */,
 				CDD116DC1D592CDD004A9DBC /* CGColor.swift in Sources */,
 				CD39BE9F1D60E25E00E8FB50 /* NBFileManager.swift in Sources */,
+				CD30FDC11D74DC200087E68F /* NBPopoverViewController.swift in Sources */,
 				CD4EA91E1D6D0962003B45E4 /* NSAttributeName.swift in Sources */,
 				CD4EA8D21D6BE607003B45E4 /* UITextInput.swift in Sources */,
 				CD4EA8C81D6BE607003B45E4 /* UIBarButtonItem.swift in Sources */,

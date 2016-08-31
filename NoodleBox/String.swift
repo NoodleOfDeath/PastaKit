@@ -669,6 +669,14 @@ extension String {
 
 extension String {
     
+    public var localizedString: String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
+    public var capitalizedLocalizedString: String {
+        return capitalizedStringWithLocale(NSLocale.autoupdatingCurrentLocale())
+    }
+    
     public static func pluralize(string: String, _ count: Int) -> String {
         return String.localizedStringWithFormat(NSLocalizedString(string, comment: ""), count)
     }
@@ -679,6 +687,11 @@ extension String {
     
     public static func pluralize(string: String, _ count: Float) -> String {
         return String.localizedStringWithFormat(NSLocalizedString(string, comment: ""), count)
+    }    
+    
+    public static func capitalizedLocalizedString(key: String) -> String {
+        let str = NSLocalizedString(key, comment: "")
+        return str.capitalizedLocalizedString
     }
     
 }

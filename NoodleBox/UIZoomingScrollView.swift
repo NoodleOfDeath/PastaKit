@@ -284,7 +284,7 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
         self.scrollView = scrollView
     }
     
-    // MARK: - ** Superclass Methods **
+    // MARK: - ** Superclass/Protocol Methods **
     
     // MARK: - UIView
     
