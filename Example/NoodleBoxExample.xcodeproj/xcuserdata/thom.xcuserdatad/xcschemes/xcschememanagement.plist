@@ -4,40 +4,35 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>NoodleBox.xcscheme_^#shared#^_</key>
+		<key>NoodleBoxExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>NoodleBoxExample_Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>607FACCF1AFB9204008FA782</key>
+		<key>CD637A211D79F2B000326413</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>607FACE41AFB9204008FA782</key>
+		<key>CDAB114D1D79FB7A00BEC7B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDAB11631D79FBA100BEC7B8</key>
+		<key>CDAB11791D79FBBB00BEC7B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDD115C81D592A12004A9DBC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CDD1166F1D592B95004A9DBC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CDD116B91D592C9F004A9DBC</key>
+		<key>CDF4CA441D7A0C2F005D585D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

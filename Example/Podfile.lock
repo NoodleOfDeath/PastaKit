@@ -1,16 +1,22 @@
 PODS:
+  - Nimble (3.2.0)
   - NoodleBox (0.1.0)
+  - Quick (0.9.3)
 
 DEPENDENCIES:
+  - Nimble (~> 3.0)
   - NoodleBox (from `../`)
+  - Quick (~> 0.8)
 
 EXTERNAL SOURCES:
   NoodleBox:
     :path: ../
 
 SPEC CHECKSUMS:
+  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   NoodleBox: 8e525324f0d0e445b62b1e7730518abba6b954aa
+  Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
 
-PODFILE CHECKSUM: ca54d76b8a9120567bde4cba6bf6c1c22a8468a3
+PODFILE CHECKSUM: fe1d67fe72ce5f120c29f517e1fb7d11ce1f3be8
 
 COCOAPODS: 1.0.1

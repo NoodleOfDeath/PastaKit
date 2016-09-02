@@ -1,0 +1,6 @@
+framework module Pods_NoodleBoxExample_Tests {
+  umbrella header "Pods-NoodleBoxExample_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
