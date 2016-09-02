@@ -18,6 +18,15 @@
 + (void)runWithBlock:(void (^)())tryBlock catchBlock:(void (^)(NSException *))catchBlock;
 + (void)runWithBlock:(void (^)())tryBlock catchBlock:(void (^)(NSException *))catchBlock finallyBlock:(void (^)())finallyBlock;
 
+- (instancetype)initWithBlock:(void (^)())tryBlock;
+- (instancetype)initWithBlock:(void (^)())tryBlock catchBlock:(void (^)(NSException *))catchBlock;
+- (instancetype)initWithBlock:(void (^)())tryBlock catchBlock:(void (^)(NSException *))catchBlock finallyBlock:(void (^)())finallyBlock;
+- (instancetype)initWithBlock:(void (^)())tryBlock delayExecution:(int)delay;
+- (instancetype)initWithBlock:(void (^)())tryBlock catchBlock:(void (^)(NSException *))catchBlock delayExecution:(int)delay;
+- (instancetype)initWithBlock:(void (^)())tryBlock catchBlock:(void (^)(NSException *))catchBlock finallyBlock:(void (^)())finallyBlock delayExecution:(int)delay;
+
+- (void)run;
+
 @end
 
 #endif /* TryOperation_h */
