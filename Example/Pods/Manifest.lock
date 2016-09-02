@@ -1,0 +1,16 @@
+PODS:
+  - NoodleBox (0.1.0)
+
+DEPENDENCIES:
+  - NoodleBox (from `../`)
+
+EXTERNAL SOURCES:
+  NoodleBox:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NoodleBox: 8e525324f0d0e445b62b1e7730518abba6b954aa
+
+PODFILE CHECKSUM: ca54d76b8a9120567bde4cba6bf6c1c22a8468a3
+
+COCOAPODS: 1.0.1

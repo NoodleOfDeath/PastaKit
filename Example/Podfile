@@ -1,0 +1,7 @@
+use_frameworks!
+
+target 'NoodleBox-Example' do
+
+    pod 'NoodleBox', :path => '../'
+
+end

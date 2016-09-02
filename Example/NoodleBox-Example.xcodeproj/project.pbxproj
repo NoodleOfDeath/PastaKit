@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40B9FCF3E6A5E2C91A0E9569 /* Pods_NoodleBox_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3077A0C61D49B26F44285089 /* Pods_NoodleBox_Example.framework */; };
+		CDAB117D1D79FBBB00BEC7B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB117C1D79FBBB00BEC7B8 /* AppDelegate.swift */; };
+		CDAB117F1D79FBBB00BEC7B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB117E1D79FBBB00BEC7B8 /* ViewController.swift */; };
+		CDAB11821D79FBBB00BEC7B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDAB11801D79FBBB00BEC7B8 /* Main.storyboard */; };
+		CDAB11841D79FBBB00BEC7B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAB11831D79FBBB00BEC7B8 /* Assets.xcassets */; };
+		CDAB11871D79FBBB00BEC7B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDAB11851D79FBBB00BEC7B8 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3077A0C61D49B26F44285089 /* Pods_NoodleBox_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoodleBox_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91231F3BF293436843FC5320 /* Pods-NoodleBox-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoodleBox-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoodleBox-Example/Pods-NoodleBox-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CDAB11441D79FA7B00BEC7B8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		CDAB117A1D79FBBB00BEC7B8 /* NoodleBox-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NoodleBox-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDAB117C1D79FBBB00BEC7B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CDAB117E1D79FBBB00BEC7B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDAB11811D79FBBB00BEC7B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CDAB11831D79FBBB00BEC7B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CDAB11861D79FBBB00BEC7B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CDAB11881D79FBBB00BEC7B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E0BDBF0FB5F440D1966C56 /* Pods-NoodleBox-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoodleBox-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoodleBox-Example/Pods-NoodleBox-Example.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDAB11771D79FBBB00BEC7B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40B9FCF3E6A5E2C91A0E9569 /* Pods_NoodleBox_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A470EDE7AA589CB570358F23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3077A0C61D49B26F44285089 /* Pods_NoodleBox_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD637A191D79F2B000326413 = {
+			isa = PBXGroup;
+			children = (
+				CDAB11461D79FA8100BEC7B8 /* Podfile Metadata */,
+				CDAB117B1D79FBBB00BEC7B8 /* NoodleBox-Example */,
+				CD637A231D79F2B000326413 /* Products */,
+				EF9DEC16D92700425173EFF4 /* Pods */,
+				A470EDE7AA589CB570358F23 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CD637A231D79F2B000326413 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDAB117A1D79FBBB00BEC7B8 /* NoodleBox-Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDAB11461D79FA8100BEC7B8 /* Podfile Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				CDAB11441D79FA7B00BEC7B8 /* Podfile */,
+			);
+			name = "Podfile Metadata";
+			sourceTree = "<group>";
+		};
+		CDAB117B1D79FBBB00BEC7B8 /* NoodleBox-Example */ = {
+			isa = PBXGroup;
+			children = (
+				CDAB117C1D79FBBB00BEC7B8 /* AppDelegate.swift */,
+				CDAB117E1D79FBBB00BEC7B8 /* ViewController.swift */,
+				CDAB11801D79FBBB00BEC7B8 /* Main.storyboard */,
+				CDAB11831D79FBBB00BEC7B8 /* Assets.xcassets */,
+				CDAB11851D79FBBB00BEC7B8 /* LaunchScreen.storyboard */,
+				CDAB11881D79FBBB00BEC7B8 /* Info.plist */,
+			);
+			path = "NoodleBox-Example";
+			sourceTree = "<group>";
+		};
+		EF9DEC16D92700425173EFF4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91231F3BF293436843FC5320 /* Pods-NoodleBox-Example.debug.xcconfig */,
+				F5E0BDBF0FB5F440D1966C56 /* Pods-NoodleBox-Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDAB11791D79FBBB00BEC7B8 /* NoodleBox-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDAB11891D79FBBB00BEC7B8 /* Build configuration list for PBXNativeTarget "NoodleBox-Example" */;
+			buildPhases = (
+				FD1BE2046C0CB68D7B9C4525 /* [CP] Check Pods Manifest.lock */,
+				CDAB11761D79FBBB00BEC7B8 /* Sources */,
+				CDAB11771D79FBBB00BEC7B8 /* Frameworks */,
+				CDAB11781D79FBBB00BEC7B8 /* Resources */,
+				014B7DD48F13B187EA2479C8 /* [CP] Embed Pods Frameworks */,
+				07FF046316289AE24791F086 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NoodleBox-Example";
+			productName = "NoodleBox-Example";
+			productReference = CDAB117A1D79FBBB00BEC7B8 /* NoodleBox-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD637A1A1D79F2B000326413 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = NoodleNation;
+				TargetAttributes = {
+					CDAB11791D79FBBB00BEC7B8 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = CD637A1D1D79F2B000326413 /* Build configuration list for PBXProject "NoodleBox-Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD637A191D79F2B000326413;
+			productRefGroup = CD637A231D79F2B000326413 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDAB11791D79FBBB00BEC7B8 /* NoodleBox-Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDAB11781D79FBBB00BEC7B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDAB11871D79FBBB00BEC7B8 /* LaunchScreen.storyboard in Resources */,
+				CDAB11841D79FBBB00BEC7B8 /* Assets.xcassets in Resources */,
+				CDAB11821D79FBBB00BEC7B8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		014B7DD48F13B187EA2479C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NoodleBox-Example/Pods-NoodleBox-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		07FF046316289AE24791F086 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NoodleBox-Example/Pods-NoodleBox-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD1BE2046C0CB68D7B9C4525 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDAB11761D79FBBB00BEC7B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDAB117F1D79FBBB00BEC7B8 /* ViewController.swift in Sources */,
+				CDAB117D1D79FBBB00BEC7B8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CDAB11801D79FBBB00BEC7B8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDAB11811D79FBBB00BEC7B8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CDAB11851D79FBBB00BEC7B8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDAB11861D79FBBB00BEC7B8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD637A371D79F2B000326413 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD637A381D79F2B000326413 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CDAB118A1D79FBBB00BEC7B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91231F3BF293436843FC5320 /* Pods-NoodleBox-Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "NoodleBox-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.NoodleNation.NoodleBox-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CDAB118B1D79FBBB00BEC7B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5E0BDBF0FB5F440D1966C56 /* Pods-NoodleBox-Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "NoodleBox-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.NoodleNation.NoodleBox-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD637A1D1D79F2B000326413 /* Build configuration list for PBXProject "NoodleBox-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD637A371D79F2B000326413 /* Debug */,
+				CD637A381D79F2B000326413 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDAB11891D79FBBB00BEC7B8 /* Build configuration list for PBXNativeTarget "NoodleBox-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDAB118A1D79FBBB00BEC7B8 /* Debug */,
+				CDAB118B1D79FBBB00BEC7B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD637A1A1D79F2B000326413 /* Project object */;
+}
