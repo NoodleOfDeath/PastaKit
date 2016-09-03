@@ -30,10 +30,10 @@ Swift library with convenience extensions and custom data structures to save dev
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'NoodleBox/Classes/**/*'
+  s.source_files = 'NoodleBox/**/*'
   
   # s.resource_bundles = {
-  #   'CoreNoodle' => ['NoodleBox/Assets/*.png']
+  #   'NoodleBox' => ['NoodleBox/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

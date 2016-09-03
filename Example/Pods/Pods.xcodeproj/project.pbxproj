@@ -83,74 +83,6 @@
 		CC355952E8D8DB86492A378BE99D2794 /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D772AF03D0B82E63647D129AEA9CCF1B /* SuiteHooks.swift */; };
 		CD05BC06D2F9DB3C18F0A6BB350D5E4C /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A1177F46842A02EE1A9A945434E453FF /* QuickSpec.m */; };
 		CD0A671D2A8DD31D50449BB358C56134 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41006CFFEC28B4197817C14B5D087239 /* Expression.swift */; };
-		CDF4CA571D7A0C92005D585D /* NoodleBox.h in Headers */ = {isa = PBXBuildFile; fileRef = CDF4CA561D7A0C92005D585D /* NoodleBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDF4CAAE1D7A0C98005D585D /* NoodleBox.h in Headers */ = {isa = PBXBuildFile; fileRef = CDF4CA5C1D7A0C98005D585D /* NoodleBox.h */; };
-		CDF4CAAF1D7A0C98005D585D /* NoodleBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA5D1D7A0C98005D585D /* NoodleBox.swift */; };
-		CDF4CAB01D7A0C98005D585D /* TryOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDF4CA5E1D7A0C98005D585D /* TryOperation.h */; };
-		CDF4CAB11D7A0C98005D585D /* TryOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA5F1D7A0C98005D585D /* TryOperation.m */; };
-		CDF4CAB21D7A0C98005D585D /* CFRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA621D7A0C98005D585D /* CFRepresentable.swift */; };
-		CDF4CAB31D7A0C98005D585D /* NBFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA631D7A0C98005D585D /* NBFileManager.swift */; };
-		CDF4CAB41D7A0C98005D585D /* UIFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA641D7A0C98005D585D /* UIFilterView.swift */; };
-		CDF4CAB51D7A0C98005D585D /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA651D7A0C98005D585D /* Operators.swift */; };
-		CDF4CAB61D7A0C98005D585D /* NSSortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA661D7A0C98005D585D /* NSSortedArray.swift */; };
-		CDF4CAB71D7A0C98005D585D /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA671D7A0C98005D585D /* SortedArray.swift */; };
-		CDF4CAB81D7A0C98005D585D /* NSSortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA691D7A0C98005D585D /* NSSortedDictionary.swift */; };
-		CDF4CAB91D7A0C98005D585D /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA6A1D7A0C98005D585D /* SortedDictionary.swift */; };
-		CDF4CABA1D7A0C98005D585D /* NBStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA6C1D7A0C98005D585D /* NBStackView.swift */; };
-		CDF4CABB1D7A0C98005D585D /* UInt256.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA6D1D7A0C98005D585D /* UInt256.swift */; };
-		CDF4CABC1D7A0C98005D585D /* UTCoreTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA6E1D7A0C98005D585D /* UTCoreTypes.swift */; };
-		CDF4CABD1D7A0C98005D585D /* UIZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA6F1D7A0C98005D585D /* UIZoomingScrollView.swift */; };
-		CDF4CABE1D7A0C98005D585D /* NBPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA701D7A0C98005D585D /* NBPopoverViewController.swift */; };
-		CDF4CABF1D7A0C98005D585D /* UIPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA711D7A0C98005D585D /* UIPaddedTextField.swift */; };
-		CDF4CAC01D7A0C98005D585D /* Localized Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA721D7A0C98005D585D /* Localized Strings.swift */; };
-		CDF4CAC11D7A0C98005D585D /* NSAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA731D7A0C98005D585D /* NSAttributeName.swift */; };
-		CDF4CAC21D7A0C98005D585D /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA771D7A0C98005D585D /* NSAttributedString.swift */; };
-		CDF4CAC31D7A0C98005D585D /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA781D7A0C98005D585D /* NSBundle.swift */; };
-		CDF4CAC41D7A0C98005D585D /* NSCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA791D7A0C98005D585D /* NSCoder.swift */; };
-		CDF4CAC51D7A0C98005D585D /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA7A1D7A0C98005D585D /* NSDate.swift */; };
-		CDF4CAC61D7A0C98005D585D /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA7B1D7A0C98005D585D /* NSFileManager.swift */; };
-		CDF4CAC71D7A0C98005D585D /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA7C1D7A0C98005D585D /* NSLayoutConstraint.swift */; };
-		CDF4CAC81D7A0C98005D585D /* NSMetadataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA7D1D7A0C98005D585D /* NSMetadataItem.swift */; };
-		CDF4CAC91D7A0C98005D585D /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA7E1D7A0C98005D585D /* NSMutableAttributedString.swift */; };
-		CDF4CACA1D7A0C98005D585D /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA7F1D7A0C98005D585D /* NSObject.swift */; };
-		CDF4CACB1D7A0C98005D585D /* NSParagraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA801D7A0C98005D585D /* NSParagraphStyle.swift */; };
-		CDF4CACC1D7A0C98005D585D /* NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA811D7A0C98005D585D /* NSRange.swift */; };
-		CDF4CACD1D7A0C98005D585D /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA821D7A0C98005D585D /* NSString.swift */; };
-		CDF4CACE1D7A0C98005D585D /* NSStringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA831D7A0C98005D585D /* NSStringEncoding.swift */; };
-		CDF4CACF1D7A0C98005D585D /* NSStringLineEnding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA841D7A0C98005D585D /* NSStringLineEnding.swift */; };
-		CDF4CAD01D7A0C98005D585D /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA851D7A0C98005D585D /* NSURL.swift */; };
-		CDF4CAD11D7A0C98005D585D /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA861D7A0C98005D585D /* NSUserDefaults.swift */; };
-		CDF4CAD21D7A0C98005D585D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA871D7A0C98005D585D /* String.swift */; };
-		CDF4CAD31D7A0C98005D585D /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA881D7A0C98005D585D /* Dictionary.swift */; };
-		CDF4CAD41D7A0C98005D585D /* Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA891D7A0C98005D585D /* Hashable.swift */; };
-		CDF4CAD51D7A0C98005D585D /* Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA8A1D7A0C98005D585D /* Any.swift */; };
-		CDF4CAD61D7A0C98005D585D /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA8B1D7A0C98005D585D /* Range.swift */; };
-		CDF4CAD71D7A0C98005D585D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA8C1D7A0C98005D585D /* Array.swift */; };
-		CDF4CAD81D7A0C98005D585D /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA8D1D7A0C98005D585D /* Bool.swift */; };
-		CDF4CAD91D7A0C98005D585D /* OptionSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA8E1D7A0C98005D585D /* OptionSetType.swift */; };
-		CDF4CADA1D7A0C98005D585D /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA8F1D7A0C98005D585D /* Math.swift */; };
-		CDF4CADB1D7A0C98005D585D /* CGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA921D7A0C98005D585D /* CGColor.swift */; };
-		CDF4CADC1D7A0C98005D585D /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA931D7A0C98005D585D /* CGPoint.swift */; };
-		CDF4CADD1D7A0C98005D585D /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA941D7A0C98005D585D /* CGRect.swift */; };
-		CDF4CADE1D7A0C98005D585D /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA951D7A0C98005D585D /* CGSize.swift */; };
-		CDF4CADF1D7A0C98005D585D /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA971D7A0C98005D585D /* UIAlertController.swift */; };
-		CDF4CAE01D7A0C98005D585D /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA981D7A0C98005D585D /* UIApplication.swift */; };
-		CDF4CAE11D7A0C98005D585D /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA991D7A0C98005D585D /* UIBarButtonItem.swift */; };
-		CDF4CAE21D7A0C98005D585D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA9A1D7A0C98005D585D /* UIColor.swift */; };
-		CDF4CAE31D7A0C98005D585D /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA9B1D7A0C98005D585D /* UIDevice.swift */; };
-		CDF4CAE41D7A0C98005D585D /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA9C1D7A0C98005D585D /* UIFont.swift */; };
-		CDF4CAE51D7A0C98005D585D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA9D1D7A0C98005D585D /* UIImage.swift */; };
-		CDF4CAE61D7A0C98005D585D /* UIInterfaceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA9E1D7A0C98005D585D /* UIInterfaceOrientation.swift */; };
-		CDF4CAE71D7A0C98005D585D /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA9F1D7A0C98005D585D /* UILabel.swift */; };
-		CDF4CAE81D7A0C98005D585D /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CAA01D7A0C98005D585D /* UINavigationController.swift */; };
-		CDF4CAE91D7A0C99005D585D /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CAA11D7A0C98005D585D /* UIScreen.swift */; };
-		CDF4CAEA1D7A0C99005D585D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CAA21D7A0C98005D585D /* UITableView.swift */; };
-		CDF4CAEB1D7A0C99005D585D /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CAA31D7A0C98005D585D /* UITextInput.swift */; };
-		CDF4CAEC1D7A0C99005D585D /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CAA41D7A0C98005D585D /* UITextView.swift */; };
-		CDF4CAED1D7A0C99005D585D /* UIToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CAA51D7A0C98005D585D /* UIToolbar.swift */; };
-		CDF4CAEE1D7A0C99005D585D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CAA61D7A0C98005D585D /* UIView.swift */; };
-		CDF4CAEF1D7A0C99005D585D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CAA71D7A0C98005D585D /* UIViewController.swift */; };
-		CDF4CAF01D7A0C99005D585D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF4CAAB1D7A0C98005D585D /* Info.plist */; };
 		D17E05109ADD21AEB0F47BEC6A565E28 /* Callsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC07B6CC006238186A56EEC6E8D3CD88 /* Callsite.swift */; };
 		D34BCF0083FFBCD6D3352A529FBBFE10 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89BF7315BAB3516AF2A51041DC39C3B /* XCTest.framework */; };
 		D41F628A81153A978EB209E4FE925700 /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = BE582507271FE02BA93C412C422D4ED8 /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -184,28 +116,14 @@
 			remoteGlobalIDString = FF61C7C740C1B196A3B33F37B77DBC68;
 			remoteInfo = Nimble;
 		};
-		CDF4CAF11D7A0CA6005D585D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CDF4CA531D7A0C92005D585D;
-			remoteInfo = NoodleBox;
-		};
-		CDF4CAF31D7A0CA9005D585D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CDF4CA531D7A0C92005D585D;
-			remoteInfo = NoodleBox;
-		};
-		CDF4CAF51D7A0CAE005D585D /* PBXContainerItemProxy */ = {
+		CD34539C1D7B6D95002CB44F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FF61C7C740C1B196A3B33F37B77DBC68;
 			remoteInfo = Nimble;
 		};
-		CDF4CAF71D7A0CAE005D585D /* PBXContainerItemProxy */ = {
+		CD34539E1D7B6D96002CB44F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -285,7 +203,7 @@
 		91B7C1953D52C630B7CEA85DC7D30371 /* ErrorUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUtility.swift; path = Sources/Quick/ErrorUtility.swift; sourceTree = "<group>"; };
 		91EB10846A1D5A8B9A3BA28C5457DF56 /* NSString+QCKSelectorName.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+QCKSelectorName.h"; path = "Sources/Quick/NSString+QCKSelectorName.h"; sourceTree = "<group>"; };
 		9341EE27FCA41AD8B88193EC0C839859 /* AsyncMatcherWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncMatcherWrapper.swift; path = Sources/Nimble/Wrappers/AsyncMatcherWrapper.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; };
 		971FBD63640E42D5B13E199D80A38E44 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Wrappers/MatcherFunc.swift; sourceTree = "<group>"; };
 		9759ABA2939945FD31FB478AE32D9E15 /* CurrentTestCaseTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CurrentTestCaseTracker.m; path = Sources/Nimble/objc/CurrentTestCaseTracker.m; sourceTree = "<group>"; };
 		9C7F03154EEF27B6220227BAD0C44F53 /* Pods-NoodleBoxExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NoodleBoxExample.modulemap"; sourceTree = "<group>"; };
@@ -314,76 +232,6 @@
 		C34071C41916A37E669FEEBA855F42C2 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		C5DDC9824ED21BCC218F3C3E3E907AED /* XCTestSuite+QuickTestSuiteBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestSuite+QuickTestSuiteBuilder.m"; path = "Sources/Quick/XCTestSuite+QuickTestSuiteBuilder.m"; sourceTree = "<group>"; };
 		CB75D143FA2C1D4F42F8F03369239006 /* ObjCMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjCMatcher.swift; path = Sources/Nimble/Wrappers/ObjCMatcher.swift; sourceTree = "<group>"; };
-		CDF4CA541D7A0C92005D585D /* NoodleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoodleBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDF4CA561D7A0C92005D585D /* NoodleBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoodleBox.h; sourceTree = "<group>"; };
-		CDF4CA581D7A0C92005D585D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDF4CA5C1D7A0C98005D585D /* NoodleBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleBox.h; sourceTree = "<group>"; };
-		CDF4CA5D1D7A0C98005D585D /* NoodleBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoodleBox.swift; sourceTree = "<group>"; };
-		CDF4CA5E1D7A0C98005D585D /* TryOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TryOperation.h; sourceTree = "<group>"; };
-		CDF4CA5F1D7A0C98005D585D /* TryOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TryOperation.m; sourceTree = "<group>"; };
-		CDF4CA621D7A0C98005D585D /* CFRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CFRepresentable.swift; sourceTree = "<group>"; };
-		CDF4CA631D7A0C98005D585D /* NBFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBFileManager.swift; sourceTree = "<group>"; };
-		CDF4CA641D7A0C98005D585D /* UIFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFilterView.swift; sourceTree = "<group>"; };
-		CDF4CA651D7A0C98005D585D /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
-		CDF4CA661D7A0C98005D585D /* NSSortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSortedArray.swift; sourceTree = "<group>"; };
-		CDF4CA671D7A0C98005D585D /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
-		CDF4CA691D7A0C98005D585D /* NSSortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSortedDictionary.swift; sourceTree = "<group>"; };
-		CDF4CA6A1D7A0C98005D585D /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedDictionary.swift; sourceTree = "<group>"; };
-		CDF4CA6C1D7A0C98005D585D /* NBStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBStackView.swift; sourceTree = "<group>"; };
-		CDF4CA6D1D7A0C98005D585D /* UInt256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt256.swift; sourceTree = "<group>"; };
-		CDF4CA6E1D7A0C98005D585D /* UTCoreTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTCoreTypes.swift; sourceTree = "<group>"; };
-		CDF4CA6F1D7A0C98005D585D /* UIZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIZoomingScrollView.swift; sourceTree = "<group>"; };
-		CDF4CA701D7A0C98005D585D /* NBPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBPopoverViewController.swift; sourceTree = "<group>"; };
-		CDF4CA711D7A0C98005D585D /* UIPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddedTextField.swift; sourceTree = "<group>"; };
-		CDF4CA721D7A0C98005D585D /* Localized Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Localized Strings.swift"; sourceTree = "<group>"; };
-		CDF4CA731D7A0C98005D585D /* NSAttributeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributeName.swift; sourceTree = "<group>"; };
-		CDF4CA771D7A0C98005D585D /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
-		CDF4CA781D7A0C98005D585D /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
-		CDF4CA791D7A0C98005D585D /* NSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCoder.swift; sourceTree = "<group>"; };
-		CDF4CA7A1D7A0C98005D585D /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
-		CDF4CA7B1D7A0C98005D585D /* NSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFileManager.swift; sourceTree = "<group>"; };
-		CDF4CA7C1D7A0C98005D585D /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
-		CDF4CA7D1D7A0C98005D585D /* NSMetadataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMetadataItem.swift; sourceTree = "<group>"; };
-		CDF4CA7E1D7A0C98005D585D /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
-		CDF4CA7F1D7A0C98005D585D /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
-		CDF4CA801D7A0C98005D585D /* NSParagraphStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSParagraphStyle.swift; sourceTree = "<group>"; };
-		CDF4CA811D7A0C98005D585D /* NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRange.swift; sourceTree = "<group>"; };
-		CDF4CA821D7A0C98005D585D /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
-		CDF4CA831D7A0C98005D585D /* NSStringEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringEncoding.swift; sourceTree = "<group>"; };
-		CDF4CA841D7A0C98005D585D /* NSStringLineEnding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringLineEnding.swift; sourceTree = "<group>"; };
-		CDF4CA851D7A0C98005D585D /* NSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
-		CDF4CA861D7A0C98005D585D /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaults.swift; sourceTree = "<group>"; };
-		CDF4CA871D7A0C98005D585D /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		CDF4CA881D7A0C98005D585D /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
-		CDF4CA891D7A0C98005D585D /* Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Hashable.swift; sourceTree = "<group>"; };
-		CDF4CA8A1D7A0C98005D585D /* Any.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Any.swift; sourceTree = "<group>"; };
-		CDF4CA8B1D7A0C98005D585D /* Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
-		CDF4CA8C1D7A0C98005D585D /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		CDF4CA8D1D7A0C98005D585D /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
-		CDF4CA8E1D7A0C98005D585D /* OptionSetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSetType.swift; sourceTree = "<group>"; };
-		CDF4CA8F1D7A0C98005D585D /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
-		CDF4CA921D7A0C98005D585D /* CGColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CGColor.swift; sourceTree = "<group>"; };
-		CDF4CA931D7A0C98005D585D /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CGPoint.swift; sourceTree = "<group>"; };
-		CDF4CA941D7A0C98005D585D /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
-		CDF4CA951D7A0C98005D585D /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
-		CDF4CA971D7A0C98005D585D /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
-		CDF4CA981D7A0C98005D585D /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
-		CDF4CA991D7A0C98005D585D /* UIBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
-		CDF4CA9A1D7A0C98005D585D /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		CDF4CA9B1D7A0C98005D585D /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
-		CDF4CA9C1D7A0C98005D585D /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		CDF4CA9D1D7A0C98005D585D /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		CDF4CA9E1D7A0C98005D585D /* UIInterfaceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientation.swift; sourceTree = "<group>"; };
-		CDF4CA9F1D7A0C98005D585D /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
-		CDF4CAA01D7A0C98005D585D /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		CDF4CAA11D7A0C98005D585D /* UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
-		CDF4CAA21D7A0C98005D585D /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
-		CDF4CAA31D7A0C98005D585D /* UITextInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextInput.swift; sourceTree = "<group>"; };
-		CDF4CAA41D7A0C98005D585D /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
-		CDF4CAA51D7A0C98005D585D /* UIToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIToolbar.swift; sourceTree = "<group>"; };
-		CDF4CAA61D7A0C98005D585D /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		CDF4CAA71D7A0C98005D585D /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		CDF4CAAB1D7A0C98005D585D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29528E2ADACEB31F5B2380DA50612C1 /* BeLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLogical.swift; path = Sources/Nimble/Matchers/BeLogical.swift; sourceTree = "<group>"; };
 		D365431FBA3C40A9570E9266B44005D7 /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Sources/Nimble/objc/NMBExceptionCapture.m; sourceTree = "<group>"; };
 		D772AF03D0B82E63647D129AEA9CCF1B /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Sources/Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
@@ -428,13 +276,6 @@
 			files = (
 				4321B90D9D1921495F390A4DAAC252D5 /* Foundation.framework in Frameworks */,
 				D34BCF0083FFBCD6D3352A529FBBFE10 /* XCTest.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDF4CA501D7A0C92005D585D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +362,6 @@
 				E18D22AA957F26206A06E5F9AE41F65E /* Pods_NoodleBoxExample.framework */,
 				882B61EC2527D236DE61BCC2A2D80F7B /* Pods_NoodleBoxExample_Tests.framework */,
 				FF1AD889EF369F4CF58D21C5361637D1 /* Quick.framework */,
-				CDF4CA541D7A0C92005D585D /* NoodleBox.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -531,7 +371,6 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				A52D25EC48667A3302718FF7C156B881 /* Development Pods */,
-				CDF4CA551D7A0C92005D585D /* NoodleBox */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				B2F3226D3D4A34C6FDC47A7E7567F3E3 /* Pods */,
 				56F4339EEC0C6C2CE72718B2BD73E2B8 /* Products */,
@@ -601,7 +440,7 @@
 		A52D25EC48667A3302718FF7C156B881 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CDF4CAAD1D7A0C98005D585D /* NoodleBox */,
+				C4BA80C255D3D0ACAFB75D08C929FF98 /* NoodleBox */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -613,6 +452,14 @@
 				CADC3EC948F24F3C262060ABA5F66D9A /* Quick */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C4BA80C255D3D0ACAFB75D08C929FF98 /* NoodleBox */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NoodleBox;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		CADC3EC948F24F3C262060ABA5F66D9A /* Quick */ = {
@@ -651,202 +498,6 @@
 				86298915AE0282D73F103DF4124EEF42 /* Support Files */,
 			);
 			path = Quick;
-			sourceTree = "<group>";
-		};
-		CDF4CA551D7A0C92005D585D /* NoodleBox */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA561D7A0C92005D585D /* NoodleBox.h */,
-				CDF4CA581D7A0C92005D585D /* Info.plist */,
-			);
-			path = NoodleBox;
-			sourceTree = "<group>";
-		};
-		CDF4CA601D7A0C98005D585D /* ObjCTry */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA5E1D7A0C98005D585D /* TryOperation.h */,
-				CDF4CA5F1D7A0C98005D585D /* TryOperation.m */,
-			);
-			name = ObjCTry;
-			sourceTree = "<group>";
-		};
-		CDF4CA611D7A0C98005D585D /* ObjC */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA601D7A0C98005D585D /* ObjCTry */,
-			);
-			name = ObjC;
-			sourceTree = "<group>";
-		};
-		CDF4CA681D7A0C98005D585D /* Sorted Array */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA661D7A0C98005D585D /* NSSortedArray.swift */,
-				CDF4CA671D7A0C98005D585D /* SortedArray.swift */,
-			);
-			name = "Sorted Array";
-			sourceTree = "<group>";
-		};
-		CDF4CA6B1D7A0C98005D585D /* Sorted Dictionary */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA691D7A0C98005D585D /* NSSortedDictionary.swift */,
-				CDF4CA6A1D7A0C98005D585D /* SortedDictionary.swift */,
-			);
-			name = "Sorted Dictionary";
-			sourceTree = "<group>";
-		};
-		CDF4CA741D7A0C98005D585D /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA621D7A0C98005D585D /* CFRepresentable.swift */,
-				CDF4CA631D7A0C98005D585D /* NBFileManager.swift */,
-				CDF4CA641D7A0C98005D585D /* UIFilterView.swift */,
-				CDF4CA651D7A0C98005D585D /* Operators.swift */,
-				CDF4CA681D7A0C98005D585D /* Sorted Array */,
-				CDF4CA6B1D7A0C98005D585D /* Sorted Dictionary */,
-				CDF4CA6C1D7A0C98005D585D /* NBStackView.swift */,
-				CDF4CA6D1D7A0C98005D585D /* UInt256.swift */,
-				CDF4CA6E1D7A0C98005D585D /* UTCoreTypes.swift */,
-				CDF4CA6F1D7A0C98005D585D /* UIZoomingScrollView.swift */,
-				CDF4CA701D7A0C98005D585D /* NBPopoverViewController.swift */,
-				CDF4CA711D7A0C98005D585D /* UIPaddedTextField.swift */,
-				CDF4CA721D7A0C98005D585D /* Localized Strings.swift */,
-				CDF4CA731D7A0C98005D585D /* NSAttributeName.swift */,
-			);
-			name = Swift;
-			sourceTree = "<group>";
-		};
-		CDF4CA751D7A0C98005D585D /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA611D7A0C98005D585D /* ObjC */,
-				CDF4CA741D7A0C98005D585D /* Swift */,
-			);
-			name = Custom;
-			sourceTree = "<group>";
-		};
-		CDF4CA761D7A0C98005D585D /* ObjC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ObjC;
-			sourceTree = "<group>";
-		};
-		CDF4CA901D7A0C98005D585D /* Swift Native */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA871D7A0C98005D585D /* String.swift */,
-				CDF4CA881D7A0C98005D585D /* Dictionary.swift */,
-				CDF4CA891D7A0C98005D585D /* Hashable.swift */,
-				CDF4CA8A1D7A0C98005D585D /* Any.swift */,
-				CDF4CA8B1D7A0C98005D585D /* Range.swift */,
-				CDF4CA8C1D7A0C98005D585D /* Array.swift */,
-				CDF4CA8D1D7A0C98005D585D /* Bool.swift */,
-				CDF4CA8E1D7A0C98005D585D /* OptionSetType.swift */,
-				CDF4CA8F1D7A0C98005D585D /* Math.swift */,
-			);
-			name = "Swift Native";
-			sourceTree = "<group>";
-		};
-		CDF4CA911D7A0C98005D585D /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA771D7A0C98005D585D /* NSAttributedString.swift */,
-				CDF4CA781D7A0C98005D585D /* NSBundle.swift */,
-				CDF4CA791D7A0C98005D585D /* NSCoder.swift */,
-				CDF4CA7A1D7A0C98005D585D /* NSDate.swift */,
-				CDF4CA7B1D7A0C98005D585D /* NSFileManager.swift */,
-				CDF4CA7C1D7A0C98005D585D /* NSLayoutConstraint.swift */,
-				CDF4CA7D1D7A0C98005D585D /* NSMetadataItem.swift */,
-				CDF4CA7E1D7A0C98005D585D /* NSMutableAttributedString.swift */,
-				CDF4CA7F1D7A0C98005D585D /* NSObject.swift */,
-				CDF4CA801D7A0C98005D585D /* NSParagraphStyle.swift */,
-				CDF4CA811D7A0C98005D585D /* NSRange.swift */,
-				CDF4CA821D7A0C98005D585D /* NSString.swift */,
-				CDF4CA831D7A0C98005D585D /* NSStringEncoding.swift */,
-				CDF4CA841D7A0C98005D585D /* NSStringLineEnding.swift */,
-				CDF4CA851D7A0C98005D585D /* NSURL.swift */,
-				CDF4CA861D7A0C98005D585D /* NSUserDefaults.swift */,
-				CDF4CA901D7A0C98005D585D /* Swift Native */,
-			);
-			name = Foundation;
-			sourceTree = "<group>";
-		};
-		CDF4CA961D7A0C98005D585D /* Core Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA921D7A0C98005D585D /* CGColor.swift */,
-				CDF4CA931D7A0C98005D585D /* CGPoint.swift */,
-				CDF4CA941D7A0C98005D585D /* CGRect.swift */,
-				CDF4CA951D7A0C98005D585D /* CGSize.swift */,
-			);
-			name = "Core Graphics";
-			sourceTree = "<group>";
-		};
-		CDF4CAA81D7A0C98005D585D /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA971D7A0C98005D585D /* UIAlertController.swift */,
-				CDF4CA981D7A0C98005D585D /* UIApplication.swift */,
-				CDF4CA991D7A0C98005D585D /* UIBarButtonItem.swift */,
-				CDF4CA9A1D7A0C98005D585D /* UIColor.swift */,
-				CDF4CA9B1D7A0C98005D585D /* UIDevice.swift */,
-				CDF4CA9C1D7A0C98005D585D /* UIFont.swift */,
-				CDF4CA9D1D7A0C98005D585D /* UIImage.swift */,
-				CDF4CA9E1D7A0C98005D585D /* UIInterfaceOrientation.swift */,
-				CDF4CA9F1D7A0C98005D585D /* UILabel.swift */,
-				CDF4CAA01D7A0C98005D585D /* UINavigationController.swift */,
-				CDF4CAA11D7A0C98005D585D /* UIScreen.swift */,
-				CDF4CAA21D7A0C98005D585D /* UITableView.swift */,
-				CDF4CAA31D7A0C98005D585D /* UITextInput.swift */,
-				CDF4CAA41D7A0C98005D585D /* UITextView.swift */,
-				CDF4CAA51D7A0C98005D585D /* UIToolbar.swift */,
-				CDF4CAA61D7A0C98005D585D /* UIView.swift */,
-				CDF4CAA71D7A0C98005D585D /* UIViewController.swift */,
-			);
-			name = UIKit;
-			sourceTree = "<group>";
-		};
-		CDF4CAA91D7A0C98005D585D /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA911D7A0C98005D585D /* Foundation */,
-				CDF4CA961D7A0C98005D585D /* Core Graphics */,
-				CDF4CAA81D7A0C98005D585D /* UIKit */,
-			);
-			name = Swift;
-			sourceTree = "<group>";
-		};
-		CDF4CAAA1D7A0C98005D585D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA761D7A0C98005D585D /* ObjC */,
-				CDF4CAA91D7A0C98005D585D /* Swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
-		CDF4CAAC1D7A0C98005D585D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CAAB1D7A0C98005D585D /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CDF4CAAD1D7A0C98005D585D /* NoodleBox */ = {
-			isa = PBXGroup;
-			children = (
-				CDF4CA5C1D7A0C98005D585D /* NoodleBox.h */,
-				CDF4CA5D1D7A0C98005D585D /* NoodleBox.swift */,
-				CDF4CA751D7A0C98005D585D /* Custom */,
-				CDF4CAAA1D7A0C98005D585D /* Extensions */,
-				CDF4CAAC1D7A0C98005D585D /* Supporting Files */,
-			);
-			name = NoodleBox;
-			path = ../../NoodleBox;
 			sourceTree = "<group>";
 		};
 		D24B2EA016AE4FABDB5AF17F3FD9C222 /* iOS */ = {
@@ -917,16 +568,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CDF4CA511D7A0C92005D585D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDF4CAB01D7A0C98005D585D /* TryOperation.h in Headers */,
-				CDF4CA571D7A0C92005D585D /* NoodleBox.h in Headers */,
-				CDF4CAAE1D7A0C98005D585D /* NoodleBox.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -941,9 +582,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				CDF4CAF61D7A0CAE005D585D /* PBXTargetDependency */,
-				CDF4CAF81D7A0CAE005D585D /* PBXTargetDependency */,
-				CDF4CAF21D7A0CA6005D585D /* PBXTargetDependency */,
+				CD34539D1D7B6D95002CB44F /* PBXTargetDependency */,
+				CD34539F1D7B6D96002CB44F /* PBXTargetDependency */,
 			);
 			name = "Pods-NoodleBoxExample";
 			productName = "Pods-NoodleBoxExample";
@@ -963,29 +603,10 @@
 			dependencies = (
 				BF3BB7D80FBF30388713FA8F40DA557D /* PBXTargetDependency */,
 				FDE6E9F87C28F42CA1E563A75DB72971 /* PBXTargetDependency */,
-				CDF4CAF41D7A0CA9005D585D /* PBXTargetDependency */,
 			);
 			name = "Pods-NoodleBoxExample_Tests";
 			productName = "Pods-NoodleBoxExample_Tests";
 			productReference = 882B61EC2527D236DE61BCC2A2D80F7B /* Pods_NoodleBoxExample_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		CDF4CA531D7A0C92005D585D /* NoodleBox */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CDF4CA591D7A0C92005D585D /* Build configuration list for PBXNativeTarget "NoodleBox" */;
-			buildPhases = (
-				CDF4CA4F1D7A0C92005D585D /* Sources */,
-				CDF4CA501D7A0C92005D585D /* Frameworks */,
-				CDF4CA511D7A0C92005D585D /* Headers */,
-				CDF4CA521D7A0C92005D585D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NoodleBox;
-			productName = NoodleBox;
-			productReference = CDF4CA541D7A0C92005D585D /* NoodleBox.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FE36EBBDA070D6AABB0AB0B03A002D58 /* Quick */ = {
@@ -1029,12 +650,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					CDF4CA531D7A0C92005D585D = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-				};
+				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1052,21 +668,9 @@
 				46EF2A27A96E7FD6E8E0456B8917C5ED /* Pods-NoodleBoxExample */,
 				83B77BB1FDC89F7F889E7E75AFFAF404 /* Pods-NoodleBoxExample_Tests */,
 				FE36EBBDA070D6AABB0AB0B03A002D58 /* Quick */,
-				CDF4CA531D7A0C92005D585D /* NoodleBox */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		CDF4CA521D7A0C92005D585D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDF4CAF01D7A0C99005D585D /* Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		131F0DED720640A3C4A36ED42EB3CBE4 /* Sources */ = {
@@ -1170,77 +774,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CDF4CA4F1D7A0C92005D585D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDF4CAD41D7A0C98005D585D /* Hashable.swift in Sources */,
-				CDF4CAC51D7A0C98005D585D /* NSDate.swift in Sources */,
-				CDF4CABA1D7A0C98005D585D /* NBStackView.swift in Sources */,
-				CDF4CAB21D7A0C98005D585D /* CFRepresentable.swift in Sources */,
-				CDF4CADA1D7A0C98005D585D /* Math.swift in Sources */,
-				CDF4CAB41D7A0C98005D585D /* UIFilterView.swift in Sources */,
-				CDF4CAB31D7A0C98005D585D /* NBFileManager.swift in Sources */,
-				CDF4CAD31D7A0C98005D585D /* Dictionary.swift in Sources */,
-				CDF4CAE01D7A0C98005D585D /* UIApplication.swift in Sources */,
-				CDF4CAED1D7A0C99005D585D /* UIToolbar.swift in Sources */,
-				CDF4CAE91D7A0C99005D585D /* UIScreen.swift in Sources */,
-				CDF4CAC11D7A0C98005D585D /* NSAttributeName.swift in Sources */,
-				CDF4CAAF1D7A0C98005D585D /* NoodleBox.swift in Sources */,
-				CDF4CAD91D7A0C98005D585D /* OptionSetType.swift in Sources */,
-				CDF4CAEF1D7A0C99005D585D /* UIViewController.swift in Sources */,
-				CDF4CACD1D7A0C98005D585D /* NSString.swift in Sources */,
-				CDF4CACF1D7A0C98005D585D /* NSStringLineEnding.swift in Sources */,
-				CDF4CADC1D7A0C98005D585D /* CGPoint.swift in Sources */,
-				CDF4CAC81D7A0C98005D585D /* NSMetadataItem.swift in Sources */,
-				CDF4CAD81D7A0C98005D585D /* Bool.swift in Sources */,
-				CDF4CAC71D7A0C98005D585D /* NSLayoutConstraint.swift in Sources */,
-				CDF4CAB91D7A0C98005D585D /* SortedDictionary.swift in Sources */,
-				CDF4CADE1D7A0C98005D585D /* CGSize.swift in Sources */,
-				CDF4CAD01D7A0C98005D585D /* NSURL.swift in Sources */,
-				CDF4CAD61D7A0C98005D585D /* Range.swift in Sources */,
-				CDF4CACE1D7A0C98005D585D /* NSStringEncoding.swift in Sources */,
-				CDF4CADD1D7A0C98005D585D /* CGRect.swift in Sources */,
-				CDF4CAC01D7A0C98005D585D /* Localized Strings.swift in Sources */,
-				CDF4CAC31D7A0C98005D585D /* NSBundle.swift in Sources */,
-				CDF4CAE11D7A0C98005D585D /* UIBarButtonItem.swift in Sources */,
-				CDF4CAE41D7A0C98005D585D /* UIFont.swift in Sources */,
-				CDF4CAC41D7A0C98005D585D /* NSCoder.swift in Sources */,
-				CDF4CAB71D7A0C98005D585D /* SortedArray.swift in Sources */,
-				CDF4CAE71D7A0C98005D585D /* UILabel.swift in Sources */,
-				CDF4CAD71D7A0C98005D585D /* Array.swift in Sources */,
-				CDF4CADF1D7A0C98005D585D /* UIAlertController.swift in Sources */,
-				CDF4CADB1D7A0C98005D585D /* CGColor.swift in Sources */,
-				CDF4CAE51D7A0C98005D585D /* UIImage.swift in Sources */,
-				CDF4CAC91D7A0C98005D585D /* NSMutableAttributedString.swift in Sources */,
-				CDF4CAEA1D7A0C99005D585D /* UITableView.swift in Sources */,
-				CDF4CABD1D7A0C98005D585D /* UIZoomingScrollView.swift in Sources */,
-				CDF4CAD51D7A0C98005D585D /* Any.swift in Sources */,
-				CDF4CAB11D7A0C98005D585D /* TryOperation.m in Sources */,
-				CDF4CACC1D7A0C98005D585D /* NSRange.swift in Sources */,
-				CDF4CAB81D7A0C98005D585D /* NSSortedDictionary.swift in Sources */,
-				CDF4CAEC1D7A0C99005D585D /* UITextView.swift in Sources */,
-				CDF4CAC61D7A0C98005D585D /* NSFileManager.swift in Sources */,
-				CDF4CAE81D7A0C98005D585D /* UINavigationController.swift in Sources */,
-				CDF4CABC1D7A0C98005D585D /* UTCoreTypes.swift in Sources */,
-				CDF4CAE21D7A0C98005D585D /* UIColor.swift in Sources */,
-				CDF4CABF1D7A0C98005D585D /* UIPaddedTextField.swift in Sources */,
-				CDF4CACB1D7A0C98005D585D /* NSParagraphStyle.swift in Sources */,
-				CDF4CAD11D7A0C98005D585D /* NSUserDefaults.swift in Sources */,
-				CDF4CAEE1D7A0C99005D585D /* UIView.swift in Sources */,
-				CDF4CACA1D7A0C98005D585D /* NSObject.swift in Sources */,
-				CDF4CAE61D7A0C98005D585D /* UIInterfaceOrientation.swift in Sources */,
-				CDF4CABE1D7A0C98005D585D /* NBPopoverViewController.swift in Sources */,
-				CDF4CABB1D7A0C98005D585D /* UInt256.swift in Sources */,
-				CDF4CAE31D7A0C98005D585D /* UIDevice.swift in Sources */,
-				CDF4CAEB1D7A0C99005D585D /* UITextInput.swift in Sources */,
-				CDF4CAB61D7A0C98005D585D /* NSSortedArray.swift in Sources */,
-				CDF4CAD21D7A0C98005D585D /* String.swift in Sources */,
-				CDF4CAC21D7A0C98005D585D /* NSAttributedString.swift in Sources */,
-				CDF4CAB51D7A0C98005D585D /* Operators.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1250,25 +783,15 @@
 			target = FF61C7C740C1B196A3B33F37B77DBC68 /* Nimble */;
 			targetProxy = 61E3713E38B4A92F1389844F7DC16556 /* PBXContainerItemProxy */;
 		};
-		CDF4CAF21D7A0CA6005D585D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CDF4CA531D7A0C92005D585D /* NoodleBox */;
-			targetProxy = CDF4CAF11D7A0CA6005D585D /* PBXContainerItemProxy */;
-		};
-		CDF4CAF41D7A0CA9005D585D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CDF4CA531D7A0C92005D585D /* NoodleBox */;
-			targetProxy = CDF4CAF31D7A0CA9005D585D /* PBXContainerItemProxy */;
-		};
-		CDF4CAF61D7A0CAE005D585D /* PBXTargetDependency */ = {
+		CD34539D1D7B6D95002CB44F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FF61C7C740C1B196A3B33F37B77DBC68 /* Nimble */;
-			targetProxy = CDF4CAF51D7A0CAE005D585D /* PBXContainerItemProxy */;
+			targetProxy = CD34539C1D7B6D95002CB44F /* PBXContainerItemProxy */;
 		};
-		CDF4CAF81D7A0CAE005D585D /* PBXTargetDependency */ = {
+		CD34539F1D7B6D96002CB44F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FE36EBBDA070D6AABB0AB0B03A002D58 /* Quick */;
-			targetProxy = CDF4CAF71D7A0CAE005D585D /* PBXContainerItemProxy */;
+			targetProxy = CD34539E1D7B6D96002CB44F /* PBXContainerItemProxy */;
 		};
 		FDE6E9F87C28F42CA1E563A75DB72971 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1407,6 +930,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Quick/Quick.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = Quick;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1454,74 +978,6 @@
 			};
 			name = Release;
 		};
-		CDF4CA5A1D7A0C92005D585D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = NoodleBox/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = net.NoodleNation.NoodleBox;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CDF4CA5B1D7A0C92005D585D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = NoodleBox/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = net.NoodleNation.NoodleBox;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		D136996600E31F365F763213EFA35139 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E124D19BC9A195791938A5946C03B103 /* Nimble.xcconfig */;
@@ -1542,6 +998,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Nimble/Nimble.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = Nimble;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1571,6 +1028,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Quick/Quick.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = Quick;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1601,6 +1059,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Nimble/Nimble.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = Nimble;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1725,14 +1184,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		CDF4CA591D7A0C92005D585D /* Build configuration list for PBXNativeTarget "NoodleBox" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CDF4CA5A1D7A0C92005D585D /* Debug */,
-				CDF4CA5B1D7A0C92005D585D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

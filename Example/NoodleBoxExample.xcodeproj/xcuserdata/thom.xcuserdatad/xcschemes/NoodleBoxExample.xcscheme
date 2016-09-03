@@ -14,10 +14,52 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "46EF2A27A96E7FD6E8E0456B8917C5ED"
+               BuildableName = "Pods_NoodleBoxExample.framework"
+               BlueprintName = "Pods-NoodleBoxExample"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "CDAB11791D79FBBB00BEC7B8"
-               BuildableName = "NoodleBox-Example.app"
-               BlueprintName = "NoodleBox-Example"
-               ReferencedContainer = "container:Example/NoodleBox-Example.xcodeproj">
+               BuildableName = "NoodleBoxExample.app"
+               BlueprintName = "NoodleBoxExample"
+               ReferencedContainer = "container:NoodleBoxExample.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "83B77BB1FDC89F7F889E7E75AFFAF404"
+               BuildableName = "Pods_NoodleBoxExample_Tests.framework"
+               BlueprintName = "Pods-NoodleBoxExample_Tests"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CDF4CA441D7A0C2F005D585D"
+               BuildableName = "NoodleBoxExample_Tests.xctest"
+               BlueprintName = "NoodleBoxExample_Tests"
+               ReferencedContainer = "container:NoodleBoxExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +71,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CDAB11791D79FBBB00BEC7B8"
+            BuildableName = "NoodleBoxExample.app"
+            BlueprintName = "NoodleBoxExample"
+            ReferencedContainer = "container:NoodleBoxExample.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +93,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CDAB11791D79FBBB00BEC7B8"
-            BuildableName = "NoodleBox-Example.app"
-            BlueprintName = "NoodleBox-Example"
-            ReferencedContainer = "container:Example/NoodleBox-Example.xcodeproj">
+            BuildableName = "NoodleBoxExample.app"
+            BlueprintName = "NoodleBoxExample"
+            ReferencedContainer = "container:NoodleBoxExample.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -64,9 +116,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CDAB11791D79FBBB00BEC7B8"
-            BuildableName = "NoodleBox-Example.app"
-            BlueprintName = "NoodleBox-Example"
-            ReferencedContainer = "container:Example/NoodleBox-Example.xcodeproj">
+            BuildableName = "NoodleBoxExample.app"
+            BlueprintName = "NoodleBoxExample"
+            ReferencedContainer = "container:NoodleBoxExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

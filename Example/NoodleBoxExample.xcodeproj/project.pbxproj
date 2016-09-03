@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7FE823840C533735ABC08EF9 /* Pods_NoodleBoxExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50330F523B8F118908350F5A /* Pods_NoodleBoxExample.framework */; };
-		9683627D6FF891FE886D80FA /* Pods_NoodleBoxExample_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6319D4AAF60A6815D11F4F6 /* Pods_NoodleBoxExample_Tests.framework */; };
+		03353BAE009656AB4F32F7FB /* Pods_NoodleBoxExample_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF132EA37FE801B3FF3435BF /* Pods_NoodleBoxExample_Tests.framework */; };
+		54A85F4F75EF67AF46FE592C /* Pods_NoodleBoxExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5524C91CBE864E4A3649A12 /* Pods_NoodleBoxExample.framework */; };
 		CDAB117D1D79FBBB00BEC7B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB117C1D79FBBB00BEC7B8 /* AppDelegate.swift */; };
 		CDAB117F1D79FBBB00BEC7B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB117E1D79FBBB00BEC7B8 /* ViewController.swift */; };
-		CDAB11821D79FBBB00BEC7B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDAB11801D79FBBB00BEC7B8 /* Main.storyboard */; };
 		CDAB11841D79FBBB00BEC7B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAB11831D79FBBB00BEC7B8 /* Assets.xcassets */; };
 		CDAB11871D79FBBB00BEC7B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDAB11851D79FBBB00BEC7B8 /* LaunchScreen.storyboard */; };
 		CDF4CA481D7A0C2F005D585D /* NoodleBoxExample_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CA471D7A0C2F005D585D /* NoodleBoxExample_Tests.swift */; };
@@ -28,23 +27,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		50330F523B8F118908350F5A /* Pods_NoodleBoxExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoodleBoxExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		682F0DFEA17A906707593DFC /* Pods-NoodleBoxExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoodleBoxExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoodleBoxExample/Pods-NoodleBoxExample.release.xcconfig"; sourceTree = "<group>"; };
-		6B1FB1F79A92F957F5EA4FA4 /* Pods-NoodleBoxExample_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoodleBoxExample_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoodleBoxExample_Tests/Pods-NoodleBoxExample_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A1BB7B31E25FB1D83183566B /* Pods-NoodleBoxExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoodleBoxExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoodleBoxExample/Pods-NoodleBoxExample.debug.xcconfig"; sourceTree = "<group>"; };
-		CDAB11441D79FA7B00BEC7B8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		035DCF64D7F0FE50E0CE3349 /* Pods-NoodleBoxExample_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoodleBoxExample_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoodleBoxExample_Tests/Pods-NoodleBoxExample_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		434CA32646EC41E0F845CAFD /* Pods-NoodleBoxExample_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoodleBoxExample_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoodleBoxExample_Tests/Pods-NoodleBoxExample_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		794E1F7C5161B64FE48A03C7 /* Pods-NoodleBoxExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoodleBoxExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoodleBoxExample/Pods-NoodleBoxExample.debug.xcconfig"; sourceTree = "<group>"; };
+		BF132EA37FE801B3FF3435BF /* Pods_NoodleBoxExample_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoodleBoxExample_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2DC6E410BE0114C18064AE9 /* Pods-NoodleBoxExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoodleBoxExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoodleBoxExample/Pods-NoodleBoxExample.release.xcconfig"; sourceTree = "<group>"; };
 		CDAB117A1D79FBBB00BEC7B8 /* NoodleBoxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoodleBoxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAB117C1D79FBBB00BEC7B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDAB117E1D79FBBB00BEC7B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CDAB11811D79FBBB00BEC7B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDAB11831D79FBBB00BEC7B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDAB11861D79FBBB00BEC7B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDAB11881D79FBBB00BEC7B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDF4CA451D7A0C2F005D585D /* NoodleBoxExample_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoodleBoxExample_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF4CA471D7A0C2F005D585D /* NoodleBoxExample_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodleBoxExample_Tests.swift; sourceTree = "<group>"; };
 		CDF4CA491D7A0C2F005D585D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD82856BCE48FF60777F5825 /* Pods-NoodleBoxExample_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoodleBoxExample_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoodleBoxExample_Tests/Pods-NoodleBoxExample_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F6319D4AAF60A6815D11F4F6 /* Pods_NoodleBoxExample_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoodleBoxExample_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5524C91CBE864E4A3649A12 /* Pods_NoodleBoxExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoodleBoxExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FE823840C533735ABC08EF9 /* Pods_NoodleBoxExample.framework in Frameworks */,
+				54A85F4F75EF67AF46FE592C /* Pods_NoodleBoxExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,42 +57,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9683627D6FF891FE886D80FA /* Pods_NoodleBoxExample_Tests.framework in Frameworks */,
+				03353BAE009656AB4F32F7FB /* Pods_NoodleBoxExample_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84527CA295AA7AB254CB7200 /* Pods */ = {
+		064FCFEA71EE2AF45549925E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1BB7B31E25FB1D83183566B /* Pods-NoodleBoxExample.debug.xcconfig */,
-				682F0DFEA17A906707593DFC /* Pods-NoodleBoxExample.release.xcconfig */,
-				6B1FB1F79A92F957F5EA4FA4 /* Pods-NoodleBoxExample_Tests.debug.xcconfig */,
-				DD82856BCE48FF60777F5825 /* Pods-NoodleBoxExample_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		A470EDE7AA589CB570358F23 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				50330F523B8F118908350F5A /* Pods_NoodleBoxExample.framework */,
-				F6319D4AAF60A6815D11F4F6 /* Pods_NoodleBoxExample_Tests.framework */,
+				E5524C91CBE864E4A3649A12 /* Pods_NoodleBoxExample.framework */,
+				BF132EA37FE801B3FF3435BF /* Pods_NoodleBoxExample_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99ADF28F42BD147177A1C3BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				794E1F7C5161B64FE48A03C7 /* Pods-NoodleBoxExample.debug.xcconfig */,
+				C2DC6E410BE0114C18064AE9 /* Pods-NoodleBoxExample.release.xcconfig */,
+				035DCF64D7F0FE50E0CE3349 /* Pods-NoodleBoxExample_Tests.debug.xcconfig */,
+				434CA32646EC41E0F845CAFD /* Pods-NoodleBoxExample_Tests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CD637A191D79F2B000326413 = {
 			isa = PBXGroup;
 			children = (
-				CDAB11461D79FA8100BEC7B8 /* Podfile Metadata */,
 				CDAB117B1D79FBBB00BEC7B8 /* NoodleBoxExample */,
 				CDF4CA461D7A0C2F005D585D /* NoodleBoxExample_Tests */,
 				CD637A231D79F2B000326413 /* Products */,
-				A470EDE7AA589CB570358F23 /* Frameworks */,
-				84527CA295AA7AB254CB7200 /* Pods */,
+				99ADF28F42BD147177A1C3BB /* Pods */,
+				064FCFEA71EE2AF45549925E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,20 +104,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CDAB11461D79FA8100BEC7B8 /* Podfile Metadata */ = {
-			isa = PBXGroup;
-			children = (
-				CDAB11441D79FA7B00BEC7B8 /* Podfile */,
-			);
-			name = "Podfile Metadata";
-			sourceTree = "<group>";
-		};
 		CDAB117B1D79FBBB00BEC7B8 /* NoodleBoxExample */ = {
 			isa = PBXGroup;
 			children = (
 				CDAB117C1D79FBBB00BEC7B8 /* AppDelegate.swift */,
 				CDAB117E1D79FBBB00BEC7B8 /* ViewController.swift */,
-				CDAB11801D79FBBB00BEC7B8 /* Main.storyboard */,
 				CDAB11831D79FBBB00BEC7B8 /* Assets.xcassets */,
 				CDAB11851D79FBBB00BEC7B8 /* LaunchScreen.storyboard */,
 				CDAB11881D79FBBB00BEC7B8 /* Info.plist */,
@@ -227,7 +214,6 @@
 			files = (
 				CDAB11871D79FBBB00BEC7B8 /* LaunchScreen.storyboard in Resources */,
 				CDAB11841D79FBBB00BEC7B8 /* Assets.xcassets in Resources */,
-				CDAB11821D79FBBB00BEC7B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,14 +348,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CDAB11801D79FBBB00BEC7B8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CDAB11811D79FBBB00BEC7B8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CDAB11851D79FBBB00BEC7B8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -467,7 +445,7 @@
 		};
 		CDAB118A1D79FBBB00BEC7B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1BB7B31E25FB1D83183566B /* Pods-NoodleBoxExample.debug.xcconfig */;
+			baseConfigurationReference = 794E1F7C5161B64FE48A03C7 /* Pods-NoodleBoxExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -482,7 +460,7 @@
 		};
 		CDAB118B1D79FBBB00BEC7B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 682F0DFEA17A906707593DFC /* Pods-NoodleBoxExample.release.xcconfig */;
+			baseConfigurationReference = C2DC6E410BE0114C18064AE9 /* Pods-NoodleBoxExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -496,7 +474,7 @@
 		};
 		CDF4CA4D1D7A0C2F005D585D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B1FB1F79A92F957F5EA4FA4 /* Pods-NoodleBoxExample_Tests.debug.xcconfig */;
+			baseConfigurationReference = 035DCF64D7F0FE50E0CE3349 /* Pods-NoodleBoxExample_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NoodleBoxExample_Tests/Info.plist;
@@ -511,7 +489,7 @@
 		};
 		CDF4CA4E1D7A0C2F005D585D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD82856BCE48FF60777F5825 /* Pods-NoodleBoxExample_Tests.release.xcconfig */;
+			baseConfigurationReference = 434CA32646EC41E0F845CAFD /* Pods-NoodleBoxExample_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NoodleBoxExample_Tests/Info.plist;
