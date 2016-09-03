@@ -70,16 +70,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CDF4CA441D7A0C2F005D585D"
-               BuildableName = "NoodleBoxExample_Tests.xctest"
-               BlueprintName = "NoodleBoxExample_Tests"
-               ReferencedContainer = "container:NoodleBoxExample.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
