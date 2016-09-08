@@ -17,6 +17,8 @@
 		CD39BE9D1D60E01500E8FB50 /* NBStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */; };
 		CD39BE9F1D60E25E00E8FB50 /* NBFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */; };
 		CD39BED81D6110F700E8FB50 /* UIZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */; };
+		CD3F02851D81DD4A00DBCF8F /* NBSwipeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3F02831D81DD4A00DBCF8F /* NBSwipeTableView.swift */; };
+		CD3F02861D81DD4A00DBCF8F /* NBSwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3F02841D81DD4A00DBCF8F /* NBSwipeTableViewCell.swift */; };
 		CD4EA8BA1D6BE519003B45E4 /* NSSortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4EA8B91D6BE519003B45E4 /* NSSortedArray.swift */; };
 		CD4EA8BD1D6BE52A003B45E4 /* TryOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4EA8BB1D6BE52A003B45E4 /* TryOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD4EA8BE1D6BE52A003B45E4 /* TryOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4EA8BC1D6BE52A003B45E4 /* TryOperation.m */; };
@@ -90,6 +92,8 @@
 		CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBStackView.swift; sourceTree = "<group>"; };
 		CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBFileManager.swift; sourceTree = "<group>"; };
 		CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIZoomingScrollView.swift; sourceTree = "<group>"; };
+		CD3F02831D81DD4A00DBCF8F /* NBSwipeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBSwipeTableView.swift; sourceTree = "<group>"; };
+		CD3F02841D81DD4A00DBCF8F /* NBSwipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBSwipeTableViewCell.swift; sourceTree = "<group>"; };
 		CD4EA8B91D6BE519003B45E4 /* NSSortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSortedArray.swift; sourceTree = "<group>"; };
 		CD4EA8BB1D6BE52A003B45E4 /* TryOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TryOperation.h; sourceTree = "<group>"; };
 		CD4EA8BC1D6BE52A003B45E4 /* TryOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TryOperation.m; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 		CD0F81421D5F784F00736E69 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				CD3F02871D81DD5000DBCF8F /* Swipe Table View */,
 				CD74914B1D7CB47800F49594 /* NBBundle.swift */,
 				CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */,
 				CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */,
@@ -240,6 +245,15 @@
 			children = (
 			);
 			name = ObjC;
+			sourceTree = "<group>";
+		};
+		CD3F02871D81DD5000DBCF8F /* Swipe Table View */ = {
+			isa = PBXGroup;
+			children = (
+				CD3F02831D81DD4A00DBCF8F /* NBSwipeTableView.swift */,
+				CD3F02841D81DD4A00DBCF8F /* NBSwipeTableViewCell.swift */,
+			);
+			name = "Swipe Table View";
 			sourceTree = "<group>";
 		};
 		CDBBB1E51D6EA21D00093684 /* CocoaPod Files */ = {
@@ -499,6 +513,7 @@
 				CDD116C71D592CDB004A9DBC /* Array.swift in Sources */,
 				CDD116EA1D592CE3004A9DBC /* UIFilterView.swift in Sources */,
 				CD0F813D1D5F712E00736E69 /* CFRepresentable.swift in Sources */,
+				CD3F02861D81DD4A00DBCF8F /* NBSwipeTableViewCell.swift in Sources */,
 				CD4EA8BA1D6BE519003B45E4 /* NSSortedArray.swift in Sources */,
 				CDD116CC1D592CDB004A9DBC /* NSBundle.swift in Sources */,
 				CDD116C31D592CDB004A9DBC /* Dictionary.swift in Sources */,
@@ -520,6 +535,7 @@
 				CD30FDC11D74DC200087E68F /* NBPopoverViewController.swift in Sources */,
 				CD4EA91E1D6D0962003B45E4 /* NSAttributeName.swift in Sources */,
 				CD4EA8D21D6BE607003B45E4 /* UITextInput.swift in Sources */,
+				CD3F02851D81DD4A00DBCF8F /* NBSwipeTableView.swift in Sources */,
 				CD4EA8C81D6BE607003B45E4 /* UIBarButtonItem.swift in Sources */,
 				CD4EA8C91D6BE607003B45E4 /* UIColor.swift in Sources */,
 				CD39BE9D1D60E01500E8FB50 /* NBStackView.swift in Sources */,
