@@ -573,9 +573,7 @@ public struct NSDataSizeFormattingOption : OptionSetType {
     
 }
 
-/**
- 
- */
+///  
 public struct NSDataSize : CustomStringConvertible {
     
     public let bytes: UInt64

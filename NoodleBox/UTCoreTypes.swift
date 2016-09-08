@@ -99,7 +99,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    (i.e., compound documents)
      *
      *    UTI: public.composite-content
-     *    conforms to: public.content
+     *    conform///  to: public.content
      *
      *
      *  kUTTypeMessage
@@ -152,7 +152,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    including files and in-memory data
      *
      *    UTI: public.data
-     *    conforms to: public.item
+     *    conform///  to: public.item
      *
      *
      *  kUTTypeDirectory
@@ -161,7 +161,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    (includes packages AND folders)
      *
      *    UTI: public.directory
-     *    conforms to: public.item
+     *    conform///  to: public.item
      *
      *
      *  kUTTypeResolvable
@@ -176,14 +176,14 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a symbolic link
      *
      *    UTI: public.symlink
-     *    conforms to: public.item, com.apple.resolvable
+     *    conform///  to: public.item, com.apple.resolvable
      *
      *
      *  kUTTypeExecutable
      *
      *    an executable item
      *    UTI: public.executable
-     *    conforms to: public.item
+     *    conform///  to: public.item
      *
      *
      *  kUTTypeMountPoint
@@ -191,7 +191,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a volume mount point (resolvable, resolves to the root dir of a volume)
      *
      *    UTI: com.apple.mount-point
-     *    conforms to: public.item, com.apple.resolvable
+     *    conform///  to: public.item, com.apple.resolvable
      *
      *
      *  kUTTypeAliasFile
@@ -199,7 +199,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a fully-formed alias file
      *
      *    UTI: com.apple.alias-file
-     *    conforms to: public.data, com.apple.resolvable
+     *    conform///  to: public.data, com.apple.resolvable
      *
      *
      *  kUTTypeAliasRecord
@@ -207,7 +207,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    raw alias data
      *
      *    UTI: com.apple.alias-record
-     *    conforms to: public.data, com.apple.resolvable
+     *    conform///  to: public.data, com.apple.resolvable
      *
      *
      *  kUTTypeURLBookmarkData
@@ -215,7 +215,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    URL bookmark
      *
      *    UTI: com.apple.bookmark
-     *    conforms to: public.data, com.apple.resolvable
+     *    conform///  to: public.data, com.apple.resolvable
      *
      */
     @available(iOS 3.0, *)
@@ -244,7 +244,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    (OSType 'url ')
      *
      *    UTI: public.url
-     *    conforms to: public.data
+     *    conform///  to: public.data
      *
      *
      *  kUTTypeFileURL
@@ -253,7 +253,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    (OSType 'furl')
      *
      *    UTI: public.file-url
-     *    conforms to: public.url
+     *    conform///  to: public.url
      *
      */
     @available(iOS 3.0, *)
@@ -268,7 +268,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    including text with markup (HTML, RTF, etc.)
      *
      *    UTI: public.text
-     *    conforms to: public.data, public.content
+     *    conform///  to: public.data, public.content
      *
      *
      *  kUTTypePlainText
@@ -276,7 +276,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    text with no markup, unspecified encoding
      *
      *    UTI: public.plain-text
-     *    conforms to: public.text
+     *    conform///  to: public.text
      *
      *
      *  kUTTypeUTF8PlainText
@@ -285,7 +285,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    (OSType 'utf8', NSPasteboardType "NSStringPBoardType")
      *
      *    UTI: public.utf8-plain-text
-     *    conforms to: public.plain-text
+     *    conform///  to: public.plain-text
      *
      *
      *  kUTTypeUTF16ExternalPlainText
@@ -296,7 +296,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    (OSType 'ut16')
      *
      *    UTI: public.utf16-external-plain-text
-     *    conforms to: public.plain-text
+     *    conform///  to: public.plain-text
      *
      *
      *  kUTTypeUTF16PlainText
@@ -305,7 +305,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    (OSType 'utxt')
      *
      *    UTI: public.utf16-plain-text
-     *    conforms to: public.plain-text
+     *    conform///  to: public.plain-text
      *
      *
      *  kUTTypeDelimitedText
@@ -313,7 +313,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    text containing delimited values
      *
      *    UTI: public.delimited-values-text
-     *    conforms to: public.text
+     *    conform///  to: public.text
      *
      *
      *  kUTTypeCommaSeparatedText
@@ -321,7 +321,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    text containing comma-separated values (.csv)
      *
      *    UTI: public.comma-separated-values-text
-     *    conforms to: public.delimited-values-text
+     *    conform///  to: public.delimited-values-text
      *
      *
      *  kUTTypeTabSeparatedText
@@ -329,7 +329,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    text containing tab-separated values
      *
      *    UTI: public.tab-separated-values-text
-     *    conforms to: public.delimited-values-text
+     *    conform///  to: public.delimited-values-text
      *
      *
      *  kUTTypeUTF8TabSeparatedText
@@ -337,7 +337,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    UTF-8 encoded text containing tab-separated values
      *
      *    UTI: public.utf8-tab-separated-values-text
-     *    conforms to: public.tab-separated-values-text, public.utf8-plain-text
+     *    conform///  to: public.tab-/// eparated-values-text, public.utf8-plain-text
      *
      *
      *  kUTTypeRTF
@@ -345,7 +345,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Rich Text EFat
      *
      *    UTI: public.rtf
-     *    conforms to: public.text
+     *    conform///  to: public.text
      *
      */
     @available(iOS 3.0, *)
@@ -375,7 +375,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    HTML, any version
      *
      *    UTI: public.html
-     *    conforms to: public.text
+     *    conform///  to: public.text
      *
      *
      *  kUTTypeXML
@@ -383,7 +383,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    generic XML
      *
      *    UTI: public.xml
-     *    conforms to: public.text
+     *    conform///  to: public.text
      *
      */
     @available(iOS 3.0, *)
@@ -397,7 +397,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    abstract type for source code (any language)
      *
      *    UTI: public.source-code
-     *    conforms to: public.plain-text
+     *    conform///  to: public.plain-text
      *
      *
      *  kUTTypeAssemblyLanguageSource
@@ -405,7 +405,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    assembly language source (.s)
      *
      *    UTI: public.assembly-source
-     *    conforms to: public.source-code
+     *    conform///  to: public.source-code
      *
      *
      *  kUTTypeCSource
@@ -413,7 +413,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    C source code (.c)
      *
      *    UTI: public.c-source
-     *    conforms to: public.source-code
+     *    conform///  to: public.source-code
      *
      *
      *  kUTTypeObjectiveCSource
@@ -421,7 +421,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Objective-C source code (.m)
      *
      *    UTI: public.objective-c-source
-     *    conforms to: public.source-code
+     *    conform///  to: public.source-code
      *
      *
      *  kUTTypeSwiftSource
@@ -429,7 +429,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Swift source code (.swift)
      *
      *    UTI: public.swift-source
-     *    conforms to: public.source-code
+     *    conform///  to: public.source-code
      *
      *
      *  kUTTypeCPlusPlusSource
@@ -437,7 +437,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    C++ source code (.cp, etc.)
      *
      *    UTI: public.c-plus-plus-source
-     *    conforms to: public.source-code
+     *    conform///  to: public.source-code
      *
      *
      *  kUTTypeObjectiveCPlusPlusSource
@@ -445,7 +445,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Objective-C++ source code
      *
      *    UTI: public.objective-c-plus-plus-source
-     *    conforms to: public.source-code
+     *    conform///  to: public.source-code
      *
      *
      *  kUTTypeCHeader
@@ -453,7 +453,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    C header
      *
      *    UTI: public.c-header
-     *    conforms to: public.source-code
+     *    conform///  to: public.source-code
      *
      *
      *  kUTTypeCPlusPlusHeader
@@ -461,7 +461,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    C++ header
      *
      *    UTI: public.c-plus-plus-header
-     *    conforms to: public.source-code
+     *    conform///  to: public.source-code
      *
      *
      *  kUTTypeJavaSource
@@ -469,7 +469,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Java source code
      *
      *    UTI: com.sun.java-source
-     *    conforms to: public.source-code
+     *    conform///  to: public.source-code
      *
      */
     @available(iOS 3.0, *)
@@ -499,7 +499,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    scripting language source
      *
      *    UTI: public.script
-     *    conforms to: public.source-code
+     *    conform///  to: public.source-code
      *
      *
      *  kUTTypeAppleScript
@@ -507,7 +507,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    AppleScript text format (.applescript)
      *
      *    UTI: com.apple.applescript.text
-     *    conforms to: public.script
+     *    conform///  to: public.script
      *
      *
      *  kUTTypeOSAScript
@@ -515,7 +515,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Open Scripting Architecture script binary format (.scpt)
      *
      *    UTI: com.apple.applescript.script
-     *    conforms to: public.data, public.script
+     *    conform///  to: public.data, public.script
      *
      *
      *  kUTTypeOSAScriptBundle
@@ -523,7 +523,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Open Scripting Architecture script bundle format (.scptd)
      *
      *    UTI: com.apple.applescript.script-bundle
-     *    conforms to: com.apple.bundle, com.apple.package, public.script
+     *    conform///  to: com.apple.bundle, com.apple.package, public.script
      *
      *
      *  kUTTypeJavaScript
@@ -531,7 +531,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    JavaScript source code
      *
      *    UTI: com.netscape.javascript-source
-     *    conforms to: public.source-code, public.executable
+     *    conform///  to: public./// ource-code, public.executable
      *
      *
      *  kUTTypeShellScript
@@ -539,7 +539,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    base type for shell scripts
      *
      *    UTI: public.shell-script
-     *    conforms to: public.script
+     *    conform///  to: public.script
      *
      *
      *  kUTTypePerlScript
@@ -547,7 +547,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Perl script
      *
      *    UTI: public.perl-script
-     *    conforms to: public.shell-script
+     *    conform///  to: public.shell-script
      *
      *
      *  kUTTypePythonScript
@@ -555,7 +555,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Python script
      *
      *    UTI: public.python-script
-     *    conforms to: public.shell-script
+     *    conform///  to: public.shell-script
      *
      *
      *  kUTTypeRubyScript
@@ -563,7 +563,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Ruby script
      *
      *    UTI: public.ruby-script
-     *    conforms to: public.shell-script
+     *    conform///  to: public.shell-script
      *
      *
      *  kUTTypePHPScript
@@ -571,7 +571,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    PHP script
      *
      *    UTI: public.php-script
-     *    conforms to: public.shell-script
+     *    conform///  to: public.shell-script
      *
      */
     @available(iOS 8.0, *)
@@ -603,7 +603,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    com.netscape.javascript-source
      *
      *    UTI: public.json
-     *    conforms to: public.text
+     *    conform///  to: public.text
      *
      *
      *  kUTTypePropertyList
@@ -611,7 +611,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    base type for property lists
      *
      *    UTI: com.apple.property-list
-     *    conforms to: public.data
+     *    conform///  to: public.data
      *
      *
      *  kUTTypeXMLPropertyList
@@ -619,7 +619,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    XML property list
      *
      *    UTI: com.apple.xml-property-list
-     *    conforms to: public.xml, com.apple.property-list
+     *    conform///  to: public.xml, com.apple.property-list
      *
      *
      *  kUTTypeBinaryPropertyList
@@ -645,7 +645,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Adobe PDF
      *
      *    UTI: com.adobe.pdf
-     *    conforms to: public.data, public.composite-content
+     *    conform///  to: public.data, public.composite-content
      *
      *
      *  kUTTypeRTFD
@@ -654,7 +654,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    (RTF with content embedding, on-disk format)
      *
      *    UTI: com.apple.rtfd
-     *    conforms to: com.apple.package, public.composite-content
+     *    conform///  to: com.apple.package, public.composite-content
      *
      *
      *  kUTTypeFlatRTFD
@@ -662,7 +662,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Flattened RTFD (pasteboard format)
      *
      *    UTI: com.apple.flat-rtfd
-     *    conforms to: public.data, public.composite-content
+     *    conform///  to: public.data, public.composite-content
      *
      *
      *  kUTTypeTXNTextAndMultimediaData
@@ -671,7 +671,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    (OSType 'txtn')
      *
      *    UTI: com.apple.txn.text-multimedia-data
-     *    conforms to: public.data, public.composite-content
+     *    conform///  to: public.data, public.composite-content
      *
      *
      *  kUTTypeWebArchive
@@ -679,7 +679,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    The WebKit webarchive format
      *
      *    UTI: com.apple.webarchive
-     *    conforms to: public.data, public.composite-content
+     *    conform///  to: public.data, public.composite-content
      */
     @available(iOS 3.0, *)
     public static let PDF = UTType(kUTTypePDF)
@@ -698,7 +698,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    abstract image data
      *
      *    UTI: public.image
-     *    conforms to: public.data, public.content
+     *    conform///  to: public.data, public.content
      *
      *
      *  kUTTypeJPEG
@@ -706,7 +706,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    JPEG image
      *
      *    UTI: public.jpeg
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypeJPEG2000
@@ -714,7 +714,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    JPEG-2000 image
      *
      *    UTI: public.jpeg-2000
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypeTIFF
@@ -722,7 +722,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    TIFF image
      *
      *    UTI: public.tiff
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypePICT
@@ -730,7 +730,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Quickdraw PICT format
      *
      *    UTI: com.apple.pict
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypeGIF
@@ -738,7 +738,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    GIF image
      *
      *    UTI: com.compuserve.gif
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypePNG
@@ -746,7 +746,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    PNG image
      *
      *    UTI: public.png
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypeQuickTimeImage
@@ -754,7 +754,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    QuickTime image format (OSType 'qtif')
      *
      *    UTI: com.apple.quicktime-image
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypeAppleICNS
@@ -762,7 +762,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Apple icon data
      *
      *    UTI: com.apple.icns
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypeBMP
@@ -770,7 +770,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Windows bitmap
      *
      *    UTI: com.microsoft.bmp
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypeICO
@@ -778,7 +778,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Windows icon data
      *
      *    UTI: com.microsoft.ico
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypeRawImage
@@ -786,7 +786,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    base type for raw image data (.raw)
      *
      *    UTI: public.camera-raw-image
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *
      *  kUTTypeScalableVectorGraphics
@@ -794,7 +794,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    SVG image
      *
      *    UTI: public.svg-image
-     *    conforms to: public.image
+     *    conform///  to: public.image
      *
      *  kUTTypeLivePhoto
      *
@@ -839,7 +839,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    audio and/or video content
      *
      *    UTI: public.audiovisual-content
-     *    conforms to: public.data, public.content
+     *    conform///  to: public.data, public.content
      *
      *
      *  kUTTypeMovie
@@ -848,7 +848,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Corresponds to what users would label a "movie"
      *
      *    UTI: public.movie
-     *    conforms to: public.audiovisual-content
+     *    conform///  to: public.audiovisual-content
      *
      *
      *  kUTTypeVideo
@@ -856,7 +856,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    pure video (no audio)
      *
      *    UTI: public.video
-     *    conforms to: public.movie
+     *    conform///  to: public.movie
      *
      *
      *  kUTTypeAudio
@@ -864,7 +864,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    pure audio (no video)
      *
      *    UTI: public.audio
-     *    conforms to: public.audiovisual-content
+     *    conform///  to: public.audiovisual-content
      *
      *
      *  kUTTypeQuickTimeMovie
@@ -872,7 +872,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    QuickTime movie
      *
      *    UTI: com.apple.quicktime-movie
-     *    conforms to: public.movie
+     *    conform///  to: public.movie
      *
      *
      *  kUTTypeMPEG
@@ -880,7 +880,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    MPEG-1 or MPEG-2 movie
      *
      *    UTI: public.mpeg
-     *    conforms to: public.movie
+     *    conform///  to: public.movie
      *
      *
      *  kUTTypeMPEG2Video
@@ -888,7 +888,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    MPEG-2 video
      *
      *    UTI: public.mpeg-2-video
-     *    conforms to: public.video
+     *    conform///  to: public.video
      *
      *
      *  kUTTypeMPEG2TransportStream
@@ -896,7 +896,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    MPEG-2 Transport Stream movie format
      *
      *    UTI: public.mpeg-2-transport-stream
-     *    conforms to: public.movie
+     *    conform///  to: public.movie
      *
      *
      *  kUTTypeMP3
@@ -904,7 +904,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    MP3 audio
      *
      *    UTI: public.mp3
-     *    conforms to: public.audio
+     *    conform///  to: public.audio
      *
      *
      *  kUTTypeMPEG4
@@ -912,7 +912,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    MPEG-4 movie
      *
      *    UTI: public.mpeg-4
-     *    conforms to: public.movie
+     *    conform///  to: public.movie
      *
      *
      *  kUTTypeMPEG4Audio
@@ -920,7 +920,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    MPEG-4 audio layer
      *
      *    UTI: public.mpeg-4-audio
-     *    conforms to: public.mpeg-4, public.audio
+     *    conform///  to: public.mpeg-4, public.audio
      *
      *
      *  kUTTypeAppleProtectedMPEG4Audio
@@ -929,7 +929,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    (.m4p, iTunes music store format)
      *
      *    UTI: com.apple.protected-mpeg-4-audio
-     *    conforms to: public.audio
+     *    conform///  to: public.audio
      *
      *
      *  kUTTypeAppleProtectedMPEG4Video
@@ -945,7 +945,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Audio Video Interleaved (AVI) movie format
      *
      *    UTI: public.avi
-     *    conforms to: public.movie
+     *    conform///  to: public.movie
      *
      *
      *  kUTTypeAudioInterchangeFileFormat
@@ -953,7 +953,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    AIFF audio format
      *
      *    UTI: public.aiff-audio
-     *    conforms to: public.aifc-audio
+     *    conform///  to: public.aifc-audio
      *
      *
      *  kUTTypeWaveformAudio
@@ -961,7 +961,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Waveform audio format (.wav)
      *
      *    UTI: com.microsoft.waveform-audio
-     *    conforms to: public.audio
+     *    conform///  to: public.audio
      *
      *
      *  kUTTypeMIDIAudio
@@ -969,7 +969,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    MIDI audio format
      *
      *    UTI: public.midi-audio
-     *    conforms to: public.audio
+     *    conform///  to: public.audio
      *
      *
      */
@@ -1021,7 +1021,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    M3U or M3U8 playlist
      *
      *    UTI: public.m3u-playlist
-     *    conforms to: public.text, public.playlist
+     *    conform///  to: public.text, public.playlist
      *
      */
     @available(iOS 8.0, *)
@@ -1035,7 +1035,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a user-browsable directory (i.e., not a package)
      *
      *    UTI: public.folder
-     *    conforms to: public.directory
+     *    conform///  to: public.directory
      *
      *
      *  kUTTypeVolume
@@ -1043,7 +1043,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    the root folder of a volume/mount point
      *
      *    UTI: public.volume
-     *    conforms to: public.folder
+     *    conform///  to: public.folder
      *
      *
      *  kUTTypePackage
@@ -1051,7 +1051,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a packaged directory
      *
      *    UTI: com.apple.package
-     *    conforms to: public.directory
+     *    conform///  to: public.directory
      *
      *
      *  kUTTypeBundle
@@ -1059,7 +1059,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a directory conforming to one of the CFBundle layouts
      *
      *    UTI: com.apple.bundle
-     *    conforms to: public.directory
+     *    conform///  to: public.directory
      *
      *
      *  kUTTypePluginBundle
@@ -1127,7 +1127,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    base type for OS X applications, launchable items
      *
      *    UTI: com.apple.application
-     *    conforms to: public.executable
+     *    conform///  to: public.executable
      *
      *
      *  kUTTypeApplicationBundle
@@ -1143,7 +1143,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a single-file Carbon/Classic application 
      *
      *    UTI: com.apple.application-file
-     *    conforms to: com.apple.application, public.data
+     *    conform///  to: com.apple.application, public.data
      *
      *
      *  kUTTypeUnixExecutable
@@ -1151,7 +1151,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a UNIX executable (flat file)
      *
      *    UTI: public.unix-executable
-     *    conforms to: public.data, public.executable
+     *    conform///  to: public.data, public.executable
      *
      *
      *  kUTTypeWindowsExecutable
@@ -1159,15 +1159,15 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a Windows executable (.exe files)
      *
      *    UTI: com.microsoft.windows-executable
-     *    conforms to: public.data, public.executable
+     *    conform///  to: public.data, public.executable
      *
      *
      *  kUTTypeJavaClass
      *
      *    a Java public class
      *
-     *    UTI: com.sun.java-public class
-     *    conforms to: public.data, public.executable
+     *    UTI: com./// un.java-public class
+     *    conform///  to: public.data, public.executable
      *
      *
      *  kUTTypeJavaArchive
@@ -1175,7 +1175,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a Java archive (.jar)
      *
      *    UTI: com.sun.java-archive
-     *    conforms to: public.zip-archive, public.executable
+     *    conform///  to: public.zip-archive, public.executable
      *
      *
      *  kUTTypeSystemPreferencesPane
@@ -1214,7 +1214,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a GNU zip archive (gzip)
      *
      *    UTI: org.gnu.gnu-zip-archive
-     *    conforms to: public.data, public.archive
+     *    conform///  to: public.data, public.archive
      *
      *
      *  kUTTypeBzip2Archive
@@ -1222,7 +1222,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    a bzip2 archive (.bz2)
      *
      *    UTI: public.bzip2-archive
-     *    conforms to: public.data, public.archive
+     *    conform///  to: public.data, public.archive
      *
      *
      *  kUTTypeZipArchive
@@ -1246,7 +1246,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    base spreadsheet document type
      *
      *    UTI: public.spreadsheet
-     *    conforms to: public.content
+     *    conform///  to: public.content
      *
      *
      *  kUTTypePresentation
@@ -1254,7 +1254,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    base presentation document type
      *
      *    UTI: public.presentation
-     *    conforms to: public.composite-content
+     *    conform///  to: public.composite-content
      *
      *
      *  kUTTypeDatabase
@@ -1277,7 +1277,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    VCard format
      *
      *    UTI: public.vcard
-     *    conforms to: public.text, public.contact
+     *    conform///  to: public.text, public.contact
      *
      *
      *  kUTTypeToDoItem
@@ -1299,7 +1299,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    e-mail message
      *
      *    UTI: public.email-message
-     *    conforms to: public.message
+     *    conform///  to: public.message
      *
      */
     @available(iOS 3.0, *)
@@ -1317,7 +1317,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    base type for Apple Internet locations
      *
      *    UTI: com.apple.internet-location
-     *    conforms to: public.data
+     *    conform///  to: public.data
      *
      */
     @available(iOS 8.0, *)
@@ -1329,7 +1329,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    Opaque InkText data
      *
      *    UTI: com.apple.ink.inktext
-     *    conforms to: public.data
+     *    conform///  to: public.data
      *
      *
      *  kUTTypeFont
@@ -1351,7 +1351,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    base type for 3D content
      *
      *    UTI: public.3d-content
-     *    conforms to: public.content
+     *    conform///  to: public.content
      *
      *
      *  kUTTypePKCS12
@@ -1359,7 +1359,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    PKCS#12 format
      *
      *    UTI: com.rsa.pkcs-12
-     *    conforms to: public.data
+     *    conform///  to: public.data
      *
      *
      *  kUTTypeX509Certificate
@@ -1367,7 +1367,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    X.509 certificate format
      *
      *    UTI: public.x509-certificate
-     *    conforms to: public.data
+     *    conform///  to: public.data
      *
      *
      *  kUTTypeElectronicPublication
@@ -1375,7 +1375,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *    ePub format
      *
      *    UTI: org.idpf.epub-container
-     *    conforms to: public.data, public.composite-content
+     *    conform///  to: public.data, public.composite-content
      *
      *
      *  kUTTypeLog

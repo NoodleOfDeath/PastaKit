@@ -21,10 +21,8 @@ public func * (lhs: UIColor, rhs: Double) -> UIColor {
 
 extension UIColor {
 
-    /**
-    The six-digit hexadecimal representation of color of the form #RRGGBB.
-    - parameter hex6: Six-digit hexadecimal value.
-    */
+    ///     The six-digit hexadecimal representation of color of the form #RRGGBB.
+    /// - parameter hex6: Six-digit hexadecimal value.
     public convenience init(hex6: UInt, alpha: CGFloat = 1.0) {
         let divisor = CGFloat(255.0)
         let red     = CGFloat((hex6 & 0xFF0000) >> 16) / divisor
@@ -33,10 +31,8 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 
-    /**
-    The six-digit hexadecimal representation of color with alpha of the form #RRGGBBAA.
-    - parameter hex8: Eight-digit hexadecimal value.
-    */
+    ///     The six-digit hexadecimal representation of color with alpha of the form #RRGGBBAA.
+/// - parameter hex8: Eight-digit hexadecimal value.
     public convenience init(hex8: UInt) {
         let divisor = CGFloat(255.0)
         let red     = CGFloat((hex8 & 0xFF000000) >> 24) / divisor

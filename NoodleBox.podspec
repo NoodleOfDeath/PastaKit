@@ -36,7 +36,7 @@ Swift library with convenience extensions and custom data structures to save dev
   #   'NoodleBox' => ['NoodleBox/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # /// .public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '* 2.3'
 end

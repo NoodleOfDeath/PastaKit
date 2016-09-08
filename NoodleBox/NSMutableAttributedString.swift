@@ -9,9 +9,8 @@
 import Foundation
 
 // MARK: - ** NSMutableAttributedString (General Convenience Extensions) **
-/**
- NSMutableAttributedString (General Convenience Extensions)
- */
+///  NSMutableAttributedString (General Convenience Extensions)
+ /// */
 extension NSMutableAttributedString {
     
     public func removeAttributes(attributes: [String], range: NSRange) {

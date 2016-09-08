@@ -43,5 +43,10 @@ extension UIApplication {
     public static func sharedKeyWindow() -> UIWindow? {
         return sharedApplication().keyWindow
     }
+    
+    /// Dismiss keyboard from key window.
+    public static func endEditing(force: Bool = false) {
+        sharedApplication().keyWindow?.endEditing(force)
+    }
 
 }

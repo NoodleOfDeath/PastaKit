@@ -91,9 +91,18 @@ extension Array where Element : Equatable {
     /// Appends an `element` to `self` iff `element` is not already
     /// contained in `self`.
     /// - parameter element: An `element` to append to `self`.
-    public mutating func appendUnique(element: Element) {
-        if !contains(element) {
-            append(element)
+    
+    public mutating func appendUnique(elements: Element...) {
+        for element in elements {
+            if !contains(element) {
+                append(element)
+            }
+        }
+    }
+    
+    public mutating func appendUnique(elements: [Element]) {
+        for element in elements {
+            appendUnique(element)
         }
     }
     

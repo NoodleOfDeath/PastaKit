@@ -10,13 +10,5 @@ import Foundation
 
 public let LSApply         = "apply".capitalizedLocalizedString
 public let LSCancel        = "cancel".capitalizedLocalizedString
-public let LSCopy          = "copy".capitalizedLocalizedString
-public let LSDelete        = "delete".capitalizedLocalizedString
 public let LSDone          = "done".capitalizedLocalizedString
 public let LSEdit          = "edit".capitalizedLocalizedString
-public let LSEmptyTrash    = "empty trash".capitalizedLocalizedString
-public let LSMove          = "move".capitalizedLocalizedString
-public let LSMoveToTrash   = "move to trash".capitalizedLocalizedString
-public let LSOpenWith      = "open with".capitalizedLocalizedString
-public let LSRename        = "rename".capitalizedLocalizedString
-public let LSRenamePrompt  = "rename prompt".capitalizedLocalizedString

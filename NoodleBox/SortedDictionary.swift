@@ -14,7 +14,7 @@ public struct SortedDictionary <Key: Comparable, Value> : CollectionType, _Objec
     
     public typealias Element = (key: Key, value: Value)
     public typealias Index = Int
-    public typealias Generator = IndexingGenerator<NSSortedDictionary<Key, Value>>
+    public typealias Generator = IndexingGenerator<SortedDictionary<Key, Value>>
     
     public var startIndex: Index {
         return 0
@@ -100,7 +100,7 @@ public struct SortedDictionary <Key: Comparable, Value> : CollectionType, _Objec
     }
     
     public func generate() -> Generator {
-        return Generator(NSSortedDictionary(values: values))
+        return Generator(SortedDictionary(keys: keys, values: values))
     }
     
     public mutating func removeAll() {

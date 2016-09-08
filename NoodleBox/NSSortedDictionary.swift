@@ -60,7 +60,6 @@ public class NSSortedDictionary <Key: Comparable, Value> : NSObject, CollectionT
     public func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeInteger(sortOrder.rawValue, forKey: CodingKeys.SortOrder)
         aCoder.encodeObject(keys, forKey: CodingKeys.Keys)
-        guard let values = values as? NSCoding else { return }
         aCoder.encodeObject(values, forKey: CodingKeys.Values)
     }
     
@@ -95,7 +94,7 @@ public class NSSortedDictionary <Key: Comparable, Value> : NSObject, CollectionT
     }
     
     public func generate() -> Generator {
-        return Generator(NSSortedDictionary(values: values))
+        return Generator(NSSortedDictionary(keys: keys, values: values))
     }
     
     public func removeAll() {
