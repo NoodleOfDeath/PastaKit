@@ -30,22 +30,24 @@ public protocol NBSwipeTableViewCellDelegate : NSObjectProtocol {
 
 extension NBSwipeTableViewCellDelegate {
     
-    func swipeTableViewCell(cell: NBSwipeTableViewCell, willShowSideView: UIView?) {}
-    func swipeTableViewCell(cell: NBSwipeTableViewCell, didShowSideView: UIView?) {}
+    public func swipeTableViewCell(cell: NBSwipeTableViewCell, willShowSideView: UIView?) {}
+    public func swipeTableViewCell(cell: NBSwipeTableViewCell, didShowSideView: UIView?) {}
     
-    func swipeTableViewCell(cell: NBSwipeTableViewCell, didRecognizePanGesture: UIPanGestureRecognizer) {}
-    func swipeTableViewCell(cell: NBSwipeTableViewCell, didRecognizeSingleTapGesture: UITapGestureRecognizer) {}
+    public func swipeTableViewCell(cell: NBSwipeTableViewCell, didRecognizePanGesture: UIPanGestureRecognizer) {}
+    public func swipeTableViewCell(cell: NBSwipeTableViewCell, didRecognizeSingleTapGesture: UITapGestureRecognizer) {}
     
-    func swipeTableViewCellDidPressDelete(cell: NBSwipeTableViewCell) {}
+    public func swipeTableViewCellDidPressDelete(cell: NBSwipeTableViewCell) {}
     
-    func swipeTableViewCell(cell: NBSwipeTableViewCell, didPressToolbarItem barButtonItem: UIBarButtonItem, atIndex index: Int) {}
+    public func swipeTableViewCell(cell: NBSwipeTableViewCell, didPressToolbarItem barButtonItem: UIBarButtonItem, atIndex index: Int) {}
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {}
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {}
+    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {}
+    public func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {}
     
 }
 
-/// The `SwipeTableViewCell` is a subclass of [UITableViewCell](xcdoc://?url=developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html) that allows the a user to swipe left or right revealing respective side views. The default cell also has a title label, a subtitle label and a default delete right view.
+/// The `SwipeTableViewCell` is a subclass of [UITableViewCell](xcdoc://?url=developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html) 
+/// that allows the a user to swipe left or right revealing respective side views. 
+/// The default cell also has a title label, a subtitle label and a default delete right view.
 public class NBSwipeTableViewCell : UITableViewCell {
 
     // MARK: - ** Properties **
@@ -513,7 +515,7 @@ public class NBSwipeTableViewCell : UITableViewCell {
     }
     
     ///
-    func hideAllViews(animated: Bool = true) {
+    public func hideAllViews(animated: Bool = true) {
         hideWestView(animated)
         hideEastView(animated)
     }

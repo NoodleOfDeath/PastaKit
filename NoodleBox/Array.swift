@@ -44,17 +44,31 @@ public postfix func * <T: AnyObject>(argument: [T]?) -> NSArray? {
 
 extension Array {
     
-    /// 
+    /// The range representation of this array.
     public var range: NSRange {
         return NSMakeRange(0, count - 1)
     }
     
-    /// 
+    /// Alias of `removeFirst()`
     public mutating func pop() -> Element? {
         return removeFirst()
     }
     
-    /// 
+    /// Conditional alias of `append(element: Element)`.
+    /// - parameter element: 
+    /// - complexity: Amortized O(1) unless self's storage is shared with another 
+    /// live array; O(count) if self does not wrap a bridged NSArray; 
+    /// otherwise the efficiency is unspecified..
+    public mutating func append(element: Element?) {
+        guard let element = element else { return }
+        append(element)
+    }
+    
+    /// Alias of `append(element: Element)` with variable arity parameters.
+    /// - complexity: Amortized O(n) unless self's storage is shared with another 
+    /// live array; O(count) if self does not wrap a bridged NSArray; 
+    /// otherwise the efficiency is unspecified. `n` is the number of elements
+    /// being appeneded.
     public mutating func append(element: Element, _ anotherElement: Element, _ elements: Element...) {
         append(element)
         append(anotherElement)
@@ -63,25 +77,23 @@ extension Array {
         }
     }
     
-    /// 
-    public mutating func append(element: Element?) {
-        guard let element = element else { return }
-        append(element)
-    }
-    
-    /// 
-    public mutating func push(element: Element, _ anotherElement: Element, _ elements: Element...) {
-        push(element)
-        push(anotherElement)
-        for element in elements {
-            push(element)
-        }
-    }
-    
-    /// 
+    /// Pushes an element onto the stack, at index 0.
     public mutating func push(element: Element?) {
         guard let element = element else { return }
         insert(element, atIndex: 0)
+    }
+    
+    /// Pushes elements onto the stack, at index 0, in FIFO fashion.
+    /// - parameter elements: The elements to push onto the stack.
+    public mutating func push(elements: [Element]) {
+        for element in elements.reverse() { push(element) }
+    }
+    
+    /// Pushes elements onto the stack, at index 0, in FIFO fashion.
+    public mutating func push(element: Element, _ anotherElement: Element, _ elements: Element...) {
+        push(elements)
+        push(anotherElement)
+        push(element)
     }
     
 }
@@ -91,7 +103,6 @@ extension Array where Element : Equatable {
     /// Appends an `element` to `self` iff `element` is not already
     /// contained in `self`.
     /// - parameter element: An `element` to append to `self`.
-    
     public mutating func appendUnique(elements: Element...) {
         for element in elements {
             if !contains(element) {
@@ -100,6 +111,7 @@ extension Array where Element : Equatable {
         }
     }
     
+    /// 
     public mutating func appendUnique(elements: [Element]) {
         for element in elements {
             appendUnique(element)

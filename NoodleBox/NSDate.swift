@@ -11,6 +11,15 @@ import UIKit
 /// Convenience `NSDate` exetensions
 extension NSDate {
     
+    /// 
+    public convenience init(dateString:String) {
+        let dateStringFormatter = NSDateFormatter()
+        dateStringFormatter.dateFormat = "yyyy-MM-dd"
+        dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        let d = dateStringFormatter.dateFromString(dateString)!
+        self.init(timeInterval:0, sinceDate:d)
+    }
+    
     /// Get a formated string using full date style
     /// - returns: A formatted string that represents a date in full date style.
     public func format() -> String {

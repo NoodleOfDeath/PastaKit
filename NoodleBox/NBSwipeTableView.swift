@@ -1,5 +1,5 @@
 //
-//  BMSwipeTableView.swift
+//  NBSwipeTableView.swift
 //  ByteMe
 //
 //  Created by Thom Morgan on 6/10/16.
@@ -9,7 +9,7 @@
 import UIKit
 
 ///
-public class BMSwipeTableView : UITableView, UIGestureRecognizerDelegate {
+public class NBSwipeTableView : UITableView, UIGestureRecognizerDelegate {
     
     ///
     public var initialContentOffset = CGPointZero
