@@ -75,7 +75,7 @@ extension NSURL {
         return resource
     }
     
-    public func exists() -> Bool {
+    public var exists: Bool {
         return checkResourceIsReachableAndReturnError(nil)
     }
 

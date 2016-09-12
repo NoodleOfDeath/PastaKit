@@ -60,10 +60,10 @@ public struct NBFileManager {
         
         var url = url
         
-        if action == .Overwrite && url.exists() { do { try fileManager.removeItemAtURL(url) } catch { errorHandler?(error: error) } }
+        if action == .Overwrite && url.exists { do { try fileManager.removeItemAtURL(url) } catch { errorHandler?(error: error) } }
         if action == .UseAlternateName {
             var i = 1
-            while url.exists() {
+            while url.exists {
                 url = baseURL +/ (lastPathComponent.stringByDeletingPathExtension + "-\(i)" + (ext.length > 0 ? ".\(ext)" : ""))
                 i += 1
             }
@@ -102,7 +102,7 @@ extension NBFileManager {
     /// - parameter url: The url of the target file.
     /// - returns: `true` if a file exists at `url`; `false` otherwise.
     public static func fileExistsAtURL(url: NSURL) -> Bool {
-        return url.exists()
+        return url.exists
     }
     
     /// Checks if a file exists at `path`.
