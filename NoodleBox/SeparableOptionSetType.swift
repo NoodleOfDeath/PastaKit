@@ -20,17 +20,27 @@ extension String {
     }
 }
 
+/// 
 public protocol SeparableOptionSetType : OptionSetType {
     
+    /// 
     associatedtype Key: Separable
-    static var values: [Key : Self] { get }
+    /// 
+    static var values: [Key : Element] { get }
     
+    /// 
     init(rawValue: RawValue)
+    /// 
     init(_ rawValue: RawValue)
     
+    /// 
     init(key: Key?)
+    /// 
     init(_ key: Key?)
+    
+    /// 
     init(keys: [Key]?)
+    /// 
     init(_ keys: [Key]?)
     
 }
@@ -53,9 +63,14 @@ extension SeparableOptionSetType {
         self.init()
         guard let keys = keys else { return }
         for key in keys {
-            guard let value = Self.values[key] else { continue }
-            insert(value)
+            guard let element = Self.values[key] else { continue }
+            insert(element)
         }
     }
     
+    public init(_ keys: [Key]?) {
+        self.init(keys: keys)
+    }
+    
 }
+

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0437751D887746007A7461 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0437741D887746007A7461 /* MimeType.swift */; };
 		CD0F813D1D5F712E00736E69 /* CFRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */; };
 		CD2907E61D627836000DD8B7 /* NSCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E51D627836000DD8B7 /* NSCoder.swift */; };
 		CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E71D627C61000DD8B7 /* SortedArray.swift */; };
@@ -80,6 +81,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD0437741D887746007A7461 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
 		CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CFRepresentable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CD2907E51D627836000DD8B7 /* NSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCoder.swift; sourceTree = "<group>"; };
 		CD2907E71D627C61000DD8B7 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			children = (
 				CDD116671D592ABE004A9DBC /* ObjC */,
 				CD0F81421D5F784F00736E69 /* Swift */,
+				CD0437741D887746007A7461 /* MimeType.swift */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				CD4EA8C61D6BE607003B45E4 /* UIAlertController.swift in Sources */,
 				CDD116C71D592CDB004A9DBC /* Array.swift in Sources */,
 				CDD116EA1D592CE3004A9DBC /* UIFilterView.swift in Sources */,
+				CD0437751D887746007A7461 /* MimeType.swift in Sources */,
 				CD0F813D1D5F712E00736E69 /* CFRepresentable.swift in Sources */,
 				CD4EA8BA1D6BE519003B45E4 /* NSSortedArray.swift in Sources */,
 				CDD116CC1D592CDB004A9DBC /* NSBundle.swift in Sources */,
