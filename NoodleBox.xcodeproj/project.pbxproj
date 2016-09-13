@@ -17,6 +17,7 @@
 		CD39BE9D1D60E01500E8FB50 /* NBStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */; };
 		CD39BE9F1D60E25E00E8FB50 /* NBFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */; };
 		CD39BED81D6110F700E8FB50 /* UIZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */; };
+		CD3AEF3D1D874D6300E3DBB4 /* SeparableOptionSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3AEF3C1D874D6300E3DBB4 /* SeparableOptionSetType.swift */; };
 		CD4EA8BA1D6BE519003B45E4 /* NSSortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4EA8B91D6BE519003B45E4 /* NSSortedArray.swift */; };
 		CD4EA8BD1D6BE52A003B45E4 /* TryOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4EA8BB1D6BE52A003B45E4 /* TryOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD4EA8BE1D6BE52A003B45E4 /* TryOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4EA8BC1D6BE52A003B45E4 /* TryOperation.m */; };
@@ -90,6 +91,7 @@
 		CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBStackView.swift; sourceTree = "<group>"; };
 		CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBFileManager.swift; sourceTree = "<group>"; };
 		CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIZoomingScrollView.swift; sourceTree = "<group>"; };
+		CD3AEF3C1D874D6300E3DBB4 /* SeparableOptionSetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparableOptionSetType.swift; sourceTree = "<group>"; };
 		CD4EA8B91D6BE519003B45E4 /* NSSortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSortedArray.swift; sourceTree = "<group>"; };
 		CD4EA8BB1D6BE52A003B45E4 /* TryOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TryOperation.h; sourceTree = "<group>"; };
 		CD4EA8BC1D6BE52A003B45E4 /* TryOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TryOperation.m; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				CD4EA91A1D6BE86A003B45E4 /* UIPaddedTextField.swift */,
 				CD4EA91D1D6D0962003B45E4 /* NSAttributeName.swift */,
 				CD7491581D7DFC8100F49594 /* NSSearchOptions.swift */,
+				CD3AEF3C1D874D6300E3DBB4 /* SeparableOptionSetType.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				CD4EA8CF1D6BE607003B45E4 /* UINavigationController.swift in Sources */,
 				CDD116D81D592CDB004A9DBC /* NSStringEncoding.swift in Sources */,
 				CD3894F01D662BF000E03CDC /* NSString.swift in Sources */,
+				CD3AEF3D1D874D6300E3DBB4 /* SeparableOptionSetType.swift in Sources */,
 				CDD116CB1D592CDB004A9DBC /* NSAttributedString.swift in Sources */,
 				CD4EA8D51D6BE607003B45E4 /* UIView.swift in Sources */,
 				CDD116DF1D592CDD004A9DBC /* CGSize.swift in Sources */,
