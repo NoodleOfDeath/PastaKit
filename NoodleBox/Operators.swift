@@ -24,4 +24,4 @@ infix operator =< { associativity right precedence 90 assignment }
 infix operator => { associativity right precedence 90 assignment }
 
 /// Bridge between Swift <-> Objective-C
-postfix operator * {}
+postfix operator *

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSBundle {
+extension Bundle {
     
     /// Returns an image resource contained in this wrapped `NSBundle`
     /// - parameter name: The name of the image. For images in asset catalogs, 
@@ -17,10 +17,10 @@ extension NSBundle {
     /// formats, include the filename extension in the name.
     /// - returns: The image object that best matches the desired traits 
     /// with the given `name`, or `nil` if no suitable image was found.
-    public func imageNamed(name: String) -> UIImage? {
+    public func imageNamed(_ name: String) -> UIImage? {
         return UIImage(named: name,
-                       inBundle: self,
-                       compatibleWithTraitCollection: .None) ?? UIImage(named: name)
+                       in: self,
+                       compatibleWith: .none) ?? UIImage(named: name)
     }
     
 }

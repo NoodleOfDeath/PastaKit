@@ -8,6 +8,17 @@
 
 import UIKit
 import Foundation
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 extension UITextInput {
     
@@ -15,19 +26,19 @@ extension UITextInput {
     
     // MARK: - UIKeyboardInput
     
-    public func keyboardInputShouldDelete(textView: UITextView) -> Bool {
+    public func keyboardInputShouldDelete(_ textView: UITextView) -> Bool {
         
         var shouldDelete = true
         
-        if UITextView.instancesRespondToSelector(#function) {
-            let op = UITextView.instanceMethodForSelector(#function)
-            let mp = UnsafeMutablePointer<(delegate: AnyObject, selector: Selector, textView: UITextView) -> Bool>(op)
-            let keyboardInputShouldDelete = mp.memory
+        if UITextView.instancesRespond(to: #function) {
+            let op = UITextView.instanceMethod(for: #function)
+            let mp = UnsafeMutablePointer<(_ delegate: AnyObject, _ selector: Selector, _ textView: UITextView) -> Bool>(op)
+            let keyboardInputShouldDelete = mp?.pointee
             shouldDelete = keyboardInputShouldDelete(delegate: self, selector: #function, textView: textView)
         }
         
-        let isIOS8 = Int(UIDevice.currentDevice().systemVersion) == 8
-        let isLtIOS8_3 = Float(UIDevice.currentDevice().systemVersion) < 8.3
+        let isIOS8 = Int(UIDevice.current.systemVersion) == 8
+        let isLtIOS8_3 = Float(UIDevice.current.systemVersion) < 8.3
         
         if textView.text.length > 0 && isIOS8 && isLtIOS8_3 {
             deleteBackward()
@@ -39,15 +50,15 @@ extension UITextInput {
     
     public func deleteForward() {
         guard let selectedTextRange = selectedTextRange else { return }
-        if !selectedTextRange.empty {
+        if !selectedTextRange.isEmpty {
             deleteBackward()
             return
         }
-        let start = offsetFromPosition(beginningOfDocument, toPosition: selectedTextRange.start)
-        let length = offsetFromPosition(selectedTextRange.start, toPosition: endOfDocument)
+        let start = offset(from: beginningOfDocument, to: selectedTextRange.start)
+        let length = offset(from: selectedTextRange.start, to: endOfDocument)
         if !(length > 0) { return }
         guard let range = textRangeOfRange(NSMakeRange(start, 1)) else { return }
-        replaceRange(range, withText: "")
+        replace(range, withText: "")
     }
     
     // MARK: - ** Public Methods **
@@ -55,27 +66,27 @@ extension UITextInput {
     // MARK: -
     
     @available(iOS 3.2, *)
-    public func locationOfTextPosition(textPosition: UITextPosition) -> Int {
-        return offsetFromPosition(beginningOfDocument, toPosition: textPosition)
+    public func locationOfTextPosition(_ textPosition: UITextPosition) -> Int {
+        return offset(from: beginningOfDocument, to: textPosition)
     }
     
     @available(iOS 3.2, *)
-    public func rangeOfTextRange(textRange: UITextRange) -> NSRange {
+    public func rangeOfTextRange(_ textRange: UITextRange) -> NSRange {
         let loc = locationOfTextPosition(textRange.start)
         let end = locationOfTextPosition(textRange.end)
         return NSMakeRange(loc, end - loc)
     }
     
     @available(iOS 3.2, *)
-    public func textPositionOfLocation(location: Int) -> UITextPosition? {
-        return positionFromPosition(beginningOfDocument, offset: location)
+    public func textPositionOfLocation(_ location: Int) -> UITextPosition? {
+        return position(from: beginningOfDocument, offset: location)
     }
     
     @available(iOS 3.2, *)
-    public func textRangeOfRange(range: NSRange) -> UITextRange? {
+    public func textRangeOfRange(_ range: NSRange) -> UITextRange? {
         guard let start = textPositionOfLocation(range.location) else { return nil }
-        guard let end = positionFromPosition(start, offset: range.length) else { return nil }
-        return textRangeFromPosition(start, toPosition: end)
+        guard let end = position(from: start, offset: range.length) else { return nil }
+        return textRange(from: start, to: end)
     }
     
 }

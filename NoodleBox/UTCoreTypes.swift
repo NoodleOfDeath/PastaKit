@@ -49,14 +49,14 @@ public struct UTType : CFRawRepresentable, Equatable {
     // MARK: - Get-Only
     
     public let rawValue: RawValue
-    public var coreValue: CoreValue { return rawValue }
+    public var coreValue: CoreValue { return rawValue as UTType.CoreValue }
     
     // MARK: - ** Static Properties **
     
     // MARK: - Get-Only
     
     public static let DefaultRawValue: RawValue = kUTTypeUnknown as String
-    public static let DefaultCoreValue: CoreValue = kUTTypeUnknown
+    public static let DefaultCoreValue: CoreValue = kUTTypeUnknown as UTType.CoreValue
     
     /// Unknown UTType indicates an encounter with raw/core values that
     /// do not point to a known UTType.
@@ -1437,7 +1437,7 @@ public struct UTType : CFRawRepresentable, Equatable {
     /// Checks whether or not `self` conforms to `uttype`.
     /// - parameter uttype: The UTType to compare against.
     /// - returns: `true` if `self` conforms to `uttype`; `false` otherwise.
-    public func conformsTo(uttype: UTType) -> Bool {
+    public func conformsTo(_ uttype: UTType) -> Bool {
         return UTTypeConformsTo(coreValue, uttype.coreValue)
     }
     

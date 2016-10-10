@@ -14,43 +14,71 @@ import Foundation
 
 /// Ascending or descending sort order enumerations
 public enum SortOrder : Int {
-    case Ascending, Descending
+    case ascending, descending
+}
+
+// MARK: - ** SortedArray Operations **
+
+/// 
+public func + <T: Comparable>(lhs: SortedArray<T>, rhs: SortedArray<T>) -> SortedArray<T> {
+    var arr = lhs
+    var index = 0
+    for element in rhs {
+        index = arr.add(element, offset: index) ?? 0
+    }
+    return arr
+}
+
+/// 
+public func + <T: Comparable>(lhs: SortedArray<T>, rhs: [T]) -> SortedArray<T> {
+    var arr = lhs
+    for element in rhs {
+        arr.add(element)
+    }
+    return arr
+}
+
+/// 
+public func + <T: Comparable>(lhs: SortedArray<T>, rhs: T) -> SortedArray<T> {
+    var arr = lhs
+    arr.add(rhs)
+    return arr
 }
 
 // MARK: - ** SortedArray Structure **
 
 /// An array data structure that automatically places elements in order as
 /// they added to the collection.
-public struct SortedArray <Value: Comparable> : CollectionType, _ObjectiveCBridgeable, CustomStringConvertible {
+public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgeable, CustomStringConvertible {
     
     // MARK: - _ObjectiveCBridgeable
     
     /// Required typealias from the `_ObjectiveCBridgeable` private protocol
-    public typealias _ObjectiveCType = NSSortedArray<Value>
+    public typealias _ObjectiveCType = NSSortedArray<Element>
     
     // MARK: - CollectionType
     
     public typealias Index = Int
-    public typealias Generator = IndexingGenerator<SortedArray<Value>>
+    public typealias Iterator = IndexingIterator<SortedArray<Element>>
     
     public var startIndex: Index { return 0 }
-    public var endIndex: Index { return values.count }
-    public var range: Range<Index> { return 0 ..< values.count }
-    public var count: Int { return values.count }
+    public var endIndex: Index { return elements.count }
+    public var range: CountableRange<Index> { return 0 ..< elements.count }
+    public var count: Int { return elements.count }
     
     // MARK: - CustomStringConvertible
     
-    public var description: String { return "\(values)" }
+    public var description: String { return "\(elements)" }
     
     // MARK: - SortedArray
     
     /// The order in which to sort array elements.
     public var sortOrder: SortOrder {
-        willSet { if sortOrder != newValue { values = values.reverse() } }
+        willSet { if sortOrder != newValue { elements = elements.reversed() } }
     }
     
     /// The elements of this array.
-    public private (set) var values = [Value]()
+    public fileprivate (set) var elements = [Element]()
     
     /// Whether or not to allow duplicate elements to be added to this array.
     public var uniqueElements: Bool = true
@@ -62,44 +90,44 @@ public struct SortedArray <Value: Comparable> : CollectionType, _ObjectiveCBridg
     /// Verbose constructor in which the sort order can be established at
     /// initialization.
     /// - parameter sortOrder: The order in which to sort array elements.
-    /// - parameter values: The initial elements to populate this array.
-    /// - note: The initial values parameter need not be sorted, as it will
+    /// - parameter elements: The initial elements to populate this array.
+    /// - note: The initial elements parameter need not be sorted, as it will
     /// automatically be sorted upon initialization.
-    /// - returns: An array structure instance with sorted values.
-    public init(sortOrder: SortOrder = .Ascending, values: [Value] = [Value]()) {
+    /// - returns: An array structure instance with sorted elements.
+    public init(sortOrder: SortOrder = .ascending, elements: [Element] = [Element]()) {
         self.sortOrder = sortOrder
-        self.values = values.sort({ (a: Value, b: Value) -> Bool in
-            return sortOrder == .Ascending ? (a < b) : (b < a)
+        self.elements = elements.sorted(by: { (a: Element, b: Element) -> Bool in
+            return sortOrder == .ascending ? (a < b) : (b < a)
         })
     }
     
     /// Convenience constructor that sets the inital array elements.
-    /// - parameter values: The initial elements to populate this array.
-    /// - returns: An array structure instance with sorted values in
+    /// - parameter elements: The initial elements to populate this array.
+    /// - returns: An array structure instance with sorted elements in
     /// ascending order.
-    public init(_ values: [Value]) {
-        sortOrder = .Ascending
-        self.values = values.sort({ (a: Value, b: Value) -> Bool in
+    public init(_ elements: [Element]) {
+        sortOrder = .ascending
+        self.elements = elements.sorted(by: { (a: Element, b: Element) -> Bool in
             return a < b
         })
     }
     
     /// Duplicating constructor.
     /// - parameter sortedArray: Another array to initialize from.
-    /// - returns: An array structure instance with sorted values
+    /// - returns: An array structure instance with sorted elements
     /// identical to `sortedArray`.
-    public init(_ sortedArray: SortedArray<Value>) {
+    public init(_ sortedArray: SortedArray<Element>) {
         sortOrder = sortedArray.sortOrder
-        values = sortedArray.values
+        elements = sortedArray.elements
     }
     
     /// Bridging constructor from an `NSSortedArray` class instance.
     /// - parameter sortedArray: Another array to initialize from.
-    /// - returns: An array structure instance with sorted values
+    /// - returns: An array structure instance with sorted elements
     /// identical to `sortedArray`.
-    public init(_ sortedArray: NSSortedArray<Value>) {
+    public init(_ sortedArray: NSSortedArray<Element>) {
         sortOrder = sortedArray.sortOrder
-        values = sortedArray.values
+        elements = sortedArray.elements
     }
     
     // MARK: - ** Public Methods **
@@ -116,47 +144,47 @@ public struct SortedArray <Value: Comparable> : CollectionType, _ObjectiveCBridg
     
     /// Required static method from the `_ObjectiveCBridgeable` private
     /// protocol.
-    /// - returns: `NSSortedArray<Value>.self`
+    /// - returns: `NSSortedArray<Element>.self`
     public static func _getObjectiveCType() -> Any.Type {
         return _ObjectiveCType.self
     }
     
     /// Required static method from the `_ObjectiveCBridgeable` private
     /// protocol.
-    /// - parameter source: An `NSSortedArray<Value>` instance to force bridge
-    /// to `SortedArray<Value>`.
-    /// - parameter result: The `SortedArray<Value>` instance created from
+    /// - parameter source: An `NSSortedArray<Element>` instance to force bridge
+    /// to `SortedArray<Element>`.
+    /// - parameter result: The `SortedArray<Element>` instance created from
     /// the forced bridging.
-    public static func _forceBridgeFromObjectiveC(source: _ObjectiveCType, inout result: SortedArray<Value>?) {
-        result = SortedArray<Value>(source)
+    public static func _forceBridgeFromObjectiveC(_ source: _ObjectiveCType, result: inout SortedArray<Element>?) {
+        result = SortedArray<Element>(source)
     }
     
     /// Required static method from the `_ObjectiveCBridgeable` private
     /// protocol.
-    /// - parameter source: An `NSSortedArray<Value>` instance to conditionally
-    /// bridge to `SortedArray<Value>`.
-    /// - parameter result: The `SortedArray<Value>` instance created from
+    /// - parameter source: An `NSSortedArray<Element>` instance to conditionally
+    /// bridge to `SortedArray<Element>`.
+    /// - parameter result: The `SortedArray<Element>` instance created from
     /// the conditional bridging.
-    public static func _conditionallyBridgeFromObjectiveC(source: _ObjectiveCType, inout result: SortedArray<Value>?) -> Bool {
+    public static func _conditionallyBridgeFromObjectiveC(_ source: _ObjectiveCType, result: inout SortedArray<Element>?) -> Bool {
         _forceBridgeFromObjectiveC(source, result: &result)
         return true
     }
     
     /// Required method from the `_ObjectiveCBridgeable` private protocol
-    /// - returns: An `NSStortedArray<Value>` instance identical to `self`.
+    /// - returns: An `NSStortedArray<Element>` instance identical to `self`.
     public func _bridgeToObjectiveC() -> _ObjectiveCType {
-        return NSSortedArray<Value>(self)
+        return NSSortedArray<Element>(self)
     }
     
     // MARK: - CollectionType
     
-    public subscript (index: Index) -> Value {
-        get { return values[index] }
-        set { values[index] = newValue }
+    public subscript (index: Index) -> Element {
+        get { return elements[index] }
+        set { elements[index] = newValue }
     }
     
-    public func generate() -> Generator {
-        return Generator(SortedArray(values: values))
+    public func makeIterator() -> Iterator {
+        return Iterator(SortedArray(self))
     }
     
     /// Insert `newElement` at index `i`.
@@ -164,8 +192,8 @@ public struct SortedArray <Value: Comparable> : CollectionType, _ObjectiveCBridg
     /// - requires: `i <= count`.
     ///
     /// - complexity: O(`self.count`).
-    public mutating func insert(value: Value, atIndex index: Index) {
-        values.insert(value, atIndex: index)
+    public mutating func insert(_ element: Element, atIndex index: Index) {
+        elements.insert(element, at: index)
     }
     
     /// Remove and return the element at index `i`.
@@ -173,8 +201,8 @@ public struct SortedArray <Value: Comparable> : CollectionType, _ObjectiveCBridg
     /// Invalidates all indices with respect to `self`.
     ///
     /// - complexity: O(`self.count`).
-    public mutating func removeAtIndex(index: Index) -> Value {
-        return values.removeAtIndex(index)
+    public mutating func removeAtIndex(_ index: Index) -> Element {
+        return elements.remove(at: index)
     }
     
     /// Remove all elements.
@@ -182,101 +210,101 @@ public struct SortedArray <Value: Comparable> : CollectionType, _ObjectiveCBridg
     /// - postcondition: `capacity == 0` iff `keepCapacity` is `false`.
     ///
     /// - complexity: O(`self.count`).
-    public mutating func removeAll() {
-        values.removeAll()
+    public mutating func removeAll(keepCapacity: Bool = false) {
+        elements.removeAll(keepingCapacity: keepCapacity)
     }
     
     // MARK: - SortedArray
     
-    /// Returns the first index where `value` appears in `self` or `nil` if
-    /// `value` is not found.
+    /// Returns the first index where `element` appears in `self` or `nil` if
+    /// `element` is not found.
     ///
     /// - note: This is a significantly less costly implementation of the
     /// default system method `indexOf(element: Element)`.
     ///
     /// - complexity: O(`log(self.count)`)
     ///
-    /// - parameter value: The value to search for
+    /// - parameter element: The element to search for
     /// - parameter range: The range to search within. If `nil` the entire
     /// range of elements are searched.
-    /// - returns: The first index where `value` appears in `self` or `nil` if
-    /// `value` is not found.
-    @warn_unused_result
-    public func indexOf(value: Value, searchRange range: Range<Index>? = nil) -> Index? {
+    /// - returns: The first index where `element` appears in `self` or `nil` if
+    /// `element` is not found.
+    
+    public func indexOf(_ element: Element, searchRange range: CountableRange<Index>? = nil) -> Index? {
         
-        if values.count == 0 { return nil }
+        if elements.count == 0 { return nil }
         
-        let range = range ?? 0 ..< values.count
-        let index = (range.startIndex + range.length / 2)
-        let val = values[index]
+        let range = range ?? 0 ..< elements.count
+        let index = (range.lowerBound + range.length / 2)
+        let val = elements[index]
         
         if range.length == 1 {
-            return val == value ? index : nil
-        } else if (val > value && sortOrder == .Ascending) || (val < value && sortOrder == .Descending) {
-            return indexOf(value, searchRange: range.startIndex ..< index)
+            return val == element ? index : nil
+        } else if (val > element && sortOrder == .ascending) || (val < element && sortOrder == .descending) {
+            return indexOf(element, searchRange: range.lowerBound ..< index)
         }
         
-        return indexOf(value, searchRange: index ..< range.endIndex)
+        return indexOf(element, searchRange: index ..< range.upperBound)
         
     }
     
-    /// Returns the first index where `value` would be placed in sorted order
+    /// Returns the first index where `element` would be placed in sorted order
     /// in `self`.
     ///
     /// - complexity: O(`log(self.count)`)
     ///
-    /// - parameter value: The value to search for.
+    /// - parameter element: The element to search for.
     /// - parameter range: The range to search within. If `nil` the entire
     /// range of elements are searched.
-    /// - returns: Returns the first index where `value` would be placed
+    /// - returns: Returns the first index where `element` would be placed
     /// in sorted order.
-    @warn_unused_result
-    public func ordinalIndexForValue(value: Value, searchRange range: Range<Index>? = nil) -> Index {
+    
+    public func ordinalIndexForElement(_ element: Element, searchRange range: CountableRange<Index>? = nil) -> Index {
         
-        if values.count == 0 { return 0 }
+        if elements.count == 0 { return 0 }
         
-        let range = range ?? 0 ..< values.count
-        let index = (range.startIndex + range.length / 2)
-        let val = values[index]
+        let range = range ?? 0 ..< elements.count
+        let index = (range.lowerBound + range.length / 2)
+        let val = elements[index]
         
         if range.length == 1 {
-            return (val > value && sortOrder == .Ascending) || (val < value && sortOrder == .Descending) ? index : index + 1
-        } else if (val > value && sortOrder == .Ascending) || (val < value && sortOrder == .Descending) {
-            return ordinalIndexForValue(value, searchRange: range.startIndex ..< index)
+            return (val > element && sortOrder == .ascending) || (val < element && sortOrder == .descending) ? index : index + 1
+        } else if (val > element && sortOrder == .ascending) || (val < element && sortOrder == .descending) {
+            return ordinalIndexForElement(element, searchRange: range.lowerBound ..< index)
         }
         
-        return ordinalIndexForValue(value, searchRange: index ..< range.endIndex)
+        return ordinalIndexForElement(element, searchRange: index ..< range.upperBound)
         
     }
     
-    /// Adds a value to `self` in sorted order.
-    /// - parameter value: The value to add.
-    /// - returns: The index where `value` was inserted, or `nil` if
-    /// `uniqueElements` is set to `true` and `value` already exists in
+    /// Adds a element to `self` in sorted order.
+    /// - parameter element: The element to add.
+    /// - returns: The index where `element` was inserted, or `nil` if
+    /// `uniqueElements` is set to `true` and `element` already exists in
     /// `self.
     ///
     /// - complexity: O(`log(self.count)`)
-    public mutating func add(value: Value) -> Index? {
+    public mutating func add(_ element: Element, offset: Int = 0) -> Index? {
         var index = 0
-        if values.count == 0 { values.append(value) }
+        if elements.count == 0 { elements.append(element) }
         else {
-            if uniqueElements && indexOf(value) != nil { return nil }
-            index = ordinalIndexForValue(value)
-            values.insert(value, atIndex: index)
+            if uniqueElements && indexOf(element) != nil { return nil }
+            index = ordinalIndexForElement(element, searchRange: offset ..< endIndex)
+            elements.insert(element, at: index)
         }
         return index
     }
     
-    /// Removes all instances of `value` from `self`
-    /// - parameter value: The `value` to remove from `self`.
+    /// Removes all instances of `element` from `self`
+    /// - parameter element: The `element` to remove from `self`.
     ///
     /// - complexity: O(`log(self.count) * n`) where `n` is the number of
-    /// times `value` occurs in `self`.
-    public mutating func remove(value: Value){
-        var index = indexOf(value)
+    /// times `element` occurs in `self`.
+    public mutating func remove(_ element: Element){
+        var index = indexOf(element)
         while index != nil {
-            values.removeAtIndex(index!)
-            index = indexOf(value)
+            elements.remove(at: index!)
+            index = indexOf(element)
         }
     }
     

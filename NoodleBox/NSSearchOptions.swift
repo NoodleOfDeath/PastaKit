@@ -11,7 +11,7 @@ import Foundation
 /// Merges together `NSStringCompareOptions`, `NSRegularExpressionOptions`
 /// and `NSMatchingOptions` into one single data structure for one less
 /// headache.
-public struct NSSearchOptions : OptionSetType, Hashable {
+public struct NSSearchOptions : OptionSet, Hashable {
     
     public typealias RawValue = Int
     public let rawValue: RawValue
@@ -19,8 +19,8 @@ public struct NSSearchOptions : OptionSetType, Hashable {
     public var hashValue: Int { return rawValue.hashValue }
     
     /// 
-    public var compareOptions: NSStringCompareOptions {
-        var options = NSStringCompareOptions()
+    public var compareOptions: NSString.CompareOptions {
+        var options = NSString.CompareOptions()
         for (type, option) in NSSearchOptions.compareOptions {
             guard contains(type) else { continue }
             options.insert(option)
@@ -29,8 +29,8 @@ public struct NSSearchOptions : OptionSetType, Hashable {
     }
     
     /// 
-    public var expressionOptions: NSRegularExpressionOptions {
-        var options = NSRegularExpressionOptions()
+    public var expressionOptions: NSRegularExpression.Options {
+        var options = NSRegularExpression.Options()
         for (type, option) in NSSearchOptions.expressionOptions {
             guard contains(type) else { continue }
             options.insert(option)
@@ -39,8 +39,8 @@ public struct NSSearchOptions : OptionSetType, Hashable {
     }
     
     /// 
-    public var matchingOptions: NSMatchingOptions {
-        var options = NSMatchingOptions()
+    public var matchingOptions: NSRegularExpression.MatchingOptions {
+        var options = NSRegularExpression.MatchingOptions()
         for (type, option) in NSSearchOptions.matchingOptions {
             guard contains(type) else { continue }
             options.insert(option)
@@ -75,39 +75,39 @@ public struct NSSearchOptions : OptionSetType, Hashable {
     public static let WithTransparentBounds    = NSSearchOptions(1 << 23)
     public static let WithoutAnchoringBounds   = NSSearchOptions(1 << 24)
     
-    private static var compareOptions: [NSSearchOptions : NSStringCompareOptions] {
+    fileprivate static var compareOptions: [NSSearchOptions : NSString.CompareOptions] {
         return [
-            CaseInsensitive         : .CaseInsensitiveSearch,
-            Literal                 : .LiteralSearch,
-            Backwards               : .BackwardsSearch,
-            Anchored                : .AnchoredSearch,
-            Numeric                 : .NumericSearch,
-            DiacriticInsensitive    : .DiacriticInsensitiveSearch,
-            WidthInsensitive        : .WidthInsensitiveSearch,
-            ForcedOrdering          : .ForcedOrderingSearch,
-            RegularExpression       : .RegularExpressionSearch,
+            CaseInsensitive         : .caseInsensitive,
+            Literal                 : .literal,
+            Backwards               : .backwards,
+            Anchored                : .anchored,
+            Numeric                 : .numeric,
+            DiacriticInsensitive    : .diacriticInsensitive,
+            WidthInsensitive        : .widthInsensitive,
+            ForcedOrdering          : .forcedOrdering,
+            RegularExpression       : .regularExpression,
         ]
     }
     
-    private static var expressionOptions: [NSSearchOptions : NSRegularExpressionOptions] {
+    fileprivate static var expressionOptions: [NSSearchOptions : NSRegularExpression.Options] {
         return [
-            CaseInsensitive             : .CaseInsensitive,
-            AllowCommentsAndWhitespace  : .AllowCommentsAndWhitespace,
-            IgnoreMetacharacters        : .IgnoreMetacharacters,
-            DotMatchesLineSeparators    : .DotMatchesLineSeparators,
-            AnchorsMatchLines           : .AnchorsMatchLines,
-            UseUnixLineSeparators       : .UseUnixLineSeparators,
-            UseUnicodeWordBoundaries    : .UseUnicodeWordBoundaries,
+            CaseInsensitive             : .caseInsensitive,
+            AllowCommentsAndWhitespace  : .allowCommentsAndWhitespace,
+            IgnoreMetacharacters        : .ignoreMetacharacters,
+            DotMatchesLineSeparators    : .dotMatchesLineSeparators,
+            AnchorsMatchLines           : .anchorsMatchLines,
+            UseUnixLineSeparators       : .useUnixLineSeparators,
+            UseUnicodeWordBoundaries    : .useUnicodeWordBoundaries,
         ]
     }
     
-    private static var matchingOptions: [NSSearchOptions : NSMatchingOptions] {
+    fileprivate static var matchingOptions: [NSSearchOptions : NSRegularExpression.MatchingOptions] {
         return [
-            ReportProgress          : .ReportProgress,
-            ReportCompletion        : .ReportCompletion,
-            Anchored                : .Anchored,
-            WithTransparentBounds   : .WithTransparentBounds,
-            WithoutAnchoringBounds  : .WithoutAnchoringBounds,
+            ReportProgress          : .reportProgress,
+            ReportCompletion        : .reportCompletion,
+            Anchored                : .anchored,
+            WithTransparentBounds   : .withTransparentBounds,
+            WithoutAnchoringBounds  : .withoutAnchoringBounds,
         ]
     }
     
@@ -150,7 +150,7 @@ public struct NSSearchOptions : OptionSetType, Hashable {
     }
     
     public init(_ string: String) {
-        self.init(string.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet()))
+        self.init(string.components(separatedBy: CharacterSet.whitespaces))
     }
     
     public init(_ strings: [String]) {
@@ -162,7 +162,7 @@ public struct NSSearchOptions : OptionSetType, Hashable {
     }
     
     public init(_ string: String?) {
-        self.init(string?.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet()))
+        self.init(string?.components(separatedBy: CharacterSet.whitespaces))
     }
     
     public init(_ strings: [String]?) {

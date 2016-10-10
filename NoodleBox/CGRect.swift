@@ -21,10 +21,10 @@ import CoreGraphics
 /// `height` are the Sums the respective two properties from `augend` and
 /// `addend`.
 public func + (augend: CGRect, addend: CGRect) -> CGRect {
-    return CGRectMake(augend.x + addend.x, 
-                      augend.y + addend.y, 
-                      augend.width + addend.width, 
-                      augend.height + addend.height)
+    return CGRect(x: augend.x + addend.x, 
+                      y: augend.y + addend.y, 
+                      width: augend.width + addend.width, 
+                      height: augend.height + addend.height)
 }
 
 ///  Sums a `CGRect` public structure and a `CGPoint` public structure.
@@ -34,9 +34,9 @@ public func + (augend: CGRect, addend: CGRect) -> CGRect {
 /// each vector are summed, preserving the `width` and `height` of `augend` in
 /// the return `CGRect`.
 public func + (augend: CGRect, addend: CGPoint) -> CGRect {
-    return CGRectMake(augend.x + addend.x, 
-                      augend.y + addend.y, 
-                      augend.width, augend.height)
+    return CGRect(x: augend.x + addend.x, 
+                      y: augend.y + addend.y, 
+                      width: augend.width, height: augend.height)
 }
 
 ///  Sums a `CGRect` public structure and a `CGSize` public structure.
@@ -46,9 +46,9 @@ public func + (augend: CGRect, addend: CGPoint) -> CGRect {
 /// of each vector are summed, preserving the `x` and `y` of `augend` in
 /// the return `CGRect`.
 public func + (augend: CGRect, addend: CGSize) -> CGRect {
-    return CGRectMake(augend.x, augend.y, 
-                      augend.width + addend.width, 
-                      augend.height + addend.height)
+    return CGRect(x: augend.x, y: augend.y, 
+                      width: augend.width + addend.width, 
+                      height: augend.height + addend.height)
 }
 
 ///  Sums a `CGRect` public structure and a `CGFloat` 1-tuple.
@@ -58,8 +58,8 @@ public func + (augend: CGRect, addend: CGSize) -> CGRect {
 /// the Sums `augend.x` and `addend`. The rest of the vector properties from
 ///  `augend` are preserved in the return `CGRect`.
 public func + (augend: CGRect, addend: (CGFloat)) -> CGRect {
-    return CGRectMake(augend.x + addend,
-                      augend.y, augend.width, augend.height)
+    return CGRect(x: augend.x + addend,
+                      y: augend.y, width: augend.width, height: augend.height)
 }
 
 ///  Sums a `CGRect` and a `(CGFloat, CGFloat)` 2-tuple.
@@ -70,9 +70,9 @@ public func + (augend: CGRect, addend: (CGFloat)) -> CGRect {
 ///  The rest of the vector properties from `augend` are preserved in the return
 ///  `CGRect`.
 public func + (augend: CGRect, addend: (CGFloat, CGFloat)) -> CGRect {
-    return CGRectMake(augend.x + addend.0, 
-                      augend.y + addend.1, 
-                      augend.width, augend.height)
+    return CGRect(x: augend.x + addend.0, 
+                      y: augend.y + addend.1, 
+                      width: augend.width, height: augend.height)
 }
 
 ///  Sums a `CGRect` and a `(CGFloat, CGFloat, CGFloat)` 3-tuple.
@@ -83,10 +83,10 @@ public func + (augend: CGRect, addend: (CGFloat, CGFloat)) -> CGRect {
 ///  tuple.  The rest of the vector properties from `augend` are preserved in 
 /// the return `CGRect`.
 public func + (augend: CGRect, addend: (CGFloat, CGFloat, CGFloat)) -> CGRect {
-    return CGRectMake(augend.x + addend.0, 
-                      augend.y + addend.1, 
-                      augend.width + addend.2, 
-                      augend.height)
+    return CGRect(x: augend.x + addend.0, 
+                      y: augend.y + addend.1, 
+                      width: augend.width + addend.2, 
+                      height: augend.height)
 }
 
 ///  Sums a `CGRect` and a `(CGFloat, CGFloat, CGFloat, CGFloat)` 
@@ -98,10 +98,10 @@ public func + (augend: CGRect, addend: (CGFloat, CGFloat, CGFloat)) -> CGRect {
 /// `addend` tuple. The rest of the vector properties from `augend` are preserved 
 ///  in the return `CGRect`.
 public func + (augend: CGRect, addend: (CGFloat, CGFloat, CGFloat, CGFloat)) -> CGRect {
-    return CGRectMake(augend.x + addend.0, 
-                      augend.y + addend.1, 
-                      augend.width + addend.2, 
-                      augend.height + addend.3)
+    return CGRect(x: augend.x + addend.0, 
+                      y: augend.y + addend.1, 
+                      width: augend.width + addend.2, 
+                      height: augend.height + addend.3)
 }
 
 // MARK: - Additive Assignment Operations
@@ -112,7 +112,7 @@ public func + (augend: CGRect, addend: (CGFloat, CGFloat, CGFloat, CGFloat)) -> 
 /// - returns: The Sums `augend` and `addend` where `x`, `y`, `width`, and 
 /// `height` are the Sums the respective two properties from `augend` and
 /// `addend`.
-public func += (inout augend: CGRect, addend: CGRect) {
+public func += (augend: inout CGRect, addend: CGRect) {
     augend = augend + addend
 }
 
@@ -123,7 +123,7 @@ public func += (inout augend: CGRect, addend: CGRect) {
 /// - returns: The Sums `augend` and `addend` where only the `x` and `y` of
 /// each vector are summed, preserving the `width` and `height` of `augend` in
 /// the return `CGRect`.
-public func += (inout augend: CGRect, addend: CGPoint) {
+public func += (augend: inout CGRect, addend: CGPoint) {
     augend = augend + addend
 }
 
@@ -134,7 +134,7 @@ public func += (inout augend: CGRect, addend: CGPoint) {
 /// - returns: The Sums `augend` and `addend` where only the `width` and `height`
 /// of each vector are summed, preserving the `x` and `y` of `augend` in
 /// the return `CGRect`.
-public func += (inout augend: CGRect, addend: CGSize) {
+public func += (augend: inout CGRect, addend: CGSize) {
     augend = augend + addend
 }
 
@@ -145,7 +145,7 @@ public func += (inout augend: CGRect, addend: CGSize) {
 /// - returns: The Sums `augend` and `addend` where only `x` is affected, being
 /// the Sums `augend.x` and `addend`. The rest of the vector properties from
 ///  `augend` are preserved in the return `CGRect`.
-public func += (inout augend: CGRect, addend: CGFloat) {
+public func += (augend: inout CGRect, addend: CGFloat) {
     augend = augend + addend
 }
 
@@ -157,7 +157,7 @@ public func += (inout augend: CGRect, addend: CGFloat) {
 /// with their ordinally respective vector property of the `addend` tuple. 
 ///  The rest of the vector properties from `augend` are preserved in the return
 ///  `CGRect`.
-public func += (inout augend: CGRect, addend: (CGFloat, CGFloat)) {
+public func += (augend: inout CGRect, addend: (CGFloat, CGFloat)) {
     augend = augend + addend
 }
 
@@ -169,7 +169,7 @@ public func += (inout augend: CGRect, addend: (CGFloat, CGFloat)) {
 /// are summed with their ordinally respective vector property of the `addend` 
 ///  tuple.  The rest of the vector properties from `augend` are preserved in 
 /// the return `CGRect`.
-public func += (inout augend: CGRect, addend: (CGFloat, CGFloat, CGFloat)) {
+public func += (augend: inout CGRect, addend: (CGFloat, CGFloat, CGFloat)) {
     augend = augend + addend
 }
 
@@ -181,7 +181,7 @@ public func += (inout augend: CGRect, addend: (CGFloat, CGFloat, CGFloat)) {
 /// `augend` is summed with its ordinally respective vector property of the
 /// `addend` tuple. The rest of the vector properties from `augend` are preserved 
 ///  in the return `CGRect`.
-public func += (inout augend: CGRect, addend: (CGFloat, CGFloat, CGFloat, CGFloat)) {
+public func += (augend: inout CGRect, addend: (CGFloat, CGFloat, CGFloat, CGFloat)) {
     augend = augend + addend
 }
 
@@ -206,7 +206,7 @@ extension CGRect {
     }
     
     public var center: CGPoint {
-        get { return CGPointMake(x + width / 2, y + height / 2) }
+        get { return CGPoint(x: x + width / 2, y: y + height / 2) }
         set { (x, y) = (newValue.x - width / 2, newValue.y - height / 2) }
     }
     
@@ -215,7 +215,7 @@ extension CGRect {
     /// A 2-tuple containing this `CGRect`'s `maxX` and `maxY` values,
     /// respectively.
     public var maxXY: CGPoint {
-        return CGPointMake(maxX, maxY)
+        return CGPoint(x: maxX, y: maxY)
     }
 
 }

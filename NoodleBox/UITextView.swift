@@ -6,7 +6,7 @@
 import UIKit
 
 public protocol UIKeyboardInput : NSObjectProtocol {
-    func keyboardInputShouldDelete(textView: UITextView) -> Bool
+    func keyboardInputShouldDelete(_ textView: UITextView) -> Bool
 }
 
 extension UITextView : UIKeyboardInput {}
@@ -18,9 +18,9 @@ extension UITextView {
     }
     
     public var visibleRange: NSRange? {
-        if let start = closestPositionToPoint(contentOffset) {
-            if let end = characterRangeAtPoint(CGPointMake(contentOffset.x + CGRectGetMaxX(bounds), contentOffset.y + CGRectGetMaxY(bounds)))?.end {
-                return NSMakeRange(offsetFromPosition(beginningOfDocument, toPosition: start), offsetFromPosition(start, toPosition: end))
+        if let start = closestPosition(to: contentOffset) {
+            if let end = characterRange(at: CGPoint(x: contentOffset.x + bounds.maxX, y: contentOffset.y + bounds.maxY))?.end {
+                return NSMakeRange(offset(from: beginningOfDocument, to: start), offset(from: start, to: end))
             }
         }
         return nil
@@ -46,7 +46,7 @@ extension UITextView {
     
     public var locationOfNextNonWhitespaceCharacter: Int {
         guard let expr = try? NSRegularExpression(pattern: "\\S", options: []) else { return NSNotFound }
-        guard let match = expr.firstMatchInString(text, options: [], range: NSMakeRange(selectedRange.location, text.length - selectedRange.location)) else { return NSNotFound }
+        guard let match = expr.firstMatch(in: text, options: [], range: NSMakeRange(selectedRange.location, text.length - selectedRange.location)) else { return NSNotFound }
         return match.range.location
     }
     
@@ -58,25 +58,25 @@ extension UITextView {
     
     // MARK: - Public Methods
     
-    public func substringWithRange(range: NSRange) -> String {
+    public func substringWithRange(_ range: NSRange) -> String {
         return text.substringWithRange(range) ?? ""
     }
     
-    public func paragraphRangeForRange(range: NSRange) -> NSRange {
+    public func paragraphRangeForRange(_ range: NSRange) -> NSRange {
         return text.paragraphRangeForRange(range)
     }
     
     @available(iOS 4.0, *)
-    public func enumerateSubstringsInRange(range: NSRange, options opts: NSStringEnumerationOptions, usingBlock block: (String?, NSRange, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void) {
+    public func enumerateSubstringsInRange(_ range: NSRange, options opts: NSString.EnumerationOptions, usingBlock block: (String?, NSRange, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void) {
         text.enumerateSubstringsInRange(range, options: opts, usingBlock: block)
     }
     
     // MARK: -
     
-    public func boundingRectForCharacterRange(range: NSRange) -> CGRect {
+    public func boundingRectForCharacterRange(_ range: NSRange) -> CGRect {
         var glyphRange = NSRange()
-        layoutManager.characterRangeForGlyphRange(range, actualGlyphRange: &glyphRange)
-        return layoutManager.boundingRectForGlyphRange(range, inTextContainer: textContainer)
+        layoutManager.characterRange(forGlyphRange: range, actualGlyphRange: &glyphRange)
+        return layoutManager.boundingRect(forGlyphRange: range, in: textContainer)
     }
     
     // MARK: -
@@ -85,10 +85,10 @@ extension UITextView {
         invalidateCharacterDisplayAndLayoutForCharacterRange(text.range)
     }
     
-    public func invalidateCharacterDisplayAndLayoutForCharacterRange(range: NSRange) {
+    public func invalidateCharacterDisplayAndLayoutForCharacterRange(_ range: NSRange) {
         let range = text.range.contains(range) ? range : text.range
-        layoutManager.invalidateDisplayForCharacterRange(range)
-        layoutManager.invalidateLayoutForCharacterRange(range, actualCharacterRange: nil)
+        layoutManager.invalidateDisplay(forCharacterRange: range)
+        layoutManager.invalidateLayout(forCharacterRange: range, actualCharacterRange: nil)
     }
     
     public func undo() {
@@ -99,62 +99,62 @@ extension UITextView {
         undoManager?.redo()
     }
     
-    public func rangeOfPrecedingWordWithAcceptableCharacters(characters: String) -> NSRange? {
+    public func rangeOfPrecedingWordWithAcceptableCharacters(_ characters: String) -> NSRange? {
         guard let expr = try? NSRegularExpression(pattern: "[\\w\(characters)]+$", options: []) else { return nil }
         let paragraphRange = paragraphRangeForRange(selectedRange)
         let searchRange = NSMakeRange(paragraphRange.location, selectedRange.location - paragraphRange.location)
-        guard let match = expr.firstMatchInString(text, options: [.WithTransparentBounds], range: searchRange) else { return nil }
+        guard let match = expr.firstMatch(in: text, options: [.withTransparentBounds], range: searchRange) else { return nil }
         return match.range
     }
     
-    public func precedingCharacters(length: Int) -> String {
+    public func precedingCharacters(_ length: Int) -> String {
         if text.length < length { return "" }
         return selectedRange.location > length ?
             text.substringWithRange(NSMakeRange(selectedRange.location - length, length)) :
             text.substringWithRange(NSMakeRange(0, length - selectedRange.location))
     }
     
-    public func procedingCharacters(length: Int) -> String {
+    public func procedingCharacters(_ length: Int) -> String {
         if text.length < selectedRange.location + length { return "" }
         return selectedRange.location + length <= text.length ?
             text.substringWithRange(NSMakeRange(selectedRange.location, length)) :
             text.substringWithRange(NSMakeRange(selectedRange.location, text.length - selectedRange.location))
     }
     
-    public func precedingCharactersContainString(string: String) -> Bool {
+    public func precedingCharactersContainString(_ string: String) -> Bool {
         guard let expr = try? NSRegularExpression(pattern: string + "$", options: []) else { return false }
         let paragraphRange = paragraphRangeForRange(selectedRange)
         let searchRange = NSMakeRange(paragraphRange.location, selectedRange.location - paragraphRange.location)
-        if let _ = expr.firstMatchInString(text, options: [.WithTransparentBounds], range: searchRange) {
+        if let _ = expr.firstMatch(in: text, options: [.withTransparentBounds], range: searchRange) {
             return true
         }
         return false
     }
     
-    public func precedingCharactersContainString(string: String, inout range: NSRange) -> Bool {
+    public func precedingCharactersContainString(_ string: String, range: inout NSRange) -> Bool {
         guard let expr = try? NSRegularExpression(pattern: string + "$", options: []) else { return false }
         let paragraphRange = paragraphRangeForRange(selectedRange)
         let searchRange = NSMakeRange(paragraphRange.location, selectedRange.location - paragraphRange.location)
-        if let match = expr.firstMatchInString(text, options: [.WithTransparentBounds], range: searchRange) {
+        if let match = expr.firstMatch(in: text, options: [.withTransparentBounds], range: searchRange) {
             range = match.range
             return true
         }
         return false
     }
     
-    public func procedingCharactersContainString(string: String) -> Bool {
+    public func procedingCharactersContainString(_ string: String) -> Bool {
         guard let expr = try? NSRegularExpression(pattern: "^" + string, options: []) else { return false }
         let searchRange = NSMakeRange(selectedRange.location, text.length - selectedRange.location)
-        if let _ = expr.firstMatchInString(text, options: [.WithTransparentBounds], range: searchRange) {
+        if let _ = expr.firstMatch(in: text, options: [.withTransparentBounds], range: searchRange) {
             return true
         }
         return false
     }
     
-    public func procedingCharactersContainString(string: String, inout range: NSRange) -> Bool {
+    public func procedingCharactersContainString(_ string: String, range: inout NSRange) -> Bool {
         guard let expr = try? NSRegularExpression(pattern: "^" + string, options: []) else { return false }
         let searchRange = NSMakeRange(selectedRange.location, text.length - selectedRange.location)
-        if let match = expr.firstMatchInString(text, options: [.WithTransparentBounds], range: searchRange) {
+        if let match = expr.firstMatch(in: text, options: [.withTransparentBounds], range: searchRange) {
             range = match.range
             return true
         }

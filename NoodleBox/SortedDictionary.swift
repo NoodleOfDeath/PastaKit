@@ -8,39 +8,45 @@
 
 import Foundation
 
-public struct SortedDictionary <Key: Comparable, Value> : CollectionType, _ObjectiveCBridgeable {
+/// 
+public struct SortedDictionary <Key: Comparable, Value> : Collection, _ObjectiveCBridgeable {
     
     public typealias _ObjectiveCType = NSSortedDictionary<Key, Value>
     
-    public typealias Element = (key: Key, value: Value)
     public typealias Index = Int
-    public typealias Generator = IndexingGenerator<SortedDictionary<Key, Value>>
+    public typealias Iterator = IndexingIterator<SortedDictionary<Key, Value>>
     
-    public var startIndex: Index {
-        return 0
-    }
+    public var startIndex: Index { return 0 }
+    public var endIndex: Index { return values.count }
+    public var count: Int { return values.count }
     
-    public var endIndex: Index {
-        return values.count
-    }
-    
+    /// 
+    public typealias Element = (key: Key, value: Value)
+    /// 
     public let sortOrder: SortOrder
-    public private (set) var keys = SortedArray<Key>()
-    public private (set) var values = [Value]()
-    
-    public var count: Int {
-        return values.count
-    }
+    /// 
+    public fileprivate (set) var keys = SortedArray<Key>()
+    /// 
+    public fileprivate (set) var values = [Value]()
     
     // MARK: - ** Constructor Methods **
     
-    public init(sortOrder: SortOrder = .Ascending, keys: SortedArray<Key>? = nil, values: [Value]? = nil) {
+    /// 
+    public init(sortOrder: SortOrder = .ascending, keys: SortedArray<Key>? = nil, values: [Value] = []) {
         self.sortOrder = sortOrder
         self.keys = keys ?? SortedArray<Key>(sortOrder: sortOrder)
         self.values = values ?? [Value]()
     }
     
+    /// 
     public init(_ sortedDictionary: NSSortedDictionary<Key, Value>) {
+        self.sortOrder = sortedDictionary.sortOrder
+        self.keys = sortedDictionary.keys
+        self.values = sortedDictionary.values
+    }
+    
+    /// 
+    public init(_ sortedDictionary: SortedDictionary<Key, Value>) {
         self.sortOrder = sortedDictionary.sortOrder
         self.keys = sortedDictionary.keys
         self.values = sortedDictionary.values
@@ -56,11 +62,11 @@ public struct SortedDictionary <Key: Comparable, Value> : CollectionType, _Objec
         return _ObjectiveCType.self
     }
     
-    public static func _forceBridgeFromObjectiveC(source: _ObjectiveCType, inout result: SortedDictionary<Key, Value>?) {
+    public static func _forceBridgeFromObjectiveC(_ source: _ObjectiveCType, result: inout SortedDictionary<Key, Value>?) {
         result = SortedDictionary<Key, Value>(source)
     }
     
-    public static func _conditionallyBridgeFromObjectiveC(source: _ObjectiveCType, inout result: SortedDictionary<Key, Value>?) -> Bool {
+    public static func _conditionallyBridgeFromObjectiveC(_ source: _ObjectiveCType, result: inout SortedDictionary<Key, Value>?) -> Bool {
         _forceBridgeFromObjectiveC(source, result: &result)
         return true
     }
@@ -71,11 +77,13 @@ public struct SortedDictionary <Key: Comparable, Value> : CollectionType, _Objec
     
     // MARK: - ** Subscript Methods **
     
+    /// 
     public subscript (position: Index) -> Element {
         get { return (keys[position], values[position]) }
         set { (keys[position], values[position]) = newValue }
     }
     
+    /// 
     public subscript (key: Key) -> Value? {
         get {
             guard let index = keys.indexOf(key) else { return nil }
@@ -87,25 +95,26 @@ public struct SortedDictionary <Key: Comparable, Value> : CollectionType, _Objec
                     values[index] = newValue
                 } else {
                     keys.removeAtIndex(index)
-                    values.removeAtIndex(index)
+                    values.remove(at: index)
                 }
             } else {
                 if let newValue = newValue {
                     if let index = keys.add(key) {
-                        values.insert(newValue, atIndex: index)
+                        values.insert(newValue, at: index)
                     }
                 }
             }
         }
     }
     
-    public func generate() -> Generator {
-        return Generator(SortedDictionary(keys: keys, values: values))
+    public func makeIterator() -> Iterator {
+        return Iterator(SortedDictionary(self))
     }
     
-    public mutating func removeAll() {
-        keys.removeAll()
-        values.removeAll()
+    /// 
+    public mutating func removeAll(keepCapacity: Bool = false) {
+        keys.removeAll(keepCapacity: keepCapacity)
+        values.removeAll(keepingCapacity: keepCapacity)
     }
     
 }

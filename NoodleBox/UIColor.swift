@@ -12,11 +12,11 @@ public let NSColorCode = "NSColorCode"
 public let NSAlpha = "NSAlpha"
 
 public func * (lhs: UIColor, rhs: CGFloat) -> UIColor {
-    return lhs.colorWithAlphaComponent(rhs)
+    return lhs.withAlphaComponent(rhs)
 }
 
 public func * (lhs: UIColor, rhs: Double) -> UIColor {
-    return lhs.colorWithAlphaComponent(rhs.asCGFloat)
+    return lhs.withAlphaComponent(rhs.asCGFloat)
 }
 
 extension UIColor {
@@ -42,11 +42,11 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 
-    public static func colorWithObject(obj: AnyObject?) -> UIColor? {
+    public static func colorWithObject(_ obj: AnyObject?) -> UIColor? {
 
         guard let obj = obj else { return nil }
         
-        func parseColorCode(code: AnyObject?) -> UInt? {
+        func parseColorCode(_ code: AnyObject?) -> UInt? {
             
             guard let code = code else { return nil }
             

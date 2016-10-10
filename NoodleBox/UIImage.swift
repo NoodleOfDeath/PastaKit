@@ -24,16 +24,16 @@ extension UIImage {
 
 extension UIImage {
     
-    public func imageByCroppingToRect(rect: CGRect) -> UIImage? {
-        if let image = CGImageCreateWithImageInRect(self.CGImage, rect) {
-            return UIImage(CGImage: image)
-        } else if let image = (self.CIImage)?.imageByCroppingToRect(rect) {
-            return UIImage(CIImage: image)
+    public func imageByCroppingToRect(_ rect: CGRect) -> UIImage? {
+        if let image = self.cgImage?.cropping(to: rect) {
+            return UIImage(cgImage: image)
+        } else if let image = (self.ciImage)?.cropping(to: rect) {
+            return UIImage(ciImage: image)
         }
         return nil
     }
     
-    public func imageByScalingAndCroppingForSize(targetSize: CGSize) -> UIImage? {
+    public func imageByScalingAndCroppingForSize(_ targetSize: CGSize) -> UIImage? {
         
         let sourceImage = self
         
@@ -43,7 +43,7 @@ extension UIImage {
         var scaledWidth: CGFloat = targetSize.width
         var scaledHeight: CGFloat = targetSize.height
         
-        var thumbnailPoint: CGPoint = CGPointMake(0.0, 0.0)
+        var thumbnailPoint: CGPoint = CGPoint(x: 0.0, y: 0.0)
         
         if (sourceImage.size != targetSize) {
             
@@ -72,12 +72,12 @@ extension UIImage {
         
         UIGraphicsBeginImageContext(targetSize)
         
-        var thumbnailRect: CGRect = CGRectZero
+        var thumbnailRect: CGRect = CGRect.zero
         thumbnailRect.origin = thumbnailPoint
         thumbnailRect.size.width = scaledWidth // Cannot convert the expression's type '()' to type 'CGFloat'
         thumbnailRect.size.height = scaledHeight // Cannot convert the expression's type '()' to type 'CGFloat'
         
-        sourceImage.drawInRect(thumbnailRect)
+        sourceImage.draw(in: thumbnailRect)
         
         newImage = UIGraphicsGetImageFromCurrentImageContext()
         

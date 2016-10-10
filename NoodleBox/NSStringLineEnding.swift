@@ -18,16 +18,16 @@ public enum NSStringLineEnding: String {
     
     public var value: Value {
         switch self {
-        case CR:
+        case .CR:
             return "\r"
-        case LF:
+        case .LF:
             return "\n"
-        case CRLF:
+        case .CRLF:
             return "\r\n"
         }
     }
     
-    private static func values() -> [String: NSStringLineEnding] {
+    fileprivate static func values() -> [String: NSStringLineEnding] {
         return [
             CR.rawValue     : CR,
             LF.rawValue     : LF,
@@ -36,8 +36,8 @@ public enum NSStringLineEnding: String {
     }
     
     public init(stringValue: String?) {
-        guard let stringValue = stringValue else { self = LF; return }
-        self = NSStringLineEnding.values()[stringValue] ?? LF
+        guard let stringValue = stringValue else { self = .LF; return }
+        self = NSStringLineEnding.values()[stringValue] ?? .LF
     }
     
 }

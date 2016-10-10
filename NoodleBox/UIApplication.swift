@@ -17,7 +17,7 @@ extension UIApplication {
     /// status bar orientation.
     /// - seealso: [`UIDeviceOrientation`]()
     public static var orientation: UIInterfaceOrientation {
-        return sharedApplication().statusBarOrientation
+        return shared.statusBarOrientation
     }
     
     /// `true` if the `orientation` is either `.Portrait` or
@@ -35,18 +35,18 @@ extension UIApplication {
     /// The shared application delegate
     /// - returns: The shared application delegate
     public static func sharedDelegate() -> UIApplicationDelegate? {
-        return sharedApplication().delegate
+        return shared.delegate
     }
 
     /// The shared application key window
     /// - returns: The shared application key window
     public static func sharedKeyWindow() -> UIWindow? {
-        return sharedApplication().keyWindow
+        return shared.keyWindow
     }
     
     /// Dismiss keyboard from key window.
-    public static func endEditing(force: Bool = false) {
-        sharedApplication().keyWindow?.endEditing(force)
+    public static func endEditing(_ force: Bool = false) {
+        shared.keyWindow?.endEditing(force)
     }
 
 }

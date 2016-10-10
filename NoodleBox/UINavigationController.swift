@@ -14,16 +14,16 @@ extension UINavigationController {
         return UINavigationControllerHideShowBarDuration
     }
     
-    public static func hideShowBarTimeInterval() -> NSTimeInterval {
-        return NSTimeInterval(UINavigationControllerHideShowBarDuration)
+    public static func hideShowBarTimeInterval() -> TimeInterval {
+        return TimeInterval(UINavigationControllerHideShowBarDuration)
     }
 
-    public override func shouldAutorotate() -> Bool {
+    open override var shouldAutorotate : Bool {
         return true
     }
     
-    public override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return (visibleViewController?.supportedInterfaceOrientations())!
+    open override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return (visibleViewController?.supportedInterfaceOrientations)!
     }
     
 }

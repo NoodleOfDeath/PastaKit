@@ -11,7 +11,7 @@ import Foundation
 /// Convenient typealias for `String` mapped dictionaryies.
 public typealias PropertyList = [String : AnyObject]
 /// Convenient typealias for `NSObject` mapped dictionaries.
-public typealias Hashtable = [NSObject : AnyObject]
+public typealias Hashtable = [AnyHashable: Any]
 
 /// Returns a `Boolean` value that indicates whether the contents of the
 /// receiving dictionary are equal to the contents of another given dictionary.
@@ -23,7 +23,7 @@ public typealias Hashtable = [NSObject : AnyObject]
 /// - returns: `true` if the contents of `rhs` are equal to the contents of
 /// `lhs`, otherwise `false`.
 public func == (lhs: Hashtable, rhs: Hashtable) -> Bool {
-    return NSDictionary(dictionary: lhs).isEqualToDictionary(rhs)
+    return NSDictionary(dictionary: lhs).isEqual(to: rhs)
 }
 
 /// Returns a Boolean value that indicates whether the contents of the
@@ -37,7 +37,7 @@ public func == (lhs: Hashtable, rhs: Hashtable) -> Bool {
 /// - returns: `true` if the contents of `rhs` are not equal to the contents of
 /// `lhs`, otherwise `false`.
 public func != (lhs: Hashtable, rhs: Hashtable) -> Bool {
-    return !NSDictionary(dictionary: lhs).isEqualToDictionary(rhs)
+    return !NSDictionary(dictionary: lhs).isEqual(to: rhs)
 }
 
 /// Add the all `keys` and `values` from `rhs` to `lhs` and return the sum.
@@ -94,7 +94,7 @@ public func + <Key, Value> (lhs: [Key : Value], rhs: [Key : Value]) -> [Key : Va
 /// back into `lhs`.
 /// - parameter lhs: Operation augend and assignment target.
 /// - parameter rhs: Opertaion addend.
-public func += <Key, Value> (inout lhs: [Key : Value]?, rhs: [Key : Value]?) {
+public func += <Key, Value> (lhs: inout [Key : Value]?, rhs: [Key : Value]?) {
     lhs = lhs + rhs
 }
 
@@ -102,7 +102,7 @@ public func += <Key, Value> (inout lhs: [Key : Value]?, rhs: [Key : Value]?) {
 /// back into `lhs`.
 /// - parameter lhs: Operation augend and assignment target.
 /// - parameter rhs: Opertaion addend.
-public func += <Key, Value> (inout lhs: [Key : Value]?, rhs: [Key : Value]) {
+public func += <Key, Value> (lhs: inout [Key : Value]?, rhs: [Key : Value]) {
     guard let addend = lhs else { lhs = rhs; return }
     lhs = addend + rhs
 }
@@ -111,7 +111,7 @@ public func += <Key, Value> (inout lhs: [Key : Value]?, rhs: [Key : Value]) {
 /// back into `lhs`.
 /// - parameter lhs: Operation augend and assignment target.
 /// - parameter rhs: Opertaion addend.
-public func += <Key, Value> (inout lhs: [Key : Value], rhs: [Key : Value]?) {
+public func += <Key, Value> (lhs: inout [Key : Value], rhs: [Key : Value]?) {
     lhs = lhs + rhs
 }
 
@@ -119,12 +119,12 @@ public func += <Key, Value> (inout lhs: [Key : Value], rhs: [Key : Value]?) {
 /// back into `lhs`.
 /// - parameter lhs: Operation augend and assignment target.
 /// - parameter rhs: Opertaion addend.
-public func += <Key, Value> (inout lhs: [Key : Value], rhs: [Key : Value]) {
+public func += <Key, Value> (lhs: inout [Key : Value], rhs: [Key : Value]) {
     lhs = lhs + rhs
 }
 
 /// Bridging from `Dictionary` to `NSDictionary`
-public postfix func * <T: DictionaryLiteralConvertible>(argument: T) -> NSDictionary {
+public postfix func * <T: ExpressibleByDictionaryLiteral>(argument: T) -> NSDictionary {
     return argument as! NSDictionary
 }
 
@@ -153,11 +153,11 @@ extension Dictionary {
     /// Writing `nil` as the value for a given key erases that key from `self`.
     public subscript (key: Key?, caseInsensitive: Bool) -> Value? {
         get {
-            guard let key = key where String(key).lowercaseString.length > 0 else { return nil }
+            guard let key = key , String(describing: key).lowercased().length > 0 else { return nil }
             guard caseInsensitive else { return self[key] }
-            let searchKey = String(key).lowercaseString
+            let searchKey = String(describing: key).lowercased()
             for key in keys {
-                let k = String(key).lowercaseString
+                let k = String(describing: key).lowercased()
                 if searchKey == k {
                     return self[key]
                 }
@@ -165,11 +165,11 @@ extension Dictionary {
             return nil
         }
         set {
-            guard let key = key where String(key).lowercaseString.length > 0 else { return }
+            guard let key = key , String(describing: key).lowercased().length > 0 else { return }
             guard caseInsensitive else { self[key] = newValue ; return }
-            let searchKey = String(key).lowercaseString
+            let searchKey = String(describing: key).lowercased()
             for key in keys {
-                guard searchKey == String(key).lowercaseString else { continue }
+                guard searchKey == String(describing: key).lowercased() else { continue }
                 self[key] = newValue
                 return
             }

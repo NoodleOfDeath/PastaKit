@@ -11,7 +11,7 @@ import Foundation
 extension Bool {
     
     public var asNumber: NSNumber {
-        return NSNumber(bool: self)
+        return NSNumber(value: self as Bool)
     }
     
 }

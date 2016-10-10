@@ -8,19 +8,19 @@
 
 import Foundation
 
-public func + <T: OptionSetType>(lhs: T, rhs: T) -> T {
+public func + <T: OptionSet>(lhs: T, rhs: T) -> T {
     return lhs.union(rhs)
 }
 
-extension OptionSetType {
+extension OptionSet {
     
-    public func without(member: Element) -> Self {
+    public func without(_ member: Element) -> Self {
         var set = self
         set.remove(member)
         return set
     }
     
-    public func doesNotContain(element: Element) -> Bool {
+    public func doesNotContain(_ element: Element) -> Bool {
         return !contains(element)
     }
     

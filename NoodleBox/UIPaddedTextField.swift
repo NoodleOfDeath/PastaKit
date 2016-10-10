@@ -9,18 +9,18 @@
 import UIKit
 import Foundation
 
-public class UIPaddedTextField : UITextField {
+open class UIPaddedTextField : UITextField {
     
-    public var padding: CGSize = CGSizeMake(5.0, 5.0) {
+    open var padding: CGSize = CGSize(width: 5.0, height: 5.0) {
         didSet { setNeedsDisplay() }
     }
     
-    public override func textRectForBounds(bounds: CGRect) -> CGRect {
-        return CGRectInset(bounds, padding.width, padding.height)
+    open override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: padding.width, dy: padding.height)
     }
     
-    public override func editingRectForBounds(bounds: CGRect) -> CGRect {
-        return CGRectInset(bounds, padding.width, padding.height)
+    open override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: padding.width, dy: padding.height)
     }
     
 }

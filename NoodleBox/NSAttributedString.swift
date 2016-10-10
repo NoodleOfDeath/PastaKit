@@ -22,7 +22,7 @@ extension NSAttributedString {
     
     /// The width of the leading whitespaces that offset this string.
     public var leadingIndentation: CGFloat {
-        return attributedSubstringFromRange(NSMakeRange(0, string.leadingWhitespaces.length)).size().width
+        return attributedSubstring(from: NSMakeRange(0, string.leadingWhitespaces.length)).size().width
     }
     
     /// The width this string would attain is the drawing bounds were constrainted
@@ -30,9 +30,9 @@ extension NSAttributedString {
     /// - parameter height: The maximum height to constrain the drawing bounds in.
     /// - returns: The width this string would attain is the drawing bounds were
     /// constrainted to a maximum height of `height`.
-    public func width(whenConstrainedToHeight height: CGFloat = .max) -> CGFloat {
-        let size = CGSizeMake(.max, height)
-        let rect = boundingRectWithSize(size, options: .UsesLineFragmentOrigin, context: nil)
+    public func width(whenConstrainedToHeight height: CGFloat = .greatestFiniteMagnitude) -> CGFloat {
+        let size = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let rect = boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil)
         return ceil(rect.size.width)
     }
     
@@ -41,9 +41,9 @@ extension NSAttributedString {
     /// - parameter width: The maximum width to constrain the drawing bounds in.
     /// - returns: The height this string would attain is the drawing bounds were
     /// constrainted to a maximum width of `width`.
-    public func height(whenConstrainedToWidth width: CGFloat = .max) -> CGFloat {
-        let size = CGSizeMake(width, .max)
-        let rect = boundingRectWithSize(size, options: .UsesLineFragmentOrigin, context: nil)
+    public func height(whenConstrainedToWidth width: CGFloat = .greatestFiniteMagnitude) -> CGFloat {
+        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let rect = boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil)
         return ceil(rect.height)
     }
     

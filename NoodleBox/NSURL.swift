@@ -9,50 +9,50 @@
 import UIKit
 
 /// 
-public func += (inout lhs: NSURL?, rhs: Character?) {
-    lhs = NSURL(fileURLWithPath:(String(lhs?.path) + String(rhs)))
+public func += (lhs: inout URL?, rhs: Character?) {
+    lhs = URL(fileURLWithPath:(String(describing: lhs?.path) + String(describing: rhs)))
 }
 
 /// 
-public func += (inout lhs: NSURL?, rhs: NSURL?) {
-    lhs = NSURL(fileURLWithPath:(String(lhs?.path) + String(rhs?.path)))
+public func += (lhs: inout URL?, rhs: URL?) {
+    lhs = URL(fileURLWithPath:(String(describing: lhs?.path) + String(describing: rhs?.path)))
 }
 
 /// 
-public func += (inout lhs: NSURL?, rhs: String?) {
-    lhs = NSURL(fileURLWithPath:(String(lhs?.path) + String(rhs)))
+public func += (lhs: inout URL?, rhs: String?) {
+    lhs = URL(fileURLWithPath:(String(describing: lhs?.path) + String(describing: rhs)))
 }
 
 /// 
-public func +/ (lhs: NSURL?, rhs: String?) -> NSURL? {
+public func +/ (lhs: URL?, rhs: String?) -> URL? {
     if let lhs = lhs {
-        return lhs.URLByAppendingPathComponent(rhs ?? "")
+        return lhs.appendingPathComponent(rhs ?? "")
     } else {
         if let rhs = rhs {
-            return NSURL(fileURLWithPath: rhs)
+            return URL(fileURLWithPath: rhs)
         }
     }
     return nil
 }
 
 /// 
-public func +/ (lhs: NSURL, rhs: String?) -> NSURL? {
+public func +/ (lhs: URL, rhs: String?) -> URL? {
     if let rhs = rhs {
-        return lhs.URLByAppendingPathComponent(rhs)
+        return lhs.appendingPathComponent(rhs)
     }
     return nil
 }
 
 /// 
-public func +/ (lhs: NSURL, rhs: String) -> NSURL {
-    return lhs.URLByAppendingPathComponent(rhs)
+public func +/ (lhs: URL, rhs: String) -> URL {
+    return lhs.appendingPathComponent(rhs)
 }
 
 /// 
-public func +* (lhs: NSURL?, rhs: String?) -> NSURL? {
+public func +* (lhs: URL?, rhs: String?) -> URL? {
     if let lhs = lhs {
-        if let rhs = rhs where rhs.length > 0 {
-            return lhs.URLByAppendingPathExtension(rhs)
+        if let rhs = rhs , rhs.length > 0 {
+            return lhs.appendingPathExtension(rhs)
         }
         return lhs
     }
@@ -60,7 +60,7 @@ public func +* (lhs: NSURL?, rhs: String?) -> NSURL? {
 }
 
 /// 
-public struct NSURLModification: OptionSetType {
+public struct NSURLModification: OptionSet {
     
     public typealias RawValue = Int
     public let rawValue: RawValue
@@ -76,7 +76,7 @@ public struct NSURLModification: OptionSetType {
 
 // MARK: - ** NSURL Extension **
 
-extension NSURL {
+extension URL {
     
     ///  `true` iff a resource exists at `self`.
     public var exists: Bool {
@@ -85,59 +85,59 @@ extension NSURL {
     
     /// `true` iff this resource is a local document resource.
     public var local: Bool {
-        return path?.containsString(NSDocumentPath) ?? false
+        return path.contains(NSDocumentPath) ?? false
     }
     
     /// `true` iff this resource is an iCloud resource. 
     public var ubiquitous: Bool {
         guard let NSUbiquityPath = NSUbiquityPath else { return false }
-        return path?.containsString(NSUbiquityPath) ?? false
+        return path.contains(NSUbiquityPath) ?? false
     }
     
     /// `true` iff this resource is a regular file, or symbolic link to a regular file.
     public var regularFile: Bool {
-        return (self[NSURLIsRegularFileKey] as? NSNumber)?.boolValue ?? false
+        return (self[URLResourceKey.isRegularFileKey.rawValue] as? NSNumber)?.boolValue ?? false
     }
     
     /// `true` iff this resource is a directory, or symbolic link to a directory.
     public var directory: Bool {
-        return (self[NSURLIsDirectoryKey] as? NSNumber)?.boolValue ?? false
+        return (self[URLResourceKey.isDirectoryKey.rawValue] as? NSNumber)?.boolValue ?? false
     }
     
     /// `true` iff this resource is a symbolic link.
     public var symbolicLink: Bool {
-        return (self[NSURLIsSymbolicLinkKey] as? NSNumber)?.boolValue ?? false
+        return (self[URLResourceKey.isSymbolicLinkKey.rawValue] as? NSNumber)?.boolValue ?? false
     }
     
     /// The file size of this resource, iff it is not a directory.
     public var fileSize: UInt64 {
-        return (self[NSURLFileSizeKey] as? NSNumber)?.unsignedLongLongValue ?? 0
+        return (self[URLResourceKey.fileSizeKey.rawValue] as? NSNumber)?.uint64Value ?? 0
     }
     
     /// The number of files contained in this resource, iff it is a directory.
     public var fileCount: Int {
         guard directory, let path = self.path,
             let contents = try? 
-                NSFileManager.defaultManager().contentsOfDirectoryAtPath(path)
+                FileManager.default.contentsOfDirectory(atPath: path)
             else { return 0 }
         return contents.count
     }
     
     /// The creation date of this resource, or `distantFuture()`
     /// if unattainable.
-    public var dateCreated: NSDate {
-        return (self[NSURLCreationDateKey] as? NSDate) ?? .distantFuture()
+    public var dateCreated: Date {
+        return (self[URLResourceKey.creationDateKey.rawValue] as? Date) ?? .distantFuture
     }
     
     /// The most recent date this resource was last accessed, or 
     /// `distantFuture()` if unattainable.
-    public var dateAccessed: NSDate {
-        return self[NSURLContentAccessDateKey] as? NSDate ?? .distantFuture()
+    public var dateAccessed: Date {
+        return self[URLResourceKey.contentAccessDateKey.rawValue] as? Date ?? .distantFuture
     }
     
     /// The most recent date this resource was modified, or 
     /// `distantFuture()` if unattainable.
-    public var dateModified: NSDate { return dateModified() }
+    public var dateModified: Date { return dateModified() }
     
     // MARK: - Methods
     
@@ -145,7 +145,7 @@ extension NSURL {
     public subscript(key: String) -> AnyObject? {
         var resource: AnyObject?
         do {
-            try getResourceValue(&resource, forKey: key)
+            try getResourceValue(&resource, forKey: URLResourceKey(rawValue: key))
         } catch let error as NSError {
             print(error.localizedDescription)
         }
@@ -158,24 +158,24 @@ extension NSURL {
     /// If `nil` is specified `[.Content, .Attribute]` is used by default.
     /// - returns: The most recent date this file was modified, or 
     /// `distantFuture()` if unattainable.
-    public func dateModified(modifications: NSURLModification! = [.Content, .Attribute]) -> NSDate {
-        var dates = [NSDate]()
+    public func dateModified(_ modifications: NSURLModification! = [.Content, .Attribute]) -> Date {
+        var dates = [Date]()
         if modifications.contains(.Content) {
-            dates.append((self[NSURLContentModificationDateKey] as? NSDate) ?? .distantFuture())
+            dates.append((self[URLResourceKey.contentModificationDateKey.rawValue] as? Date) ?? .distantFuture)
         }
         if modifications.contains(.Attribute) {
-            dates.append((self[NSURLAttributeModificationDateKey] as? NSDate) ?? .distantFuture())
+            dates.append((self[URLResourceKey.attributeModificationDateKey.rawValue] as? Date) ?? .distantFuture)
         }
-        return dates.sort({ (a: NSDate, b: NSDate) -> Bool in
+        return dates.sorted(by: { (a: Date, b: Date) -> Bool in
             return a.timeIntervalSinceNow < b.timeIntervalSinceNow
-        }).first ?? .distantFuture()
+        }).first ?? .distantFuture
     }
     
     /// 
-    public func localizedCompare(url: NSURL) -> NSComparisonResult {
-        guard let name1 = self[NSURLNameKey] as? String, 
-            let name2 = url[NSURLNameKey] as? String else { return .OrderedSame }
-        return (name1 < name2 ? .OrderedAscending : (name1 > name2 ? .OrderedDescending : .OrderedSame))
+    public func localizedCompare(_ url: URL) -> ComparisonResult {
+        guard let name1 = self[URLResourceKey.nameKey.rawValue] as? String, 
+            let name2 = url[URLResourceKey.nameKey.rawValue] as? String else { return .orderedSame }
+        return (name1 < name2 ? .orderedAscending : (name1 > name2 ? .orderedDescending : .orderedSame))
     }
 
 }

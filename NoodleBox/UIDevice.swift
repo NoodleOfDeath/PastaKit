@@ -11,19 +11,19 @@ import UIKit
 extension UIDevice {
     
     public static var isPortrait: Bool {
-        return UIDeviceOrientationIsPortrait(currentDevice().orientation)
+        return UIDeviceOrientationIsPortrait(current.orientation)
     }
     
     public static var isFlat: Bool {
-        return currentDevice().orientation.isFlat
+        return current.orientation.isFlat
     }
     
     public static var isLandscape: Bool {
-        return UIDeviceOrientationIsLandscape(currentDevice().orientation)
+        return UIDeviceOrientationIsLandscape(current.orientation)
     }
     
     public static var isValidInterfaceOrientation: Bool {
-        return UIDeviceOrientationIsValidInterfaceOrientation(currentDevice().orientation)
+        return UIDeviceOrientationIsValidInterfaceOrientation(current.orientation)
     }
     
     public static var isPortraitOrFlat: Bool {
@@ -31,32 +31,32 @@ extension UIDevice {
     }
 
     public static func isIphone4orLess() -> Bool {
-        return currentDevice().userInterfaceIdiom == .Phone
+        return current.userInterfaceIdiom == .phone
             && UIScreen.maxDimension() < 568.0
     }
 
     public static func isIphone5() -> Bool {
-        return currentDevice().userInterfaceIdiom == .Phone
+        return current.userInterfaceIdiom == .phone
             && UIScreen.maxDimension() == 568.0
     }
 
     public static func isIphone6() -> Bool {
-        return currentDevice().userInterfaceIdiom == .Phone
+        return current.userInterfaceIdiom == .phone
             && UIScreen.maxDimension() == 667.0
     }
 
     public static func isIphone6P() -> Bool {
-        return currentDevice().userInterfaceIdiom == .Phone
+        return current.userInterfaceIdiom == .phone
             && UIScreen.maxDimension() == 736.0
     }
 
     public static func isIpad() -> Bool {
-        return (currentDevice().userInterfaceIdiom == .Pad)
+        return (current.userInterfaceIdiom == .pad)
             && UIScreen.maxDimension() == 1024.0
     }
     
     public static func isIpadPro() -> Bool {
-        return (currentDevice().userInterfaceIdiom == .Pad)
+        return (current.userInterfaceIdiom == .pad)
             && UIScreen.maxDimension() == 1366.0
     }
 
@@ -69,8 +69,8 @@ extension UIDevice {
         sysctlbyname("hw.machine", nil, &size, nil, 0)
         let _machine = malloc(size)
         sysctlbyname("hw.machine", _machine, &size, nil, 0)
-        let data = NSData(bytes: _machine, length: Int(size))
-        let machine = String(data: data, encoding: NSUTF8StringEncoding)
+        let data = Data(bytes: UnsafePointer<UInt8>(_machine), count: Int(size))
+        let machine = String(data: data, encoding: String.Encoding.utf8)
         free(_machine)
         return machine
     }

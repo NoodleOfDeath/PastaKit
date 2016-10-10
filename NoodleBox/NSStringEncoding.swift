@@ -8,45 +8,45 @@
 
 import Foundation
 
-extension NSStringEncoding {
+extension String.Encoding {
     
     public var stringValue: String {
-        guard let index = NSStringEncoding.values().values.indexOf(self) else { return "" }
-        return NSStringEncoding.values().keys[index] ?? ""
+        guard let index = String.Encoding.values().values.index(of: self) else { return "" }
+        return String.Encoding.values().keys[index] ?? ""
     }
 
-    private static func values() -> [String : NSStringEncoding] {
+    fileprivate static func values() -> [String : String.Encoding] {
         return [
-            "ASCIIStringEncoding"             : NSASCIIStringEncoding,
-            "NEXTSTEPStringEncoding"          : NSNEXTSTEPStringEncoding,
-            "JapaneseEUCStringEncoding"       : NSJapaneseEUCStringEncoding,
-            "UTF8StringEncoding"              : NSUTF8StringEncoding,
-            "ISOLatin1StringEncoding"         : NSISOLatin1StringEncoding,
-            "SymbolStringEncoding"            : NSSymbolStringEncoding,
-            "NonLossyASCIIStringEncoding"     : NSNonLossyASCIIStringEncoding,
-            "ShiftJISStringEncoding"          : NSShiftJISStringEncoding,
-            "ISOLatin2StringEncoding"         : NSISOLatin2StringEncoding,
-            "UnicodeStringEncoding"           : NSUnicodeStringEncoding,
-            "WindowsCP1251StringEncoding"     : NSWindowsCP1251StringEncoding,
-            "WindowsCP1252StringEncoding"     : NSWindowsCP1252StringEncoding,
-            "WindowsCP1253StringEncoding"     : NSWindowsCP1253StringEncoding,
-            "WindowsCP1254StringEncoding"     : NSWindowsCP1254StringEncoding,
-            "WindowsCP1250StringEncoding"     : NSWindowsCP1250StringEncoding,
-            "ISO2022JPStringEncoding"         : NSISO2022JPStringEncoding,
-            "MacOSRomanStringEncoding"        : NSMacOSRomanStringEncoding,
-            "UTF16StringEncoding"             : NSUTF16StringEncoding,
-            "UTF16BigEndianStringEncoding"    : NSUTF16BigEndianStringEncoding,
-            "UTF16LittleEndianStringEncoding" : NSUTF16LittleEndianStringEncoding,
-            "UTF32StringEncoding"             : NSUTF32StringEncoding,
-            "UTF32BigEndianStringEncoding"    : NSUTF32BigEndianStringEncoding,
-            "UTF32LittleEndianStringEncoding" : NSUTF32LittleEndianStringEncoding,
-            "ProprietaryStringEncoding"       : NSProprietaryStringEncoding,
+            "ASCIIStringEncoding"             : String.Encoding.ascii,
+            "NEXTSTEPStringEncoding"          : String.Encoding.nextstep,
+            "JapaneseEUCStringEncoding"       : String.Encoding.japaneseEUC,
+            "UTF8StringEncoding"              : String.Encoding.utf8,
+            "ISOLatin1StringEncoding"         : String.Encoding.isoLatin1,
+            "SymbolStringEncoding"            : String.Encoding.symbol,
+            "NonLossyASCIIStringEncoding"     : String.Encoding.nonLossyASCII,
+            "ShiftJISStringEncoding"          : String.Encoding.shiftJIS,
+            "ISOLatin2StringEncoding"         : String.Encoding.isoLatin2,
+            "UnicodeStringEncoding"           : String.Encoding.unicode,
+            "WindowsCP1251StringEncoding"     : String.Encoding.windowsCP1251,
+            "WindowsCP1252StringEncoding"     : String.Encoding.windowsCP1252,
+            "WindowsCP1253StringEncoding"     : String.Encoding.windowsCP1253,
+            "WindowsCP1254StringEncoding"     : String.Encoding.windowsCP1254,
+            "WindowsCP1250StringEncoding"     : String.Encoding.windowsCP1250,
+            "ISO2022JPStringEncoding"         : String.Encoding.iso2022JP,
+            "MacOSRomanStringEncoding"        : String.Encoding.macOSRoman,
+            "UTF16StringEncoding"             : String.Encoding.utf16,
+            "UTF16BigEndianStringEncoding"    : String.Encoding.utf16BigEndian,
+            "UTF16LittleEndianStringEncoding" : String.Encoding.utf16LittleEndian,
+            "UTF32StringEncoding"             : String.Encoding.utf32,
+            "UTF32BigEndianStringEncoding"    : String.Encoding.utf32BigEndian,
+            "UTF32LittleEndianStringEncoding" : String.Encoding.utf32LittleEndian,
+            "ProprietaryStringEncoding"       : String.Encoding(rawValue: NSProprietaryStringEncoding),
         ]
     }
 
     public init(stringValue: String?) {
-        guard let stringValue = stringValue else { self = NSUTF8StringEncoding; return }
-        self = NSStringEncoding.values()[stringValue] ?? NSUTF8StringEncoding
+        guard let stringValue = stringValue else { self = String.Encoding.utf8; return }
+        self = String.Encoding.values()[stringValue] ?? String.Encoding.utf8
     }
 
 }

@@ -17,7 +17,7 @@ import UIKit
 /// A composite protocol of the `UIScrollViewDelegate` that sends events
 /// from the embedded custom scroll view to a delegate object.
 public protocol UIZoomingScrollViewDelegate : NSObjectProtocol {
-    func scrollViewDidScroll(scrollView: UIScrollView)
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
 }
 
 // MARK: - ** UIZoomingScrollView - UIScrollView Composite Class ** -
@@ -38,7 +38,7 @@ public protocol UIZoomingScrollViewDelegate : NSObjectProtocol {
 /// }
 /// ...
 /// ````
-public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
+open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     
     // MARK: - ** Static Properties ** -
     
@@ -54,12 +54,12 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     
     /// The delegating object that receives event notifications from this
     /// scroll view.
-    public weak var delegate: UIZoomingScrollViewDelegate?
+    open weak var delegate: UIZoomingScrollViewDelegate?
     
     // MARK: - Composite (UIScrollView)
     
     /// Enable/disable zooming of the custom scroll view.
-    public var enableZoom = true {
+    open var enableZoom = true {
         didSet {
             zoomScale = enableZoom ? zoomScale : 1.0
             minimumZoomScale = enableZoom ?
@@ -74,7 +74,7 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     ///
     /// This value determines how much the content is currently scaled. 
     /// The default value is 1.0.
-    public var zoomScale: CGFloat {
+    open var zoomScale: CGFloat {
         get { return contentScrollView.zoomScale }
         set { contentScrollView.zoomScale = newValue }
     }
@@ -84,7 +84,7 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     ///
     /// This value determines how small the content can be scaled. 
     /// The default value is 1.0
-    public var minimumZoomScale: CGFloat {
+    open var minimumZoomScale: CGFloat {
         get { return contentScrollView.minimumZoomScale }
         set { contentScrollView.minimumZoomScale = newValue }
     }
@@ -95,7 +95,7 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     /// This value determines how large the content can be scaled. It must be 
     /// greater than the minimum zoom scale for zooming to be enabled. 
     /// The default value is 1.0.
-    public var maximumZoomScale: CGFloat {
+    open var maximumZoomScale: CGFloat {
         get { return contentScrollView.maximumZoomScale }
         set { contentScrollView.maximumZoomScale = newValue }
     }
@@ -106,19 +106,19 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     /// `contentScrollView.contentSize.contentSize.width`. The custom scroll
     /// view (or its view controller) is responsible for setting its content
     /// size height.
-    public var contentSize: CGSize = CGSizeZero {
+    open var contentSize: CGSize = CGSize.zero {
         didSet { updateDimensions() }
     }
     
     /// The vertical offset of the content view
-    public var verticalOffset: CGFloat = 0.0 {
+    open var verticalOffset: CGFloat = 0.0 {
         didSet { updateDimensions() }
     }
     
     /// The initial padding used by the custom scroll view
     /// - note: During zooming, this padding is adjusted with respect to the
     /// zoomScale so that it remains the same size visually.
-    public var defaultContentInset = UIEdgeInsets(top: 0.0, left: 0.0,
+    open var defaultContentInset = UIEdgeInsets(top: 0.0, left: 0.0,
                                                   bottom: 0.0, right: 0.0) {
         didSet { updateDimensions() }
     }
@@ -126,19 +126,19 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     // MARK: - Composite (NSLayoutConstraint)
     
     /// The y coordinate of the scroll indicator
-    public var scrollIndicatorVerticalOffset: CGFloat = 0.0 {
+    open var scrollIndicatorVerticalOffset: CGFloat = 0.0 {
         didSet { scrollIndicatorTopLayoutConstraint.constant =
             scrollIndicatorVerticalOffset }
     }
     
     /// The width of the scroll indicator
-    public var scrollIndicatorWidth: CGFloat = 2.5 {
+    open var scrollIndicatorWidth: CGFloat = 2.5 {
         didSet { scrollIndicatorWidthLayoutConstraint.constant =
             scrollIndicatorWidth }
     }
     
     /// The height of the scroll indicator
-    public var scrollIndicatorHeight: CGFloat = 0.0 {
+    open var scrollIndicatorHeight: CGFloat = 0.0 {
         didSet { scrollIndicatorHeightLayoutConstraint.constant =
             scrollIndicatorHeight }
     }
@@ -146,7 +146,7 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     // MARK: - UI Components
     
     /// The custom scroll view to make zoomable.
-    public var scrollView: UIScrollView? {
+    open var scrollView: UIScrollView? {
         didSet {
             guard let scrollView = scrollView else { return }
             contentView.addSubview(scrollView)
@@ -162,12 +162,12 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     // MARK: - Stored
     
     /// Indicates whether the scale view is visible or not.
-    private lazy var scaleViewVisible = false
+    fileprivate lazy var scaleViewVisible = false
     
     // MARK: - UI Components
     
     /// The scroll view that handles horizontal scrolling.
-    private lazy var contentScrollView: UIScrollView = {
+    fileprivate lazy var contentScrollView: UIScrollView = {
         let contentScrollView = UIScrollView()
         contentScrollView.addSubview(self.contentView)
         contentScrollView.delegate = self
@@ -177,27 +177,27 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     }()
     
     /// The view that contains the custom scroll view.
-    private lazy var contentView: UIView = {
+    fileprivate lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var scrollIndicator: UIView = {
+    fileprivate lazy var scrollIndicator: UIView = {
         let scrollIndicator = UIView()
         scrollIndicator.translatesAutoresizingMaskIntoConstraints = false
-        scrollIndicator.backgroundColor = .grayColor() * 0.85
+        scrollIndicator.backgroundColor = .gray() * 0.85
         scrollIndicator.layer.cornerRadius = 1.25
         return scrollIndicator
     }()
     
     /// The view containing the scale label
-    private lazy var scaleView: UIView = {
+    fileprivate lazy var scaleView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addConstraint(view.widthLayoutConstraint(75.0))
         view.addConstraint(view.heightLayoutConstraint(50.0))
-        view.backgroundColor = .blackColor() * 0.75
+        view.backgroundColor = .black() * 0.75
         view.layer.cornerRadius = 5.0
         view.addSubview(self.scaleLabel)
         self.scaleLabel.constrainToSuperview()
@@ -206,18 +206,18 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     
     /// The label that displays the zoom scale as a percentage. For
     /// example if `zoomScale = 0.5` this label will display `"50%".
-    private lazy var scaleLabel: UILabel = {
+    fileprivate lazy var scaleLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .clearColor()
-        label.textColor = .whiteColor()
-        label.textAlignment = .Center
+        label.backgroundColor = .clear()
+        label.textColor = .white()
+        label.textAlignment = .center
         return label
     }()
     
     // MARK: - Layout Constraints
     
     /// Content view width constraint
-    private lazy var contentViewWidthLayoutConstraint: NSLayoutConstraint = {
+    fileprivate lazy var contentViewWidthLayoutConstraint: NSLayoutConstraint = {
         return self.contentView.widthLayoutConstraint(self.contentSize.width)
     }()
     
@@ -227,26 +227,26 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     /// zoomScale. Thus, the content scroll view will never be able to scroll
     /// vertically, leaving that responsibility to the scroll view contained
     /// inside the content view.
-    private lazy var contentViewHeightLayoutConstraint: NSLayoutConstraint = {
+    fileprivate lazy var contentViewHeightLayoutConstraint: NSLayoutConstraint = {
         return self.contentView.heightLayoutConstraint(
             self.height / self.zoomScale)
     }()
     
     /// Scroll indicator y coordinate constraint
-    private lazy var scrollIndicatorTopLayoutConstraint: NSLayoutConstraint = {
+    fileprivate lazy var scrollIndicatorTopLayoutConstraint: NSLayoutConstraint = {
         return self.scrollIndicator.topLayoutConstraintRelativeToView(
             self, constant: self.scrollIndicatorVerticalOffset)
     }()
     
     /// Scroll indicator width constraint
-    private lazy var scrollIndicatorWidthLayoutConstraint:
+    fileprivate lazy var scrollIndicatorWidthLayoutConstraint:
         NSLayoutConstraint = {
         return self.scrollIndicator.widthLayoutConstraint(
             self.scrollIndicatorWidth)
     }()
     
     /// Scroll indicator height constraint
-    private lazy var scrollIndicatorHeightLayoutConstraint:
+    fileprivate lazy var scrollIndicatorHeightLayoutConstraint:
         NSLayoutConstraint = {
         return self.scrollIndicator.heightLayoutConstraint(
             self.scrollIndicatorHeight)
@@ -256,7 +256,7 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     
     public convenience init() {
         
-        self.init(frame: UIScreen.mainScreen().applicationFrame)
+        self.init(frame: UIScreen.main.applicationFrame)
         
         contentView.addConstraint(contentViewWidthLayoutConstraint)
         contentView.addConstraint(contentViewHeightLayoutConstraint)
@@ -288,16 +288,16 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     
     // MARK: - UIView
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         updateDimensions()
     }
     
-    public override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        let view = super.hitTest(point, withEvent: event)
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
         if view == contentScrollView {
-            let point = contentScrollView.convertPoint(point, toView: scrollView)
-            return scrollView?.hitTest(point, withEvent: event) ?? scrollView
+            let point = contentScrollView.convert(point, to: scrollView)
+            return scrollView?.hitTest(point, with: event) ?? scrollView
         }
         return view
     }
@@ -306,22 +306,22 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     
     // MARK: - UIScrollViewDelegate
     
-    public func scrollViewDidScroll(scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         updateScrollIndicator()
     }
     
-    public func scrollViewDidZoom(scrollView: UIScrollView) {
+    open func scrollViewDidZoom(_ scrollView: UIScrollView) {
         showScaleView()
         updateDimensions()
     }
     
-    public func viewForZoomingInScrollView(scrollView: UIScrollView) ->
+    open func viewForZooming(in scrollView: UIScrollView) ->
         UIView? {
         return contentView
     }
     
-    public func scrollViewDidEndZooming(scrollView: UIScrollView,
-                                        withView view: UIView?,
+    open func scrollViewDidEndZooming(_ scrollView: UIScrollView,
+                                        with view: UIView?,
                                                  atScale scale: CGFloat) {
         if scale >= 0.95 && scale <= 1.05 {
             scrollView.zoomScale = 1.0
@@ -336,14 +336,14 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     
     /// Scrolls so that `rect` is just visible (nearest edges).
     /// Does nothing if `rect` completely visible.
-    public func scrollRectToVisible(rect: CGRect, animated: Bool) {
+    open func scrollRectToVisible(_ rect: CGRect, animated: Bool) {
         contentScrollView.scrollRectToVisible(rect, animated: animated)
     }
     
     // MARK: - ** Private Methods ** -
     
     /// Updates the dimensions of the vertical scroll indicator
-    private func updateScrollIndicator() {
+    fileprivate func updateScrollIndicator() {
         
         guard let scrollView = scrollView else { return }
         guard scrollView.contentSize.height > 0 else { return }
@@ -366,7 +366,7 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
         
         scrollIndicator.alpha = 1.0
         delay(0.5) {
-            UIView.animateWithDuration(0.25, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 self.scrollIndicator.alpha = 0.0
             })
         }
@@ -374,7 +374,7 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     }
     
     /// Updates the dimensions of the inner scroll view
-    private func updateDimensions() {
+    fileprivate func updateDimensions() {
         
         let margin =
             (contentSize.width * zoomScale <= width) ?
@@ -389,8 +389,8 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
                                                       left: margin,
                                                       bottom: 0.0,
                                                       right: margin)
-        contentScrollView.contentSize = CGSizeMake(
-            contentSize.width * zoomScale, height - verticalOffset)
+        contentScrollView.contentSize = CGSize(
+            width: contentSize.width * zoomScale, height: height - verticalOffset)
         
         scrollView?.setNeedsDisplay()
         scrollView?.contentInset = UIEdgeInsets(
@@ -403,7 +403,7 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     }
     
     /// Shows the scale view for 0.5 seconds
-    private func showScaleView() {
+    fileprivate func showScaleView() {
         
         scaleLabel.text = "\(round(zoomScale * 100))%"
         
@@ -417,9 +417,9 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
             
             scaleView.alpha = 0.0
             
-            UIView.animateWithDuration(0.5) {
+            UIView.animate(withDuration: 0.5, animations: {
                 self.scaleView.alpha = 1.0
-            }
+            }) 
             
             delay(0.5) { self.hideScaleView() }
             
@@ -428,13 +428,13 @@ public class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     }
     
     /// Hides the scale view
-    private func hideScaleView() {
-        UIView.animateWithDuration(0.5, animations: { 
+    fileprivate func hideScaleView() {
+        UIView.animate(withDuration: 0.5, animations: { 
             self.scaleView.alpha = 0.0
-        }) { (Bool) in
+        }, completion: { (Bool) in
             self.scaleView.removeFromSuperview()
             self.scaleViewVisible = false
-        }
+        }) 
     }
     
 }

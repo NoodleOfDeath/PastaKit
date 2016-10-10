@@ -11,15 +11,15 @@ import UIKit
 extension NSObject {
     
     public func beginObserving(selector aSelector: Selector, name aName: String?, object anObject: AnyObject?) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: aSelector, name: aName, object: anObject)
+        NotificationCenter.default.addObserver(self, selector: aSelector, name: aName.map { NSNotification.Name(rawValue: $0) }, object: anObject)
     }
     
     public func stopObserving(name aName: String?, object anObject: AnyObject?) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: aName, object: anObject)
+        NotificationCenter.default.removeObserver(self, name: aName.map { NSNotification.Name(rawValue: $0) }, object: anObject)
     }
     
-    public func postNotificationName(name: String, object anObject: AnyObject? = nil, userInfo info: [NSObject: AnyObject]? = nil) {
-        NSNotificationCenter.defaultCenter().postNotificationName(name, object: (anObject ?? self), userInfo: info)
+    public func postNotificationName(_ name: String, object anObject: AnyObject? = nil, userInfo info: [AnyHashable: Any]? = nil) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: name), object: (anObject ?? self), userInfo: info)
     }
     
 }

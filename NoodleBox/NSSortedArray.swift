@@ -12,41 +12,42 @@ import Foundation
 
 private struct CodingKeys {
     static let SortOrder = "SortOrder"
-    static let Values = "Values"
+    static let elements = "elements"
 }
 
 // MARK: - ** NSSortedArray Class **
 
 /// An array class that automatically places elements in order as
 /// they added to the collection.
-public class NSSortedArray <Value: Comparable> : NSObject, CollectionType, NSCoding {
+open class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding {
     
     // MARK: - CollectionType
     
     public typealias Index = Int
-    public typealias Generator = IndexingGenerator<NSSortedArray<Value>>
+    public typealias Iterator = IndexingIterator<NSSortedArray<Element>>
     
-    public var startIndex: Index { return 0 }
-    public var endIndex: Index { return values.count }
-    public var range: Range<Index> { return 0 ..< values.count }
-    public var count: Int { return values.count }
+    open var startIndex: Index { return 0 }
+    open var endIndex: Index { return elements.count }
+    open var range: CountableRange<Index> { return 0 ..< elements.count }
+    open var count: Int { return elements.count }
     
     // MARK: - CustomStringConvertible
     
-    public override var description: String { return "\(values)" }
+    open override var description: String { return "\(elements)" }
     
     // MARK: - NSSortedArray
     
     /// The order in which to sort array elements.
-    public var sortOrder: SortOrder {
-        willSet { if sortOrder != newValue { values = values.reverse() } }
-    }
+    open var sortOrder: SortOrder { return backingStorage.sortOrder }
     
     /// The elements of this array.
-    public private (set) var values = [Value]()
+    open var elements: [Element] { return backingStorage.elements }
     
     /// Whether or not to allow duplicate elements to be added to this array.
-    public var uniqueElements: Bool = true
+    open var uniqueElements: Bool { return backingStorage.uniqueElements }
+    
+    /// 
+    fileprivate var backingStorage: SortedArray<Element>
     
     // MARK: - ** Constructor Methods **
     
@@ -55,68 +56,60 @@ public class NSSortedArray <Value: Comparable> : NSObject, CollectionType, NSCod
     /// Verbose constructor in which the sort order can be established at
     /// initialization.
     /// - parameter sortOrder: The order in which to sort array elements.
-    /// - parameter values: The initial elements to populate this array.
-    /// - note: The initial values parameter need not be sorted, as it will
+    /// - parameter elements: The initial elements to populate this array.
+    /// - note: The initial elements parameter need not be sorted, as it will
     /// automatically be sorted upon initialization.
-    /// - returns: An array structure instance with sorted values.
-    public init(sortOrder: SortOrder = .Ascending, values: [Value] = [Value]()) {
-        self.sortOrder = sortOrder
-        self.values = values.sort({ (a: Value, b: Value) -> Bool in
-            return sortOrder == .Ascending ? (a < b) : (b < a)
-        })
+    /// - returns: An array structure instance with sorted elements.
+    public init(sortOrder: SortOrder = .ascending, elements: [Element] = [Element]()) {
+        backingStorage = SortedArray<Element>(sortOrder: sortOrder, elements: elements)
     }
     
     /// Convenience constructor that sets the inital array elements.
-    /// - parameter values: The initial elements to populate this array.
-    /// - returns: An array structure instance with sorted values in
+    /// - parameter elements: The initial elements to populate this array.
+    /// - returns: An array structure instance with sorted elements in
     /// ascending order.
-    public init(_ values: [Value]) {
-        sortOrder = .Ascending
-        self.values = values.sort({ (a: Value, b: Value) -> Bool in
-            return a < b
-        })
-    }
-    
-    /// Duplicating constructor.
-    /// - parameter sortedArray: Another array to initialize from.
-    /// - returns: An array structure instance with sorted values
-    /// identical to `sortedArray`.
-    public init(_ sortedArray: NSSortedArray<Value>) {
-        sortOrder = sortedArray.sortOrder
-        values = sortedArray.values
+    public init(_ elements: [Element]) {
+        backingStorage = SortedArray<Element>(sortOrder: .ascending, elements: elements)
     }
     
     /// Bridging constructor from a `SortedArray` structure instance.
     /// - parameter sortedArray: Another array to initialize from.
-    /// - returns: An array class instance with sorted values
+    /// - returns: An array class instance with sorted elements
     /// identical to `sortedArray`.
-    public init(_ sortedArray: SortedArray<Value>) {
-        sortOrder = sortedArray.sortOrder
-        values = sortedArray.values
+    public init(_ sortedArray: SortedArray<Element>) {
+        backingStorage = sortedArray
+    }
+    
+    /// Duplicating constructor.
+    /// - parameter sortedArray: Another array to initialize from.
+    /// - returns: An array structure instance with sorted elements
+    /// identical to `sortedArray`.
+    public init(_ sortedArray: NSSortedArray<Element>) {
+        backingStorage = sortedArray.backingStorage
     }
     
     // MARK: - NSCoding
     
     public convenience required init?(coder aDecoder: NSCoder) {
-        guard let sortOrder = SortOrder(rawValue: aDecoder.decodeIntegerForKey(CodingKeys.SortOrder)) else { return nil }
-        guard let values = aDecoder.decodeObjectForKey(CodingKeys.Values) as? [Value] else { return nil }
-        self.init(sortOrder: sortOrder, values: values)
+        guard let sortOrder = SortOrder(rawValue: aDecoder.decodeInteger(forKey: CodingKeys.SortOrder)) else { return nil }
+        guard let elements = aDecoder.decodeObject(forKey: CodingKeys.elements) as? [Element] else { return nil }
+        self.init(sortOrder: sortOrder, elements: elements)
     }
     
-    public func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeInteger(sortOrder.rawValue, forKey: CodingKeys.SortOrder)
-        aCoder.encodeObject(values, forKey: CodingKeys.Values)
+    open func encode(with aCoder: NSCoder) {
+        aCoder.encode(sortOrder.rawValue, forKey: CodingKeys.SortOrder)
+        aCoder.encode(elements, forKey: CodingKeys.elements)
     }
     
     // MARK: - CollectionType
     
-    public subscript (index: Index) -> Value {
-        get { return values[index] }
-        set { values[index] = newValue }
+    open subscript (index: Index) -> Element {
+        get { return backingStorage[index] }
+        set { backingStorage[index] = newValue }
     }
     
-    public func generate() -> Generator {
-        return Generator(NSSortedArray(values: values))
+    open func makeIterator() -> Iterator {
+        return Iterator(NSSortedArray(self))
     }
     
     /// Insert `newElement` at index `i`.
@@ -124,8 +117,8 @@ public class NSSortedArray <Value: Comparable> : NSObject, CollectionType, NSCod
     /// - requires: `i <= count`.
     ///
     /// - complexity: O(`self.count`).
-    public func insert(value: Value, atIndex index: Index) {
-        values.insert(value, atIndex: index)
+    open func insert(_ element: Element, atIndex index: Index) {
+        backingStorage.insert(element, atIndex: index)
     }
     
     /// Remove and return the element at index `i`.
@@ -133,8 +126,8 @@ public class NSSortedArray <Value: Comparable> : NSObject, CollectionType, NSCod
     /// Invalidates all indices with respect to `self`.
     ///
     /// - complexity: O(`self.count`).
-    public func removeAtIndex(index: Index) -> Value {
-        return values.removeAtIndex(index)
+    open func removeAtIndex(_ index: Index) -> Element {
+        return backingStorage.removeAtIndex(index)
     }
     
     /// Remove all elements.
@@ -142,102 +135,63 @@ public class NSSortedArray <Value: Comparable> : NSObject, CollectionType, NSCod
     /// - postcondition: `capacity == 0` iff `keepCapacity` is `false`.
     ///
     /// - complexity: O(`self.count`).
-    public func removeAll(keepCapacity keepCapacity: Bool = false) {
-        values.removeAll(keepCapacity: keepCapacity)
+    open func removeAll(keepCapacity: Bool = false) {
+        backingStorage.removeAll(keepCapacity: keepCapacity)
     }
     
     // MARK: - NSSortedArray
     
-    /// Returns the first index where `value` appears in `self` or `nil` if
-    /// `value` is not found.
+    /// Returns the first index where `element` appears in `self` or `nil` if
+    /// `element` is not found.
     ///
     /// - note: This is a significantly less costly implementation of the
     /// default system method `indexOf(element: Element)`.
     ///
     /// - complexity: O(`log(self.count)`)
     ///
-    /// - parameter value: The value to search for.
+    /// - parameter element: The element to search for.
     /// - parameter range: The range to search within. If `nil` the entire
     /// range of elements are searched.
-    /// - returns: The first index where `value` appears in `self` or `nil` if
-    /// `value` is not found.
-    @warn_unused_result
-    public func indexOf(value: Value, searchRange range: Range<Index>? = nil) -> Index? {
-        
-        if values.count == 0 { return nil }
-        
-        let range = range ?? 0 ..< values.count
-        let index = (range.startIndex + range.length / 2)
-        let val = values[index]
-        
-        if range.length == 1 {
-            return val == value ? index : nil
-        } else if (val > value && sortOrder == .Ascending) || (val < value && sortOrder == .Descending) {
-            return indexOf(value, searchRange: range.startIndex ..< index)
-        }
-        
-        return indexOf(value, searchRange: index ..< range.endIndex)
-        
+    /// - returns: The first index where `element` appears in `self` or `nil` if
+    /// `element` is not found.
+    
+    open func indexOf(_ element: Element, searchRange range: CountableRange<Index>? = nil) -> Index? {
+        return backingStorage.indexOf(element, searchRange: range)
     }
     
-    /// Returns the first index where `value` would be placed in sorted order
+    /// Returns the first index where `element` would be placed in sorted order
     /// in `self`.
     ///
     /// - complexity: O(`log(self.count)`)
     ///
-    /// - parameter value: The value to search for.
+    /// - parameter element: The element to search for.
     /// - parameter range: The range to search within. If `nil` the entire
     /// range of elements are searched.
-    /// - returns: The first index where `value` would be placed in sorted
+    /// - returns: The first index where `element` would be placed in sorted
     /// order in `self`.
-    @warn_unused_result
-    public func ordinalIndexForValue(value: Value, searchRange range: Range<Index>? = nil) -> Index {
-        
-        if values.count == 0 { return 0 }
-        
-        let range = range ?? 0 ..< values.count
-        let index = (range.startIndex + range.length / 2)
-        let val = values[index]
-        
-        if range.length == 1 {
-            return (val > value && sortOrder == .Ascending) || (val < value && sortOrder == .Descending) ? index : index + 1
-        } else if (val > value && sortOrder == .Ascending) || (val < value && sortOrder == .Descending) {
-            return ordinalIndexForValue(value, searchRange: range.startIndex ..< index)
-        }
-        
-        return ordinalIndexForValue(value, searchRange: index ..< range.endIndex)
-        
+    
+    open func ordinalIndexForElement(_ element: Element, searchRange range: CountableRange<Index>? = nil) -> Index {
+        return backingStorage.ordinalIndexForElement(element, searchRange: range)
     }
     
-    /// Adds a value to `self` in sorted order.
-    /// - parameter value: The value to add.
-    /// - returns: The index where `value` was inserted, or `nil` if
-    /// `uniqueElements` is set to `true` and `value` already exists in
+    /// Adds a element to `self` in sorted order.
+    /// - parameter element: The element to add.
+    /// - returns: The index where `element` was inserted, or `nil` if
+    /// `uniqueElements` is set to `true` and `element` already exists in
     /// `self.
     ///
     /// - complexity: O(`log(self.count)`)
-    public func add(value: Value) -> Index? {
-        var index = 0
-        if values.count == 0 { values.append(value) }
-        else {
-            if uniqueElements && indexOf(value) != nil { return nil }
-            index = ordinalIndexForValue(value)
-            values.insert(value, atIndex: index)
-        }
-        return index
+    open func add(_ element: Element, offset: Int = 0) -> Index? {
+        return backingStorage.add(element, offset: offset)
     }
     
-    /// Removes all instances of `value` from `self`
-    /// - parameter value: The `value` to remove from `self`.
+    /// Removes all instances of `element` from `self`
+    /// - parameter element: The `element` to remove from `self`.
     ///
     /// - complexity: O(`log(self.count) * n`) where `n` is the number of
-    /// times `value` occurs in `self`.
-    public func remove(value: Value){
-        var index = indexOf(value)
-        while index != nil {
-            values.removeAtIndex(index!)
-            index = indexOf(value)
-        }
+    /// times `element` occurs in `self`.
+    open func remove(_ element: Element) {
+        backingStorage.remove(element)
     }
     
 }

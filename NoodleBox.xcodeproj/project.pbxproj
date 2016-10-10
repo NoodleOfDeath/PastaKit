@@ -435,6 +435,7 @@
 				TargetAttributes = {
 					CDD116B91D592C9F004A9DBC = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -665,6 +666,7 @@
 				PRODUCT_NAME = NoodleBox;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -689,6 +691,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.NoodleNation.NoodleBox;
 				PRODUCT_NAME = NoodleBox;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

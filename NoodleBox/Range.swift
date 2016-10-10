@@ -10,17 +10,17 @@ import Foundation
 
 /// 
 public postfix func * (argument: Range<Int>) -> NSRange {
-    return NSMakeRange(argument.startIndex, argument.length)
+    return NSMakeRange(argument.lowerBound, argument.length)
 }
 
 /// 
-public postfix func * (argument: NSRange) -> Range<Int> {
+public postfix func * (argument: NSRange) -> CountableRange<Int> {
     return argument.location ..< argument.maxRange
 }
 
-extension Range where Element : IntegerType {
+extension Range where Element : Integer {
     
     /// 
-    public var length: Element { return endIndex - startIndex }
+    public var length: Element { return upperBound - lowerBound }
     
 }

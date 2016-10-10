@@ -14,7 +14,7 @@ public func == (lhs: NBPopoverAction, rhs: NBPopoverAction) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
 
-public struct NBPopoverAction : OptionSetType, Hashable {
+public struct NBPopoverAction : OptionSet, Hashable {
     
     public typealias DynamicType = NBPopoverAction
     public typealias RawValue = Int
@@ -44,38 +44,36 @@ public struct NBPopoverAction : OptionSetType, Hashable {
 }
 
 public protocol NBPopoverViewControllerDelegate : UIPopoverPresentationControllerDelegate {
-    func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?)
-    func popoverViewController(popoverViewController: NBPopoverViewController, didRequestAction: NBPopoverAction, userInfo: AnyObject?, responder: AnyObject?)
-    func popoverViewControllerDidResign(popoverViewController: NBPopoverViewController)
+    func presentViewController(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?)
+    func popoverViewController(_ popoverViewController: NBPopoverViewController, didRequestAction action: NBPopoverAction, userInfo: AnyObject?, responder: AnyObject?)
+    func popoverViewControllerDidResign(_ popoverViewController: NBPopoverViewController)
 }
 
 extension NBPopoverViewControllerDelegate {
-    public func popoverViewController(popoverViewController: NBPopoverViewController, didRequestAction: NBPopoverAction, userInfo: AnyObject?, responder: AnyObject?) {}
-    public func popoverViewControllerDidResign(popoverViewController: NBPopoverViewController) {}
+    public func popoverViewController(_ popoverViewController: NBPopoverViewController, didRequestAction action: NBPopoverAction, userInfo: AnyObject?, responder: AnyObject?) {}
+    public func popoverViewControllerDidResign(_ popoverViewController: NBPopoverViewController) {}
 }
-
-extension UIViewController : NBPopoverViewControllerDelegate {}
 
 // MARK: - ** NBPopoverViewController Class **
 
 ///
-public class NBPopoverViewController: UIViewController {
+open class NBPopoverViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
-    public weak var delegate: NBPopoverViewControllerDelegate?
+    open weak var delegate: NBPopoverViewControllerDelegate?
     
     // MARK: - ** Get-Only Properties **
     
-    public var name: String! = ""
+    open var name: String! = ""
     
-    public weak var responder: AnyObject?
+    open weak var responder: AnyObject?
     
-    public var actions: NBPopoverAction = [.Done] {
+    open var actions: NBPopoverAction = [.Done] {
         didSet { updateActions() }
     }
     
-    public var overrideDimiss: Bool = false
+    open var overrideDimiss: Bool = false
     
-    public var actionTitles: [NBPopoverAction : String] = [
+    open var actionTitles: [NBPopoverAction : String] = [
             .Cancel : LSCancel,
             .Apply  : LSApply,
             .Done   : LSDone,
@@ -83,7 +81,7 @@ public class NBPopoverViewController: UIViewController {
         didSet { updateActions() }
     }
     
-    public var actionsEnabled: [NBPopoverAction : Bool] = [
+    open var actionsEnabled: [NBPopoverAction : Bool] = [
             .Cancel : true,
             .Apply  : false,
             .Done   : true,
@@ -91,34 +89,34 @@ public class NBPopoverViewController: UIViewController {
         didSet { updateActions() }
     }
     
-    public var userInfo: AnyObject?
+    open var userInfo: AnyObject?
     
     // MARK: - ** Private Properties **
     
-    private lazy var cancelButton: UIBarButtonItem = {
+    fileprivate lazy var cancelButton: UIBarButtonItem = {
         let cancelButton = UIBarButtonItem(
             title: self.actionTitles[.Cancel],
             target: self,
             action: #selector(didPressCancelBarButtonItem(_:)))
-        cancelButton.enabled = self.actionsEnabled[.Cancel] ?? false
+        cancelButton.isEnabled = self.actionsEnabled[.Cancel] ?? false
         return cancelButton
     }()
     
-    private lazy var applyButton: UIBarButtonItem = {
+    fileprivate lazy var applyButton: UIBarButtonItem = {
         let applyButton = UIBarButtonItem(
             title: self.actionTitles[.Apply],
             target: self, 
             action: #selector(didPressApplyBarButtonItem(_:)))
-        applyButton.enabled = self.actionsEnabled[.Apply] ?? false
+        applyButton.isEnabled = self.actionsEnabled[.Apply] ?? false
         return applyButton
     }()
     
-    private lazy var doneButton: UIBarButtonItem = {
+    fileprivate lazy var doneButton: UIBarButtonItem = {
         let doneButton = UIBarButtonItem(
             title: self.actionTitles[.Done], 
             target: self, 
             action: #selector(didPressDoneBarButtonItem(_:)))
-        doneButton.enabled = self.actionsEnabled[.Done] ?? false
+        doneButton.isEnabled = self.actionsEnabled[.Done] ?? false
         return doneButton
     }()
     
@@ -133,7 +131,7 @@ public class NBPopoverViewController: UIViewController {
         self.responder = responder
     }
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         updateActions()
         beginObservations()
@@ -141,7 +139,7 @@ public class NBPopoverViewController: UIViewController {
     
     // MARK: - ** Internal Methods **
     
-    public func updateActions() {
+    open func updateActions() {
         
         navigationItem.leftBarButtonItems = nil
         navigationItem.rightBarButtonItem = nil
@@ -171,7 +169,7 @@ public class NBPopoverViewController: UIViewController {
         
     }
     
-    public func beginObservations() {
+    open func beginObservations() {
         
         beginObserving(
             selector: #selector(didUpdateUserInfo(_:)), 
@@ -180,27 +178,26 @@ public class NBPopoverViewController: UIViewController {
         
     }
     
-    public func presentWithDelegate(delegate: NBPopoverViewControllerDelegate, barButtonItem: UIBarButtonItem? = nil, completion: (() -> Void)? = nil) {
-        
-        self.delegate = delegate
+    open func presentWithDelegate(_ delegate: NBPopoverViewControllerDelegate, barButtonItem: UIBarButtonItem? = nil, completion: (() -> Void)? = nil) {
         
         let nav = embeddedInsideNavigationController()
-        nav.modalPresentationStyle = .Popover
+        nav.modalPresentationStyle = .popover
         
         delegate.presentViewController(nav, animated: true) { () -> Void in
             completion?()
         }
         
+        self.delegate = delegate
+        
         guard UIDevice.splitViewSupported(), let controller = navigationController?.popoverPresentationController else { return }
         
-        controller.permittedArrowDirections = .Any
+        controller.permittedArrowDirections = .any
         controller.barButtonItem = barButtonItem
-        controller.delegate = delegate
         
     }
     
-    public func dismiss(completion: (() -> Void)? = nil) {
-        navigationController?.dismissViewControllerAnimated(true) { () -> Void in
+    open func dismiss(_ completion: (() -> Void)? = nil) {
+        navigationController?.dismiss(animated: true) { () -> Void in
             completion?()
             self.delegate?.popoverViewControllerDidResign(self)
         }
@@ -211,18 +208,18 @@ public class NBPopoverViewController: UIViewController {
     // MARK: - ** Action Handlers **
     
     @objc
-    private func didPressCancelBarButtonItem(barButtonItem: UIBarButtonItem) {
+    fileprivate func didPressCancelBarButtonItem(_ barButtonItem: UIBarButtonItem) {
         delegate?.popoverViewController(self, didRequestAction: [.Cancel], userInfo: userInfo, responder: responder)
         dismiss()
     }
     
     @objc
-    private func didPressApplyBarButtonItem(barButtonItem: UIBarButtonItem) {
+    fileprivate func didPressApplyBarButtonItem(_ barButtonItem: UIBarButtonItem) {
         delegate?.popoverViewController(self, didRequestAction: [.Apply], userInfo: userInfo, responder: responder)
     }
     
     @objc
-    private func didPressDoneBarButtonItem(barButtonItem: UIBarButtonItem) {
+    fileprivate func didPressDoneBarButtonItem(_ barButtonItem: UIBarButtonItem) {
         delegate?.popoverViewController(self, didRequestAction: [.Apply, .Done], userInfo: userInfo, responder: responder)
         if !overrideDimiss { dismiss() }
     }
@@ -230,7 +227,7 @@ public class NBPopoverViewController: UIViewController {
     // MARK: - ** Notification Handlers **
     
     @objc
-    private func didUpdateUserInfo(notification: NSNotification) {
+    fileprivate func didUpdateUserInfo(_ notification: Notification) {
         updateActions()
     }
 

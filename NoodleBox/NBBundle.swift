@@ -17,12 +17,12 @@ public let NBBundleResourcePath: String = NSResourcePath +/ "Bundles"
 /// Composite class for `NSBundle` that can be overridden and used to
 /// represent a group of bundles in a directory with similar extension and
 /// functionality
-public class NBBundle : NSObject, NSCoding {
+open class NBBundle : NSObject, NSCoding {
     
     // MARK: - ** Static Properties **
     
     /// Encoding/decoding keys
-    private struct CodingKeys {
+    fileprivate struct CodingKeys {
         /// Key used to encode `name` property.
         static let Name = "Name"
         /// Key used to encode `bundlePath` property.
@@ -32,7 +32,7 @@ public class NBBundle : NSObject, NSCoding {
     }
     
     /// Info Dictionary Keys
-    private struct InfoKeys {
+    fileprivate struct InfoKeys {
         /// Key used to access the `version` property.
         static let Version = "Version"
     }
@@ -40,17 +40,17 @@ public class NBBundle : NSObject, NSCoding {
     // MARK: - Get-Only
     
     /// Default bundle name to use
-    public class var defaultName: String {
+    open class var defaultName: String {
         return "Default"
     }
     
     /// Default directory path for all bundles of this type
-    public class var defaultBundlePath: String {
+    open class var defaultBundlePath: String {
         return NBBundleResourcePath
     }
     
     /// Default extension for all bundles of this type
-    public class var defaultBundleExtension: String {
+    open class var defaultBundleExtension: String {
         return "bundle"
     }
 
@@ -59,38 +59,38 @@ public class NBBundle : NSObject, NSCoding {
     // MARK: - Get-Only
     
     /// Name of this bundle without the extension
-    public let name: String
+    open let name: String
     
     /// Embedded `NSBundle` instance
-    private (set) var bundle: NSBundle?
+    fileprivate (set) var bundle: Bundle?
     
     /// Bundle dirctory path of this `NBBundle` instance
-    private (set) var bundlePath: String!
+    fileprivate (set) var bundlePath: String!
     
     /// Bundle extension of this `NBBundle` instance
-    private (set) var bundleExtension: String!
+    fileprivate (set) var bundleExtension: String!
     
     // MARK: - Composite (NSBundle)
     
     /// The bundle info dictionary
-    public var info: NSDictionary? { return bundle?.infoDictionary }
+    open var info: NSDictionary? { return bundle?.infoDictionary as NSDictionary? }
     
     /// The version of this bundle represented as the modified date
     /// concatenated to the bundle version
-    public var version: String {
+    open var version: String {
         return (info?[InfoKeys.Version] as? String ?? "0.0.0") +
             ((bundle?.bundleURL +/ "Contents/Info.plist")?.dateModified.format()
-                ?? NSDate.distantPast().format()) }
+                ?? Date.distantPast.format()) }
 
     // MARK: - ** Constructor Methods **
     
     public override init() {
-        name = self.dynamicType.defaultName
-        bundlePath = self.dynamicType.defaultBundlePath
-        bundleExtension = self.dynamicType.defaultBundleExtension
-        if let path = self.dynamicType.bundlePathForName(
+        name = type(of: self).defaultName
+        bundlePath = type(of: self).defaultBundlePath
+        bundleExtension = type(of: self).defaultBundleExtension
+        if let path = type(of: self).bundlePathForName(
             name, bundlePath: bundlePath, bundleExtension: bundleExtension) {
-            bundle = NSBundle(path: path)
+            bundle = Bundle(path: path)
         }
         super.init()
     }
@@ -103,18 +103,18 @@ public class NBBundle : NSObject, NSCoding {
                   bundleExtension: String? = nil) {
         self.name = name
         super.init()
-        bundle = self.dynamicType.bundleForName(
+        bundle = type(of: self).bundleForName(
             name, bundlePath: bundlePath, bundleExtension: bundleExtension)
-        self.bundlePath = bundlePath ?? self.dynamicType.defaultBundlePath
+        self.bundlePath = bundlePath ?? type(of: self).defaultBundlePath
         self.bundleExtension =
-            bundleExtension ?? self.dynamicType.defaultBundleExtension
+            bundleExtension ?? type(of: self).defaultBundleExtension
     }
     
     public required convenience init?(coder aDecoder: NSCoder) {
         guard
-            let name = aDecoder.decodeObjectForKey(CodingKeys.Name) as? String,
-            let bundlePath = aDecoder.decodeObjectForKey(CodingKeys.BundlePath) as? String,
-            let bundleExtension = aDecoder.decodeObjectForKey(CodingKeys.BundleExtension) as? String else { return nil }
+            let name = aDecoder.decodeObject(forKey: CodingKeys.Name) as? String,
+            let bundlePath = aDecoder.decodeObject(forKey: CodingKeys.BundlePath) as? String,
+            let bundleExtension = aDecoder.decodeObject(forKey: CodingKeys.BundleExtension) as? String else { return nil }
         self.init(name: name, bundlePath: bundlePath, bundleExtension: bundleExtension)
     }
 
@@ -128,10 +128,10 @@ public class NBBundle : NSObject, NSCoding {
     
     // MARK: - NSCoding
     
-    public func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(name, forKey: CodingKeys.Name)
-        aCoder.encodeObject(bundlePath, forKey: CodingKeys.BundlePath)
-        aCoder.encodeObject(bundleExtension, forKey: CodingKeys.BundleExtension)
+    open func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: CodingKeys.Name)
+        aCoder.encode(bundlePath, forKey: CodingKeys.BundlePath)
+        aCoder.encode(bundleExtension, forKey: CodingKeys.BundleExtension)
     }
     
     // MARK: - ** Internal Methods **
@@ -149,7 +149,7 @@ public class NBBundle : NSObject, NSCoding {
     /// - note: This method only builds a path string, it does not imply
     /// anything about the existence of bundle in the filesystem or its
     /// configuration.
-    public static func bundlePathForName(name: String, bundlePath: String? = nil, bundleExtension: String? = nil) -> String? {
+    open static func bundlePathForName(_ name: String, bundlePath: String? = nil, bundleExtension: String? = nil) -> String? {
         return { bundlePath ?? defaultBundlePath }() +/ name +* (bundleExtension ?? defaultBundleExtension)
     }
     
@@ -166,9 +166,9 @@ public class NBBundle : NSObject, NSCoding {
     /// - returns: The `NSBundle` object located in the directory `bundlePath`
     /// named `name` and with the extension `bundleExtension`, or `nil`
     /// if no such item exists in the filesystem.
-    public static func bundleForName(name: String, bundlePath: String? = nil, bundleExtension: String? = nil) -> NSBundle? {
+    open static func bundleForName(_ name: String, bundlePath: String? = nil, bundleExtension: String? = nil) -> Bundle? {
         guard let path = bundlePathForName(name, bundlePath: bundlePath ?? defaultBundlePath, bundleExtension: bundleExtension ?? defaultBundleExtension) else { return nil }
-        return NSBundle(path: path)
+        return Bundle(path: path)
     }
     
     /// Returns the version of a bundle at the given `bundlePath` named
@@ -181,7 +181,7 @@ public class NBBundle : NSObject, NSCoding {
     /// set to `nil` the the static `defaultBundleExtension` value will be
     /// used instead
     /// - returns: The version of the bundle as a string
-    public static func versionForBundleNamed(name: String, bundlePath: String? = nil, bundleExtension: String? = nil) -> String? {
+    open static func versionForBundleNamed(_ name: String, bundlePath: String? = nil, bundleExtension: String? = nil) -> String? {
         return NBBundle(name: name, bundlePath: bundlePath ?? defaultBundlePath, bundleExtension: bundleExtension ?? defaultBundleExtension).version
     }
     
@@ -192,7 +192,7 @@ public class NBBundle : NSObject, NSCoding {
     /// formats, include the filename extension in the name.
     /// - returns: The image object that best matches the desired traits
     /// with the given `name`, or `nil` if no suitable image was found.
-    public func imageNamed(name: String) -> UIImage? {
+    open func imageNamed(_ name: String) -> UIImage? {
         return bundle?.imageNamed(name)
     }
 

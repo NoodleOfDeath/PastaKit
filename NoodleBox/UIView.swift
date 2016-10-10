@@ -37,13 +37,13 @@ extension UIView {
     /// The `width` dimension of `self.frame.size`.
     public var width: CGFloat {
         get { return frame.size.width }
-        set { frame.size = CGSizeMake(newValue, height) }
+        set { frame.size = CGSize(width: newValue, height: height) }
     }
     
     /// The `height` dimension of `self.frame.size`.
     public var height: CGFloat {
         get { return frame.height }
-        set { frame.size = CGSizeMake(width, newValue) }
+        set { frame.size = CGSize(width: width, height: newValue) }
     }
     
 }
@@ -61,73 +61,73 @@ extension UIView {
     }
     
     /// 
-    public func widthLayoutConstraint(width: CGFloat) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .Width, relativeToView: nil, constant: width)
+    public func widthLayoutConstraint(_ width: CGFloat) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .width, relativeToView: nil, constant: width)
     }
     
     /// 
-    public func heightLayoutConstraint(height: CGFloat) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .Height, relativeToView: nil, constant: height)
+    public func heightLayoutConstraint(_ height: CGFloat) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .height, relativeToView: nil, constant: height)
     }
     
     /// 
-    public func widthLayoutConstraintRelativeToView(view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .Width, relativeToView: view, multiplier: m, constant: c)
+    public func widthLayoutConstraintRelativeToView(_ view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .width, relativeToView: view, multiplier: m, constant: c)
     }
     
     /// 
-    public func heightLayoutConstraintRelativeToView(view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .Height, relativeToView: view, multiplier: m, constant: c)
+    public func heightLayoutConstraintRelativeToView(_ view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .height, relativeToView: view, multiplier: m, constant: c)
     }
     
     /// 
-    public func leftLayoutConstraintRelativeToView(view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .Left, relativeToView: view, multiplier: m, constant: c)
+    public func leftLayoutConstraintRelativeToView(_ view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .left, relativeToView: view, multiplier: m, constant: c)
     }
     
     /// 
-    public func rightLayoutConstraintRelativeToView(view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .Right, relativeToView: view, multiplier: m, constant: c)
+    public func rightLayoutConstraintRelativeToView(_ view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .right, relativeToView: view, multiplier: m, constant: c)
     }
     
     /// 
-    public func topLayoutConstraintRelativeToView(view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .Top, relativeToView: view, multiplier: m, constant: c)
+    public func topLayoutConstraintRelativeToView(_ view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .top, relativeToView: view, multiplier: m, constant: c)
     }
     
     /// 
-    public func bottomLayoutConstraintRelativeToView(view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .Bottom, relativeToView: view, multiplier: m, constant: c)
+    public func bottomLayoutConstraintRelativeToView(_ view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .bottom, relativeToView: view, multiplier: m, constant: c)
     }
     
     /// 
-    public func horizontalSpacingLayoutConstraintRelativeToView(view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .Right, relativeToView: view, attribute: .Left, multiplier: m, constant: c)
+    public func horizontalSpacingLayoutConstraintRelativeToView(_ view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .right, relativeToView: view, attribute: .left, multiplier: m, constant: c)
     }
     
     /// 
-    public func verticalSpacingLayoutConstraintRelativeToView(view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .Bottom, relativeToView: view, attribute: .Top, multiplier: m, constant: c)
+    public func verticalSpacingLayoutConstraintRelativeToView(_ view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .bottom, relativeToView: view, attribute: .top, multiplier: m, constant: c)
     }
     
     /// 
-    public func centerXLayoutConstraint(centerX: CGFloat) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .CenterX, relativeToView: nil, constant: centerX)
+    public func centerXLayoutConstraint(_ centerX: CGFloat) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .centerX, relativeToView: nil, constant: centerX)
     }
     
     /// 
-    public func centerYLayoutConstraint(centerY: CGFloat) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .CenterY, relativeToView: nil, constant: centerY)
+    public func centerYLayoutConstraint(_ centerY: CGFloat) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .centerY, relativeToView: nil, constant: centerY)
     }
     
     /// 
-    public func centerXLayoutConstraintRelativeToView(view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .CenterX, relativeToView: view, multiplier: m, constant: c)
+    public func centerXLayoutConstraintRelativeToView(_ view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .centerX, relativeToView: view, multiplier: m, constant: c)
     }
     
     /// 
-    public func centerYLayoutConstraintRelativeToView(view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
-        return layoutConstraint(attribute: .CenterY, relativeToView: view, multiplier: m, constant: c)
+    public func centerYLayoutConstraintRelativeToView(_ view: UIView, multiplier m: CGFloat = 1.0, constant c: CGFloat = 0.0) -> NSLayoutConstraint {
+        return layoutConstraint(attribute: .centerY, relativeToView: view, multiplier: m, constant: c)
     }
     
     /// Constrains a subview to its superview using auto-layout constaints.

@@ -9,32 +9,32 @@
 import UIKit
 
 /// Convenience `NSDate` exetensions
-extension NSDate {
+extension Date {
     
     /// 
-    public convenience init(dateString:String) {
-        let dateStringFormatter = NSDateFormatter()
+    public init(dateString:String) {
+        let dateStringFormatter = DateFormatter()
         dateStringFormatter.dateFormat = "yyyy-MM-dd"
-        dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        let d = dateStringFormatter.dateFromString(dateString)!
-        self.init(timeInterval:0, sinceDate:d)
+        dateStringFormatter.locale = Locale(identifier: "en_US_POSIX")
+        let d = dateStringFormatter.date(from: dateString)!
+        (self as NSDate).init(timeInterval:0, since:d)
     }
     
     /// Get a formated string using full date style
     /// - returns: A formatted string that represents a date in full date style.
     public func format() -> String {
-        return formatWithDateStyle(.FullStyle, timeStyle: .FullStyle)
+        return formatWithDateStyle(.full, timeStyle: .full)
     }
     
     /// Get a formated string that conforms to a particular date and time style.
     /// - parameter dateStyle: The style for formatting the date.
     /// - parameter timeStyle: The style for formatting the time.
     /// - returns: A formatted string that represents a date.
-    public func formatWithDateStyle(dateStyle: NSDateFormatterStyle, timeStyle: NSDateFormatterStyle) -> String {
-        let formatter = NSDateFormatter()
+    public func formatWithDateStyle(_ dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> String {
+        let formatter = DateFormatter()
         formatter.dateStyle = dateStyle
         formatter.timeStyle = timeStyle
-        let dateString = formatter.stringFromDate(self)
+        let dateString = formatter.string(from: self)
         return dateString
     }
     

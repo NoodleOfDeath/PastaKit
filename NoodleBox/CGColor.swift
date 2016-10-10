@@ -13,63 +13,63 @@ import CoreGraphics
 extension CGColor {
 
     public static func blackColor() -> CGColor {
-        return UIColor.blackColor().CGColor
+        return UIColor.black.cgColor
     }
 
     public static func darkGrayColor() -> CGColor {
-        return UIColor.darkGrayColor().CGColor
+        return UIColor.darkGray.cgColor
     }
 
     public static func lightGrayColor() -> CGColor {
-        return UIColor.lightGrayColor().CGColor
+        return UIColor.lightGray.cgColor
     }
 
     public static func whiteColor() -> CGColor {
-        return UIColor.whiteColor().CGColor
+        return UIColor.white.cgColor
     }
 
     public static func grayColor() -> CGColor {
-        return UIColor.grayColor().CGColor
+        return UIColor.gray.cgColor
     }
 
     public static func redColor() -> CGColor {
-        return UIColor.redColor().CGColor
+        return UIColor.red.cgColor
     }
 
     public static func greenColor() -> CGColor {
-        return UIColor.greenColor().CGColor
+        return UIColor.green.cgColor
     }
 
     public static func blueColor() -> CGColor {
-        return UIColor.blueColor().CGColor
+        return UIColor.blue.cgColor
     }
 
     public static func cyanColor() -> CGColor {
-        return UIColor.cyanColor().CGColor
+        return UIColor.cyan.cgColor
     }
 
     public static func yellowColor() -> CGColor {
-        return UIColor.yellowColor().CGColor
+        return UIColor.yellow.cgColor
     }
 
     public static func magentaColor() -> CGColor {
-        return UIColor.magentaColor().CGColor
+        return UIColor.magenta.cgColor
     }
 
     public static func orangeColor() -> CGColor {
-        return UIColor.orangeColor().CGColor
+        return UIColor.orange.cgColor
     }
 
     public static func purpleColor() -> CGColor {
-        return UIColor.purpleColor().CGColor
+        return UIColor.purple.cgColor
     }
 
     public static func brownColor() -> CGColor {
-        return UIColor.brownColor().CGColor
+        return UIColor.brown.cgColor
     }
 
     public static func clearColor() -> CGColor {
-        return UIColor.clearColor().CGColor
+        return UIColor.clear.cgColor
     }
     
 }

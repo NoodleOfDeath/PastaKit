@@ -118,14 +118,14 @@ public func + (lhs: NSRange, rhs: (location: Int, length: Int)) -> NSRange {
  /// the augend.
 /// - parameter lhs: A range to shift and assignment target.
 /// - parameter rhs: Distance to shift the range location.
-public func += (inout lhs: NSRange, rhs: Int) {
+public func += (lhs: inout NSRange, rhs: Int) {
     lhs = NSMakeRange(lhs.location + rhs, lhs.length)
 }
 
 ///  Adds two `NSRange` objects like matricies and assigns the sum to the augend.
 /// - parameter lhs: The augend range and assignment target.
 /// - parameter rhs: The addend range.
-public func += (inout lhs: NSRange, rhs: NSRange) {
+public func += (lhs: inout NSRange, rhs: NSRange) {
     lhs = NSMakeRange(lhs.location + rhs.location, lhs.length + rhs.length)
 }
 
@@ -134,7 +134,7 @@ public func += (inout lhs: NSRange, rhs: NSRange) {
 /// - parameter lhs: A range to shift and assignment target.
 /// - parameter rhs: Distance to shift the range location and length as a second
  /// order integer tuple.
-public func += (inout lhs: NSRange, rhs: (location: Int, length: Int)) {
+public func += (lhs: inout NSRange, rhs: (location: Int, length: Int)) {
     lhs = NSMakeRange(lhs.location + rhs.location, lhs.length + lhs.length)
 }
 
@@ -150,27 +150,27 @@ extension NSRange {
         return NSMaxRange(self)
     }
     
-    public func contains(range: NSRange) -> Bool {
+    public func contains(_ range: NSRange) -> Bool {
         return union(range) == self
     }
 
-    public func contains(loc: Int) -> Bool {
+    public func contains(_ loc: Int) -> Bool {
         return NSLocationInRange(loc, self)
     }
     
-    public func doesNotContain(range: NSRange) -> Bool {
+    public func doesNotContain(_ range: NSRange) -> Bool {
         return union(range) != self
     }
     
-    public func doesNotContain(loc: Int) -> Bool {
+    public func doesNotContain(_ loc: Int) -> Bool {
         return !NSLocationInRange(loc, self)
     }
     
-    public func union(range: NSRange) -> NSRange {
+    public func union(_ range: NSRange) -> NSRange {
         return NSUnionRange(self, range)
     }
     
-    public func intersection(range: NSRange) -> NSRange {
+    public func intersection(_ range: NSRange) -> NSRange {
         return NSIntersectionRange(self, range)
     }
 

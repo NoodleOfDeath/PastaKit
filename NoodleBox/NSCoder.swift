@@ -18,15 +18,15 @@ extension NSCoder {
     /// - important: The objective-c class being bridged to must conform to
     /// `NSCoding`.
     /// - parameter object: The object to encode.
-    public func encodeObject<T: _ObjectiveCBridgeable>(object: T?) {
-        encodeObject(object?._bridgeToObjectiveC())
+    public func encodeObject<T: _ObjectiveCBridgeable>(_ object: T?) {
+        encode(object?._bridgeToObjectiveC())
     }
     
     /// Encodes an `_ObjectiveCBridgeable` data structure as a root object.
     /// - important: The objective-c class being bridged to must conform to
     /// `NSCoding`.
     /// - parameter object: The object to encode.
-    public func encodeRootObject<T: _ObjectiveCBridgeable>(object: T) {
+    public func encodeRootObject<T: _ObjectiveCBridgeable>(_ object: T) {
         encodeRootObject(object._bridgeToObjectiveC())
     }
     
@@ -34,7 +34,7 @@ extension NSCoder {
     /// - important: The objective-c class being bridged to must conform to
     /// `NSCoding`.
     /// - parameter object: The object to encode.
-    public func encodeConditionalObject<T: _ObjectiveCBridgeable>(object: T?) {
+    public func encodeConditionalObject<T: _ObjectiveCBridgeable>(_ object: T?) {
         encodeConditionalObject(object?._bridgeToObjectiveC())
     }
     
@@ -44,8 +44,8 @@ extension NSCoder {
     /// `NSCoding`.
     /// - parameter object: The object to encode.
     /// - parameter key: The key to associate with this object.
-    public func encodeObject<T: _ObjectiveCBridgeable>(object: T?, forKey key: String) {
-        encodeObject(object?._bridgeToObjectiveC(), forKey: key)
+    public func encodeObject<T: _ObjectiveCBridgeable>(_ object: T?, forKey key: String) {
+        encode(object?._bridgeToObjectiveC(), forKey: key)
     }
     
     /// Encodes an `_ObjectiveCBridgeable` conditional data structure and maps
@@ -54,7 +54,7 @@ extension NSCoder {
     /// `NSCoding`.
     /// - parameter object: The object to encode.
     /// - parameter key: The key to associate with this object.
-    public func encodeConditionalObject<T: _ObjectiveCBridgeable>(object: T?, forKey key: String) {
+    public func encodeConditionalObject<T: _ObjectiveCBridgeable>(_ object: T?, forKey key: String) {
         encodeConditionalObject(object?._bridgeToObjectiveC(), forKey: key)
     }
     

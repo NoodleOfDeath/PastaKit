@@ -19,11 +19,11 @@ extension UIFont {
     /// A font object of the standard system font and size.
     /// - returns: A font object of the standard system font and size.
     public static func systemFont() -> UIFont {
-        return systemFontOfSize(systemFontSize())
+        return self.systemFont(ofSize: systemFontSize)
     }
 
     /// 
-    public static func fontWithObject(obj: AnyObject, size: CGFloat = UIFont.systemFontSize()) -> UIFont? {
+    public static func fontWithObject(_ obj: AnyObject, size: CGFloat = UIFont.systemFontSize) -> UIFont? {
         
         switch obj {
             

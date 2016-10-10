@@ -12,7 +12,7 @@ extension UIViewController {
     
     /// 
     public var ordinal: Int {
-        guard let index = navigationController?.viewControllers.indexOf(self) else { return NSNotFound }
+        guard let index = navigationController?.viewControllers.index(of: self) else { return NSNotFound }
         return index
     }
     

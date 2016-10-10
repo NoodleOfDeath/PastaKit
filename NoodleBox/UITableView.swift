@@ -19,7 +19,7 @@ extension UITableView {
     /// - returns: Returns an initialized `UITableView` object, or `nil` if 
     /// the object could not be successfully initialized.
     public convenience init(style: UITableViewStyle) {
-        self.init(frame: CGRectZero, style: style)
+        self.init(frame: CGRect.zero, style: style)
     }
     
 }

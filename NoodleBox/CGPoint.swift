@@ -11,7 +11,7 @@ import CoreGraphics
 // MARK: - ** Convenicence CGPoint Construction from 2-tuple **
 
 public postfix func * (argument: (x: Int, y: Int)) -> CGPoint {
-    return CGPointMake(CGFloat(argument.x), CGFloat(argument.y))
+    return CGPoint(x: CGFloat(argument.x), y: CGFloat(argument.y))
 }
 
 // MARK: - ** Public Operations **
@@ -19,56 +19,56 @@ public postfix func * (argument: (x: Int, y: Int)) -> CGPoint {
 // MARK: - Additive Operations
 
 public func - (lhs: (x: CGFloat, y: CGFloat), rhs: (x: CGFloat, y: CGFloat)) -> CGPoint {
-    return CGPointMake(lhs.x - rhs.x, lhs.y - rhs.y)
+    return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
 }
 
 public func + (lhs: (x: CGFloat, y: CGFloat), x: CGFloat) -> CGPoint {
-    return CGPointMake(lhs.x + x, lhs.y)
+    return CGPoint(x: lhs.x + x, y: lhs.y)
 }
 
 public func - (lhs: (x: CGFloat, y: CGFloat), x: CGFloat) -> CGPoint {
-    return CGPointMake(lhs.x - x, lhs.y)
+    return CGPoint(x: lhs.x - x, y: lhs.y)
 }
 
 public func + (lhs: CGPoint, rhs: (x: CGFloat, y: CGFloat)) -> CGPoint {
-    return CGPointMake(lhs.x + rhs.x, lhs.y + rhs.y)
+    return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
 }
 
 public func - (lhs: CGPoint, rhs: (x: CGFloat, y: CGFloat)) -> CGPoint {
-    return CGPointMake(lhs.x - rhs.x, lhs.y - rhs.y)
+    return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
 }
 
 public func + (lhs: (x: CGFloat, y: CGFloat), rhs: CGPoint) -> CGPoint {
-    return CGPointMake(lhs.x + rhs.x, lhs.y + rhs.y)
+    return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
 }
 
 public func - (lhs: (x: CGFloat, y: CGFloat), rhs: CGPoint) -> CGPoint {
-    return CGPointMake(lhs.x - rhs.x, lhs.y - rhs.y)
+    return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
 }
 
 public func + (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
-    return CGPointMake(lhs.x + rhs.x, lhs.y + rhs.y)
+    return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
 }
 
 public func - (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
-    return CGPointMake(lhs.x - rhs.x, lhs.y - rhs.y)
+    return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
 }
 
 public func + (lhs: CGPoint, x: CGFloat) -> CGPoint {
-    return CGPointMake(lhs.x + x, lhs.y)
+    return CGPoint(x: lhs.x + x, y: lhs.y)
 }
 
 public func - (lhs: CGPoint, x: CGFloat) -> CGPoint {
-    return CGPointMake(lhs.x - x, lhs.y)
+    return CGPoint(x: lhs.x - x, y: lhs.y)
 }
 
 // MARK: - ** Additive Assignment Operations **
 
-public func += (inout lhs: CGPoint, rhs: CGPoint) {
+public func += (lhs: inout CGPoint, rhs: CGPoint) {
     lhs = lhs + rhs
 }
 
-public func -= (inout lhs: CGPoint, rhs: CGPoint) {
+public func -= (lhs: inout CGPoint, rhs: CGPoint) {
     lhs = lhs - rhs
 }
 
@@ -81,7 +81,7 @@ extension CGPoint {
     }
     
     public var transposed: CGPoint {
-        return CGPointMake(y, x)
+        return CGPoint(x: y, y: x)
     }
     
 }

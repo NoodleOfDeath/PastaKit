@@ -10,7 +10,7 @@ import Foundation
 
 /// Convenience structure that contains all of the `NS***AttributeName` string
 /// constants
-public struct NSAttributeName : OptionSetType, Hashable {
+public struct NSAttributeName : OptionSet, Hashable {
     
     public typealias RawValue = Int
     
@@ -48,7 +48,7 @@ public struct NSAttributeName : OptionSetType, Hashable {
 
     public static let VerticalGlyphForm = NSAttributeName(NSVerticalGlyphFormAttributeName)
     
-    private static var values: [ RawValue : String ] {
+    fileprivate static var values: [ RawValue : String ] {
         return [
             Font.hashValue                  : Font.stringValue,
             ParagraphStyle.hashValue        : ParagraphStyle.stringValue,
@@ -103,7 +103,7 @@ public struct NSAttributeName : OptionSetType, Hashable {
             rawValue += stringValue.hashValue
         }
         self.rawValue = rawValue
-        stringValue = stringValues.joinWithSeparator(" ")
+        stringValue = stringValues.joined(separator: " ")
     }
     
     public init(_ stringValues: [String]) {
@@ -111,7 +111,7 @@ public struct NSAttributeName : OptionSetType, Hashable {
     }
     
     public func arrayRepresentation() -> [String] {
-        return stringValue.componentsSeparatedByCharactersInSet(.whitespaceCharacterSet())
+        return stringValue.components(separatedBy: .whitespaces())
     }
 
 }

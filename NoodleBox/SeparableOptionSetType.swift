@@ -16,12 +16,12 @@ extension String : Separable {}
 
 extension String {
     public func separatedComponents() -> [String] {
-        return componentsSeparatedByCharactersInSet(.whitespaceCharacterSet())
+        return components(separatedBy: .whitespaces())
     }
 }
 
 /// 
-public protocol SeparableOptionSetType : OptionSetType {
+public protocol SeparableOptionSetType : OptionSet {
     
     /// 
     associatedtype Key: Separable

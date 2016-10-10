@@ -13,7 +13,7 @@ import Foundation
 /// - parameter lhs: The value to be updated
 /// - parameter rhs: The value to assign to `lhs` if it is less than `lhs`
 ///
-public func =< <T: Comparable>(inout lhs: T, rhs: T) {
+public func =< <T: Comparable>(lhs: inout T, rhs: T) {
     lhs = (lhs < rhs ? lhs : rhs)
 }
 
@@ -22,12 +22,12 @@ public func =< <T: Comparable>(inout lhs: T, rhs: T) {
 /// - parameter lhs: The value to be updated
 /// - parameter rhs: The value to assign to `lhs` if it is greater than `lhs`
 ///
-public func => <T: Comparable>(inout lhs: T, rhs: T) {
+public func => <T: Comparable>(lhs: inout T, rhs: T) {
     lhs = (lhs > rhs ? lhs : rhs)
 }
 
 /// Modulo division the way it is supposed to be
-public func %% <T: SignedIntegerType>(lhs: T, rhs: T) -> T {
+public func %% <T: SignedInteger>(lhs: T, rhs: T) -> T {
     var lhs = lhs
     if lhs < 0 {
         lhs = rhs - abs(lhs)
@@ -39,15 +39,15 @@ extension UInt {
     
     public init?(_ text: String) {
         
-        let hexPrefix = text.rangeOfString("0x") ?? text.rangeOfString("#")
+        let hexPrefix = text.range(of: "0x") ?? text.range(of: "#")
         
         var text = text
         var radix = 10
         
         switch text {
             
-        case _ where hexPrefix?.startIndex == text.startIndex:
-            text.replaceRange(hexPrefix!, with: "")
+        case _ where hexPrefix?.lowerBound == text.startIndex:
+            text.replaceSubrange(hexPrefix!, with: "")
             radix = 16
             break
             
@@ -109,7 +109,7 @@ extension Int {
         return asDataSizeString()
     }
     
-    public func format(format: String = "") -> String {
+    public func format(_ format: String = "") -> String {
         return String(format: "%\(format)d", self)
     }
     
@@ -161,7 +161,7 @@ extension UInt {
         return asDataSizeString()
     }
     
-    public func format(format: String = "") -> String {
+    public func format(_ format: String = "") -> String {
         return String(format: "%\(format)ud", self)
     }
     
@@ -213,7 +213,7 @@ extension Int32 {
         return asDataSizeString()
     }
     
-    public func format(format: String = "") -> String {
+    public func format(_ format: String = "") -> String {
         return String(format: "%\(format)d", self)
     }
     
@@ -265,7 +265,7 @@ extension UInt32 {
         return asDataSizeString()
     }
     
-    public func format(format: String = "") -> String {
+    public func format(_ format: String = "") -> String {
         return String(format: "%\(format)ud", self)
     }
     
@@ -317,7 +317,7 @@ extension Int64 {
         return asDataSizeString()
     }
     
-    public func format(format: String = "") -> String {
+    public func format(_ format: String = "") -> String {
         return String(format: "%\(format)d", self)
     }
     
@@ -369,7 +369,7 @@ extension UInt64 {
         return asDataSizeString()
     }
     
-    public func format(format: String = "") -> String {
+    public func format(_ format: String = "") -> String {
         return String(format: "%\(format)ud", self)
     }
     
@@ -430,7 +430,7 @@ extension Double {
         return asDataSizeString()
     }
     
-    public func format(format: String = "") -> String {
+    public func format(_ format: String = "") -> String {
         return String(format: "%\(format)f", self)
     }
     
@@ -490,7 +490,7 @@ extension Float {
         return asDataSizeString()
     }
     
-    public func format(format: String = "") -> String {
+    public func format(_ format: String = "") -> String {
         return String(format: "%\(format)f", self)
     }
     
@@ -546,7 +546,7 @@ extension CGFloat {
         return asDataSizeString()
     }
     
-    public func format(format: String = "") -> String {
+    public func format(_ format: String = "") -> String {
         return String(format: "%\(format)f", self)
     }
     
@@ -556,7 +556,7 @@ extension CGFloat {
     
 }
 
-public struct NSDataSizeFormattingOption : OptionSetType {
+public struct NSDataSizeFormattingOption : OptionSet {
     
     public typealias RawValue = UInt
     public var rawValue: RawValue = 0
@@ -583,8 +583,8 @@ public struct NSDataSize : CustomStringConvertible {
         return "\(self)"
     }
     
-    private (set) var suffix: [String] = ["byte", "b"]
-    private (set) var size: Double = 0.0
+    fileprivate (set) var suffix: [String] = ["byte", "b"]
+    fileprivate (set) var size: Double = 0.0
     
     public init(bytes: UInt64, options: NSDataSizeFormattingOption = .Default) {
         
@@ -621,12 +621,12 @@ public struct NSDataSize : CustomStringConvertible {
     public var description: String {
         if options.contains(.Abbreviated) {
             let units = options.contains(.Capitalized) ?
-                suffix[1].uppercaseString : suffix[1]
+                suffix[1].uppercased() : suffix[1]
             return "%.2f%@".format(size.asFloat, units)
         } else {
             var units = " " + suffix[0]
             units = options.contains(.Capitalized) ? 
-                units.capitalizedString : units
+                units.capitalized : units
             return String.pluralize("%.2f \(units)", size.asFloat)
         }
     }

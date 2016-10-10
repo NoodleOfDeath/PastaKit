@@ -16,8 +16,8 @@ import Foundation
 
 /// Possible stacking alignments for a `NBStackView`.
 public enum NBStackViewAlignment : Int {
-    case Horizontal
-    case Vertical
+    case horizontal
+    case vertical
 }
 
 // MARK: - ** NBStackView Class ** -
@@ -54,12 +54,12 @@ public enum NBStackViewAlignment : Int {
 /// }
 /// ...
 /// ````
-public class NBStackView : UIView {
+open class NBStackView : UIView {
     
     // MARK: - ** Static Properties ** -
     
     /// Encoding/decoding keys.
-    private struct CodingKeys {
+    fileprivate struct CodingKeys {
         /// Key used to encode `alignment`.
         static let Alignment = "Alignment"
     }
@@ -69,20 +69,20 @@ public class NBStackView : UIView {
     // MARK: - Get-Only
     
     /// `Horizontal` or `Vertical` stacking of views. Default is `Horizontal`.
-    public let alignment: NBStackViewAlignment
+    open let alignment: NBStackViewAlignment
     
     // MARK: - Stored
     
-    public var margin: CGFloat = 10.0 {
+    open var margin: CGFloat = 10.0 {
         didSet {
             let views = subviews
             for view in views {
                 view.removeFromSuperview()
             }
             push(views)
-            UIView.animateWithDuration(0.25) { 
+            UIView.animate(withDuration: 0.25, animations: { 
                 self.setNeedsLayout()
-            }
+            }) 
         }
     }
     
@@ -93,19 +93,19 @@ public class NBStackView : UIView {
     /// Temporary variable used to keep track of the first outermost layout
     /// constraint. This will either be the left layout constraint of the first
     /// subview, or the top layout constaint of the first subview.
-    private var constraintA = NSLayoutConstraint()
+    fileprivate var constraintA = NSLayoutConstraint()
     
     /// Temporary variable used to keep track of the last outermost layout
     /// constraint. This will either be the right layout constraint of the last
     /// subview, or the bottom layout constaint of the last subview.
-    private var constraintB = NSLayoutConstraint()
+    fileprivate var constraintB = NSLayoutConstraint()
     
     // MARK: - ** Constructor Methods ** -
     
     public required init?(coder aDecoder: NSCoder) {
         guard let alignment =
             NBStackViewAlignment(rawValue:
-                aDecoder.decodeIntegerForKey(CodingKeys.Alignment))
+                aDecoder.decodeInteger(forKey: CodingKeys.Alignment))
             else { return nil }
         self.alignment = alignment
         super.init(coder: aDecoder)
@@ -117,25 +117,25 @@ public class NBStackView : UIView {
     /// subviews.
     /// - returns: A `NBStackView` instance that stacks subviews according to
     /// `alignment`.
-    public required init(alignment: NBStackViewAlignment = .Horizontal) {
+    public required init(alignment: NBStackViewAlignment = .horizontal) {
         self.alignment = alignment
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
     }
     
     // MARK: - ** Superclass/Protocol Methods **
     
     // MARK: - NSCoding
     
-    public override func encodeWithCoder(aCoder: NSCoder) {
-        super.encodeWithCoder(aCoder)
-        aCoder.encodeInteger(alignment.rawValue, forKey: CodingKeys.Alignment)
+    open override func encode(with aCoder: NSCoder) {
+        super.encode(with: aCoder)
+        aCoder.encode(alignment.rawValue, forKey: CodingKeys.Alignment)
     }
     
     // MARK: - ** Public Methods ** -
     
     /// Pushes a subview onto the end of stack.
     /// - parameter view: The subview to push onto the stack.
-    public func pushSubview(subview: UIView) {
+    open func pushSubview(_ subview: UIView) {
         
         let first = subviews.first
         let last = subviews.last
@@ -143,7 +143,7 @@ public class NBStackView : UIView {
         addSubview(subview)
         subview.translatesAutoresizingMaskIntoConstraints = false
         
-        if alignment == .Horizontal {
+        if alignment == .horizontal {
             addConstraint(subview.topLayoutConstraintRelativeToView(self))
             addConstraint(subview.bottomLayoutConstraintRelativeToView(self))
             addConstraint(subview.centerYLayoutConstraintRelativeToView(self))
@@ -154,7 +154,7 @@ public class NBStackView : UIView {
         }
         
         if first == nil {
-            constraintA = alignment == .Horizontal ?
+            constraintA = alignment == .horizontal ?
                 subview.leftLayoutConstraintRelativeToView(self) :
                 subview.topLayoutConstraintRelativeToView(self)
             addConstraint(constraintA)
@@ -162,12 +162,12 @@ public class NBStackView : UIView {
         
         if let last = last {
             removeConstraint(constraintB)
-            addConstraint(alignment == .Horizontal ?
+            addConstraint(alignment == .horizontal ?
                 last.horizontalSpacingLayoutConstraintRelativeToView(subview, constant: -margin) :
                 last.verticalSpacingLayoutConstraintRelativeToView(subview, constant: -margin))
         }
         
-        constraintB = alignment == .Horizontal ?
+        constraintB = alignment == .horizontal ?
             subview.rightLayoutConstraintRelativeToView(self) :
             subview.bottomLayoutConstraintRelativeToView(self)
         addConstraint(constraintB)
@@ -177,14 +177,14 @@ public class NBStackView : UIView {
     /// Convenience method that pushes multiple subviews onto the end of the 
     /// stack in FIFO order
     /// - parameter views: The subviews to push onto the end of the stack
-    public func push(views: UIView...) {
+    open func push(_ views: UIView...) {
         for view in views { pushSubview(view) }
     }
     
     /// Convenience method that pushes an array of subviews onto the end of the
     /// stack in FIFO order
     /// - parameter views: The subviews to push onto the end of the stack
-    public func push(views: [UIView]) {
+    open func push(_ views: [UIView]) {
         for view in views { pushSubview(view) }
     }
     

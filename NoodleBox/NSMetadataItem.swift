@@ -11,7 +11,7 @@ import UIKit
 extension NSMetadataItem {
     
     public subscript (key: String) -> AnyObject? {
-        get { return valueForKey(key) }
+        get { return value(forKey: key) as AnyObject? }
         set { setValue(newValue, forKey: key) }
     }
     

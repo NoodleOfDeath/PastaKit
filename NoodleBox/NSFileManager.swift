@@ -11,47 +11,47 @@ import Foundation
 public let NSFileManagerErrorCodeCopyFailedFileAlreadyExists = 516
 
 /// Convenience `NSFileManager` methods for directory creation
-extension NSFileManager {
+extension FileManager {
 
-    public func createDirectoryAtURL(url: NSURL, withIntermediateDirectories createIntermediates: Bool = true) throws {
+    public func createDirectoryAtURL(_ url: URL, withIntermediateDirectories createIntermediates: Bool = true) throws {
         do { 
-            try createDirectoryAtURL(url, withIntermediateDirectories: createIntermediates, attributes: nil)
+            try createDirectory(at: url, withIntermediateDirectories: createIntermediates, attributes: nil)
         } catch { throw error }
     }
     
-    public func createDirectoryAtPath(path: String, withIntermediateDirectories createIntermediates: Bool = true) throws {
+    public func createDirectoryAtPath(_ path: String, withIntermediateDirectories createIntermediates: Bool = true) throws {
         do {
-            try createDirectoryAtPath(path, withIntermediateDirectories: createIntermediates, attributes: nil)
+            try createDirectory(atPath: path, withIntermediateDirectories: createIntermediates, attributes: nil)
         } catch { throw error }
     }
 
 }
 
 /// Convenience `NSFileManager` methods for copying files
-extension NSFileManager {
+extension FileManager {
     
-    public func copyItemAtURL(url: NSURL, toURL: NSURL, overwriteExisting: Bool) throws {
-        if overwriteExisting { do { try removeItemAtURL(url) } catch {} }
+    public func copyItemAtURL(_ url: URL, toURL: URL, overwriteExisting: Bool) throws {
+        if overwriteExisting { do { try removeItem(at: url) } catch {} }
         do {
-            try copyItemAtURL(url, toURL: toURL)
+            try copyItem(at: url, to: toURL)
         } catch { throw error }
     }
     
-    public func copyItemAtPath(path: String, toPath: String, overwriteExisting: Bool) throws {
-        if overwriteExisting { do { try removeItemAtPath(path) } catch {} }
+    public func copyItemAtPath(_ path: String, toPath: String, overwriteExisting: Bool) throws {
+        if overwriteExisting { do { try removeItem(atPath: path) } catch {} }
         do {
-            try copyItemAtPath(path, toPath: toPath)
+            try copyItem(atPath: path, toPath: toPath)
         } catch { throw error }
     }
     
 }
 
 /// Convenience `NSFileManager` methods for getting directory contents
-extension NSFileManager {
+extension FileManager {
     
-    public func contentsOfDirectoryAtURL(url: NSURL) throws -> [NSURL] {
+    public func contentsOfDirectoryAtURL(_ url: URL) throws -> [URL] {
         do {
-            return try contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: [])
+            return try contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: [])
         } catch { throw error }
     }
     
