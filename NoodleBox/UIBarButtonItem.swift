@@ -11,11 +11,11 @@ import UIKit
 // MARK: - ** UIBarButtonItem Extension **
 extension UIBarButtonItem {
 
-    public convenience init(title: String?, target: AnyObject? = nil, action: Selector? = nil) {
+    public convenience init(title: String?, target: Any? = nil, action: Selector? = nil) {
         self.init(title: title, style: .plain, target: target, action: action)
     }
 
-    public convenience init(image: UIImage?, target: AnyObject? = nil, action: Selector? = nil) {
+    public convenience init(image: UIImage?, target: Any? = nil, action: Selector? = nil) {
         self.init(image: image, style: .plain, target: target, action: action)
     }
 

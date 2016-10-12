@@ -43,12 +43,12 @@ public struct NBPopoverAction : OptionSet, Hashable {
 
 public protocol NBPopoverViewControllerDelegate : UIPopoverPresentationControllerDelegate {
     func presentViewController(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?)
-    func popoverViewController(_ popoverViewController: NBPopoverViewController, didRequestAction action: NBPopoverAction, userInfo: AnyObject?, responder: AnyObject?)
+    func popoverViewController(_ popoverViewController: NBPopoverViewController, didRequestAction action: NBPopoverAction, userInfo: Any?, responder: Any?)
     func popoverViewControllerDidResign(_ popoverViewController: NBPopoverViewController)
 }
 
 extension NBPopoverViewControllerDelegate {
-    public func popoverViewController(_ popoverViewController: NBPopoverViewController, didRequestAction action: NBPopoverAction, userInfo: AnyObject?, responder: AnyObject?) {}
+    public func popoverViewController(_ popoverViewController: NBPopoverViewController, didRequestAction action: NBPopoverAction, userInfo: Any?, responder: Any?) {}
     public func popoverViewControllerDidResign(_ popoverViewController: NBPopoverViewController) {}
 }
 
@@ -89,7 +89,7 @@ open class NBPopoverViewController: UIViewController, UIPopoverPresentationContr
         didSet { updateActions() }
     }
     
-    open var userInfo: AnyObject?
+    open var userInfo: Any?
     
     // MARK: - ** Private Properties **
     

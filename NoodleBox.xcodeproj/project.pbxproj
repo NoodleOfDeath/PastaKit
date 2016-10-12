@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CD0437751D887746007A7461 /* MIMEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0437741D887746007A7461 /* MIMEType.swift */; };
 		CD0F813D1D5F712E00736E69 /* CFRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */; };
+		CD17D9551DAEA7D700580E92 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17D9541DAEA7D700580E92 /* URL.swift */; };
 		CD2907E61D627836000DD8B7 /* NSCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E51D627836000DD8B7 /* NSCoder.swift */; };
 		CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E71D627C61000DD8B7 /* SortedArray.swift */; };
 		CD2907EA1D627C88000DD8B7 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */; };
@@ -85,6 +86,7 @@
 /* Begin PBXFileReference section */
 		CD0437741D887746007A7461 /* MIMEType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIMEType.swift; sourceTree = "<group>"; };
 		CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CFRepresentable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		CD17D9541DAEA7D700580E92 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CD2907E51D627836000DD8B7 /* NSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCoder.swift; sourceTree = "<group>"; };
 		CD2907E71D627C61000DD8B7 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
 		CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedDictionary.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				CDD115FF1D592A93004A9DBC /* Math.swift */,
 				CD39B1AA1DAC439900D0F8BF /* CountableRange.swift */,
 				CD39B1AC1DAD44C700D0F8BF /* Notification.swift */,
+				CD17D9541DAEA7D700580E92 /* URL.swift */,
 			);
 			name = "Swift Native";
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				CD4EA8D41D6BE607003B45E4 /* UIToolbar.swift in Sources */,
 				CDD116DC1D592CDD004A9DBC /* CGColor.swift in Sources */,
 				CD39BE9F1D60E25E00E8FB50 /* NBFileManager.swift in Sources */,
+				CD17D9551DAEA7D700580E92 /* URL.swift in Sources */,
 				CD30FDC11D74DC200087E68F /* NBPopoverViewController.swift in Sources */,
 				CD4EA91E1D6D0962003B45E4 /* NSAttributeName.swift in Sources */,
 				CD4EA8D21D6BE607003B45E4 /* UITextInput.swift in Sources */,
@@ -572,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -621,6 +626,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

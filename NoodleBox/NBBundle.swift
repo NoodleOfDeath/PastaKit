@@ -150,7 +150,7 @@ open class NBBundle : NSObject, NSCoding {
     /// anything about the existence of bundle in the filesystem or its
     /// configuration.
     open static func bundlePathForName(_ name: String, bundlePath: String? = nil, bundleExtension: String? = nil) -> String? {
-        return { bundlePath ?? defaultBundlePath }() +/ name +* (bundleExtension ?? defaultBundleExtension)
+        return { bundlePath ?? defaultBundlePath }() +/ name +> (bundleExtension ?? defaultBundleExtension)
     }
     
     /// Returns the `NSBundle` object located in the directory `bundlePath`

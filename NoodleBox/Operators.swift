@@ -11,7 +11,7 @@ import Foundation
 /// Append path component `rhs` to `lhs`
 infix operator +/ : AdditionPrecedence
 /// Append path extension `rhs` to `lhs`
-infix operator +* : AdditionPrecedence
+infix operator +> : AdditionPrecedence
 
 /// Modular division the way it was meant to be
 infix operator %% : AdditionPrecedence

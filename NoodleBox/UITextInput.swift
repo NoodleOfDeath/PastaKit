@@ -32,7 +32,7 @@ extension UITextInput {
         
         if UITextView.instancesRespond(to: #function) {
             let op = UITextView.instanceMethod(for: #function)
-            let mp = UnsafeMutablePointer<(_ delegate: AnyObject, _ selector: Selector, _ textView: UITextView) -> Bool>(op)
+            let mp = UnsafeMutablePointer<(_ delegate: Any, _ selector: Selector, _ textView: UITextView) -> Bool>(op)
             guard let keyboardInputShouldDelete = mp?.pointee else { return false }
             shouldDelete = keyboardInputShouldDelete(self, #function, textView)
         }

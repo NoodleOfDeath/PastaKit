@@ -10,15 +10,15 @@ import UIKit
 
 extension NSObject {
     
-    open func beginObserving(selector aSelector: Selector, name aName: String?, object anObject: AnyObject?) {
+    open func beginObserving(selector aSelector: Selector, name aName: String?, object anObject: Any?) {
         NotificationCenter.default.addObserver(self, selector: aSelector, name: aName.map { NSNotification.Name(rawValue: $0) }, object: anObject)
     }
     
-    open func stopObserving(name aName: String?, object anObject: AnyObject?) {
+    open func stopObserving(name aName: String?, object anObject: Any?) {
         NotificationCenter.default.removeObserver(self, name: aName.map { NSNotification.Name(rawValue: $0) }, object: anObject)
     }
     
-    open func postNotificationName(_ name: String, object anObject: AnyObject? = nil, userInfo info: [AnyHashable: Any]? = nil) {
+    open func postNotificationName(_ name: String, object anObject: Any? = nil, userInfo info: [AnyHashable: Any]? = nil) {
         NotificationCenter.default.post(name: Notification.Name(rawValue: name), object: (anObject ?? self), userInfo: info)
     }
     

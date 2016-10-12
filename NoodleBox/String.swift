@@ -103,25 +103,25 @@ public func +/ (lhs: String?, rhs: String?) -> String? {
 // MARK: - Path Extension Concatenation
 
 /// 
-public func +* (lhs: String?, rhs: String?) -> String? {
+public func +> (lhs: String?, rhs: String?) -> String? {
     guard let lhs = lhs, let rhs = rhs else { return nil }
     return lhs.stringByAppendingPathExtension(rhs)
 }
 
 /// 
-public func +* (lhs: String?, rhs: String) -> String? {
+public func +> (lhs: String?, rhs: String) -> String? {
     guard let lhs = lhs else { return nil }
     return lhs.stringByAppendingPathExtension(rhs)
 }
 
 /// 
-public func +* (lhs: String, rhs: String?) -> String? {
+public func +> (lhs: String, rhs: String?) -> String? {
     guard let rhs = rhs else { return nil }
     return lhs.stringByAppendingPathExtension(rhs)
 }
 
 /// 
-public func +* (lhs: String, rhs: String) -> String? {
+public func +> (lhs: String, rhs: String) -> String? {
     return lhs.stringByAppendingPathExtension(rhs)
 }
 

@@ -10,8 +10,8 @@ import UIKit
 
 extension NSMetadataItem {
     
-    open subscript (key: String) -> AnyObject? {
-        get { return value(forKey: key) as AnyObject? }
+    open subscript (key: String) -> Any? {
+        get { return value(forKey: key) as Any? }
         set { setValue(newValue, forKey: key) }
     }
     
