@@ -65,6 +65,8 @@ extension UIDevice {
     }
     
     open static func machine() -> String? {
+        return nil
+        /*
         var size: size_t = 0
         sysctlbyname("hw.machine", nil, &size, nil, 0)
         guard let _machine = malloc(size) else { return nil }
@@ -72,7 +74,7 @@ extension UIDevice {
         let data = Data(bytes: UnsafePointer<UInt8>(_machine.assumingMemoryBound(to: UInt8.self)), count: Int(size))
         let machine = String(data: data, encoding: String.Encoding.utf8)
         free(_machine)
-        return machine
+        return machine*/
     }
 
 }

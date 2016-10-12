@@ -10,6 +10,8 @@
 		CD0437751D887746007A7461 /* MIMEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0437741D887746007A7461 /* MIMEType.swift */; };
 		CD0F813D1D5F712E00736E69 /* CFRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */; };
 		CD17D9551DAEA7D700580E92 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17D9541DAEA7D700580E92 /* URL.swift */; };
+		CD17D9581DAEC51C00580E92 /* MultitouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17D9571DAEC51C00580E92 /* MultitouchView.swift */; };
+		CD17D95A1DAEC59100580E92 /* MultitouchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17D9591DAEC59100580E92 /* MultitouchTableView.swift */; };
 		CD2907E61D627836000DD8B7 /* NSCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E51D627836000DD8B7 /* NSCoder.swift */; };
 		CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E71D627C61000DD8B7 /* SortedArray.swift */; };
 		CD2907EA1D627C88000DD8B7 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */; };
@@ -87,6 +89,8 @@
 		CD0437741D887746007A7461 /* MIMEType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIMEType.swift; sourceTree = "<group>"; };
 		CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CFRepresentable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CD17D9541DAEA7D700580E92 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		CD17D9571DAEC51C00580E92 /* MultitouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultitouchView.swift; sourceTree = "<group>"; };
+		CD17D9591DAEC59100580E92 /* MultitouchTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultitouchTableView.swift; sourceTree = "<group>"; };
 		CD2907E51D627836000DD8B7 /* NSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCoder.swift; sourceTree = "<group>"; };
 		CD2907E71D627C61000DD8B7 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
 		CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedDictionary.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				CD4EA91A1D6BE86A003B45E4 /* UIPaddedTextField.swift */,
 				CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */,
 				CDD1162B1D592A93004A9DBC /* UTCoreTypes.swift */,
+				CD17D9571DAEC51C00580E92 /* MultitouchView.swift */,
+				CD17D9591DAEC59100580E92 /* MultitouchTableView.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
@@ -513,6 +519,7 @@
 				CDD116D01D592CDB004A9DBC /* NSLayoutConstraint.swift in Sources */,
 				CD4EA8C61D6BE607003B45E4 /* UIAlertController.swift in Sources */,
 				CDD116C71D592CDB004A9DBC /* Array.swift in Sources */,
+				CD17D95A1DAEC59100580E92 /* MultitouchTableView.swift in Sources */,
 				CDD116EA1D592CE3004A9DBC /* UIFilterView.swift in Sources */,
 				CD0437751D887746007A7461 /* MIMEType.swift in Sources */,
 				CD0F813D1D5F712E00736E69 /* CFRepresentable.swift in Sources */,
@@ -523,6 +530,7 @@
 				CDD116D41D592CDB004A9DBC /* NSParagraphStyle.swift in Sources */,
 				CD4EA8D61D6BE607003B45E4 /* UIViewController.swift in Sources */,
 				CD4EA8CD1D6BE607003B45E4 /* UIInterfaceOrientation.swift in Sources */,
+				CD17D9581DAEC51C00580E92 /* MultitouchView.swift in Sources */,
 				CDD116C91D592CDB004A9DBC /* OptionSetType.swift in Sources */,
 				CD4EA8CF1D6BE607003B45E4 /* UINavigationController.swift in Sources */,
 				CDD116D81D592CDB004A9DBC /* NSStringEncoding.swift in Sources */,
