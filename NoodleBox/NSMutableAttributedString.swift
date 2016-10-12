@@ -13,7 +13,7 @@ import Foundation
  /// */
 extension NSMutableAttributedString {
     
-    public func removeAttributes(_ attributes: [String], range: NSRange) {
+    open func removeAttributes(_ attributes: [String], range: NSRange) {
         for attribute in attributes {
             removeAttribute(attribute, range: range)
         }

@@ -186,7 +186,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     fileprivate lazy var scrollIndicator: UIView = {
         let scrollIndicator = UIView()
         scrollIndicator.translatesAutoresizingMaskIntoConstraints = false
-        scrollIndicator.backgroundColor = .gray() * 0.85
+        scrollIndicator.backgroundColor = .gray * 0.85
         scrollIndicator.layer.cornerRadius = 1.25
         return scrollIndicator
     }()
@@ -197,7 +197,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addConstraint(view.widthLayoutConstraint(75.0))
         view.addConstraint(view.heightLayoutConstraint(50.0))
-        view.backgroundColor = .black() * 0.75
+        view.backgroundColor = .black * 0.75
         view.layer.cornerRadius = 5.0
         view.addSubview(self.scaleLabel)
         self.scaleLabel.constrainToSuperview()
@@ -208,8 +208,8 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     /// example if `zoomScale = 0.5` this label will display `"50%".
     fileprivate lazy var scaleLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .clear()
-        label.textColor = .white()
+        label.backgroundColor = .clear
+        label.textColor = .white
         label.textAlignment = .center
         return label
     }()

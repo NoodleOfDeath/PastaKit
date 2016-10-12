@@ -19,32 +19,41 @@ private struct CodingKeys {
 
 /// An array class that automatically places elements in order as
 /// they added to the collection.
-open class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding {
+public class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding {
     
+    /// Returns the position immediately after the given index.
+    ///
+    /// - Parameter i: A valid index of the collection. `i` must be less than
+    ///   `endIndex`.
+    /// - Returns: The index value immediately after `i`.
+    public func index(after i: Int) -> Int {
+        return i + 1
+    }
+
     // MARK: - CollectionType
     
     public typealias Index = Int
     public typealias Iterator = IndexingIterator<NSSortedArray<Element>>
     
-    open var startIndex: Index { return 0 }
-    open var endIndex: Index { return elements.count }
-    open var range: CountableRange<Index> { return 0 ..< elements.count }
-    open var count: Int { return elements.count }
+    public var startIndex: Index { return 0 }
+    public var endIndex: Index { return elements.count }
+    public var range: CountableRange<Index> { return 0 ..< elements.count }
+    public var count: Int { return elements.count }
     
     // MARK: - CustomStringConvertible
     
-    open override var description: String { return "\(elements)" }
+    public override var description: String { return "\(elements)" }
     
     // MARK: - NSSortedArray
     
     /// The order in which to sort array elements.
-    open var sortOrder: SortOrder { return backingStorage.sortOrder }
+    public var sortOrder: SortOrder { return backingStorage.sortOrder }
     
     /// The elements of this array.
-    open var elements: [Element] { return backingStorage.elements }
+    public var elements: [Element] { return backingStorage.elements }
     
     /// Whether or not to allow duplicate elements to be added to this array.
-    open var uniqueElements: Bool { return backingStorage.uniqueElements }
+    public var uniqueElements: Bool { return backingStorage.uniqueElements }
     
     /// 
     fileprivate var backingStorage: SortedArray<Element>
@@ -96,20 +105,20 @@ open class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding 
         self.init(sortOrder: sortOrder, elements: elements)
     }
     
-    open func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
         aCoder.encode(sortOrder.rawValue, forKey: CodingKeys.SortOrder)
         aCoder.encode(elements, forKey: CodingKeys.elements)
     }
     
     // MARK: - CollectionType
     
-    open subscript (index: Index) -> Element {
+    public subscript (index: Index) -> Element {
         get { return backingStorage[index] }
         set { backingStorage[index] = newValue }
     }
     
-    open func makeIterator() -> Iterator {
-        return Iterator(NSSortedArray(self))
+    public func makeIterator() -> Iterator {
+        return Iterator(_elements: NSSortedArray(self))
     }
     
     /// Insert `newElement` at index `i`.
@@ -117,7 +126,7 @@ open class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding 
     /// - requires: `i <= count`.
     ///
     /// - complexity: O(`self.count`).
-    open func insert(_ element: Element, atIndex index: Index) {
+    public func insert(_ element: Element, atIndex index: Index) {
         backingStorage.insert(element, atIndex: index)
     }
     
@@ -126,7 +135,7 @@ open class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding 
     /// Invalidates all indices with respect to `self`.
     ///
     /// - complexity: O(`self.count`).
-    open func removeAtIndex(_ index: Index) -> Element {
+    public func removeAtIndex(_ index: Index) -> Element {
         return backingStorage.removeAtIndex(index)
     }
     
@@ -135,7 +144,7 @@ open class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding 
     /// - postcondition: `capacity == 0` iff `keepCapacity` is `false`.
     ///
     /// - complexity: O(`self.count`).
-    open func removeAll(keepCapacity: Bool = false) {
+    public func removeAll(keepCapacity: Bool = false) {
         backingStorage.removeAll(keepCapacity: keepCapacity)
     }
     
@@ -155,7 +164,7 @@ open class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding 
     /// - returns: The first index where `element` appears in `self` or `nil` if
     /// `element` is not found.
     
-    open func indexOf(_ element: Element, searchRange range: CountableRange<Index>? = nil) -> Index? {
+    public func indexOf(_ element: Element, searchRange range: CountableRange<Index>? = nil) -> Index? {
         return backingStorage.indexOf(element, searchRange: range)
     }
     
@@ -170,7 +179,7 @@ open class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding 
     /// - returns: The first index where `element` would be placed in sorted
     /// order in `self`.
     
-    open func ordinalIndexForElement(_ element: Element, searchRange range: CountableRange<Index>? = nil) -> Index {
+    public func ordinalIndexForElement(_ element: Element, searchRange range: CountableRange<Index>? = nil) -> Index {
         return backingStorage.ordinalIndexForElement(element, searchRange: range)
     }
     
@@ -181,7 +190,7 @@ open class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding 
     /// `self.
     ///
     /// - complexity: O(`log(self.count)`)
-    open func add(_ element: Element, offset: Int = 0) -> Index? {
+    public func add(_ element: Element, offset: Int = 0) -> Index? {
         return backingStorage.add(element, offset: offset)
     }
     
@@ -190,7 +199,7 @@ open class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding 
     ///
     /// - complexity: O(`log(self.count) * n`) where `n` is the number of
     /// times `element` occurs in `self`.
-    open func remove(_ element: Element) {
+    public func remove(_ element: Element) {
         backingStorage.remove(element)
     }
     

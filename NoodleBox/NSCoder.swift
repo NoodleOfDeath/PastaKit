@@ -18,7 +18,7 @@ extension NSCoder {
     /// - important: The objective-c class being bridged to must conform to
     /// `NSCoding`.
     /// - parameter object: The object to encode.
-    public func encodeObject<T: _ObjectiveCBridgeable>(_ object: T?) {
+    open func encodeObject<T: _ObjectiveCBridgeable>(_ object: T?) {
         encode(object?._bridgeToObjectiveC())
     }
     
@@ -26,7 +26,7 @@ extension NSCoder {
     /// - important: The objective-c class being bridged to must conform to
     /// `NSCoding`.
     /// - parameter object: The object to encode.
-    public func encodeRootObject<T: _ObjectiveCBridgeable>(_ object: T) {
+    open func encodeRootObject<T: _ObjectiveCBridgeable>(_ object: T) {
         encodeRootObject(object._bridgeToObjectiveC())
     }
     
@@ -34,7 +34,7 @@ extension NSCoder {
     /// - important: The objective-c class being bridged to must conform to
     /// `NSCoding`.
     /// - parameter object: The object to encode.
-    public func encodeConditionalObject<T: _ObjectiveCBridgeable>(_ object: T?) {
+    open func encodeConditionalObject<T: _ObjectiveCBridgeable>(_ object: T?) {
         encodeConditionalObject(object?._bridgeToObjectiveC())
     }
     
@@ -44,7 +44,7 @@ extension NSCoder {
     /// `NSCoding`.
     /// - parameter object: The object to encode.
     /// - parameter key: The key to associate with this object.
-    public func encodeObject<T: _ObjectiveCBridgeable>(_ object: T?, forKey key: String) {
+    open func encodeObject<T: _ObjectiveCBridgeable>(_ object: T?, forKey key: String) {
         encode(object?._bridgeToObjectiveC(), forKey: key)
     }
     
@@ -54,7 +54,7 @@ extension NSCoder {
     /// `NSCoding`.
     /// - parameter object: The object to encode.
     /// - parameter key: The key to associate with this object.
-    public func encodeConditionalObject<T: _ObjectiveCBridgeable>(_ object: T?, forKey key: String) {
+    open func encodeConditionalObject<T: _ObjectiveCBridgeable>(_ object: T?, forKey key: String) {
         encodeConditionalObject(object?._bridgeToObjectiveC(), forKey: key)
     }
     

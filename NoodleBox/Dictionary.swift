@@ -8,23 +8,7 @@
 
 import Foundation
 
-/// Convenient typealias for `String` mapped dictionaryies.
-public typealias PropertyList = [String : AnyObject]
-/// Convenient typealias for `NSObject` mapped dictionaries.
-public typealias Hashtable = [AnyHashable: Any]
-
-/// Returns a `Boolean` value that indicates whether the contents of the
-/// receiving dictionary are equal to the contents of another given dictionary.
-///
-/// `true` if the contents of `rhs` are equal to the contents
-/// of `lhs`, otherwise `false`.
-/// - parameter lhs: The receiving dictionary.
-/// - parameter rhs: Another dictionary.
-/// - returns: `true` if the contents of `rhs` are equal to the contents of
-/// `lhs`, otherwise `false`.
-public func == (lhs: Hashtable, rhs: Hashtable) -> Bool {
-    return NSDictionary(dictionary: lhs).isEqual(to: rhs)
-}
+extension Dictionary : Equatable {}
 
 /// Returns a Boolean value that indicates whether the contents of the
 /// receiving dictionary are _not_ equal to the contents of another 
@@ -36,8 +20,21 @@ public func == (lhs: Hashtable, rhs: Hashtable) -> Bool {
 /// - parameter rhs: Another dictionary.
 /// - returns: `true` if the contents of `rhs` are not equal to the contents of
 /// `lhs`, otherwise `false`.
-public func != (lhs: Hashtable, rhs: Hashtable) -> Bool {
+public func != <Key, Value> (lhs: [Key : Value], rhs: [Key : Value]) -> Bool {
     return !NSDictionary(dictionary: lhs).isEqual(to: rhs)
+}
+
+/// Returns a `Boolean` value that indicates whether the contents of the
+/// receiving dictionary are equal to the contents of another given dictionary.
+///
+/// `true` if the contents of `rhs` are equal to the contents
+/// of `lhs`, otherwise `false`.
+/// - parameter lhs: The receiving dictionary.
+/// - parameter rhs: Another dictionary.
+/// - returns: `true` if the contents of `rhs` are equal to the contents of
+/// `lhs`, otherwise `false`.
+public func == <Key, Value> (lhs: [Key : Value], rhs: [Key : Value]) -> Bool {
+    return NSDictionary(dictionary: lhs).isEqual(to: rhs)
 }
 
 /// Add the all `keys` and `values` from `rhs` to `lhs` and return the sum.

@@ -8,8 +8,6 @@
 
 import UIKit
 
-public let NBPopoverViewControllerDidUpdateUserInfoNotification = "NBPopoverViewControllerDidUpdateUserInfoNotification"
-
 public func == (lhs: NBPopoverAction, rhs: NBPopoverAction) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
@@ -58,6 +56,8 @@ extension NBPopoverViewControllerDelegate {
 
 ///
 open class NBPopoverViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+    
+    open static let DidUpdateUserInfoNotification = "NBPopoverViewControllerDidUpdateUserInfoNotification"
     
     open weak var delegate: NBPopoverViewControllerDelegate?
     
@@ -173,7 +173,7 @@ open class NBPopoverViewController: UIViewController, UIPopoverPresentationContr
         
         beginObserving(
             selector: #selector(didUpdateUserInfo(_:)), 
-            name: NBPopoverViewControllerDidUpdateUserInfoNotification, 
+            name: NBPopoverViewController.DidUpdateUserInfoNotification, 
             object: userInfo)
         
     }

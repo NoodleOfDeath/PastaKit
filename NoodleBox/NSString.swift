@@ -11,7 +11,7 @@ import Foundation
 extension NSString {
     
     /// The range representation of this string.
-    public var range: NSRange {
+    open var range: NSRange {
         return NSMakeRange(0, length)
     }
     

@@ -15,7 +15,7 @@ extension UILabel {
         self.text = text
     }
     
-    public func boundingRectForCharacterRange(_ range: NSRange) -> CGRect? {
+    open func boundingRectForCharacterRange(_ range: NSRange) -> CGRect? {
         
         guard let attributedText = attributedText else { return nil }
         

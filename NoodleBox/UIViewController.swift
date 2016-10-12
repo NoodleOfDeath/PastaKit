@@ -11,18 +11,18 @@ import Foundation
 extension UIViewController {
     
     /// 
-    public var ordinal: Int {
+    open var ordinal: Int {
         guard let index = navigationController?.viewControllers.index(of: self) else { return NSNotFound }
         return index
     }
     
     /// 
-    public var isRootViewController: Bool {
+    open var isRootViewController: Bool {
         return ordinal == 0
     }
 
     /// Sets the text for the back button in the navigation controller.
-    public var backButtonTitle: String? {
+    open var backButtonTitle: String? {
         get {
             guard let button = navigationItem.backBarButtonItem else { return nil }
             return button.title
@@ -33,7 +33,7 @@ extension UIViewController {
     }
     
     /// 
-    public func embeddedInsideNavigationController() -> UINavigationController {
+    open func embeddedInsideNavigationController() -> UINavigationController {
         return UINavigationController(rootViewController: self)
     }
 

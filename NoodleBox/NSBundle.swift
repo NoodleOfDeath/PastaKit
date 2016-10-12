@@ -17,7 +17,7 @@ extension Bundle {
     /// formats, include the filename extension in the name.
     /// - returns: The image object that best matches the desired traits 
     /// with the given `name`, or `nil` if no suitable image was found.
-    public func imageNamed(_ name: String) -> UIImage? {
+    open func imageNamed(_ name: String) -> UIImage? {
         return UIImage(named: name,
                        in: self,
                        compatibleWith: .none) ?? UIImage(named: name)

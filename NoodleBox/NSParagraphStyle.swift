@@ -16,7 +16,7 @@ extension NSParagraphStyle {
     /// - parameter attrs: The contextual font attributes for which to determine character width
     /// - parameter strReference: Character used to determine a single character width
     /// - returns: A [NSMutableParagraphStyle](xdoc://) instance with a tab span of `tabSpan` based on font with attributes `attrs`
-    public static func mutableStyle(_ tabWidth: Int = 4, attributes attrs: [String: AnyObject] = [NSFontAttributeName: UIFont.systemFont()], strReference: String = "A") -> NSMutableParagraphStyle {
+    open static func mutableStyle(_ tabWidth: Int = 4, attributes attrs: [String: Any] = [NSFontAttributeName: UIFont.systemFont()], strReference: String = "A") -> NSMutableParagraphStyle {
         let paragraphStyle = `default`.mutableCopy() as! NSMutableParagraphStyle
         let charWidth = strReference.width(withAttributes: attrs)
         paragraphStyle.defaultTabInterval = charWidth * CGFloat(tabWidth)

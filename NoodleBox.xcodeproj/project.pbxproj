@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD0437751D887746007A7461 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0437741D887746007A7461 /* MimeType.swift */; };
+		CD0437751D887746007A7461 /* MIMEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0437741D887746007A7461 /* MIMEType.swift */; };
 		CD0F813D1D5F712E00736E69 /* CFRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */; };
 		CD2907E61D627836000DD8B7 /* NSCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E51D627836000DD8B7 /* NSCoder.swift */; };
 		CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E71D627C61000DD8B7 /* SortedArray.swift */; };
@@ -15,6 +15,8 @@
 		CD30FDC11D74DC200087E68F /* NBPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30FDC01D74DC200087E68F /* NBPopoverViewController.swift */; };
 		CD30FDC31D74DC470087E68F /* Localized Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30FDC21D74DC470087E68F /* Localized Strings.swift */; };
 		CD3894F01D662BF000E03CDC /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3894EF1D662BF000E03CDC /* NSString.swift */; };
+		CD39B1AB1DAC439900D0F8BF /* CountableRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39B1AA1DAC439900D0F8BF /* CountableRange.swift */; };
+		CD39B1AD1DAD44C700D0F8BF /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39B1AC1DAD44C700D0F8BF /* Notification.swift */; };
 		CD39BE9D1D60E01500E8FB50 /* NBStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */; };
 		CD39BE9F1D60E25E00E8FB50 /* NBFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */; };
 		CD39BED81D6110F700E8FB50 /* UIZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */; };
@@ -81,7 +83,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CD0437741D887746007A7461 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
+		CD0437741D887746007A7461 /* MIMEType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIMEType.swift; sourceTree = "<group>"; };
 		CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CFRepresentable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CD2907E51D627836000DD8B7 /* NSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCoder.swift; sourceTree = "<group>"; };
 		CD2907E71D627C61000DD8B7 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
@@ -90,6 +92,8 @@
 		CD30FDC21D74DC470087E68F /* Localized Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Localized Strings.swift"; sourceTree = "<group>"; };
 		CD3894EB1D66294700E03CDC /* UIInterfaceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientation.swift; sourceTree = "<group>"; };
 		CD3894EF1D662BF000E03CDC /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
+		CD39B1AA1DAC439900D0F8BF /* CountableRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountableRange.swift; sourceTree = "<group>"; };
+		CD39B1AC1DAD44C700D0F8BF /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBStackView.swift; sourceTree = "<group>"; };
 		CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBFileManager.swift; sourceTree = "<group>"; };
 		CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIZoomingScrollView.swift; sourceTree = "<group>"; };
@@ -202,22 +206,22 @@
 		CD0F81421D5F784F00736E69 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				CD74914B1D7CB47800F49594 /* NBBundle.swift */,
 				CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */,
+				CD74914B1D7CB47800F49594 /* NBBundle.swift */,
 				CD39BE9E1D60E25E00E8FB50 /* NBFileManager.swift */,
-				CDD1161E1D592A93004A9DBC /* UIFilterView.swift */,
-				CDD116131D592A93004A9DBC /* Operators.swift */,
-				CD2907EB1D627CCA000DD8B7 /* Sorted Array */,
-				CD2907EC1D627CD0000DD8B7 /* Sorted Dictionary */,
-				CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */,
-				CDD116231D592A93004A9DBC /* UInt256.swift */,
-				CDD1162B1D592A93004A9DBC /* UTCoreTypes.swift */,
-				CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */,
 				CD30FDC01D74DC200087E68F /* NBPopoverViewController.swift */,
-				CD4EA91A1D6BE86A003B45E4 /* UIPaddedTextField.swift */,
+				CD39BE9C1D60E01500E8FB50 /* NBStackView.swift */,
 				CD4EA91D1D6D0962003B45E4 /* NSAttributeName.swift */,
 				CD7491581D7DFC8100F49594 /* NSSearchOptions.swift */,
+				CDD116131D592A93004A9DBC /* Operators.swift */,
 				CD3AEF3C1D874D6300E3DBB4 /* SeparableOptionSetType.swift */,
+				CD2907EB1D627CCA000DD8B7 /* Sorted Array */,
+				CD2907EC1D627CD0000DD8B7 /* Sorted Dictionary */,
+				CDD1161E1D592A93004A9DBC /* UIFilterView.swift */,
+				CDD116231D592A93004A9DBC /* UInt256.swift */,
+				CD4EA91A1D6BE86A003B45E4 /* UIPaddedTextField.swift */,
+				CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */,
+				CDD1162B1D592A93004A9DBC /* UTCoreTypes.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
@@ -295,6 +299,7 @@
 		CDD116671D592ABE004A9DBC /* ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				CD0437741D887746007A7461 /* MIMEType.swift */,
 				CDD116681D592AC7004A9DBC /* ObjCTry */,
 			);
 			name = ObjC;
@@ -334,6 +339,8 @@
 				CDD115F61D592A93004A9DBC /* Bool.swift */,
 				CDD116141D592A93004A9DBC /* OptionSetType.swift */,
 				CDD115FF1D592A93004A9DBC /* Math.swift */,
+				CD39B1AA1DAC439900D0F8BF /* CountableRange.swift */,
+				CD39B1AC1DAD44C700D0F8BF /* Notification.swift */,
 			);
 			name = "Swift Native";
 			sourceTree = "<group>";
@@ -367,7 +374,6 @@
 			children = (
 				CDD116671D592ABE004A9DBC /* ObjC */,
 				CD0F81421D5F784F00736E69 /* Swift */,
-				CD0437741D887746007A7461 /* MimeType.swift */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -430,7 +436,7 @@
 			attributes = {
 				CLASSPREFIX = NB;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = NoodleNation;
 				TargetAttributes = {
 					CDD116B91D592C9F004A9DBC = {
@@ -505,7 +511,7 @@
 				CD4EA8C61D6BE607003B45E4 /* UIAlertController.swift in Sources */,
 				CDD116C71D592CDB004A9DBC /* Array.swift in Sources */,
 				CDD116EA1D592CE3004A9DBC /* UIFilterView.swift in Sources */,
-				CD0437751D887746007A7461 /* MimeType.swift in Sources */,
+				CD0437751D887746007A7461 /* MIMEType.swift in Sources */,
 				CD0F813D1D5F712E00736E69 /* CFRepresentable.swift in Sources */,
 				CD4EA8BA1D6BE519003B45E4 /* NSSortedArray.swift in Sources */,
 				CDD116CC1D592CDB004A9DBC /* NSBundle.swift in Sources */,
@@ -535,10 +541,12 @@
 				CDD116CF1D592CDB004A9DBC /* NSFileManager.swift in Sources */,
 				CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */,
 				CD4EA8CA1D6BE607003B45E4 /* UIDevice.swift in Sources */,
+				CD39B1AB1DAC439900D0F8BF /* CountableRange.swift in Sources */,
 				CDD116C61D592CDB004A9DBC /* Range.swift in Sources */,
 				CDD116DD1D592CDD004A9DBC /* CGPoint.swift in Sources */,
 				CDD116E31D592CDF004A9DBC /* UInt256.swift in Sources */,
 				CDD116DB1D592CDB004A9DBC /* NSUserDefaults.swift in Sources */,
+				CD39B1AD1DAD44C700D0F8BF /* Notification.swift in Sources */,
 				CD2907E61D627836000DD8B7 /* NSCoder.swift in Sources */,
 				CDD116CD1D592CDB004A9DBC /* NSDate.swift in Sources */,
 				CDD116C81D592CDB004A9DBC /* Bool.swift in Sources */,
@@ -564,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -573,8 +582,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -610,6 +621,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -619,8 +631,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -651,6 +665,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -678,6 +693,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

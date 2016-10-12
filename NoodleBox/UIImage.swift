@@ -11,11 +11,11 @@ import CoreImage
 
 extension UIImage {
     
-    public var width: CGFloat {
+    open var width: CGFloat {
         return size.width
     }
     
-    public var height: CGFloat {
+    open var height: CGFloat {
         return size.height
     }
     
@@ -24,7 +24,7 @@ extension UIImage {
 
 extension UIImage {
     
-    public func imageByCroppingToRect(_ rect: CGRect) -> UIImage? {
+    open func imageByCroppingToRect(_ rect: CGRect) -> UIImage? {
         if let image = self.cgImage?.cropping(to: rect) {
             return UIImage(cgImage: image)
         } else if let image = (self.ciImage)?.cropping(to: rect) {
@@ -33,7 +33,7 @@ extension UIImage {
         return nil
     }
     
-    public func imageByScalingAndCroppingForSize(_ targetSize: CGSize) -> UIImage? {
+    open func imageByScalingAndCroppingForSize(_ targetSize: CGSize) -> UIImage? {
         
         let sourceImage = self
         

@@ -10,11 +10,11 @@ import Foundation
 
 extension UINavigationController {
  
-    public static func hideShowBarDuration() -> CGFloat {
+    open static func hideShowBarDuration() -> CGFloat {
         return UINavigationControllerHideShowBarDuration
     }
     
-    public static func hideShowBarTimeInterval() -> TimeInterval {
+    open static func hideShowBarTimeInterval() -> TimeInterval {
         return TimeInterval(UINavigationControllerHideShowBarDuration)
     }
 

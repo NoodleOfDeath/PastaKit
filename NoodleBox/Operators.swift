@@ -9,19 +9,21 @@
 import Foundation
 
 /// Append path component `rhs` to `lhs`
-infix operator +/ { associativity left precedence 150 }
+infix operator +/ : AdditionPrecedence
 /// Append path extension `rhs` to `lhs`
-infix operator +* { associativity left precedence 150 }
+infix operator +* : AdditionPrecedence
 
 /// Modular division the way it was meant to be
-infix operator %% { associativity left precedence 150 }
+infix operator %% : AdditionPrecedence
 
 /// Assign value to `lhs` iff `rhs` is not `nil`
-infix operator =? { associativity right precedence 90 assignment }
+infix operator =? : AssignmentPrecedence
 /// Assign value to `lhs` iff `rhs < lhs`
-infix operator =< { associativity right precedence 90 assignment }
+infix operator =< : AssignmentPrecedence
 /// Assign value to `lhs` iff `rhs > lhs`
-infix operator => { associativity right precedence 90 assignment }
+infix operator => : AssignmentPrecedence
 
 /// Bridge between Swift <-> Objective-C
 postfix operator *
+
+

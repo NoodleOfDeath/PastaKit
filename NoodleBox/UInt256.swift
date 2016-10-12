@@ -157,77 +157,6 @@ public func %= (lhs: inout UInt256, rhs: UInt256) {
     lhs = lhs % rhs
 }
 
-extension UInt256 {
-    
-    
-    public func toIntMax() -> IntMax {
-        return Int64(parts[6] << 32) + Int64(parts[7])
-    }
-    
-    
-    public func toUIntMax() -> UIntMax {
-        return UInt64(parts[6] << 32) + UInt64(parts[7])
-    }
-    
-    /// Adds `lhs` and `rhs`, returning the result and a `Bool` that is
-    /// `true` iff the operation caused an arithmetic overflow.
-    public static func addWithOverflow(_ lhs: UInt256, _ rhs: UInt256) -> (UInt256, overflow: Bool) {
-        var parts = [UInt32]()
-        var carry = false
-        for i in (0 ..< 8).reversed() {
-            let lpart = UInt64(lhs.parts[i])
-            let rpart = UInt64(rhs.parts[i])
-            let comp = lpart == UInt64(UInt32.max) && rpart == UInt64(UInt32.max)
-            let sum64 = lpart + rpart + (carry || comp ? 1 : 0)
-            let sum32 = UInt32((sum64 << 32) >> 32)
-            carry = sum64 > UInt64(UInt32.max)
-            parts.insert(sum32, at: 0)
-        }
-        return (UInt256(parts), parts[0] > 0x8fffffff)
-    }
-    
-    /// Subtracts `lhs` and `rhs`, returning the result and a `Bool` that is
-    /// `true` iff the operation caused an arithmetic overflow.
-    public static func subtractWithOverflow(_ lhs: UInt256, _ rhs: UInt256) -> (UInt256, overflow: Bool) {
-        // TODO: -
-        var parts = [UInt32]()
-        var borrow = false
-        var gave = false
-        for i in (0 ..< 8).reversed() {
-            borrow = lhs.parts[i] < rhs.parts[i]
-            let lpart = UInt64(lhs.parts[i]) - (gave ? 1 : 0) + (borrow ? UInt64(UInt32.max) : 0)
-            let rpart = UInt64(rhs.parts[i])
-            let sum64 = lpart - rpart
-            let sum32 = UInt32((sum64 << 32) >> 32)
-            gave = borrow
-            parts.insert(sum32, at: 0)
-        }
-        return (UInt256(parts), parts[0] > 0x8fffffff)
-    }
-    
-    /// Multiplies `lhs` and `rhs`, returning the result and a `Bool` that is
-    /// `true` iff the operation caused an arithmetic overflow.
-    public static func multiplyWithOverflow(_ lhs: UInt256, _ rhs: UInt256) -> (UInt256, overflow: Bool) {
-        // TODO: -Not Implemented
-        return (UInt256(), false)
-    }
-    
-    /// Divides `lhs` and `rhs`, returning the result and a `Bool` that is
-    /// `true` iff the operation caused an arithmetic overflow.
-    public static func divideWithOverflow(_ lhs: UInt256, _ rhs: UInt256) -> (UInt256, overflow: Bool) {
-        // TODO: -Not Implemented
-       return (UInt256(), false)
-    }
-    
-    /// Divides `lhs` and `rhs`, returning the remainder and a `Bool` that is
-    /// `true` iff the operation caused an arithmetic overflow.
-    public static func remainderWithOverflow(_ lhs: UInt256, _ rhs: UInt256) -> (UInt256, overflow: Bool) {
-        // TODO: -Not Implemented
-        return (UInt256(), false)
-    }
-    
-}
-
 public struct UInt256 : UnsignedInteger, Comparable, Equatable {
     
     public typealias _ObjectiveCType = NSNumber
@@ -272,7 +201,7 @@ public struct UInt256 : UnsignedInteger, Comparable, Equatable {
     
     public var data: Data {
         let bytes = [part0, part1, part2, part3, part4, part5, part6, part7]
-        return Data(bytes: UnsafePointer<UInt8>(bytes), count: 32)
+        return Data(bytes: UnsafePointer<UInt32>(bytes), count: 32)
     }
     
     public init(_builtinIntegerLiteral builtinIntegerLiteral: _MaxBuiltinIntegerType) {
@@ -343,18 +272,17 @@ public struct UInt256 : UnsignedInteger, Comparable, Equatable {
         self.init(parts)
     }
     
-    
-    public func advancedBy(_ n: Stride) -> UInt256 {
+    public func advanced(by n: Stride) -> UInt256 {
         return self + UInt256(n)
     }
     
     
-    public func advancedBy(_ n: Distance, limit: UInt256) -> UInt256 {
+    public func advanced(by n: Distance, limit: UInt256) -> UInt256 {
         return limit - UInt256(n) > self ? self + UInt256(n) : limit
     }
     
     
-    public func distanceTo(_ end: UInt256) -> Distance {
+    public func distance(to end: UInt256) -> Distance {
         return end - self
     }
     
@@ -368,12 +296,12 @@ public struct UInt256 : UnsignedInteger, Comparable, Equatable {
     /// - Requires: `UInt256` has a well-defined predecessor.
     
     public func predecessor() -> UInt256 {
-        return advancedBy(-1)
+        return advanced(by: -1)
     }
     
     
     public func successor() -> UInt256 {
-        return advancedBy(1)
+        return advanced(by: 1)
     }
     
 }
@@ -425,6 +353,75 @@ extension UInt256 {
     
     public static var allZeros: UInt256 {
         return UInt256()
+    }
+    
+}
+
+extension UInt256 {
+    
+    public func toIntMax() -> IntMax {
+        return Int64(parts[6] << 32) + Int64(parts[7])
+    }
+    
+    public func toUIntMax() -> UIntMax {
+        return UInt64(parts[6] << 32) + UInt64(parts[7])
+    }
+    
+    /// Adds `lhs` and `rhs`, returning the result and a `Bool` that is
+    /// `true` iff the operation caused an arithmetic overflow.
+    public static func addWithOverflow(_ lhs: UInt256, _ rhs: UInt256) -> (UInt256, overflow: Bool) {
+        var parts = [UInt32]()
+        var carry = false
+        for i in (0 ..< 8).reversed() {
+            let lpart = UInt64(lhs.parts[i])
+            let rpart = UInt64(rhs.parts[i])
+            let comp = lpart == UInt64(UInt32.max) && rpart == UInt64(UInt32.max)
+            let sum64 = lpart + rpart + (carry || comp ? 1 : 0)
+            let sum32 = UInt32((sum64 << 32) >> 32)
+            carry = sum64 > UInt64(UInt32.max)
+            parts.insert(sum32, at: 0)
+        }
+        return (UInt256(parts), parts[0] > 0x8fffffff)
+    }
+    
+    /// Subtracts `lhs` and `rhs`, returning the result and a `Bool` that is
+    /// `true` iff the operation caused an arithmetic overflow.
+    public static func subtractWithOverflow(_ lhs: UInt256, _ rhs: UInt256) -> (UInt256, overflow: Bool) {
+        // TODO: -
+        var parts = [UInt32]()
+        var borrow = false
+        var gave = false
+        for i in (0 ..< 8).reversed() {
+            borrow = lhs.parts[i] < rhs.parts[i]
+            let lpart = UInt64(lhs.parts[i]) - (gave ? 1 : 0) + (borrow ? UInt64(UInt32.max) : 0)
+            let rpart = UInt64(rhs.parts[i])
+            let sum64 = lpart - rpart
+            let sum32 = UInt32((sum64 << 32) >> 32)
+            gave = borrow
+            parts.insert(sum32, at: 0)
+        }
+        return (UInt256(parts), parts[0] > 0x8fffffff)
+    }
+    
+    /// Multiplies `lhs` and `rhs`, returning the result and a `Bool` that is
+    /// `true` iff the operation caused an arithmetic overflow.
+    public static func multiplyWithOverflow(_ lhs: UInt256, _ rhs: UInt256) -> (UInt256, overflow: Bool) {
+        // TODO: -Not Implemented
+        return (UInt256(), false)
+    }
+    
+    /// Divides `lhs` and `rhs`, returning the result and a `Bool` that is
+    /// `true` iff the operation caused an arithmetic overflow.
+    public static func divideWithOverflow(_ lhs: UInt256, _ rhs: UInt256) -> (UInt256, overflow: Bool) {
+        // TODO: -Not Implemented
+        return (UInt256(), false)
+    }
+    
+    /// Divides `lhs` and `rhs`, returning the remainder and a `Bool` that is
+    /// `true` iff the operation caused an arithmetic overflow.
+    public static func remainderWithOverflow(_ lhs: UInt256, _ rhs: UInt256) -> (UInt256, overflow: Bool) {
+        // TODO: -Not Implemented
+        return (UInt256(), false)
     }
     
 }

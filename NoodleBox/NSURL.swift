@@ -76,22 +76,26 @@ public struct NSURLModification: OptionSet {
 
 // MARK: - ** NSURL Extension **
 
+public postfix func * (argument: URL) -> NSURL {
+    return (argument as NSURL)
+}
+
 extension URL {
     
     ///  `true` iff a resource exists at `self`.
     public var exists: Bool {
-        return checkResourceIsReachableAndReturnError(nil)
+        return self*.checkResourceIsReachableAndReturnError(nil)
     }
     
     /// `true` iff this resource is a local document resource.
     public var local: Bool {
-        return path.contains(NSDocumentPath) ?? false
+        return path.contains(NSDocumentPath)
     }
     
     /// `true` iff this resource is an iCloud resource. 
     public var ubiquitous: Bool {
         guard let NSUbiquityPath = NSUbiquityPath else { return false }
-        return path.contains(NSUbiquityPath) ?? false
+        return path.contains(NSUbiquityPath)
     }
     
     /// `true` iff this resource is a regular file, or symbolic link to a regular file.
@@ -116,8 +120,7 @@ extension URL {
     
     /// The number of files contained in this resource, iff it is a directory.
     public var fileCount: Int {
-        guard directory, let path = self.path,
-            let contents = try? 
+        guard let contents = try? 
                 FileManager.default.contentsOfDirectory(atPath: path)
             else { return 0 }
         return contents.count
@@ -144,12 +147,16 @@ extension URL {
     /// Get the resource value for `key` of the resource located at `self`.
     public subscript(key: String) -> AnyObject? {
         var resource: AnyObject?
+        getResourceValue(&resource, forKey: URLResourceKey(rawValue: key))
+        return resource
+    }
+    
+    public func getResourceValue(_ value: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey key: URLResourceKey) {
         do {
-            try getResourceValue(&resource, forKey: URLResourceKey(rawValue: key))
-        } catch let error as NSError {
+            try self*.getResourceValue(value, forKey: key)
+        } catch let error {
             print(error.localizedDescription)
         }
-        return resource
     }
     
     /// Returns the most recent date this file was modified, or 

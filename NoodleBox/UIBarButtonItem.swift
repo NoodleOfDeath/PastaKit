@@ -22,7 +22,7 @@ extension UIBarButtonItem {
     ///     A standard fixed space [UIBarButtonItem]() of specified width
     /// - parameter width: The fixed width of to make the space
     /// - returns: A fixed space instance with a width of `width`
-    public static func fixedSpace(_ width: CGFloat = 0.0) -> UIBarButtonItem {
+    open static func fixedSpace(_ width: CGFloat = 0.0) -> UIBarButtonItem {
         let item = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         item.width = width
         return item
@@ -30,7 +30,7 @@ extension UIBarButtonItem {
 
     ///     A standard flexible space [UIBarButtonItem]()
     /// - returns: A flexible space instance
-    public static func flexibleSpace() -> UIBarButtonItem {
+    open static func flexibleSpace() -> UIBarButtonItem {
         return UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     }
 

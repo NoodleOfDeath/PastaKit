@@ -16,36 +16,36 @@ extension UIApplication {
     /// - returns: The orientation of the application in terms of the
     /// status bar orientation.
     /// - seealso: [`UIDeviceOrientation`]()
-    public static var orientation: UIInterfaceOrientation {
+    open static var orientation: UIInterfaceOrientation {
         return shared.statusBarOrientation
     }
     
     /// `true` if the `orientation` is either `.Portrait` or
     /// `.PortraitUpsideDown`
-    public static var isPortrait: Bool {
+    open static var isPortrait: Bool {
         return orientation.isPortrait
     }
 
     /// `true` if the `orientation` is either `.LandscapeLeft` or
     /// `.LandscapeRight`
-    public static var isLandscape: Bool {
+    open static var isLandscape: Bool {
         return orientation.isLandscape
     }
     
     /// The shared application delegate
     /// - returns: The shared application delegate
-    public static func sharedDelegate() -> UIApplicationDelegate? {
+    open static func sharedDelegate() -> UIApplicationDelegate? {
         return shared.delegate
     }
 
     /// The shared application key window
     /// - returns: The shared application key window
-    public static func sharedKeyWindow() -> UIWindow? {
+    open static func sharedKeyWindow() -> UIWindow? {
         return shared.keyWindow
     }
     
     /// Dismiss keyboard from key window.
-    public static func endEditing(_ force: Bool = false) {
+    open static func endEditing(_ force: Bool = false) {
         shared.keyWindow?.endEditing(force)
     }
 

@@ -18,9 +18,9 @@ public postfix func * (argument: NSRange) -> CountableRange<Int> {
     return argument.location ..< argument.maxRange
 }
 
-extension Range where Element : Integer {
+extension Range where Bound : Integer {
     
     /// 
-    public var length: Element { return upperBound - lowerBound }
+    public var length: Bound { return upperBound - lowerBound }
     
 }

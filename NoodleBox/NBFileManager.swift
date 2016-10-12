@@ -54,8 +54,8 @@ public struct NBFileManager {
     
     fileprivate static func getURL(_ url: URL, forOverwriteAction action: NSOverwriteAction) -> URL? {
         
-        guard let baseURL = url.deletingLastPathComponent() else { return nil }
-        guard let lastPathComponent = url.lastPathComponent else { return nil }
+        let baseURL = url.deletingLastPathComponent()
+        let lastPathComponent = url.lastPathComponent
         let ext = lastPathComponent.pathExtension
         
         var url = url
@@ -64,7 +64,7 @@ public struct NBFileManager {
         if action == .useAlternateName {
             var i = 1
             while url.exists {
-                url = baseURL +/ (lastPathComponent.stringByDeletingPathExtension + "-\(i)" + (ext.length > 0 ? ".\(ext)" : ""))
+                url = (baseURL +/ (lastPathComponent.stringByDeletingPathExtension + "-\(i)" + (ext.length > 0 ? ".\(ext)" : "")))
                 i += 1
             }
         }
@@ -84,7 +84,7 @@ public struct NBFileManager {
         if action == .useAlternateName {
             var i = 1
             while fileExistsAtPath(path) {
-                path = basePath +/ (lastPathComponent.stringByDeletingPathExtension + "-\(i)" + (ext.length > 0 ? ".\(ext)" : ""))
+                path = (basePath +/ (lastPathComponent.stringByDeletingPathExtension + "-\(i)" + (ext.length > 0 ? ".\(ext)" : "")))
                 i += 1
             }
         }
@@ -139,9 +139,9 @@ extension NBFileManager {
     /// option is NSDirectoryEnumerationSkipsHiddenFiles.
     /// - returns: An array of `NSURL` objects, each of which identifies a 
     /// file, directory, or symbolic link contained in url.
-    public static func contentsOfDirectoryAtURL(_ url: URL, includingPropertiesForKeys keys: [String]? = nil, options mask: FileManager.DirectoryEnumerationOptions = []) -> [URL] {
+    public static func contentsOfDirectoryAtURL(_ url: URL, includingPropertiesForKeys keys: [URLResourceKey]? = nil, options mask: FileManager.DirectoryEnumerationOptions = []) -> [URL] {
         do {
-            return try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: keys as! [URLResourceKey]?, options: mask)
+            return try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: keys, options: mask)
         } catch { errorHandler?(error) }
         return []
     }
@@ -183,7 +183,7 @@ extension NBFileManager {
     /// - parameter createIntermediates: If true, this method creates any non-existent parent directories as part of creating the directory in url. If false, this method fails if any of the intermediate parent directories does not exist. Default is `true`.
     /// - parameter attributes: The file attributes for the new directory. You can set the owner and group numbers, file permissions, and modification date. If you specify nil for this parameter, the directory is created according to the umask(2) Mac OS X Developer Tools Manual Page of the process. The Constants section lists the global constants used as keys in the attributes dictionary. Some of the keys, such as NSFileHFSCreatorCode and NSFileHFSTypeCode, do not apply to directories. Default is `nil`.
     /// - returns: `true` if the directory was created, `true` if createIntermediates is set and the directory already exists, or `false` if an error occurred.
-    public static func createDirectoryAtURL(_ url: URL, forOverwriteAction action: NSOverwriteAction = .none, withIntermediateDirectories createIntermediates: Bool = true, attributes: PropertyList? = nil) -> URL? {
+    public static func createDirectoryAtURL(_ url: URL, forOverwriteAction action: NSOverwriteAction = .none, withIntermediateDirectories createIntermediates: Bool = true, attributes: [String : Any]? = nil) -> URL? {
         guard let url = getURL(url, forOverwriteAction: action) else { return nil }
         do {
             try fileManager.createDirectory(at: url, withIntermediateDirectories: createIntermediates, attributes: attributes)
@@ -200,7 +200,7 @@ extension NBFileManager {
     /// - parameter createIntermediates: If `true`, this method creates any non-existent parent directories as part of creating the directory in url. If `false`, this method fails if any of the intermediate parent directories does not exist. Default is `true`.
     /// - parameter attributes: The file attributes for the new directory. You can set the owner and group numbers, file permissions, and modification date. If you specify nil for this parameter, the directory is created according to the umask(2) Mac OS X Developer Tools Manual Page of the process. The Constants section lists the global constants used as keys in the attributes dictionary. Some of the keys, such as NSFileHFSCreatorCode and NSFileHFSTypeCode, do not apply to directories. Default is `nil`.
     /// - returns: `true` if the directory was created, `true` if createIntermediates is set and the directory already exists, or `false` if an error occurred.
-    public static func createDirectoryAtPath(_ path: String, forOverwriteAction action: NSOverwriteAction = .none, withIntermediateDirectories createIntermediates: Bool = true, attributes: PropertyList? = nil) -> String? {
+    public static func createDirectoryAtPath(_ path: String, forOverwriteAction action: NSOverwriteAction = .none, withIntermediateDirectories createIntermediates: Bool = true, attributes: [String : Any]? = nil) -> String? {
         let path = getPath(path, forOverwriteAction: action)
         do {
             try fileManager.createDirectory(atPath: path, withIntermediateDirectories: createIntermediates, attributes: attributes)

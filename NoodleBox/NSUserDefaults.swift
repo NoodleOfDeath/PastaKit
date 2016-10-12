@@ -19,7 +19,7 @@ import UIKit
 /// - parameter rhs: The property list containing new preferences
 /// - returns: A user defaults object with data that has been merged with the
 /// data from `rhs`.
-public func + (lhs: UserDefaults, rhs: PropertyList) -> UserDefaults {
+public func + (lhs: UserDefaults, rhs: [String : Any]) -> UserDefaults {
     for (k, v) in rhs { lhs[k] = v }
     return lhs
 }
@@ -29,7 +29,7 @@ public func + (lhs: UserDefaults, rhs: PropertyList) -> UserDefaults {
 /// by the value for that key in `rhs`.
 /// - parameter lhs: The user defaults object to update
 /// - parameter rhs: The property list containing new preferences
-public func += (lhs: inout UserDefaults, rhs: PropertyList) {
+public func += (lhs: inout UserDefaults, rhs: [String : Any]) {
     for (k, v) in rhs { lhs[k] = v }
 }
 
@@ -38,8 +38,8 @@ public func += (lhs: inout UserDefaults, rhs: PropertyList) {
 extension UserDefaults {
 
     /// Convenient subscripting access to/assignment of values via `key`
-    public subscript (key: String) -> AnyObject? {
-        get { return object(forKey: key) as AnyObject? }
+    open subscript (key: String) -> Any? {
+        get { return object(forKey: key) as Any? }
         set { set(newValue, forKey: key) }
     }
 

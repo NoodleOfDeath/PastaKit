@@ -33,7 +33,7 @@ public func + <T: Comparable>(lhs: SortedArray<T>, rhs: SortedArray<T>) -> Sorte
 public func + <T: Comparable>(lhs: SortedArray<T>, rhs: [T]) -> SortedArray<T> {
     var arr = lhs
     for element in rhs {
-        arr.add(element)
+        _ = arr.add(element)
     }
     return arr
 }
@@ -41,7 +41,7 @@ public func + <T: Comparable>(lhs: SortedArray<T>, rhs: [T]) -> SortedArray<T> {
 /// 
 public func + <T: Comparable>(lhs: SortedArray<T>, rhs: T) -> SortedArray<T> {
     var arr = lhs
-    arr.add(rhs)
+    _ = arr.add(rhs)
     return arr
 }
 
@@ -51,6 +51,42 @@ public func + <T: Comparable>(lhs: SortedArray<T>, rhs: T) -> SortedArray<T> {
 /// they added to the collection.
 public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgeable, CustomStringConvertible {
     
+    /// Returns the position immediately after the given index.
+    ///
+    /// - Parameter i: A valid index of the collection. `i` must be less than
+    ///   `endIndex`.
+    /// - Returns: The index value immediately after `i`.
+    public func index(after i: Int) -> Int {
+        return i + 1
+    }
+    
+    /// Bridge from an Objective-C object of the bridged class type to a
+    /// value of the Self type.
+    ///
+    /// This bridging operation is used for unconditional bridging when
+    /// interoperating with Objective-C code, either in the body of an
+    /// Objective-C thunk or when calling Objective-C code, and may
+    /// defer complete checking until later. For example, when bridging
+    /// from `NSArray` to `Array<Element>`, we can defer the checking
+    /// for the individual elements of the array.
+    ///
+    /// \param source The Objective-C object from which we are
+    /// bridging. This optional value will only be `nil` in cases where
+    /// an Objective-C method has returned a `nil` despite being marked
+    /// as `_Nonnull`/`nonnull`. In most such cases, bridging will
+    /// generally force the value immediately. However, this gives
+    /// bridging the flexibility to substitute a default value to cope
+    /// with historical decisions, e.g., an existing Objective-C method
+    /// that returns `nil` to for "empty result" rather than (say) an
+    /// empty array. In such cases, when `nil` does occur, the
+    /// implementation of `Swift.Array`'s conformance to
+    /// `_ObjectiveCBridgeable` will produce an empty array rather than
+    /// dynamically failing.
+    public static func _unconditionallyBridgeFromObjectiveC(_ source: NSSortedArray<Element>?) -> SortedArray<Element> {
+        guard let source = source else { return SortedArray<Element> () }
+        return SortedArray<Element>(source)
+    }
+
     // MARK: - _ObjectiveCBridgeable
     
     /// Required typealias from the `_ObjectiveCBridgeable` private protocol
@@ -184,7 +220,7 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     }
     
     public func makeIterator() -> Iterator {
-        return Iterator(SortedArray(self))
+        return Iterator(_elements: SortedArray(self))
     }
     
     /// Insert `newElement` at index `i`.

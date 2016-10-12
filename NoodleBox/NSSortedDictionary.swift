@@ -15,23 +15,33 @@ private struct CodingKeys {
 }
 
 /// 
-open class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection, NSCoding {
+public class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection, NSCoding {
+    
+    /// Returns the position immediately after the given index.
+    ///
+    /// - Parameter i: A valid index of the collection. `i` must be less than
+    ///   `endIndex`.
+    /// - Returns: The index value immediately after `i`.
+    public func index(after i: Int) -> Int {
+        return i + 1
+    }
+
     
     public typealias Index = Int
     public typealias Iterator = IndexingIterator<NSSortedDictionary<Key, Value>>
     
-    open var startIndex: Index { return 0 }
-    open var endIndex: Index { return values.count }
-    open var count: Int { return values.count }
+    public var startIndex: Index { return 0 }
+    public var endIndex: Index { return values.count }
+    public var count: Int { return values.count }
     
     /// 
     public typealias Element = (key: Key, value: Value)
     /// The order in which to sort array elements.
-    open var sortOrder: SortOrder { return backingStorage.sortOrder }
+    public var sortOrder: SortOrder { return backingStorage.sortOrder }
     /// 
-    open var keys: SortedArray<Key> { return backingStorage.keys }
+    public var keys: SortedArray<Key> { return backingStorage.keys }
     /// 
-    open var values:[Value] { return backingStorage.values }
+    public var values:[Value] { return backingStorage.values }
     
     /// 
     fileprivate var backingStorage: SortedDictionary<Key, Value>
@@ -60,7 +70,7 @@ open class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection, N
         self.init(sortOrder: sortOrder, keys: keys, values: values)
     }
     
-    open func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
         aCoder.encode(sortOrder.rawValue, forKey: CodingKeys.SortOrder)
         aCoder.encode(keys, forKey: CodingKeys.Keys)
         aCoder.encode(values, forKey: CodingKeys.Values)
@@ -69,23 +79,24 @@ open class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection, N
     // MARK: - ** Subscript Methods **
     
     /// 
-    open subscript (position: Index) -> Element {
+    public subscript (position: Index) -> Element {
         get { return backingStorage[position] }
         set { backingStorage[position] = newValue }
     }
     
     /// 
-    open subscript (key: Key) -> Value? {
+    public subscript (key: Key) -> Value? {
         get { return backingStorage[key] }
         set { backingStorage[key] = newValue }
     }
     
-    open func makeIterator() -> Iterator {
-        return Iterator(NSSortedDictionary(self))
+    /// 
+    public func makeIterator() -> Iterator {
+        return Iterator(_elements: NSSortedDictionary(self))
     }
     
     /// 
-    open func removeAll(keepCapacity: Bool = false) {
+    public func removeAll(keepCapacity: Bool = false) {
         backingStorage.removeAll(keepCapacity: keepCapacity)
     }
     

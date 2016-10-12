@@ -33,8 +33,8 @@ extension UITextInput {
         if UITextView.instancesRespond(to: #function) {
             let op = UITextView.instanceMethod(for: #function)
             let mp = UnsafeMutablePointer<(_ delegate: AnyObject, _ selector: Selector, _ textView: UITextView) -> Bool>(op)
-            let keyboardInputShouldDelete = mp?.pointee
-            shouldDelete = keyboardInputShouldDelete(delegate: self, selector: #function, textView: textView)
+            guard let keyboardInputShouldDelete = mp?.pointee else { return false }
+            shouldDelete = keyboardInputShouldDelete(self, #function, textView)
         }
         
         let isIOS8 = Int(UIDevice.current.systemVersion) == 8

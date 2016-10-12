@@ -142,12 +142,12 @@ extension String {
     
     /// The number of words contained in this string.
     public var wordCount: Int {
-        return self.components(separatedBy: .whitespaces()).count - (length > 1 ? 1 : 0)
+        return components(separatedBy: .whitespaces).count - (length > 1 ? 1 : 0)
     }
     
     /// The number of lines contained in this string.
     public var lineCount: Int {
-        return self.components(separatedBy: .newlines()).count
+        return components(separatedBy: .newlines).count
     }
     
 }
@@ -204,16 +204,6 @@ extension String {
 // MARK: - ** String Pattern Matching Methods **
 
 extension String {
-    
-    /// Optional `containsString` method overload
-    /// Returns true iff `other` is non-empty, not `nil`, and contained within 
-    /// `self` by case-sensitive, non-literal search.
-    /// Equivalent to `self.rangeOfString(other)` != nil
-    
-    public func containsString(_ other: String?) -> Bool {
-        guard let other = other else { return false }
-        return self.contains(other)
-    }
     
     /// Returns whether or not at least one match is found in the parameter
     /// `string`, confining the search range to `range`, and using `self`
@@ -591,14 +581,14 @@ extension String {
     public var leadingWhitespaces: String {
         guard let expr = try? NSRegularExpression(pattern: "^[ \\t]*", options: []),
             let match = expr.firstMatch(in: self, options: [], range: range) else { return "" }
-        return substringWithRange(match.range) ?? ""
+        return substringWithRange(match.range)
     }
     
     /// The substring of trailing whitespaces, if any.
     public var trailingWhitespaces: String {
         guard let expr = try? NSRegularExpression(pattern: "[ \\t]*$", options: []),
             let match = expr.firstMatch(in: self, options: [], range: range) else { return "" }
-        return substringWithRange(match.range) ?? ""
+        return substringWithRange(match.range)
     }
     
 }
@@ -718,7 +708,7 @@ extension String {
     /// The bounding box size the receiver occupies when drawn with the specified attributes.
     /// - parameter attrs: A dictionary of text attributes to be applied to the string. These are the same attributes that can be applied to an NSAttributedString object, but in the case of NSString objects, the attributes apply to the entire string, rather than ranges within the string.
     /// - returns: The bounding box size the receiver occupies when drawn with the specified attributes.
-    public func sizeWithAttributes(_ attrs: PropertyList) -> CGSize {
+    public func sizeWithAttributes(_ attrs: [String : Any]) -> CGSize {
         return self*.size(attributes: attrs)
     }
 
@@ -727,7 +717,7 @@ extension String {
     /// - parameter height: The constrained height of the drawing bounds
     /// - parameter attrs: The attributes to apply to the string
     /// - returns: The width of the bounding rect for the receiver drawn using the given options and display characteristics.
-    public func width(whenConstrainedToHeight height: CGFloat = .greatestFiniteMagnitude, withAttributes attrs: PropertyList? = nil) -> CGFloat {
+    public func width(whenConstrainedToHeight height: CGFloat = .greatestFiniteMagnitude, withAttributes attrs: [String : Any]? = nil) -> CGFloat {
         let attrs = attrs ?? [NSFontAttributeName : UIFont.systemFont()]
         let constraintRect = CGSize(width: height, height: .greatestFiniteMagnitude)
         let boundingBox = self*.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: attrs, context: nil)
@@ -739,7 +729,7 @@ extension String {
     /// - parameter width: The constrained width of the drawing bounds
     /// - parameter attrs: The attributes to apply to the string
     /// - returns: The height of the bounding rect for the receiver drawn using the given options and display characteristics.
-    public func height(whenConstrainedToWidth width: CGFloat = .greatestFiniteMagnitude, withAttributes attrs: PropertyList? = nil) -> CGFloat {
+    public func height(whenConstrainedToWidth width: CGFloat = .greatestFiniteMagnitude, withAttributes attrs: [String : Any]? = nil) -> CGFloat {
         let attrs = attrs ?? [NSFontAttributeName : UIFont.systemFont()]
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self*.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: attrs, context: nil)
@@ -784,7 +774,7 @@ extension String {
     /// - returns: An `UIImage` representation of `self` with `attrs` text
     ///  attributes and dimensions `size`.
     
-    public func imageWithAttributes(_ attrs: PropertyList, size: CGSize? = nil) -> UIImage {
+    public func imageWithAttributes(_ attrs: [String : Any], size: CGSize? = nil) -> UIImage {
         let size = size ?? self.sizeWithAttributes(attrs)
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
         // draw in context, you can use also drawInRect:withFont:
@@ -807,15 +797,6 @@ extension String {
 }
 
 // MARK: - ** String (General Convenience Extensions) **
-
-extension String {
-    
-    /// Alias for `containsString`
-    public func contains(_ other: String) -> Bool {
-        return self.contains(other)
-    }
-    
-}
 
 // MARK: - ** String (General Convenience Extensions) **
 

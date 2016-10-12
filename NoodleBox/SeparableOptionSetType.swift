@@ -16,7 +16,7 @@ extension String : Separable {}
 
 extension String {
     public func separatedComponents() -> [String] {
-        return components(separatedBy: .whitespaces())
+        return components(separatedBy: .whitespaces)
     }
 }
 

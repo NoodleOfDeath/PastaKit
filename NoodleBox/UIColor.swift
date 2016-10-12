@@ -42,11 +42,11 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 
-    public static func colorWithObject(_ obj: AnyObject?) -> UIColor? {
+    open static func colorWith(_ any: Any?) -> UIColor? {
 
-        guard let obj = obj else { return nil }
+        guard let any = any else { return nil }
         
-        func parseColorCode(_ code: AnyObject?) -> UInt? {
+        func parseColorCode(_ code: Any?) -> UInt? {
             
             guard let code = code else { return nil }
             
@@ -65,9 +65,9 @@ extension UIColor {
             
         }
 
-        switch obj {
+        switch any {
             
-        case let dict as PropertyList:
+        case let dict as [String : Any]:
             guard let hexcode = parseColorCode(dict[NSColorCode]) else { return nil }
             let alpha = dict[NSAlpha] as? CGFloat ?? 1.0
             return UIColor(hex6: hexcode, alpha: alpha)

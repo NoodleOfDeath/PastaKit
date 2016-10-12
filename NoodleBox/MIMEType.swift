@@ -1,5 +1,5 @@
 //
-//  MimeType.swift
+//  MIMEType.swift
 //  NoodleBox
 //
 //  Created by Thom Morgan on 9/13/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum MimeType : String {
+public enum MIMEType : String {
     
     case JPEG       = "image/jpeg"
     case PNG        = "image/png"

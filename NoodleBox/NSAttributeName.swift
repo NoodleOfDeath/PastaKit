@@ -111,7 +111,7 @@ public struct NSAttributeName : OptionSet, Hashable {
     }
     
     public func arrayRepresentation() -> [String] {
-        return stringValue.components(separatedBy: .whitespaces())
+        return stringValue.components(separatedBy: .whitespaces)
     }
 
 }

@@ -12,63 +12,63 @@ import CoreGraphics
 
 extension CGColor {
 
-    public static func blackColor() -> CGColor {
+    open static var black: CGColor {
         return UIColor.black.cgColor
     }
 
-    public static func darkGrayColor() -> CGColor {
+    open static var darkGray: CGColor {
         return UIColor.darkGray.cgColor
     }
 
-    public static func lightGrayColor() -> CGColor {
+    open static var lightGray: CGColor {
         return UIColor.lightGray.cgColor
     }
 
-    public static func whiteColor() -> CGColor {
+    open static var white: CGColor {
         return UIColor.white.cgColor
     }
 
-    public static func grayColor() -> CGColor {
+    open static var gray: CGColor {
         return UIColor.gray.cgColor
     }
 
-    public static func redColor() -> CGColor {
+    open static var red: CGColor {
         return UIColor.red.cgColor
     }
 
-    public static func greenColor() -> CGColor {
+    open static var green: CGColor {
         return UIColor.green.cgColor
     }
 
-    public static func blueColor() -> CGColor {
+    open static var blue: CGColor {
         return UIColor.blue.cgColor
     }
 
-    public static func cyanColor() -> CGColor {
+    open static var cyan: CGColor {
         return UIColor.cyan.cgColor
     }
 
-    public static func yellowColor() -> CGColor {
+    open static var yellow: CGColor {
         return UIColor.yellow.cgColor
     }
 
-    public static func magentaColor() -> CGColor {
+    open static var magenta: CGColor {
         return UIColor.magenta.cgColor
     }
 
-    public static func orangeColor() -> CGColor {
+    open static var orange: CGColor {
         return UIColor.orange.cgColor
     }
 
-    public static func purpleColor() -> CGColor {
+    open static var purple: CGColor {
         return UIColor.purple.cgColor
     }
 
-    public static func brownColor() -> CGColor {
+    open static var brown: CGColor {
         return UIColor.brown.cgColor
     }
 
-    public static func clearColor() -> CGColor {
+    open static var clear: CGColor {
         return UIColor.clear.cgColor
     }
     

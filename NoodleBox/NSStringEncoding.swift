@@ -12,7 +12,7 @@ extension String.Encoding {
     
     public var stringValue: String {
         guard let index = String.Encoding.values().values.index(of: self) else { return "" }
-        return String.Encoding.values().keys[index] ?? ""
+        return String.Encoding.values().keys[index]
     }
 
     fileprivate static func values() -> [String : String.Encoding] {
