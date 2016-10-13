@@ -74,9 +74,9 @@ open class NBPopoverViewController: UIViewController, UIPopoverPresentationContr
     open var overrideDimiss: Bool = false
     
     open var actionTitles: [NBPopoverAction : String] = [
-            .Cancel : LSCancel,
-            .Apply  : LSApply,
-            .Done   : LSDone,
+            .Cancel : LocalizedStrings.Cancel,
+            .Apply  : LocalizedStrings.Apply,
+            .Done   : LocalizedStrings.Done,
         ] {
         didSet { updateActions() }
     }

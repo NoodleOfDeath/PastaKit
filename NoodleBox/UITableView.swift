@@ -8,8 +8,6 @@
 
 import UIKit
 
-public let UITableViewCellDefaultReuseIdentifier = "UITableViewCellDefaultReuseIdentifier"
-
 public protocol StringEnumeration {
     var rawValue: String { get }
 }

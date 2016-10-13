@@ -42,5 +42,12 @@ extension UserDefaults {
         get { return object(forKey: key) as Any? }
         set { set(newValue, forKey: key) }
     }
+    
+    /// Alias for `dictionaryRepresentation`
+    /// - returns: The dictionary representation of the user defaults object.
+    open func dictionaryForm() -> [String : Any] {
+        return dictionaryRepresentation()
+    }
 
 }
+
