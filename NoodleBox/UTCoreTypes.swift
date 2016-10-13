@@ -1180,7 +1180,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *
      *  kUTTypeSystemPreferencesPane
      *
-     *    a System Preferences pane
+     *    a System BMPreferences pane
      *
      *    UTI: com.apple.systempreference.prefpane
      *    conforms to: com.apple.package, com.apple.bundle
