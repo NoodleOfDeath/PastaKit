@@ -136,9 +136,8 @@ public struct SortedDictionary <Key: Comparable, Value> : Collection, _Objective
                 }
             } else {
                 if let newValue = newValue {
-                    if let index = keys.add(key) {
-                        values.insert(newValue, at: index)
-                    }
+                    let index = keys.add(key)
+                    values.insert(newValue, at: index)
                 }
             }
         }

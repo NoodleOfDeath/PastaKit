@@ -149,13 +149,13 @@ extension NSRange {
     public var maxRange: Int {
         return NSMaxRange(self)
     }
-    
-    public func contains(_ range: NSRange) -> Bool {
-        return union(range) == self
-    }
 
     public func contains(_ loc: Int) -> Bool {
         return NSLocationInRange(loc, self)
+    }
+    
+    public func contains(_ range: NSRange) -> Bool {
+        return union(range) == self
     }
     
     public func doesNotContain(_ range: NSRange) -> Bool {

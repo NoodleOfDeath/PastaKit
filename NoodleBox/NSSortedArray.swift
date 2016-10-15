@@ -52,9 +52,6 @@ public class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCodin
     /// The elements of this array.
     public var elements: [Element] { return backingStorage.elements }
     
-    /// Whether or not to allow duplicate elements to be added to this array.
-    public var uniqueElements: Bool { return backingStorage.uniqueElements }
-    
     /// 
     fileprivate var backingStorage: SortedArray<Element>
     
@@ -190,7 +187,7 @@ public class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCodin
     /// `self.
     ///
     /// - complexity: O(`log(self.count)`)
-    public func add(_ element: Element, offset: Int = 0) -> Index? {
+    public func add(_ element: Element, offset: Int = 0) -> Index {
         return backingStorage.add(element, offset: offset)
     }
     

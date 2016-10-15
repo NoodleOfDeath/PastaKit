@@ -24,7 +24,7 @@ public func + <T: Comparable>(lhs: SortedArray<T>, rhs: SortedArray<T>) -> Sorte
     var arr = lhs
     var index = 0
     for element in rhs {
-        index = arr.add(element, offset: index) ?? 0
+        index = arr.add(element, offset: index)
     }
     return arr
 }
@@ -115,9 +115,6 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     
     /// The elements of this array.
     public fileprivate (set) var elements = [Element]()
-    
-    /// Whether or not to allow duplicate elements to be added to this array.
-    public var uniqueElements: Bool = true
     
     // MARK: - ** Constructor Methods **
     
@@ -320,11 +317,10 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     /// `self.
     ///
     /// - complexity: O(`log(self.count)`)
-    public mutating func add(_ element: Element, offset: Int = 0) -> Index? {
+    public mutating func add(_ element: Element, offset: Int = 0) -> Index {
         var index = 0
         if elements.count == 0 { elements.append(element) }
         else {
-            if uniqueElements && indexOf(element) != nil { return nil }
             index = ordinalIndexForElement(element, searchRange: offset ..< endIndex)
             elements.insert(element, at: index)
         }

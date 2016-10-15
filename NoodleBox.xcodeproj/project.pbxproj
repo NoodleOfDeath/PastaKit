@@ -45,6 +45,7 @@
 		CD4EA8D61D6BE607003B45E4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1162A1D592A93004A9DBC /* UIViewController.swift */; };
 		CD4EA91B1D6BE86A003B45E4 /* UIPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4EA91A1D6BE86A003B45E4 /* UIPaddedTextField.swift */; };
 		CD4EA91E1D6D0962003B45E4 /* NSAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4EA91D1D6D0962003B45E4 /* NSAttributeName.swift */; };
+		CD6F17411DB2878400CB8278 /* StringAnyMapCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F17401DB2878400CB8278 /* StringAnyMapCoding.swift */; };
 		CD74914C1D7CB47800F49594 /* NBBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD74914B1D7CB47800F49594 /* NBBundle.swift */; };
 		CD7491591D7DFC8100F49594 /* NSSearchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7491581D7DFC8100F49594 /* NSSearchOptions.swift */; };
 		CD9311B31D8068360058D4B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD9311B51D8068360058D4B6 /* Localizable.strings */; };
@@ -108,6 +109,7 @@
 		CD4EA8C01D6BE556003B45E4 /* NSSortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSortedDictionary.swift; sourceTree = "<group>"; };
 		CD4EA91A1D6BE86A003B45E4 /* UIPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddedTextField.swift; sourceTree = "<group>"; };
 		CD4EA91D1D6D0962003B45E4 /* NSAttributeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributeName.swift; sourceTree = "<group>"; };
+		CD6F17401DB2878400CB8278 /* StringAnyMapCoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAnyMapCoding.swift; sourceTree = "<group>"; };
 		CD74914B1D7CB47800F49594 /* NBBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBBundle.swift; sourceTree = "<group>"; };
 		CD7491581D7DFC8100F49594 /* NSSearchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSearchOptions.swift; sourceTree = "<group>"; };
 		CD9311B41D8068360058D4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		CD0F81411D5F783B00736E69 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
+				CDD116AF1D592C08004A9DBC /* Native */,
 				CDD116641D592A9D004A9DBC /* Foundation */,
 				CDD116651D592AAB004A9DBC /* Core Graphics */,
 				CDD116B01D592C12004A9DBC /* UIKit */,
@@ -229,6 +232,7 @@
 				CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */,
 				CDD1162B1D592A93004A9DBC /* UTCoreTypes.swift */,
 				CDF2EF3E1DAFECAD0001438E /* Unicode.swift */,
+				CD6F17401DB2878400CB8278 /* StringAnyMapCoding.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
@@ -286,7 +290,6 @@
 				CDD1160D1D592A93004A9DBC /* NSStringEncoding.swift */,
 				CDD1160E1D592A93004A9DBC /* NSStringLineEnding.swift */,
 				CDD1160F1D592A93004A9DBC /* NSURL.swift */,
-				CDD116AF1D592C08004A9DBC /* Swift Native */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -333,7 +336,7 @@
 			path = NoodleBox;
 			sourceTree = SOURCE_ROOT;
 		};
-		CDD116AF1D592C08004A9DBC /* Swift Native */ = {
+		CDD116AF1D592C08004A9DBC /* Native */ = {
 			isa = PBXGroup;
 			children = (
 				CDD116181D592A93004A9DBC /* String.swift */,
@@ -350,7 +353,7 @@
 				CD17D9541DAEA7D700580E92 /* URL.swift */,
 				CDD116101D592A93004A9DBC /* UserDefaults.swift */,
 			);
-			name = "Swift Native";
+			name = Native;
 			sourceTree = "<group>";
 		};
 		CDD116B01D592C12004A9DBC /* UIKit */ = {
@@ -508,6 +511,7 @@
 				CD4EA8D11D6BE607003B45E4 /* UITableView.swift in Sources */,
 				CD4EA91B1D6BE86A003B45E4 /* UIPaddedTextField.swift in Sources */,
 				CDD116E01D592CDF004A9DBC /* Operators.swift in Sources */,
+				CD6F17411DB2878400CB8278 /* StringAnyMapCoding.swift in Sources */,
 				CDD116C21D592CDB004A9DBC /* String.swift in Sources */,
 				CDD116D31D592CDB004A9DBC /* NSObject.swift in Sources */,
 				CD30FDC31D74DC470087E68F /* LocalizedStrings.swift in Sources */,

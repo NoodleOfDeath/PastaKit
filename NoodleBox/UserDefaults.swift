@@ -45,7 +45,7 @@ extension UserDefaults {
     
     /// Alias for `dictionaryRepresentation`
     /// - returns: The dictionary representation of the user defaults object.
-    open func dictionaryForm() -> [String : Any] {
+    open var dictionaryForm: [String : Any] {
         return dictionaryRepresentation()
     }
 

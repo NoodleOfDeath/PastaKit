@@ -540,6 +540,24 @@ extension String {
         return string.components(separatedBy: template)
     }
     
+    /// 
+    /// 
+    /// 
+    /// 
+    public func replacingMatches(of pattern: String, with template: String) -> String {
+        let string = NSMutableString(string: self)
+        _ = try? NSRegularExpression(pattern: pattern, options: []).replaceMatches(in: string, options: [], range: string.range, withTemplate: template)
+        return string as String
+    }
+    
+    /// 
+    /// 
+    /// 
+    /// 
+    public mutating func replaceMatches(of pattern: String, with template: String) {
+        self = replacingMatches(of: pattern, with: template)
+    }
+    
 }
 
 // MARK: - ** String Escaping **
