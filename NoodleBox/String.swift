@@ -79,25 +79,25 @@ public func + (augend: String?, addend: String?) -> String? {
 
 /// 
 public func +/ (lhs: String, rhs: String) -> String {
-    return lhs.stringByAppendingPathComponent(rhs)
+    return lhs.appendingPathComponent(rhs)
 }
 
 /// 
 public func +/ (lhs: String, rhs: String?) -> String? {
     guard let rhs = rhs else { return nil }
-    return lhs.stringByAppendingPathComponent(rhs)
+    return lhs.appendingPathComponent(rhs)
 }
 
 /// 
 public func +/ (lhs: String?, rhs: String) -> String? {
     guard let lhs = lhs else { return nil }
-    return lhs.stringByAppendingPathComponent(rhs)
+    return lhs.appendingPathComponent(rhs)
 }
 
 /// 
 public func +/ (lhs: String?, rhs: String?) -> String? {
     guard let lhs = lhs, let rhs = rhs else { return nil }
-    return lhs.stringByAppendingPathComponent(rhs)
+    return lhs.appendingPathComponent(rhs)
 }
 
 // MARK: - Path Extension Concatenation
@@ -105,24 +105,24 @@ public func +/ (lhs: String?, rhs: String?) -> String? {
 /// 
 public func +> (lhs: String?, rhs: String?) -> String? {
     guard let lhs = lhs, let rhs = rhs else { return nil }
-    return lhs.stringByAppendingPathExtension(rhs)
+    return lhs.appendingPathExtension(rhs)
 }
 
 /// 
 public func +> (lhs: String?, rhs: String) -> String? {
     guard let lhs = lhs else { return nil }
-    return lhs.stringByAppendingPathExtension(rhs)
+    return lhs.appendingPathExtension(rhs)
 }
 
 /// 
 public func +> (lhs: String, rhs: String?) -> String? {
     guard let rhs = rhs else { return nil }
-    return lhs.stringByAppendingPathExtension(rhs)
+    return lhs.appendingPathExtension(rhs)
 }
 
 /// 
 public func +> (lhs: String, rhs: String) -> String? {
-    return lhs.stringByAppendingPathExtension(rhs)
+    return lhs.appendingPathExtension(rhs)
 }
 
 // MARK: - ** String General Properties **
@@ -185,7 +185,7 @@ extension String {
     /// The first character of this string represented as a `String`.
     public var firstCharacterString: String? {
         if length < 1 { return nil }
-        return self.substringToIndex(1)
+        return self.substring(to: 1)
     }
     
     /// The last `Character` of this `String`.
@@ -196,7 +196,7 @@ extension String {
     /// The last character of this string represented as a `String`.
     public var lastCharacterString: String? {
         if length < 1 { return nil }
-        return self.substringFromIndex(length - 1)
+        return self.substring(from: length - 1)
     }
     
 }
@@ -216,7 +216,7 @@ extension String {
     /// - returns: `true` if at least one match is found, `false` otherwise.
     
     public func matches(_ string: String, options: NSRegularExpression.MatchingOptions = [.withTransparentBounds], range: NSRange? = nil) -> Bool {
-        return firstMatchInString(string, options: options, range: range) != nil
+        return firstMatch(in: string, options: options, range: range) != nil
     }
     
     /// Returns whether or not at least one match is found in the parameter
@@ -230,7 +230,7 @@ extension String {
     /// - returns: `true` if at least one match is found, `false` otherwise.
     
     public func matches(_ string: String, searchOptions options: NSSearchOptions, range: NSRange? = nil) -> Bool {
-        return firstMatchInString(string, searchOptions: options, range: range) != nil
+        return firstMatch(in: string, searchOptions: options, range: range) != nil
     }
     
     /// Returns the first match in the parameter `string`, confining the search 
@@ -244,7 +244,7 @@ extension String {
     /// - returns: an `NSTextCheckingResult` object if a match is found,
     /// `false` otherwise.
     
-    public func firstMatchInString(_ string: String, options: NSRegularExpression.MatchingOptions = [.withTransparentBounds], range: NSRange? = nil) -> NSTextCheckingResult? {
+    public func firstMatch(in string: String, options: NSRegularExpression.MatchingOptions = [.withTransparentBounds], range: NSRange? = nil) -> NSTextCheckingResult? {
         guard let expr = try? NSRegularExpression(pattern: self, options: []) else { return nil }
         guard let match = expr.firstMatch(in: string, options: options, range: range ?? string.range) else  { return nil }
         return match
@@ -261,7 +261,7 @@ extension String {
     /// - returns: an `NSTextCheckingResult` object if a match is found,
     /// `false` otherwise.
     
-    public func firstMatchInString(_ string: String, searchOptions options: NSSearchOptions, range: NSRange? = nil) -> NSTextCheckingResult? {
+    public func firstMatch(in string: String, searchOptions options: NSSearchOptions, range: NSRange? = nil) -> NSTextCheckingResult? {
         guard let expr = try? NSRegularExpression(pattern: self, options: options.expressionOptions) else { return nil }
         guard let match = expr.firstMatch(in: string, options: options.matchingOptions, range: range ?? string.range) else  { return nil }
         return match
@@ -278,7 +278,7 @@ extension String {
     /// - returns: an `Array` of `NSTextCheckingResult` objects, or an empty
     /// `Array` if no matches are found.
     
-    public func matchesInString(_ string: String, options: NSRegularExpression.MatchingOptions = [.withTransparentBounds], range: NSRange? = nil) -> [NSTextCheckingResult] {
+    public func matches(in string: String, options: NSRegularExpression.MatchingOptions = [.withTransparentBounds], range: NSRange? = nil) -> [NSTextCheckingResult] {
         guard let expr = try? NSRegularExpression(pattern: self, options: []) else { return [] }
         return expr.matches(in: string, options: options, range: range ?? string.range)
     }
@@ -294,7 +294,7 @@ extension String {
     /// - returns: an `Array` of `NSTextCheckingResult` objects, or an empty
     /// `Array` if no matches are found.
     
-    public func matchesInString(_ string: String, searchOptions options: NSSearchOptions, range: NSRange? = nil) -> [NSTextCheckingResult] {
+    public func matches(in string: String, searchOptions options: NSSearchOptions, range: NSRange? = nil) -> [NSTextCheckingResult] {
         guard let expr = try? NSRegularExpression(pattern: self, options: options.expressionOptions) else { return [] }
         return expr.matches(in: string, options: options.matchingOptions, range: range ?? string.range)
     }
@@ -344,7 +344,7 @@ extension String {
     /// The Block returns void.
     ///
     
-    public func enumerateMatchesInString(_ string: String, options: NSRegularExpression.MatchingOptions = [.withTransparentBounds], range: NSRange? = nil, usingBlock block: (NSTextCheckingResult?, NSRegularExpression.MatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void) {
+    public func enumerateMatches(in string: String, options: NSRegularExpression.MatchingOptions = [.withTransparentBounds], range: NSRange? = nil, usingBlock block: (NSTextCheckingResult?, NSRegularExpression.MatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void) {
         guard let expr = try? NSRegularExpression(pattern: self, options: []) else { return }
         expr.enumerateMatches(in: string, options: options, range: range ?? string.range, using: block)
     }
@@ -363,8 +363,8 @@ extension String {
     /// Raises an NSRangeException if (anIndex - 1) lies beyond the end of the receiver.
     /// - returns: A new string containing the characters of the receiver from the one at `anIndex` to the end.
     
-    public func substringFromIndex(_ anIndex: Int) -> String {
-        return self*.substring(from: anIndex)
+    public func substring(from index: Int) -> String {
+        return self*.substring(from: index)
     }
     
     /// Returns a new string containing the characters of the receiver up to, but not including, the one at a given index.
@@ -375,8 +375,8 @@ extension String {
     /// Raises an NSRangeException if (anIndex - 1) lies beyond the end of the receiver.
     /// - returns: A new string containing the characters of the receiver up to, but not including, the one at `anIndex`.
     
-    public func substringToIndex(_ anIndex: Int) -> String {
-        return self*.substring(to: anIndex)
+    public func substring(to index: Int) -> String {
+        return self*.substring(to: index)
     }
     
     /// Returns a string object containing the characters of the receiver that lie within a given range.
@@ -389,9 +389,9 @@ extension String {
     /// Raises an NSRangeException if (aRange.location - 1) or (aRange.location + aRange.length - 1) lies beyond the end of the receiver.
     /// - returns: A string object containing the characters of the receiver that lie within `aRange`.
     
-    public func substringWithRange(_ aRange: Range<Int>) -> String {
-        guard self.range.contains(aRange*) else { return "" }
-        return self*.substring(with: aRange*)
+    public func substring(with range: Range<Int>) -> String {
+        guard self.range.contains(range*) else { return "" }
+        return self*.substring(with: range*)
     }
     
     /// Returns a string object containing the characters of the receiver that lie within a given range.
@@ -404,7 +404,7 @@ extension String {
     /// Raises an NSRangeException if (aRange.location - 1) or (aRange.location + aRange.length - 1) lies beyond the end of the receiver.
     /// - returns: A string object containing the characters of the receiver that lie within `aRange`.
     
-    public func substringWithRange(_ range: NSRange) -> String {
+    public func substring(with range: NSRange) -> String {
         guard self.range.contains(range) else { return "" }
         return self*.substring(with: range)
     }
@@ -426,7 +426,7 @@ extension String {
     /// paragraphs containing aRange, including the paragraph termination characters.
     @available(iOS 8.0, *)
     
-    public func paragraphRangeForRange(_ range: Range<Int>) -> NSRange {
+    public func paragraphRange(for range: Range<Int>) -> NSRange {
         return self*.paragraphRange(for: range*)
     }
     
@@ -441,7 +441,7 @@ extension String {
     /// paragraphs containing aRange, including the paragraph termination characters.
     @available(iOS 8.0, *)
     
-    public func paragraphRangeForRange(_ range: NSRange) -> NSRange {
+    public func paragraphRange(for range: NSRange) -> NSRange {
         guard self.range.contains(range) else { return range }
         return self*.paragraphRange(for: range)
     }
@@ -477,7 +477,7 @@ extension String {
     /// stop
     /// \
     /// A reference to a Boolean value that the block can use to stop the enumeration by setting *stop = YES; it should not touch *stop otherwise.
-    public func enumerateSubstringsInRange(_ range: NSRange, options opts: NSString.EnumerationOptions, usingBlock block: @escaping (String?, NSRange, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void) {
+    public func enumerateSubstrings(in range: NSRange, options opts: NSString.EnumerationOptions, usingBlock block: @escaping (String?, NSRange, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void) {
         self*.enumerateSubstrings(in: range, options: opts, using: block)
     }
     
@@ -506,7 +506,7 @@ extension String {
     /// stop
     /// \
     /// A reference to a Boolean value that the block can use to stop the enumeration by setting *stop = YES; it should not touch *stop otherwise.
-    public func enumerateSubstringsInRange(_ range: Range<Int>, options opts: NSString.EnumerationOptions, usingBlock block: @escaping (String?, NSRange, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void) {
+    public func enumerateSubstrings(in range: Range<Int>, options opts: NSString.EnumerationOptions, usingBlock block: @escaping (String?, NSRange, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void) {
         self*.enumerateSubstrings(in: range*, options: opts, using: block)
     }
     
@@ -517,7 +517,7 @@ extension String {
 extension String {
     
     /// 
-    public func stringByReplacingOccurrencesOfString(_ string: String, withString: String, options: NSString.CompareOptions, range: NSRange) -> String {
+    public func replacingOccurrences(of string: String, withString: String, options: NSString.CompareOptions, range: NSRange) -> String {
         return self*.replacingOccurrences(of: string, with: withString, options: options, range: range)
     }
     
@@ -533,7 +533,7 @@ extension String {
     /// separation. Default is `««`. 
     /// - note: `template` should be a unique pattern distinguishable from
     /// `pattern` or any regular expression control characters/patterns.
-    public func componentsSeparatedByPattern(_ pattern: String, template: String = "««") -> [String] {
+    public func components(separatedBy pattern: String, template: String = "««") -> [String] {
         guard let expr = try? NSRegularExpression(pattern: pattern, options: []) else { return [] }
         let string = NSMutableString(string: self)
         expr.replaceMatches(in: string, options: [.withTransparentBounds], range: string.range, withTemplate: template)
@@ -599,14 +599,14 @@ extension String {
     public var leadingWhitespaces: String {
         guard let expr = try? NSRegularExpression(pattern: "^[ \\t]*", options: []),
             let match = expr.firstMatch(in: self, options: [], range: range) else { return "" }
-        return substringWithRange(match.range)
+        return substring(with: match.range)
     }
     
     /// The substring of trailing whitespaces, if any.
     public var trailingWhitespaces: String {
         guard let expr = try? NSRegularExpression(pattern: "[ \\t]*$", options: []),
             let match = expr.firstMatch(in: self, options: [], range: range) else { return "" }
-        return substringWithRange(match.range)
+        return substring(with: match.range)
     }
     
 }
@@ -628,8 +628,8 @@ extension String {
     /// - parameter aRange: The range within the receiver for which to search for aString.
     /// Raises an NSRangeException if aRange is invalid.
     /// - returns: An NSRange structure giving the location and length in the receiver of aString within aRange in the receiver, modulo the options in mask.
-    public func rangeOfString(_ aString: String, options mask: NSString.CompareOptions, range aRange: NSRange) -> NSRange? {
-        let foundRange = self*.range(of: aString, options: mask, range: aRange)
+    public func range(of string: String, options mask: NSString.CompareOptions, range aRange: NSRange) -> NSRange? {
+        let foundRange = self*.range(of: string, options: mask, range: aRange)
         if foundRange.location == NSNotFound { return nil }
         return foundRange
     }
@@ -641,23 +641,23 @@ extension String {
 extension String {
 
     /// Removes the last path component of `self` and returns the result.
-    public var stringByDeletingLastPathComponent: String {
+    public var deletingLastPathComponent: String {
         return self*.deletingLastPathComponent
     }
 
     /// Removes the path extension of `self` and returns the result.
-    public var stringByDeletingPathExtension: String {
+    public var deletingPathExtension: String {
         return self*.deletingPathExtension
     }
     
     /// Removes all occurrences of `"/"` and returns the result.
-    public var stringByRemovingPathDelimiters: String {
-        return stringByRemovingOccurrencesOfString("/")
+    public var removingPathDelimiters: String {
+        return removingOccurrences(of: "/")
     }
     
     /// Removes all occurrences of `string` and returns the result.
-    public func stringByRemovingOccurrencesOfString(_ target: String) -> String {
-        return replacingOccurrences(of: target, with: "")
+    public func removingOccurrences(of str: String) -> String {
+        return replacingOccurrences(of: str, with: "")
     }
     
 }
@@ -680,11 +680,11 @@ extension String {
     /// Returns a new string made by appending to the receiver a given string.
     ///
     /// A new string made by appending aString to the receiver, preceded if necessary by a path separator.
-    /// - parameter aString: The path component to append to the receiver.
+    /// - parameter str: The path component to append to the receiver.
     /// - returns: A new string made by appending aString to the receiver, 
     /// preceded if necessary by a path separator.
-    public func stringByAppendingPathComponent(_ aString: String) -> String {
-        return self*.appendingPathComponent(aString)
+    public func appendingPathComponent(_ str: String) -> String {
+        return self*.appendingPathComponent(str)
     }
 
     /// Returns a new string made by appending to the receiver an extension separator followed by a given extension.
@@ -692,11 +692,11 @@ extension String {
     /// A new string made by appending to the receiver an extension separator followed by ext.
     /// 
     /// Prior to OS X v10.9 this method did not allow you to append file extensions to filenames starting with the tilde character (~).
-    /// - parameter ext: The extension to append to the receiver.
+    /// - parameter str: The extension to append to the receiver.
     /// - returns: A new string made by appending aString to the receiver, 
     /// preceded if necessary by a path separator.
-    public func stringByAppendingPathExtension(_ ext: String) -> String? {
-        return self*.appendingPathExtension(ext)
+    public func appendingPathExtension(_ str: String) -> String? {
+        return self*.appendingPathExtension(str)
     }
     
 }
@@ -726,7 +726,7 @@ extension String {
     /// The bounding box size the receiver occupies when drawn with the specified attributes.
     /// - parameter attrs: A dictionary of text attributes to be applied to the string. These are the same attributes that can be applied to an NSAttributedString object, but in the case of NSString objects, the attributes apply to the entire string, rather than ranges within the string.
     /// - returns: The bounding box size the receiver occupies when drawn with the specified attributes.
-    public func sizeWithAttributes(_ attrs: [String : Any]) -> CGSize {
+    public func size(attributes attrs: [String : Any]) -> CGSize {
         return self*.size(attributes: attrs)
     }
 
@@ -768,7 +768,7 @@ extension String {
     /// - returns: A new string in which the characters in range of the receiver are replaced by replacement.
     @available(iOS 2.0, *)
     
-    public func stringByReplacingCharactersInRange(_ range: NSRange, withString replacement: String) -> String {
+    public func replacingCharacters(in range: NSRange, withString replacement: String) -> String {
         return self*.replacingCharacters(in: range, with: replacement)
     }
     
@@ -776,8 +776,8 @@ extension String {
     /// - parameter range: A range of characters in the receiver.
     /// - parameter replacement: The string with which to replace the characters in range.
     @available(iOS 2.0, *)
-    public mutating func replaceRange(_ range: NSRange, withString replacement: String) {
-        self = self.stringByReplacingCharactersInRange(range, withString: replacement)
+    public mutating func replace(range: NSRange, withString replacement: String) {
+        self = self.replacingCharacters(in: range, withString: replacement)
     }
     
 }
@@ -792,8 +792,8 @@ extension String {
     /// - returns: An `UIImage` representation of `self` with `attrs` text
     ///  attributes and dimensions `size`.
     
-    public func imageWithAttributes(_ attrs: [String : Any], size: CGSize? = nil) -> UIImage {
-        let size = size ?? self.sizeWithAttributes(attrs)
+    public func image(attributes attrs: [String : Any], size: CGSize? = nil) -> UIImage {
+        let size = size ?? self.size(attributes: attrs)
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
         // draw in context, you can use also drawInRect:withFont:
         self*.draw(at: CGPoint(x: 0.0, y: 0.0), withAttributes: attrs)
@@ -808,8 +808,8 @@ extension String {
     /// - returns: An `UIImage` representation of `self` with system font
     ///  and dimensions `size`.
     
-    public func imageWithSize(_ size: CGSize) -> UIImage {
-        return imageWithAttributes([NSFontAttributeName : UIFont.systemFont()], size: size)
+    public func image(size: CGSize) -> UIImage {
+        return image(attributes: [NSFontAttributeName : UIFont.systemFont()], size: size)
     }
     
 }
@@ -834,7 +834,7 @@ extension String {
     /// Replaces all occurrences of `target` in `self` with `replacement`.
     /// - parameter target: The string to search for.
     /// - parameter replacement: The string used to replace `target` with.
-    public mutating func replaceOccurrencesOfString(_ target: String, withString replacement: String) {
+    public mutating func replaceOccurrences(of target: String, with replacement: String) {
         self = self.replacingOccurrences(of: target, with: replacement)
     }
     

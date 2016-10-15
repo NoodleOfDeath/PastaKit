@@ -355,14 +355,14 @@ public struct UTType : CFRawRepresentable, Equatable {
      *
      *  kUTTypeRTF
      *
-     *    Rich Text EFat
+     *    Rich text EFat
      *
      *    UTI: public.rtf
      *    conform///  to: public.text
      *
      */
     @available(iOS 3.0, *)
-    public static let Text = UTType(kUTTypeText)
+    public static let text = UTType(kUTTypeText)
     @available(iOS 3.0, *)
     public static let PlainText = UTType(kUTTypePlainText)
     @available(iOS 3.0, *)
@@ -663,7 +663,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *
      *  kUTTypeRTFD
      *
-     *    Rich Text EFat Directory 
+     *    Rich text EFat Directory 
      *    (RTF with content embedding, on-disk format)
      *
      *    UTI: com.apple.rtfd

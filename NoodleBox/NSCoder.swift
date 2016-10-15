@@ -18,7 +18,7 @@ extension NSCoder {
     /// - important: The objective-c class being bridged to must conform to
     /// `NSCoding`.
     /// - parameter object: The object to encode.
-    open func encodeObject<T: _ObjectiveCBridgeable>(_ object: T?) {
+    open func encode<T: _ObjectiveCBridgeable>(_ object: T?) {
         encode(object?._bridgeToObjectiveC())
     }
     
@@ -44,7 +44,7 @@ extension NSCoder {
     /// `NSCoding`.
     /// - parameter object: The object to encode.
     /// - parameter key: The key to associate with this object.
-    open func encodeObject<T: _ObjectiveCBridgeable>(_ object: T?, forKey key: String) {
+    open func encode<T: _ObjectiveCBridgeable>(_ object: T?, forKey key: String) {
         encode(object?._bridgeToObjectiveC(), forKey: key)
     }
     

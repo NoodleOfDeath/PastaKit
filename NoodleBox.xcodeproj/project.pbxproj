@@ -49,6 +49,7 @@
 		CD74914C1D7CB47800F49594 /* NBBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD74914B1D7CB47800F49594 /* NBBundle.swift */; };
 		CD7491591D7DFC8100F49594 /* NSSearchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7491581D7DFC8100F49594 /* NSSearchOptions.swift */; };
 		CD9311B31D8068360058D4B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD9311B51D8068360058D4B6 /* Localizable.strings */; };
+		CDC9BFE81DB2CAA500270764 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC9BFE71DB2CAA500270764 /* Thread.swift */; };
 		CDD116C21D592CDB004A9DBC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD116181D592A93004A9DBC /* String.swift */; };
 		CDD116C31D592CDB004A9DBC /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD115FD1D592A93004A9DBC /* Dictionary.swift */; };
 		CDD116C41D592CDB004A9DBC /* Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD115FE1D592A93004A9DBC /* Hashable.swift */; };
@@ -117,6 +118,7 @@
 		CDBBB1A01D6E784700093684 /* NoodleBox.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NoodleBox.podspec; sourceTree = "<group>"; };
 		CDBBB1A21D6E794900093684 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CDBBB1E61D6EA27C00093684 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CDC9BFE71DB2CAA500270764 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		CDD115F41D592A93004A9DBC /* Any.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Any.swift; sourceTree = "<group>"; };
 		CDD115F51D592A93004A9DBC /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		CDD115F61D592A93004A9DBC /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
@@ -339,17 +341,18 @@
 		CDD116AF1D592C08004A9DBC /* Native */ = {
 			isa = PBXGroup;
 			children = (
-				CDD116181D592A93004A9DBC /* String.swift */,
-				CDD115FD1D592A93004A9DBC /* Dictionary.swift */,
-				CDD115FE1D592A93004A9DBC /* Hashable.swift */,
 				CDD115F41D592A93004A9DBC /* Any.swift */,
-				CDD116151D592A93004A9DBC /* Range.swift */,
 				CDD115F51D592A93004A9DBC /* Array.swift */,
 				CDD115F61D592A93004A9DBC /* Bool.swift */,
-				CDD116141D592A93004A9DBC /* OptionSetType.swift */,
-				CDD115FF1D592A93004A9DBC /* Math.swift */,
 				CD39B1AA1DAC439900D0F8BF /* CountableRange.swift */,
+				CDD115FD1D592A93004A9DBC /* Dictionary.swift */,
+				CDD115FE1D592A93004A9DBC /* Hashable.swift */,
+				CDD115FF1D592A93004A9DBC /* Math.swift */,
 				CD39B1AC1DAD44C700D0F8BF /* Notification.swift */,
+				CDD116141D592A93004A9DBC /* OptionSetType.swift */,
+				CDD116151D592A93004A9DBC /* Range.swift */,
+				CDD116181D592A93004A9DBC /* String.swift */,
+				CDC9BFE71DB2CAA500270764 /* Thread.swift */,
 				CD17D9541DAEA7D700580E92 /* URL.swift */,
 				CDD116101D592A93004A9DBC /* UserDefaults.swift */,
 			);
@@ -553,6 +556,7 @@
 				CD4EA8D21D6BE607003B45E4 /* UITextInput.swift in Sources */,
 				CD4EA8C81D6BE607003B45E4 /* UIBarButtonItem.swift in Sources */,
 				CD4EA8C91D6BE607003B45E4 /* UIColor.swift in Sources */,
+				CDC9BFE81DB2CAA500270764 /* Thread.swift in Sources */,
 				CD39BE9D1D60E01500E8FB50 /* NBStackView.swift in Sources */,
 				CDD116CF1D592CDB004A9DBC /* NSFileManager.swift in Sources */,
 				CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */,

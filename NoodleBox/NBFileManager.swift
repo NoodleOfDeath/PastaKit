@@ -64,7 +64,7 @@ public struct NBFileManager {
         if action == .useAlternateName {
             var i = 1
             while url.exists {
-                url = (baseURL +/ (lastPathComponent.stringByDeletingPathExtension + "-\(i)" + (ext.length > 0 ? ".\(ext)" : "")))
+                url = (baseURL +/ (lastPathComponent.deletingPathExtension + "-\(i)" + (ext.length > 0 ? ".\(ext)" : "")))
                 i += 1
             }
         }
@@ -74,7 +74,7 @@ public struct NBFileManager {
     
     fileprivate static func getPath(_ path: String, forOverwriteAction action: NSOverwriteAction) -> String {
         
-        let basePath = path.stringByDeletingLastPathComponent
+        let basePath = path.deletingLastPathComponent
         let lastPathComponent = path.lastPathComponent
         let ext = lastPathComponent.pathExtension
         
@@ -84,7 +84,7 @@ public struct NBFileManager {
         if action == .useAlternateName {
             var i = 1
             while fileExistsAtPath(path) {
-                path = (basePath +/ (lastPathComponent.stringByDeletingPathExtension + "-\(i)" + (ext.length > 0 ? ".\(ext)" : "")))
+                path = (basePath +/ (lastPathComponent.deletingPathExtension + "-\(i)" + (ext.length > 0 ? ".\(ext)" : "")))
                 i += 1
             }
         }

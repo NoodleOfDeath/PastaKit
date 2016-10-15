@@ -33,7 +33,7 @@ extension UITextView {
     open var precedingWord: String? {
         guard let range = rangeOfPrecedingWord else { return nil }
         guard text.range.contains(range) else { return nil }
-        return substringWithRange(range)
+        return substring(with: range)
     }
     
     open var precedingCharacter: String {
@@ -51,19 +51,19 @@ extension UITextView {
     }
     
     open var nextNonWhitespaceCharacter: String? {
-        return locationOfNextNonWhitespaceCharacter != NSNotFound ? text.substringWithRange(NSMakeRange(locationOfNextNonWhitespaceCharacter, 1)) : nil
+        return locationOfNextNonWhitespaceCharacter != NSNotFound ? text.substring(with: NSMakeRange(locationOfNextNonWhitespaceCharacter, 1)) : nil
     }
     
     // MARK: - ** Protocol Methods **
     
     // MARK: - Public Methods
     
-    open func substringWithRange(_ range: NSRange) -> String {
-        return text.substringWithRange(range)
+    open func substring(with range: NSRange) -> String {
+        return text.substring(with: range)
     }
     
     open func paragraphRangeForRange(_ range: NSRange) -> NSRange {
-        return text.paragraphRangeForRange(range)
+        return text.paragraphRange(for: range)
     }
     
     @available(iOS 4.0, *)
@@ -110,15 +110,15 @@ extension UITextView {
     open func precedingCharacters(_ length: Int) -> String {
         if text.length < length { return "" }
         return selectedRange.location > length ?
-            text.substringWithRange(NSMakeRange(selectedRange.location - length, length)) :
-            text.substringWithRange(NSMakeRange(0, length - selectedRange.location))
+            text.substring(with: NSMakeRange(selectedRange.location - length, length)) :
+            text.substring(with: NSMakeRange(0, length - selectedRange.location))
     }
     
     open func procedingCharacters(_ length: Int) -> String {
         if text.length < selectedRange.location + length { return "" }
         return selectedRange.location + length <= text.length ?
-            text.substringWithRange(NSMakeRange(selectedRange.location, length)) :
-            text.substringWithRange(NSMakeRange(selectedRange.location, text.length - selectedRange.location))
+            text.substring(with: NSMakeRange(selectedRange.location, length)) :
+            text.substring(with: NSMakeRange(selectedRange.location, text.length - selectedRange.location))
     }
     
     open func precedingCharactersContainString(_ string: String) -> Bool {

@@ -10,20 +10,6 @@ import Foundation
 
 extension Dictionary : Equatable {}
 
-/// Returns a Boolean value that indicates whether the contents of the
-/// receiving dictionary are _not_ equal to the contents of another 
-/// given dictionary.
-///
-/// `true` if the contents of `rhs` are not equal to the contents of
-/// `lhs`, otherwise `false`.
-/// - parameter lhs: The receiving dictionary.
-/// - parameter rhs: Another dictionary.
-/// - returns: `true` if the contents of `rhs` are not equal to the contents of
-/// `lhs`, otherwise `false`.
-public func != <Key, Value> (lhs: [Key : Value], rhs: [Key : Value]) -> Bool {
-    return !NSDictionary(dictionary: lhs).isEqual(to: rhs)
-}
-
 /// Returns a `Boolean` value that indicates whether the contents of the
 /// receiving dictionary are equal to the contents of another given dictionary.
 ///
@@ -44,8 +30,8 @@ public func == <Key, Value> (lhs: [Key : Value], rhs: [Key : Value]) -> Bool {
 public func + <Key, Value> (lhs: [Key : Value]?, rhs: [Key : Value]?) -> [Key : Value]? {
     guard var lhs = lhs else { return rhs ?? nil }
     guard let rhs = rhs else { return lhs }
-    for (k, v) in rhs {
-        lhs[k] = v
+    for (key, value) in rhs {
+        lhs[key] = value
     }
     return lhs
 }
@@ -56,8 +42,8 @@ public func + <Key, Value> (lhs: [Key : Value]?, rhs: [Key : Value]?) -> [Key : 
 /// - returns: A union of `lhs` and `rhs`.
 public func + <Key, Value> (lhs: [Key : Value]?, rhs: [Key : Value]) -> [Key : Value] {
     guard var lhs = lhs else { return rhs }
-    for (k, v) in rhs {
-        lhs[k] = v
+    for (key, value) in rhs {
+        lhs[key] = value
     }
     return lhs
 }
@@ -69,8 +55,8 @@ public func + <Key, Value> (lhs: [Key : Value]?, rhs: [Key : Value]) -> [Key : V
 public func + <Key, Value> (lhs: [Key : Value], rhs: [Key : Value]?) -> [Key : Value] {
     guard let rhs = rhs else { return lhs }
     var lhs = lhs
-    for (k, v) in rhs {
-        lhs[k] = v
+    for (key, value) in rhs {
+        lhs[key] = value
     }
     return lhs
 }
@@ -81,8 +67,8 @@ public func + <Key, Value> (lhs: [Key : Value], rhs: [Key : Value]?) -> [Key : V
 /// - returns: A union of `lhs` and `rhs`.
 public func + <Key, Value> (lhs: [Key : Value], rhs: [Key : Value]) -> [Key : Value] {
     var lhs = lhs
-    for (k, v) in rhs {
-        lhs[k] = v
+    for (key, value) in rhs {
+        lhs[key] = value
     }
     return lhs
 }
@@ -150,7 +136,7 @@ extension Dictionary {
     /// Writing `nil` as the value for a given key erases that key from `self`.
     public subscript (key: Key?, caseInsensitive: Bool) -> Value? {
         get {
-            guard let key = key , String(describing: key).lowercased().length > 0 else { return nil }
+            guard let key = key, String(describing: key).lowercased().length > 0 else { return nil }
             guard caseInsensitive else { return self[key] }
             let searchKey = String(describing: key).lowercased()
             for key in keys {
@@ -162,7 +148,7 @@ extension Dictionary {
             return nil
         }
         set {
-            guard let key = key , String(describing: key).lowercased().length > 0 else { return }
+            guard let key = key, String(describing: key).lowercased().length > 0 else { return }
             guard caseInsensitive else { self[key] = newValue ; return }
             let searchKey = String(describing: key).lowercased()
             for key in keys {

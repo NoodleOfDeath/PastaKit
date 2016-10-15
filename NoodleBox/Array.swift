@@ -12,33 +12,33 @@ public typealias AnyArray = [Any]
 public typealias AnyObjectArray = [AnyObject]
 
 ///
-public func + <T>(lhs: [T]?, rhs: [T]) -> [T] {
+public func + <Element>(lhs: [Element]?, rhs: [Element]) -> [Element] {
     return (lhs ?? []) + rhs
 }
 
 ///
-public func + <T>(lhs: [T], rhs: [T]?) -> [T] {
+public func + <Element>(lhs: [Element], rhs: [Element]?) -> [Element] {
     return lhs + (rhs ?? [])
 }
 
 ///
-public func + <T>(lhs: [T]?, rhs: [T]?) -> [T]? {
+public func + <Element>(lhs: [Element]?, rhs: [Element]?) -> [Element]? {
     if let lhs = lhs {
-        return (lhs + rhs) as [T]
+        return (lhs + rhs) as [Element]
     }
     if let rhs = rhs {
-        return (lhs + rhs) as [T]
+        return (lhs + rhs) as [Element]
     }
     return nil
 }
 
 ///
-public postfix func * <T: Any>(argument: [T]) -> NSArray {
+public postfix func * <Element: Any>(argument: [Element]) -> NSArray {
     return argument as NSArray
 }
 
 ///
-public postfix func * <T: Any>(argument: [T]?) -> NSArray? {
+public postfix func * <Element: Any>(argument: [Element]?) -> NSArray? {
     return argument as NSArray?
 }
 
@@ -72,9 +72,7 @@ extension Array {
     public mutating func append(_ element: Element, _ anotherElement: Element, _ elements: Element...) {
         append(element)
         append(anotherElement)
-        for element in elements {
-            append(element)
-        }
+        for element in elements { append(element) }
     }
     
     /// Pushes an element onto the stack, at index 0.
@@ -86,14 +84,14 @@ extension Array {
     /// Pushes elements onto the stack, at index 0, in FIFO fashion.
     /// - parameter elements: The elements to push onto the stack.
     public mutating func push(_ elements: [Element]) {
-        for element in elements.reversed() { push(element) }
+        for element in elements { push(element) }
     }
     
     /// Pushes elements onto the stack, at index 0, in FIFO fashion.
     public mutating func push(_ element: Element, _ anotherElement: Element, _ elements: Element...) {
-        push(elements)
-        push(anotherElement)
         push(element)
+        push(anotherElement)
+        push(elements)
     }
     
 }
@@ -104,18 +102,14 @@ extension Array where Element : Equatable {
     /// contained in `self`.
     /// - parameter element: An `element` to append to `self`.
     public mutating func appendUnique(_ elements: Element...) {
-        for element in elements {
-            if !contains(element) {
-                append(element)
-            }
+        for element in elements where !contains(element) {
+            append(element)
         }
     }
     
     /// 
     public mutating func appendUnique(_ elements: [Element]) {
-        for element in elements {
-            appendUnique(element)
-        }
+        for element in elements { appendUnique(element) }
     }
     
     /// Removes _all_ instances of `element` from `self`.
