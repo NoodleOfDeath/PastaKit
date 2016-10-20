@@ -16,17 +16,8 @@ private struct CodingKeys {
 
 /// 
 public class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection, NSCoding {
-    
-    /// Returns the position immediately after the given index.
-    ///
-    /// - Parameter i: A valid index of the collection. `i` must be less than
-    ///   `endIndex`.
-    /// - Returns: The index value immediately after `i`.
-    public func index(after i: Int) -> Int {
-        return i + 1
-    }
 
-    
+    public typealias BackingStorage = SortedDictionary<Key, Value>
     public typealias Index = Int
     public typealias Iterator = IndexingIterator<NSSortedDictionary<Key, Value>>
     
@@ -36,26 +27,22 @@ public class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection,
     
     /// 
     public typealias Element = (key: Key, value: Value)
-    /// The order in which to sort array elements.
-    public var sortOrder: SortOrder { return backingStorage.sortOrder }
+    
     /// 
     public var keys: SortedArray<Key> { return backingStorage.keys }
     /// 
     public var values:[Value] { return backingStorage.values }
+    /// The order in which to sort array elements.
+    public var sortOrder: SortOrder { return backingStorage.sortOrder }
     
     /// 
-    fileprivate var backingStorage: SortedDictionary<Key, Value>
+    fileprivate var backingStorage: BackingStorage
     
     // MARK: - ** Constructor Methods **
     
     /// 
-    public init(sortOrder: SortOrder = .ascending, keys: SortedArray<Key>? = nil, values: [Value] = []) {
-        backingStorage = SortedDictionary<Key, Value>(sortOrder: sortOrder, keys: keys, values: values)
-    }
-    
-    /// 
-    public init(_ sortedDictionary: SortedDictionary<Key, Value>) {
-        backingStorage = sortedDictionary
+    public init(keys: SortedArray<Key>? = nil, values: [Value] = [], sortOrder: SortOrder = .ascending) {
+        backingStorage = BackingStorage(keys: keys, values: values, sortOrder: sortOrder)
     }
     
     /// 
@@ -63,17 +50,41 @@ public class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection,
         backingStorage = sortedDictionary.backingStorage
     }
     
+    /// 
+    public init(_ sortedDictionary: BackingStorage) {
+        backingStorage = sortedDictionary
+    }
+    
     public convenience required init?(coder aDecoder: NSCoder) {
         guard let sortOrder = SortOrder(rawValue: aDecoder.decodeInteger(forKey: CodingKeys.SortOrder)) else { return nil }
         guard let keys = aDecoder.decodeObject(forKey: CodingKeys.Keys) as? SortedArray<Key> else { return nil }
         guard let values = aDecoder.decodeObject(forKey: CodingKeys.Values) as? [Value] else { return nil }
-        self.init(sortOrder: sortOrder, keys: keys, values: values)
+        self.init(keys: keys, values: values, sortOrder: sortOrder)
     }
     
     public func encode(with aCoder: NSCoder) {
         aCoder.encode(sortOrder.rawValue, forKey: CodingKeys.SortOrder)
         aCoder.encode(keys, forKey: CodingKeys.Keys)
         aCoder.encode(values, forKey: CodingKeys.Values)
+    }
+    
+    /// 
+    public func makeIterator() -> Iterator {
+        return Iterator(_elements: NSSortedDictionary<Key, Value>(self))
+    }
+    
+    /// 
+    public func removeAll(keepCapacity: Bool = false) {
+        backingStorage.removeAll(keepCapacity: keepCapacity)
+    }
+    
+    /// Returns the position immediately after the given index.
+    ///
+    /// - Parameter i: A valid index of the collection. `i` must be less than
+    ///   `endIndex`.
+    /// - Returns: The index value immediately after `i`.
+    public func index(after i: Int) -> Int {
+        return backingStorage.index(after: i)
     }
     
     // MARK: - ** Subscript Methods **
@@ -88,16 +99,6 @@ public class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection,
     public subscript (key: Key) -> Value? {
         get { return backingStorage[key] }
         set { backingStorage[key] = newValue }
-    }
-    
-    /// 
-    public func makeIterator() -> Iterator {
-        return Iterator(_elements: NSSortedDictionary(self))
-    }
-    
-    /// 
-    public func removeAll(keepCapacity: Bool = false) {
-        backingStorage.removeAll(keepCapacity: keepCapacity)
     }
     
 }

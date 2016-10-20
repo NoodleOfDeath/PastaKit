@@ -110,7 +110,7 @@ public struct NSAttributeName : OptionSet, Hashable {
         self.init(stringValues: stringValues)
     }
     
-    public func arrayRepresentation() -> [String] {
+    public func array() -> [String] {
         return stringValue.components(separatedBy: .whitespaces)
     }
 

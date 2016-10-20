@@ -10,13 +10,6 @@
 
 import Foundation
 
-// MARK: - ** SortOrder Enumeration **
-
-/// Ascending or descending sort order enumerations
-public enum SortOrder : Int {
-    case ascending, descending
-}
-
 // MARK: - ** SortedArray Operations **
 
 /// 
@@ -24,7 +17,7 @@ public func + <T: Comparable>(lhs: SortedArray<T>, rhs: SortedArray<T>) -> Sorte
     var arr = lhs
     var index = 0
     for element in rhs {
-        index = arr.add(element, offset: index)
+        index = arr.add(element, offset: index) ?? 0
     }
     return arr
 }
@@ -50,42 +43,6 @@ public func + <T: Comparable>(lhs: SortedArray<T>, rhs: T) -> SortedArray<T> {
 /// An array data structure that automatically places elements in order as
 /// they added to the collection.
 public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgeable, CustomStringConvertible {
-    
-    /// Returns the position immediately after the given index.
-    ///
-    /// - Parameter i: A valid index of the collection. `i` must be less than
-    ///   `endIndex`.
-    /// - Returns: The index value immediately after `i`.
-    public func index(after i: Int) -> Int {
-        return i + 1
-    }
-    
-    /// Bridge from an Objective-C object of the bridged class type to a
-    /// value of the Self type.
-    ///
-    /// This bridging operation is used for unconditional bridging when
-    /// interoperating with Objective-C code, either in the body of an
-    /// Objective-C thunk or when calling Objective-C code, and may
-    /// defer complete checking until later. For example, when bridging
-    /// from `NSArray` to `Array<Element>`, we can defer the checking
-    /// for the individual elements of the array.
-    ///
-    /// \param source The Objective-C object from which we are
-    /// bridging. This optional value will only be `nil` in cases where
-    /// an Objective-C method has returned a `nil` despite being marked
-    /// as `_Nonnull`/`nonnull`. In most such cases, bridging will
-    /// generally force the value immediately. However, this gives
-    /// bridging the flexibility to substitute a default value to cope
-    /// with historical decisions, e.g., an existing Objective-C method
-    /// that returns `nil` to for "empty result" rather than (say) an
-    /// empty array. In such cases, when `nil` does occur, the
-    /// implementation of `Swift.Array`'s conformance to
-    /// `_ObjectiveCBridgeable` will produce an empty array rather than
-    /// dynamically failing.
-    public static func _unconditionallyBridgeFromObjectiveC(_ source: NSSortedArray<Element>?) -> SortedArray<Element> {
-        guard let source = source else { return SortedArray<Element> () }
-        return SortedArray<Element>(source)
-    }
 
     // MARK: - _ObjectiveCBridgeable
     
@@ -104,17 +61,20 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     
     // MARK: - CustomStringConvertible
     
-    public var description: String { return "\(elements)" }
+    public var description: String { return elements.description }
     
     // MARK: - SortedArray
+    
+    /// The elements of this array.
+    public fileprivate (set) var elements = [Element]()
     
     /// The order in which to sort array elements.
     public var sortOrder: SortOrder {
         willSet { if sortOrder != newValue { elements = elements.reversed() } }
     }
     
-    /// The elements of this array.
-    public fileprivate (set) var elements = [Element]()
+    /// Whether or not this set is surjective, default value is false.
+    public let surjective: Bool
     
     // MARK: - ** Constructor Methods **
     
@@ -122,45 +82,37 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     
     /// Verbose constructor in which the sort order can be established at
     /// initialization.
-    /// - parameter sortOrder: The order in which to sort array elements.
     /// - parameter elements: The initial elements to populate this array.
+    /// - parameter sortOrder: The order in which to sort array elements.
     /// - note: The initial elements parameter need not be sorted, as it will
     /// automatically be sorted upon initialization.
     /// - returns: An array structure instance with sorted elements.
-    public init(sortOrder: SortOrder = .ascending, elements: [Element] = [Element]()) {
-        self.sortOrder = sortOrder
+    public init(elements: [Element] = [Element](), sortOrder: SortOrder = .ascending, surjective: Bool = false) {
         self.elements = elements.sorted(by: { (a: Element, b: Element) -> Bool in
             return sortOrder == .ascending ? (a < b) : (b < a)
         })
+        self.sortOrder = sortOrder
+        self.surjective = surjective
     }
     
-    /// Convenience constructor that sets the inital array elements.
-    /// - parameter elements: The initial elements to populate this array.
-    /// - returns: An array structure instance with sorted elements in
-    /// ascending order.
-    public init(_ elements: [Element]) {
-        sortOrder = .ascending
-        self.elements = elements.sorted(by: { (a: Element, b: Element) -> Bool in
-            return a < b
-        })
-    }
-    
-    /// Duplicating constructor.
+    /// Duplication constructor.
     /// - parameter sortedArray: Another array to initialize from.
     /// - returns: An array structure instance with sorted elements
     /// identical to `sortedArray`.
     public init(_ sortedArray: SortedArray<Element>) {
         sortOrder = sortedArray.sortOrder
         elements = sortedArray.elements
+        surjective = sortedArray.surjective
     }
     
     /// Bridging constructor from an `NSSortedArray` class instance.
     /// - parameter sortedArray: Another array to initialize from.
     /// - returns: An array structure instance with sorted elements
     /// identical to `sortedArray`.
-    public init(_ sortedArray: NSSortedArray<Element>) {
+    public init(_ sortedArray: _ObjectiveCType) {
         sortOrder = sortedArray.sortOrder
         elements = sortedArray.elements
+        surjective = sortedArray.surjective
     }
     
     // MARK: - ** Public Methods **
@@ -206,7 +158,34 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     /// Required method from the `_ObjectiveCBridgeable` private protocol
     /// - returns: An `NSStortedArray<Element>` instance identical to `self`.
     public func _bridgeToObjectiveC() -> _ObjectiveCType {
-        return NSSortedArray<Element>(self)
+        return _ObjectiveCType(self)
+    }
+    
+    /// Bridge from an Objective-C object of the bridged class type to a
+    /// value of the Self type.
+    ///
+    /// This bridging operation is used for unconditional bridging when
+    /// interoperating with Objective-C code, either in the body of an
+    /// Objective-C thunk or when calling Objective-C code, and may
+    /// defer complete checking until later. For example, when bridging
+    /// from `NSArray` to `Array<Element>`, we can defer the checking
+    /// for the individual elements of the array.
+    ///
+    /// \param source The Objective-C object from which we are
+    /// bridging. This optional value will only be `nil` in cases where
+    /// an Objective-C method has returned a `nil` despite being marked
+    /// as `_Nonnull`/`nonnull`. In most such cases, bridging will
+    /// generally force the value immediately. However, this gives
+    /// bridging the flexibility to substitute a default value to cope
+    /// with historical decisions, e.g., an existing Objective-C method
+    /// that returns `nil` to for "empty result" rather than (say) an
+    /// empty array. In such cases, when `nil` does occur, the
+    /// implementation of `Swift.Array`'s conformance to
+    /// `_ObjectiveCBridgeable` will produce an empty array rather than
+    /// dynamically failing.
+    public static func _unconditionallyBridgeFromObjectiveC(_ source: _ObjectiveCType?) -> SortedArray<Element> {
+        guard let source = source else { return SortedArray<Element> () }
+        return SortedArray<Element>(source)
     }
     
     // MARK: - CollectionType
@@ -214,6 +193,15 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     public subscript (index: Index) -> Element {
         get { return elements[index] }
         set { elements[index] = newValue }
+    }
+    
+    /// Returns the position immediately after the given index.
+    ///
+    /// - Parameter i: A valid index of the collection. `i` must be less than
+    ///   `endIndex`.
+    /// - Returns: The index value immediately after `i`.
+    public func index(after i: Int) -> Int {
+        return i + 1
     }
     
     public func makeIterator() -> Iterator {
@@ -317,10 +305,11 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     /// `self.
     ///
     /// - complexity: O(`log(self.count)`)
-    public mutating func add(_ element: Element, offset: Int = 0) -> Index {
+    public mutating func add(_ element: Element, offset: Int = 0) -> Index? {
         var index = 0
         if elements.count == 0 { elements.append(element) }
         else {
+            if surjective && elements.contains(element) { return nil }
             index = ordinalIndexForElement(element, searchRange: offset ..< endIndex)
             elements.insert(element, at: index)
         }

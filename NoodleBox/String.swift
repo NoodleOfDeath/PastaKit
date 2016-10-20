@@ -201,6 +201,18 @@ extension String {
     
 }
 
+extension String {
+    
+    public func contains(_ loc: Int) -> Bool {
+        return range.contains(loc)
+    }
+    
+    public func contains(_ range: NSRange) -> Bool {
+        return self.range.contains(range)
+    }
+    
+}
+
 // MARK: - ** String Pattern Matching Methods **
 
 extension String {

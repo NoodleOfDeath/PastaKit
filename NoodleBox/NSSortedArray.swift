@@ -10,9 +10,10 @@
 
 import Foundation
 
-private struct CodingKeys {
+fileprivate struct CodingKeys {
     static let SortOrder = "SortOrder"
-    static let elements = "elements"
+    static let Elements = "Elements"
+    static let Surjective = "Surjective"
 }
 
 // MARK: - ** NSSortedArray Class **
@@ -20,19 +21,11 @@ private struct CodingKeys {
 /// An array class that automatically places elements in order as
 /// they added to the collection.
 public class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCoding {
-    
-    /// Returns the position immediately after the given index.
-    ///
-    /// - Parameter i: A valid index of the collection. `i` must be less than
-    ///   `endIndex`.
-    /// - Returns: The index value immediately after `i`.
-    public func index(after i: Int) -> Int {
-        return i + 1
-    }
 
     // MARK: - CollectionType
     
-    public typealias Index = Int
+    public typealias BackingStorage = SortedArray<Element>
+    public typealias Index = BackingStorage.Index
     public typealias Iterator = IndexingIterator<NSSortedArray<Element>>
     
     public var startIndex: Index { return 0 }
@@ -46,14 +39,15 @@ public class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCodin
     
     // MARK: - NSSortedArray
     
-    /// The order in which to sort array elements.
-    public var sortOrder: SortOrder { return backingStorage.sortOrder }
-    
     /// The elements of this array.
     public var elements: [Element] { return backingStorage.elements }
+    /// The order in which to sort array elements.
+    public var sortOrder: SortOrder { return backingStorage.sortOrder }
+    /// Whether or not this set is surjective.
+    public var surjective: Bool { return backingStorage.surjective }
     
     /// 
-    fileprivate var backingStorage: SortedArray<Element>
+    fileprivate var backingStorage: BackingStorage
     
     // MARK: - ** Constructor Methods **
     
@@ -66,27 +60,11 @@ public class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCodin
     /// - note: The initial elements parameter need not be sorted, as it will
     /// automatically be sorted upon initialization.
     /// - returns: An array structure instance with sorted elements.
-    public init(sortOrder: SortOrder = .ascending, elements: [Element] = [Element]()) {
-        backingStorage = SortedArray<Element>(sortOrder: sortOrder, elements: elements)
+    public init(elements: [Element] = [Element](), sortOrder: SortOrder = .ascending, surjective: Bool = false) {
+        backingStorage = BackingStorage(elements: elements, sortOrder: sortOrder, surjective: surjective)
     }
     
-    /// Convenience constructor that sets the inital array elements.
-    /// - parameter elements: The initial elements to populate this array.
-    /// - returns: An array structure instance with sorted elements in
-    /// ascending order.
-    public init(_ elements: [Element]) {
-        backingStorage = SortedArray<Element>(sortOrder: .ascending, elements: elements)
-    }
-    
-    /// Bridging constructor from a `SortedArray` structure instance.
-    /// - parameter sortedArray: Another array to initialize from.
-    /// - returns: An array class instance with sorted elements
-    /// identical to `sortedArray`.
-    public init(_ sortedArray: SortedArray<Element>) {
-        backingStorage = sortedArray
-    }
-    
-    /// Duplicating constructor.
+    /// Duplication constructor.
     /// - parameter sortedArray: Another array to initialize from.
     /// - returns: An array structure instance with sorted elements
     /// identical to `sortedArray`.
@@ -94,17 +72,27 @@ public class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCodin
         backingStorage = sortedArray.backingStorage
     }
     
+    /// Bridging constructor from a `SortedArray` structure instance.
+    /// - parameter sortedArray: Another array to initialize from.
+    /// - returns: An array class instance with sorted elements
+    /// identical to `sortedArray`.
+    public init(_ sortedArray: BackingStorage) {
+        backingStorage = sortedArray
+    }
+    
     // MARK: - NSCoding
     
     public convenience required init?(coder aDecoder: NSCoder) {
-        guard let sortOrder = SortOrder(rawValue: aDecoder.decodeInteger(forKey: CodingKeys.SortOrder)) else { return nil }
-        guard let elements = aDecoder.decodeObject(forKey: CodingKeys.elements) as? [Element] else { return nil }
-        self.init(sortOrder: sortOrder, elements: elements)
+        guard let elements = aDecoder.decodeObject(forKey: CodingKeys.Elements) as? [Element],
+            let sortOrder = SortOrder(rawValue: aDecoder.decodeInteger(forKey: CodingKeys.SortOrder)) else { return nil }
+        let surjective = aDecoder.decodeBool(forKey: CodingKeys.Surjective)
+        self.init(elements: elements, sortOrder: sortOrder, surjective: surjective)
     }
     
     public func encode(with aCoder: NSCoder) {
+        aCoder.encode(elements, forKey: CodingKeys.Elements)
         aCoder.encode(sortOrder.rawValue, forKey: CodingKeys.SortOrder)
-        aCoder.encode(elements, forKey: CodingKeys.elements)
+        aCoder.encode(surjective, forKey: CodingKeys.Surjective)
     }
     
     // MARK: - CollectionType
@@ -113,9 +101,13 @@ public class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCodin
         get { return backingStorage[index] }
         set { backingStorage[index] = newValue }
     }
+
+    public func index(after i: Int) -> Int {
+        return backingStorage.index(after: i)
+    }
     
     public func makeIterator() -> Iterator {
-        return Iterator(_elements: NSSortedArray(self))
+        return Iterator(_elements: NSSortedArray<Element>(self))
     }
     
     /// Insert `newElement` at index `i`.
@@ -187,7 +179,7 @@ public class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCodin
     /// `self.
     ///
     /// - complexity: O(`log(self.count)`)
-    public func add(_ element: Element, offset: Int = 0) -> Index {
+    public func add(_ element: Element, offset: Int = 0) -> Index? {
         return backingStorage.add(element, offset: offset)
     }
     
