@@ -6,11 +6,6 @@
 // Copyright © 2016 NoodleNation. All rights reserved.
 //
 
-import Foundation
-
-public typealias AnyArray = [Any]
-public typealias AnyObjectArray = [AnyObject]
-
 ///
 public func + <Element>(lhs: [Element]?, rhs: [Element]) -> [Element] {
     return (lhs ?? []) + rhs

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for NoodleBox.
 FOUNDATION_EXPORT double NoodleBoxVersionNumber;
