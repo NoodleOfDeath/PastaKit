@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B8F9D3D568F28CADF583D83310324CF"
-               BuildableName = "Pods_NoodleBoxExample.framework"
-               BlueprintName = "Pods-NoodleBoxExample"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "9F8FDC6353668659F24591889813533B"
+               BuildableName = "NoodleBox.framework"
+               BlueprintName = "NoodleBox"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B8F9D3D568F28CADF583D83310324CF"
-            BuildableName = "Pods_NoodleBoxExample.framework"
-            BlueprintName = "Pods-NoodleBoxExample"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "9F8FDC6353668659F24591889813533B"
+            BuildableName = "NoodleBox.framework"
+            BlueprintName = "NoodleBox"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>

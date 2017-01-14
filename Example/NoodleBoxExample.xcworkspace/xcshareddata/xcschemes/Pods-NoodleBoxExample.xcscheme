@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CDD116B91D592C9F004A9DBC"
-               BuildableName = "NoodleBox.framework"
-               BlueprintName = "NoodleBox"
-               ReferencedContainer = "container:NoodleBox.xcodeproj">
+               BlueprintIdentifier = "3B8F9D3D568F28CADF583D83310324CF"
+               BuildableName = "Pods_NoodleBoxExample.framework"
+               BlueprintName = "Pods-NoodleBoxExample"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CDD116B91D592C9F004A9DBC"
-            BuildableName = "NoodleBox.framework"
-            BlueprintName = "NoodleBox"
-            ReferencedContainer = "container:NoodleBox.xcodeproj">
+            BlueprintIdentifier = "3B8F9D3D568F28CADF583D83310324CF"
+            BuildableName = "Pods_NoodleBoxExample.framework"
+            BlueprintName = "Pods-NoodleBoxExample"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CDD116B91D592C9F004A9DBC"
-            BuildableName = "NoodleBox.framework"
-            BlueprintName = "NoodleBox"
-            ReferencedContainer = "container:NoodleBox.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
