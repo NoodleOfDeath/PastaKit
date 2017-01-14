@@ -2,8 +2,8 @@ use_frameworks!
 
 target 'NoodleBoxExample' do
 
-    pod 'NoodleBox', :path => '../'
-    #pod 'NoodleBox', :git => ':git => 'https://github.com/NoodleOfDeath/NoodleBox.git'
+    # pod 'NoodleBox', :path => '../'
+    pod 'NoodleBox', :git => 'https://github.com/NoodleOfDeath/NoodleBox.git'
 
 end
 

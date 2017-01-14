@@ -2,15 +2,20 @@ PODS:
   - NoodleBox (0.1.5)
 
 DEPENDENCIES:
-  - NoodleBox (from `../`)
+  - NoodleBox (from `https://github.com/NoodleOfDeath/NoodleBox.git`)
 
 EXTERNAL SOURCES:
   NoodleBox:
-    :path: ../
+    :git: https://github.com/NoodleOfDeath/NoodleBox.git
+
+CHECKOUT OPTIONS:
+  NoodleBox:
+    :commit: 581afe33082c56f24e29eec836fb719889353a95
+    :git: https://github.com/NoodleOfDeath/NoodleBox.git
 
 SPEC CHECKSUMS:
   NoodleBox: 8a90805aa2dc7721d856b4f65cde06a124396464
 
-PODFILE CHECKSUM: eace9f206d10c8c6ebe796a9d3b83885e94778a9
+PODFILE CHECKSUM: 278d6b3a1d7e946dfe5261c62fa37592e5ae92e8
 
 COCOAPODS: 1.0.1

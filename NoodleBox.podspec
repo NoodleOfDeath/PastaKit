@@ -24,7 +24,7 @@ Swift library with convenience extensions and custom data structures to save dev
   s.homepage         = 'https://github.com/NoodleOfDeath/NoodleBox'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'NoodleOfDeath' => 'noodlekit@bytemeapp.com' }
+  s.author           = { 'NoodleOfDeath' => 'noodlebox@noodlenation.net' }
   s.source           = { :git => 'https://github.com/NoodleOfDeath/NoodleBox.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/Noodle_of_Death'
 

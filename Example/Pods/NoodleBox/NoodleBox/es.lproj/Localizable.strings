@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  NoodleBox
+
+  Created by Thom Morgan on 9/7/16.
+  Copyright © 2016 NoodleNation. All rights reserved.
+*/
+
+"apply" = "aplicar";
+"cancel" = "cancelar";
+"done" = "OK";
+"edit" = "editar";
