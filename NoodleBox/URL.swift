@@ -1,9 +1,9 @@
 //
-//  URL.swift
-//  NoodleBox
+// URL.swift
+// NoodleBox
 //
-//  Created by Thom Morgan on 10/12/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by Thom Morgan on 10/12/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation
@@ -85,7 +85,7 @@ public func +> (lhs: URL?, rhs: String?) -> URL? {
 
 extension URL {
     
-    ///  `true` iff a resource exists at `self`.
+    /// `true` iff a resource exists at `self`.
     public var exists: Bool {
         return self*.checkResourceIsReachableAndReturnError(nil)
     }

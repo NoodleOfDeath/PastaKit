@@ -10,11 +10,13 @@
 		CD0437751D887746007A7461 /* MIMEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0437741D887746007A7461 /* MIMEType.swift */; };
 		CD0F813D1D5F712E00736E69 /* CFRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */; };
 		CD17D9551DAEA7D700580E92 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17D9541DAEA7D700580E92 /* URL.swift */; };
+		CD1ED31E1E1D62F100679D10 /* NBRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1ED31D1E1D62F100679D10 /* NBRegex.swift */; };
 		CD2907E61D627836000DD8B7 /* NSCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E51D627836000DD8B7 /* NSCoder.swift */; };
 		CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E71D627C61000DD8B7 /* SortedArray.swift */; };
 		CD2907EA1D627C88000DD8B7 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */; };
 		CD30FDC11D74DC200087E68F /* NBPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30FDC01D74DC200087E68F /* NBPopoverViewController.swift */; };
 		CD30FDC31D74DC470087E68F /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30FDC21D74DC470087E68F /* LocalizedStrings.swift */; };
+		CD379B1F1DB9176600124712 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD379B1E1DB9176600124712 /* Comparable.swift */; };
 		CD3894F01D662BF000E03CDC /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3894EF1D662BF000E03CDC /* NSString.swift */; };
 		CD39B1AB1DAC439900D0F8BF /* CountableRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39B1AA1DAC439900D0F8BF /* CountableRange.swift */; };
 		CD39B1AD1DAD44C700D0F8BF /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39B1AC1DAD44C700D0F8BF /* Notification.swift */; };
@@ -89,13 +91,15 @@
 
 /* Begin PBXFileReference section */
 		CD0437741D887746007A7461 /* MIMEType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIMEType.swift; sourceTree = "<group>"; };
-		CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CFRepresentable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CFRepresentable.swift; sourceTree = "<group>"; };
 		CD17D9541DAEA7D700580E92 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		CD1ED31D1E1D62F100679D10 /* NBRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBRegex.swift; sourceTree = "<group>"; };
 		CD2907E51D627836000DD8B7 /* NSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCoder.swift; sourceTree = "<group>"; };
 		CD2907E71D627C61000DD8B7 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
 		CD2907E91D627C88000DD8B7 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedDictionary.swift; sourceTree = "<group>"; };
 		CD30FDC01D74DC200087E68F /* NBPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBPopoverViewController.swift; sourceTree = "<group>"; };
 		CD30FDC21D74DC470087E68F /* LocalizedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		CD379B1E1DB9176600124712 /* Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
 		CD3894EB1D66294700E03CDC /* UIInterfaceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInterfaceOrientation.swift; sourceTree = "<group>"; };
 		CD3894EF1D662BF000E03CDC /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
 		CD39B1AA1DAC439900D0F8BF /* CountableRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountableRange.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				CD39BED71D6110F700E8FB50 /* UIZoomingScrollView.swift */,
 				CDD1162B1D592A93004A9DBC /* UTCoreTypes.swift */,
 				CDF2EF3E1DAFECAD0001438E /* Unicode.swift */,
+				CD1ED31D1E1D62F100679D10 /* NBRegex.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				CDC9BFE71DB2CAA500270764 /* Thread.swift */,
 				CD17D9541DAEA7D700580E92 /* URL.swift */,
 				CDD116101D592A93004A9DBC /* UserDefaults.swift */,
+				CD379B1E1DB9176600124712 /* Comparable.swift */,
 			);
 			name = Native;
 			sourceTree = "<group>";
@@ -504,10 +510,12 @@
 				CDD116D91D592CDB004A9DBC /* NSStringLineEnding.swift in Sources */,
 				CD4EA8CC1D6BE607003B45E4 /* UIImage.swift in Sources */,
 				CD4EA8D31D6BE607003B45E4 /* UITextView.swift in Sources */,
+				CD1ED31E1E1D62F100679D10 /* NBRegex.swift in Sources */,
 				CDD116D11D592CDB004A9DBC /* NSMetadataItem.swift in Sources */,
 				CD6192991DB3E83B00E581E2 /* SortOrder.swift in Sources */,
 				CDF2EF411DAFF0630001438E /* UITableViewCell.swift in Sources */,
 				CDD116DE1D592CDD004A9DBC /* CGRect.swift in Sources */,
+				CD379B1F1DB9176600124712 /* Comparable.swift in Sources */,
 				CDD116C51D592CDB004A9DBC /* Any.swift in Sources */,
 				CD39BED81D6110F700E8FB50 /* UIZoomingScrollView.swift in Sources */,
 				CDD116FC1D592F54004A9DBC /* NoodleBox.swift in Sources */,
@@ -635,6 +643,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -678,6 +687,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -1,9 +1,9 @@
 //
-//  CGColor.swift
-//  NoodleBox
+// CGColor.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 7/3/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 7/3/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import CoreGraphics

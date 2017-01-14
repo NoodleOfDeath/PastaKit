@@ -1,9 +1,9 @@
 //
-//  CGSize.swift
-//  NoodleBox
+// CGSize.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 6/6/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 6/6/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import CoreGraphics

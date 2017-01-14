@@ -1,0 +1,6 @@
+framework module NoodleBox {
+  umbrella header "NoodleBox-umbrella.h"
+
+  export *
+  module * { export * }
+}

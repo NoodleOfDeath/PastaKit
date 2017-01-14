@@ -1,15 +1,15 @@
 //
-//  NSMutableAttributedString.swift
-//  NoodleBox
+// NSMutableAttributedString.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 6/11/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 6/11/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation
 
 // MARK: - ** NSMutableAttributedString (General Convenience Extensions) **
-///  NSMutableAttributedString (General Convenience Extensions)
+/// NSMutableAttributedString (General Convenience Extensions)
  /// */
 extension NSMutableAttributedString {
     

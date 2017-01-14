@@ -1,9 +1,9 @@
 //
-//  NBStackView.swift
-//  NoodleBox
+// NBStackView.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 8/14/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 8/14/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 // MARK: - ** Import Modules **
@@ -34,23 +34,23 @@ public enum NBStackViewAlignment : Int {
 /// ...
 /// override viewDidLoad() {
 ///
-///     super.viewDidLoad()
+///    super.viewDidLoad()
 ///
-///     let viewA = UIView()
-///     viewA.addConstraint(viewA.widthLayoutConstraint(40.0))
+///    let viewA = UIView()
+///    viewA.addConstraint(viewA.widthLayoutConstraint(40.0))
 ///
-///     let viewB = UIView()
-///     viewB.addConstraint(viewB.widthLayoutConstraint(50.0))
+///    let viewB = UIView()
+///    viewB.addConstraint(viewB.widthLayoutConstraint(50.0))
 ///
-///     let label = UILabel()
-///     label.text = "This is a label"
-///     label.addConstraint(label.widthLayoutConstraint(100.0))
+///    let label = UILabel()
+///    label.text = "This is a label"
+///    label.addConstraint(label.widthLayoutConstraint(100.0))
 ///
-///     let stack = NBStackView()
-///     stack.push(viewA, viewB, label)
+///    let stack = NBStackView()
+///    stack.push(viewA, viewB, label)
 ///
-///     view.addSubview(stack)
-///     stack.constrainToSuperview()
+///    view.addSubview(stack)
+///    stack.constrainToSuperview()
 /// }
 /// ...
 /// ````

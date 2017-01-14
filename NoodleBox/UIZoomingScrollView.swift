@@ -1,9 +1,9 @@
 //
-//  UIZoomingScrollView.swift
-//  NoodleBox
+// UIZoomingScrollView.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 5/17/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 5/17/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 // MARK: - ** Import Modules **
@@ -29,12 +29,12 @@ public protocol UIZoomingScrollViewDelegate : NSObjectProtocol {
 /// import NoodleBox
 /// ...
 /// override func viewDidLoad() {
-///     super.viewDidLoad()
-///     let textView = UITextView()
-///     textView.text = "This is a text view"
-///     let zview = UIZoomingScrollView(scrollView: textView)
-///     view.addSubview(zview)
-///     zview.constrainToSuperview()
+///    super.viewDidLoad()
+///    let textView = UITextView()
+///    textView.text = "This is a text view"
+///    let zview = UIZoomingScrollView(scrollView: textView)
+///    view.addSubview(zview)
+///    zview.constrainToSuperview()
 /// }
 /// ...
 /// ````

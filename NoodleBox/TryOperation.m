@@ -1,9 +1,9 @@
 //
-//  TryOperation.m
-//  NoodleBox
+// TryOperation.m
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 7/6/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 7/6/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

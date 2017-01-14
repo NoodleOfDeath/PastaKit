@@ -1,9 +1,9 @@
 //
-//  QuickSortArray.swift
-//  NoodleBox
+// QuickSortArray.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 6/23/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 6/23/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation
@@ -81,7 +81,7 @@ public class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection,
     /// Returns the position immediately after the given index.
     ///
     /// - Parameter i: A valid index of the collection. `i` must be less than
-    ///   `endIndex`.
+    ///  `endIndex`.
     /// - Returns: The index value immediately after `i`.
     public func index(after i: Int) -> Int {
         return backingStorage.index(after: i)

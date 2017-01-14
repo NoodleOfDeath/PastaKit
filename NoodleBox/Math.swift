@@ -1,9 +1,9 @@
 //
-//  Math.swift
-//  NoodleBox
+// Math.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 3/5/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 3/5/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation
@@ -18,7 +18,7 @@ public func =< <T: Comparable>(lhs: inout T, rhs: T) {
 }
 
 ///
-///  `lhs => rhs` means if `rhs` is greater than `lhs`, assign `rhs` to `lhs`
+/// `lhs => rhs` means if `rhs` is greater than `lhs`, assign `rhs` to `lhs`
 /// - parameter lhs: The value to be updated
 /// - parameter rhs: The value to assign to `lhs` if it is greater than `lhs`
 ///
@@ -573,7 +573,7 @@ public struct NSDataSizeFormattingOption : OptionSet {
     
 }
 
-///  
+/// 
 public struct NSDataSize : CustomStringConvertible {
     
     public let bytes: UInt64

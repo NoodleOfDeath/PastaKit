@@ -1,9 +1,9 @@
 //
-//  SortedDictionary.swift
-//  NoodleBox
+// SortedDictionary.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 8/15/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 8/15/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation

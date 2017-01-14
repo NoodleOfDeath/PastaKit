@@ -1,9 +1,9 @@
 //
-//  String.swift
-//  NoodleBox
+// String.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 3/8/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 3/8/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 // MARK: - ** Import Modules **
@@ -97,6 +97,21 @@ public func +/ (lhs: String?, rhs: String) -> String? {
 /// 
 public func +/ (lhs: String?, rhs: String?) -> String? {
     guard let lhs = lhs, let rhs = rhs else { return nil }
+    return lhs.appendingPathComponent(rhs)
+}
+
+/// 
+public func +/ (lhs: String!, rhs: String) -> String {
+    return lhs.appendingPathComponent(rhs)
+}
+
+/// 
+public func +/ (lhs: String, rhs: String!) -> String {
+    return lhs.appendingPathComponent(rhs)
+}
+
+/// 
+public func +/ (lhs: String!, rhs: String!) -> String {
     return lhs.appendingPathComponent(rhs)
 }
 
@@ -545,7 +560,7 @@ extension String {
     /// separation. Default is `««`. 
     /// - note: `template` should be a unique pattern distinguishable from
     /// `pattern` or any regular expression control characters/patterns.
-    public func components(separatedBy pattern: String, template: String = "««") -> [String] {
+    public func components(separatedByPattern pattern: String, template: String = "««") -> [String] {
         guard let expr = try? NSRegularExpression(pattern: pattern, options: []) else { return [] }
         let string = NSMutableString(string: self)
         expr.replaceMatches(in: string, options: [.withTransparentBounds], range: string.range, withTemplate: template)
@@ -651,6 +666,12 @@ extension String {
 // MARK: - ** String (General Convenience Extensions) **
 
 extension String {
+    
+    /// Removes the leading and trailing whitespace characters of `self` and
+    /// returns the result.
+    public var trimmed: String {
+        return trimmingCharacters(in: .whitespaces)
+    }
 
     /// Removes the last path component of `self` and returns the result.
     public var deletingLastPathComponent: String {
@@ -802,7 +823,7 @@ extension String {
     /// - parameter attrs: The text attributes to use for text rendering.
     /// - parameter size: The size of the return image.
     /// - returns: An `UIImage` representation of `self` with `attrs` text
-    ///  attributes and dimensions `size`.
+    /// attributes and dimensions `size`.
     
     public func image(attributes attrs: [String : Any], size: CGSize? = nil) -> UIImage {
         let size = size ?? self.size(attributes: attrs)
@@ -818,7 +839,7 @@ extension String {
     /// Returns `self` with system font as an image with dimensions `size`.
     /// - parameter size: The size of the return image.
     /// - returns: An `UIImage` representation of `self` with system font
-    ///  and dimensions `size`.
+    /// and dimensions `size`.
     
     public func image(size: CGSize) -> UIImage {
         return image(attributes: [NSFontAttributeName : UIFont.systemFont()], size: size)

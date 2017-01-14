@@ -1,24 +1,13 @@
 //
-//  UITextInput.swift
-//  NoodleBox
+// UITextInput.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 7/22/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 7/22/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import UIKit
 import Foundation
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
-
 
 extension UITextInput {
     
@@ -57,7 +46,7 @@ extension UITextInput {
         let start = offset(from: beginningOfDocument, to: selectedTextRange.start)
         let length = offset(from: selectedTextRange.start, to: endOfDocument)
         if !(length > 0) { return }
-        guard let range = textRangeOfRange(NSMakeRange(start, 1)) else { return }
+        guard let range = textRange(of: NSMakeRange(start, 1)) else { return }
         replace(range, withText: "")
     }
     
@@ -66,25 +55,25 @@ extension UITextInput {
     // MARK: -
     
     @available(iOS 3.2, *)
-    public func locationOfTextPosition(_ textPosition: UITextPosition) -> Int {
+    public func location(of textPosition: UITextPosition) -> Int {
         return offset(from: beginningOfDocument, to: textPosition)
     }
     
     @available(iOS 3.2, *)
-    public func rangeOfTextRange(_ textRange: UITextRange) -> NSRange {
-        let loc = locationOfTextPosition(textRange.start)
-        let end = locationOfTextPosition(textRange.end)
+    public func range(of textRange: UITextRange) -> NSRange {
+        let loc = location(of: textRange.start)
+        let end = location(of: textRange.end)
         return NSMakeRange(loc, end - loc)
     }
     
     @available(iOS 3.2, *)
-    public func textPositionOfLocation(_ location: Int) -> UITextPosition? {
+    public func textPosition(of location: Int) -> UITextPosition? {
         return position(from: beginningOfDocument, offset: location)
     }
     
     @available(iOS 3.2, *)
-    public func textRangeOfRange(_ range: NSRange) -> UITextRange? {
-        guard let start = textPositionOfLocation(range.location) else { return nil }
+    public func textRange(of range: NSRange) -> UITextRange? {
+        guard let start = textPosition(of: range.location) else { return nil }
         guard let end = position(from: start, offset: range.length) else { return nil }
         return textRange(from: start, to: end)
     }

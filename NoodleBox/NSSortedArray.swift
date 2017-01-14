@@ -1,9 +1,9 @@
 //
-//  NSSortedArray.swift
-//  NoodleBox
+// NSSortedArray.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 6/29/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 6/29/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 // MARK: - ** Import Modules **

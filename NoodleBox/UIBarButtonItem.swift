@@ -1,9 +1,9 @@
 //
-//  UIBarButtonItem.swift
-//  NoodleBox
+// UIBarButtonItem.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 3/12/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 3/12/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import UIKit
@@ -19,7 +19,7 @@ extension UIBarButtonItem {
         self.init(image: image, style: .plain, target: target, action: action)
     }
 
-    ///     A standard fixed space [UIBarButtonItem]() of specified width
+    ///    A standard fixed space [UIBarButtonItem]() of specified width
     /// - parameter width: The fixed width of to make the space
     /// - returns: A fixed space instance with a width of `width`
     open static func fixedSpace(_ width: CGFloat = 0.0) -> UIBarButtonItem {
@@ -28,7 +28,7 @@ extension UIBarButtonItem {
         return item
     }
 
-    ///     A standard flexible space [UIBarButtonItem]()
+    ///    A standard flexible space [UIBarButtonItem]()
     /// - returns: A flexible space instance
     open static func flexibleSpace() -> UIBarButtonItem {
         return UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)

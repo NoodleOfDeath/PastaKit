@@ -1,9 +1,9 @@
 //
-//  UILabel.swift
-//  NoodleBox
+// UILabel.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 6/9/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 6/9/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import UIKit

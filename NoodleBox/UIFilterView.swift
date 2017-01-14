@@ -1,9 +1,9 @@
 //
-//  UIFilterView.swift
-//  NoodleBox
+// UIFilterView.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 6/27/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 6/27/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 // MARK: - ** Import Modules **

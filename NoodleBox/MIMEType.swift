@@ -1,9 +1,9 @@
 //
-//  MIMEType.swift
-//  NoodleBox
+// MIMEType.swift
+// NoodleBox
 //
-//  Created by Thom Morgan on 9/13/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by Thom Morgan on 9/13/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation

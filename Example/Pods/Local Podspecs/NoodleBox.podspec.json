@@ -1,6 +1,6 @@
 {
   "name": "NoodleBox",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "summary": "Swift library with convenience extensions and custom data structures.",
   "description": "Swift library with convenience extensions and custom data structures to save developer headaches.",
   "homepage": "https://github.com/NoodleOfDeath/NoodleBox",
@@ -13,10 +13,10 @@
   },
   "source": {
     "git": "https://github.com/NoodleOfDeath/NoodleBox.git",
-    "tag": "0.1.0"
+    "tag": "0.1.5"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "NoodleBox/Classes/**/*"
+  "source_files": "NoodleBox/**/*"
 }

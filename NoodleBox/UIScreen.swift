@@ -1,9 +1,9 @@
 //
-//  UIScreen.swift
-//  NoodleBox
+// UIScreen.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 4/27/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 4/27/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import UIKit

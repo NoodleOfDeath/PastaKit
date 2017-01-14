@@ -1,9 +1,9 @@
 //
-//  NBBundle.swift
-//  ByteMe
+// NBBundle.swift
+// ByteMe
 //
-//  Created by Thom Morgan on 5/22/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by Thom Morgan on 5/22/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 // MARK: - ** Import Modules **

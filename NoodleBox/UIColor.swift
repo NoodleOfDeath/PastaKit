@@ -1,9 +1,9 @@
 //
-//  UIColor.swift
-//  NoodleBox
+// UIColor.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 4/20/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 4/20/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation
@@ -21,7 +21,7 @@ public func * (lhs: UIColor, rhs: Double) -> UIColor {
 
 extension UIColor {
 
-    ///     The six-digit hexadecimal representation of color of the form #RRGGBB.
+    ///    The six-digit hexadecimal representation of color of the form #RRGGBB.
     /// - parameter hex6: Six-digit hexadecimal value.
     public convenience init(hex6: UInt, alpha: CGFloat = 1.0) {
         let divisor = CGFloat(255.0)
@@ -31,7 +31,7 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 
-    ///     The six-digit hexadecimal representation of color with alpha of the form #RRGGBBAA.
+    ///    The six-digit hexadecimal representation of color with alpha of the form #RRGGBBAA.
 /// - parameter hex8: Eight-digit hexadecimal value.
     public convenience init(hex8: UInt) {
         let divisor = CGFloat(255.0)

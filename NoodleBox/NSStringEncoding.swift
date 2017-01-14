@@ -1,9 +1,9 @@
 //
-//  NSStringEncoding.swift
-//  NoodleBox
+// NSStringEncoding.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 6/2/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 6/2/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation

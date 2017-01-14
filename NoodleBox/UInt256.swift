@@ -1,9 +1,9 @@
 //
-//  UInt256.swift
-//  NoodleBox
+// UInt256.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 7/10/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 7/10/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation

@@ -1,9 +1,9 @@
 //
-//  NSParagraphStyle.swift
-//  NoodleBox
+// NSParagraphStyle.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 3/6/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 3/6/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import UIKit

@@ -1,9 +1,9 @@
 //
-//  UINavigationController.swift
-//  NoodleBox
+// UINavigationController.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 4/25/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 4/25/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation

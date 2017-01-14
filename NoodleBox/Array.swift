@@ -1,9 +1,9 @@
 //
-//  Array.swift
-//  NoodleBox
+// Array.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 4/12/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 4/12/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation
@@ -48,6 +48,23 @@ extension Array {
     public var range: NSRange {
         return NSMakeRange(0, count - 1)
     }
+    
+}
+
+extension Array {
+    
+    /// Returns whether or not the specified index is within the index
+    /// bounds of this array.
+    /// - parameter index: an index
+    /// - returns: `true` if `index` is within the bounds of this array.
+    /// `false` otherwise.
+    public func contains(index: Int) -> Bool {
+        return index >= 0 && index < count
+    }
+    
+}
+
+extension Array {
     
     /// Alias of `removeFirst()`
     public mutating func pop() -> Element? {

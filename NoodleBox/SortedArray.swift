@@ -1,9 +1,9 @@
 //
-//  SortedArray.swift
-//  NoodleBox
+// SortedArray.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 8/15/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 8/15/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 // MARK: - ** Import Modules **
@@ -198,7 +198,7 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     /// Returns the position immediately after the given index.
     ///
     /// - Parameter i: A valid index of the collection. `i` must be less than
-    ///   `endIndex`.
+    ///  `endIndex`.
     /// - Returns: The index value immediately after `i`.
     public func index(after i: Int) -> Int {
         return i + 1

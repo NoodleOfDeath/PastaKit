@@ -1,9 +1,9 @@
 //
-//  NSAttributeName.swift
-//  NoodleBox
+// NSAttributeName.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 8/23/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 8/23/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation

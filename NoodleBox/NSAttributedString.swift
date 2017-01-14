@@ -1,9 +1,9 @@
 //
-//  NSAttributedString.swift
-//  NoodleBox
+// NSAttributedString.swift
+// NoodleBox
 //
-//  Created by NoodleOfDeath on 6/11/16.
-//  Copyright © 2016 NoodleNation. All rights reserved.
+// Created by NoodleOfDeath on 6/11/16.
+// Copyright © 2016 NoodleNation. All rights reserved.
 //
 
 import Foundation
@@ -14,8 +14,8 @@ import Foundation
 /// `NSAttributedString` open class.
 extension NSAttributedString {
     
-    ///  The range representation of this string.
-    ///  - returns: `NSMakeRange(0, length)`
+    /// The range representation of this string.
+    /// - returns: `NSMakeRange(0, length)`
     open var range: NSRange {
         return NSMakeRange(0, length)
     }
