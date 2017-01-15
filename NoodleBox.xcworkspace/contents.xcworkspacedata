@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../NoodleBox.xcodeproj">
+      location = "group:NoodleBox.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:/Users/thom/Documents/OneDrive/Dev/NoodleBox/Example/NoodleBoxExample.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:Example/Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

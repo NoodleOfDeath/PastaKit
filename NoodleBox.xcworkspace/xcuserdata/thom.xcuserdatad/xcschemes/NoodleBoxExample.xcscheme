@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -17,7 +17,21 @@
                BlueprintIdentifier = "3B8F9D3D568F28CADF583D83310324CF"
                BuildableName = "Pods_NoodleBoxExample.framework"
                BlueprintName = "Pods-NoodleBoxExample"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+               ReferencedContainer = "container:Example/Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CDAB11791D79FBBB00BEC7B8"
+               BuildableName = "NoodleBoxExample.app"
+               BlueprintName = "NoodleBoxExample"
+               ReferencedContainer = "container:Example/NoodleBoxExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +43,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CDAB11791D79FBBB00BEC7B8"
+            BuildableName = "NoodleBoxExample.app"
+            BlueprintName = "NoodleBoxExample"
+            ReferencedContainer = "container:Example/NoodleBoxExample.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +65,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B8F9D3D568F28CADF583D83310324CF"
-            BuildableName = "Pods_NoodleBoxExample.framework"
-            BlueprintName = "Pods-NoodleBoxExample"
-            ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            BlueprintIdentifier = "CDAB11791D79FBBB00BEC7B8"
+            BuildableName = "NoodleBoxExample.app"
+            BlueprintName = "NoodleBoxExample"
+            ReferencedContainer = "container:Example/NoodleBoxExample.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,6 +84,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CDAB11791D79FBBB00BEC7B8"
+            BuildableName = "NoodleBoxExample.app"
+            BlueprintName = "NoodleBoxExample"
+            ReferencedContainer = "container:Example/NoodleBoxExample.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
