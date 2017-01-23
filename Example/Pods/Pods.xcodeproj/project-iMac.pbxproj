@@ -1,0 +1,872 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		060E8FD656D4ED2D7F680DD90DE78B18 /* MIMEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2DD6644EACF2DDF4A2BB0148A7A54E /* MIMEType.swift */; };
+		0E4E82DAD2C4A5DD61C2529ACA707BD5 /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E469670672217000B8978376F07D57 /* UITextInput.swift */; };
+		0F1B1FB1223F0B67C69F679A829D146F /* Localizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = 8BA8A354107D51B065AC444D51D8D5CF /* Localizable.strings */; };
+		118BBB0617D94409298E097BCB99D2CA /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983228E8F3765A2087D11A244E0B89BA /* UIDevice.swift */; };
+		14D3BCEAA91C242C3265E4318E8F6DF0 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 4B8981BB147447002A7B7EEB38423B88 /* Info.plist */; };
+		14F0FAD8ACEF5C6425F913C2C0E817D8 /* Unicode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6965E73510217ED5F1AFA5730863E /* Unicode.swift */; };
+		15A596859B529E7101F69B5C213FA4B7 /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E76C5F3ADFB5429B425A106B0E580D /* NSBundle.swift */; };
+		183B947A1EA0340455CB5F3A2D2E60E9 /* UIInterfaceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FBAC54AD6496EE679C9973BE9A1663 /* UIInterfaceOrientation.swift */; };
+		19DB7B714C7C773928C66DC4905D4857 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D005904833DD08A37E43EF4C7050B5E /* Operators.swift */; };
+		1BCA0F9C2150C9EF6A4CA660625A90CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		1CCB50BF07D5D04FFC7A678E18DA6E4E /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986083808FB00E092DB84B92B405CB54 /* Bool.swift */; };
+		1E01F1D3112C31E3D91ABE6007B8111E /* CFRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD256080B3DFD8774ABC0F148A0096F1 /* CFRepresentable.swift */; };
+		1E2C9D8A35BE0507B4A521F74D2D956F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B40DEBB6FF3D4BC453F9FCC9BB3F79 /* String.swift */; };
+		1F81068E442D45727641B268FBD61F64 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF271341B49298A401252E156DCD4E33 /* UIImage.swift */; };
+		215BE5C099A9B06E2A17B53EC02C3AB3 /* NSStringEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70334D78C84D4874E58CBBB225794882 /* NSStringEncoding.swift */; };
+		224A4E4650511625BE097EB30C51A42E /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83216BF6A144C83FB2FFD617614E1640 /* UIBarButtonItem.swift */; };
+		28FA718F22C738C826572B5ED65C586F /* UInt256.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA533DF1DA0A506CF4F9EC785C2442BC /* UInt256.swift */; };
+		296E60E937FAFC80F304AF28FEBE182F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB4DBD12AFED68CC8C0B258AEAB7A29 /* UIViewController.swift */; };
+		2A87AEE756201FE44E29D15947BB1E35 /* NoodleBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A551B30A8054CBEEDAC7EEC4FF2E3D /* NoodleBox.swift */; };
+		316328C359F565A28EB833FE9935C87C /* NoodleBox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E173F7A38C1543F51C07FF206322517 /* NoodleBox-dummy.m */; };
+		39C351243CE753393D9A5C551B258BB5 /* NSAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14CE7E53AE55CC343CE7B6EACF1AB8 /* NSAttributeName.swift */; };
+		3B16343B4754E469F3B4B58D081AE580 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD700AD34865FBE473735E47869BFB /* URL.swift */; };
+		405ECDFB888F67F6B12DE7334319EF5B /* CGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014BDC514667C8CCC006DC7FC7363724 /* CGColor.swift */; };
+		4117FD4E8F3641A45B04F1038DD5D3F6 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451E47F7CBCB7199F422A026F4872656 /* SortedArray.swift */; };
+		42FB85D7C9F75223F8662CA1DF70553E /* Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763B66875468AF4D79FAEC7DAD608BD /* Hashable.swift */; };
+		471E7ED9834C38A923F7B073F8F57FA0 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3B224224FDA0A2C98CECB0336E1C8B /* UIApplication.swift */; };
+		4851A698F80EADD7A0BE5CF025B1E630 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0A325AC799BB288CD2EEEEDF08BE93 /* LocalizedStrings.swift */; };
+		54CD365E69FBF8CAE9D617E451028B85 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372B0E5B1C8B6AD1A84EAA6A8DB0B7F /* UIFont.swift */; };
+		580AA231C8455EEA8070311F6F068B6E /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0BA6D262323B956B159121A3E5F54 /* NSFileManager.swift */; };
+		5C88F6136D6D28DA03FEDEDA65F86ACD /* NSStringLineEnding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968378D580AD24B4E2CA2ECCBA8CB8A7 /* NSStringLineEnding.swift */; };
+		5DA83F8BAD334127A2E74CBCB0A0129B /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CD1DD0C5A6EE0E26CE896E4EF5C3C1 /* NSDate.swift */; };
+		5F16CC08F4D3B8DF1C8D35E6DD296519 /* NSSortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9EB60F9EA31A13ED5399A18D886227 /* NSSortedDictionary.swift */; };
+		5F1D238821F50B4A42DEDE89A7BCE345 /* SeparableOptionSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FF1E5B59388D3D874998FFE66F2FF2 /* SeparableOptionSetType.swift */; };
+		612C7747EC26C62662FCBB1CCA745990 /* Pods-NoodleBoxExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6873DFB2BE0C340708FA9114D1E014C7 /* Pods-NoodleBoxExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		626754264D1AB4E32F035514D491CAF2 /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B98898A2DFC57F73498BCAC7F3B5373 /* NSString.swift */; };
+		626E3FD2684636E76EFFBD642D144B43 /* UTCoreTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA41187084FDE4ED35705860B32D014 /* UTCoreTypes.swift */; };
+		62B33B65032FB24A13B4D18E2448E445 /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B45FB7CC5EBAB79A5064A03A435E60 /* NSURL.swift */; };
+		65035D876AFC0871061AAE2E4014A0A9 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C7D75950957FBC53AADB154C4987BF /* NSAttributedString.swift */; };
+		6828D7C30AEF9DAA1AF2AC332C2F8BD1 /* NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB2E4233292CE1C4AB22C381CC9499 /* NSRange.swift */; };
+		6B932F203FC3A84B6F61A136F22DFB46 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403D41A4F9BBA238AF06CAAD4D0D3E92 /* CGSize.swift */; };
+		6F1E226742418119B4A4DECCFBE41BB5 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4FBDE03D60D0CC0ABBC085E09EBD14 /* Array.swift */; };
+		72D525A159CB124813047A55DCC30D54 /* TryOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FECC2DC9D6B03A0D28552436AD71E1AE /* TryOperation.m */; };
+		72EFEB2A83B513B57F5E23ADCFE67480 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B4A166CC62C2A1889E3CCB722F771 /* SortedDictionary.swift */; };
+		7369AF3717F7E0E4439BEA95A6BF0898 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD0B6C90FB6954E5B083F754C824007 /* UIScreen.swift */; };
+		7B5B54865772FE43A597EF5A880D46B1 /* Localizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = 1C8CF61013C6456D6DE3BD5844EDD488 /* Localizable.strings */; };
+		7EA2E2DE8ED19CB7DD89136B35C72949 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2AC687E2BCA8FB8CEA28563643C55 /* CGRect.swift */; };
+		822AFC4D4C57624488A1EDA6A6B0CB9B /* CountableRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3075DAC28D1DC9B654214FEAC62870 /* CountableRange.swift */; };
+		8248B7AA77A39EA769B93AE38FB9E80E /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5DD8C3B56B8440925BDCE92AA4AD16 /* Math.swift */; };
+		8360166136B9A7591EDE64778D08D088 /* TryOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = DCACC0C65F2486D4C93C7488BC9E15AC /* TryOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84D503629DDAEB1645E70E43F8623E2A /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833EB299A2FFBB62CB2BB9F7D34D4321 /* NSObject.swift */; };
+		86943116AABBC71465E48EC28CF974DF /* UIZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913927693B2254ADBA579AF90C58DAEE /* UIZoomingScrollView.swift */; };
+		8B65E5F64AAD645F948633012266D3E5 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC7DB5B3843A9A2E7858BF9EB4A7AF /* Notification.swift */; };
+		97EC8747D554148CD8706DF2BF7AB6C2 /* NSCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E52AEA25E35C27557F1252F46A9F4BD /* NSCoder.swift */; };
+		9DC0747048D4D9171C912349A1A010F0 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61BF686821B4BFA69CC09D8E4CD74CA /* UITextView.swift */; };
+		9E41DF8AA6FB305736402F5BC8D591D3 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B59E50FCF15AD97567E7EEA0E2CE8A6 /* UIAlertController.swift */; };
+		A09A662485CD2E9DB35BF93A9020DB3F /* NSSearchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0946531D58E2C3F60EAE2A8CD499892 /* NSSearchOptions.swift */; };
+		A15FBD4305590AEF285FFF0CEEA34943 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B3A3A7C843E13760F3C2D16BE572EA /* Dictionary.swift */; };
+		A179F73F6DC56B28FD88CAA384127E00 /* NoodleBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A17172BC8AEE7A7B4621D079C9BB5D /* NoodleBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2927BC18D2C5E52510CA276A8BED1D9 /* OptionSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F7D06A54250455B17155070E6BC72C /* OptionSetType.swift */; };
+		AB3D39DBCFB768FBA22968801F8D0554 /* NoodleBox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B75772698CF07DA6DB355E0D90B472 /* NoodleBox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02CB11D775583978560C74A0237E4BB /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA107919090E3483205E647421B7B47B /* NSLayoutConstraint.swift */; };
+		B03D4942C2DD13505133189A4C98D689 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		B2EF4F9AE2CBF6D2B15779128472AEDE /* NSParagraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8D9397DC82E6F2C78126E0B963920 /* NSParagraphStyle.swift */; };
+		B6119901BFCC691FE4823464159E9579 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88489307FD993EA774D2DCA59E6AA938 /* NSMutableAttributedString.swift */; };
+		B8F2E787DD70953DB3624BB9F8E4F224 /* NBFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5AC306CE67CACF38AFDADEE1BF632 /* NBFileManager.swift */; };
+		BC1D26A29F3B991CAE5DC13FBF1D8F9F /* NBPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A09581733206FBFB1D45B32396501 /* NBPopoverViewController.swift */; };
+		BCCFC4D66515FDC9687D0EF8E26DDC98 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB772513F6BBA0D109B671FEFEEFF4 /* UserDefaults.swift */; };
+		BEF01F91A2921C619459057D0423A8D0 /* Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F3E85BAD444E430C4014DCDA08A5B7 /* Any.swift */; };
+		C25072C472CFBCB78D06408CE1D98B70 /* SortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9395A475E2063FDE73FF06A966B90F /* SortOrder.swift */; };
+		C2558817AB9FCA79A826B27D3C16EA0E /* NBStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7653B2216FEC30A8263ABA83D40EC74 /* NBStackView.swift */; };
+		C26F2B7796E42E2DC49E49F5564267BD /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6204D7924FF31188259E7B8357EFE9D /* UITableViewCell.swift */; };
+		C7AB436B991EE4C88370F5A11E2E69D1 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457602E35C7A8AFE7D24FA438DBA80C9 /* Comparable.swift */; };
+		C810427BAE476DB3E406F442D0972CD2 /* NBBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF6ADAE5001693A1708DF36613E8AF5 /* NBBundle.swift */; };
+		C94D555505E7007757ACE37CAA375CD0 /* UIFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11C2B389908080DE176D7C7A7F09F5 /* UIFilterView.swift */; };
+		C9B95415B20AAF633ACF265C93030EB7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232706EA8755E7433642A7421470B9DB /* UIView.swift */; };
+		C9C9BF91B5C1D40B573CC914DDF632AE /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373D761DE9EAB40973FADAFC4B4DF9F /* UITableView.swift */; };
+		CA09A21954B3B90E2C7699FFD33864E4 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DAD304C9820EA209E61199D7AE4644 /* Thread.swift */; };
+		D122C637BAE4C0D482099154843FAF23 /* NSMetadataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5A7C319A78419F632EEC439C2BDFCD /* NSMetadataItem.swift */; };
+		DE470BF557B41D74137043190285D8CA /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A6C12B44F353EAE01425B1146007F /* UINavigationController.swift */; };
+		E13FDC2496F67D1A597397A27B9B024B /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB895A5649FCA4E510287ACBFA07D96 /* UILabel.swift */; };
+		E316224EBD66F930BC91A277DB9DAE8C /* NSSortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1AF71C8B6BC4F05D9383FD15122F0D /* NSSortedArray.swift */; };
+		E9BF7A52169AAB4FA4403929B3D28D64 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F084C2823FBCE4F1FAAF50502246A261 /* UIColor.swift */; };
+		EAB515A38B2BE2934134693CC05A4351 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A321A23758ABAA7EA805E3E254F48C /* Range.swift */; };
+		F239F94DF32FDDF6469A923CD8A4EAB8 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AA5CAF0692F86E43A19C91247FBCB /* CGPoint.swift */; };
+		F52F8B4F7A882F724BFCE4E73419C4A8 /* NBRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3699E0C2D99BDF1C1B6EACDC73558 /* NBRegex.swift */; };
+		F7B737D84414444CFE47F3677355561B /* UIToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716906A7C5D5373D204E85D1DC2D5FCB /* UIToolbar.swift */; };
+		FCB86428624EE3C9B206FE3FB25E1443 /* UIPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86EBCB5B57131C59AEE9AF1FC85890 /* UIPaddedTextField.swift */; };
+		FD1EBA85DD0AEEE421E5D6F10D4501EF /* Pods-NoodleBoxExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB637C7E42DA7E0E14C26E7142A26DA /* Pods-NoodleBoxExample-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC0E4E1BAAF9AA1DEFAC2B996E22C491 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F8FDC6353668659F24591889813533B;
+			remoteInfo = NoodleBox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		014BDC514667C8CCC006DC7FC7363724 /* CGColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGColor.swift; path = NoodleBox/CGColor.swift; sourceTree = "<group>"; };
+		0A14CE7E53AE55CC343CE7B6EACF1AB8 /* NSAttributeName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSAttributeName.swift; path = NoodleBox/NSAttributeName.swift; sourceTree = "<group>"; };
+		0AB895A5649FCA4E510287ACBFA07D96 /* UILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UILabel.swift; path = NoodleBox/UILabel.swift; sourceTree = "<group>"; };
+		0BAB772513F6BBA0D109B671FEFEEFF4 /* UserDefaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserDefaults.swift; path = NoodleBox/UserDefaults.swift; sourceTree = "<group>"; };
+		0BF6965E73510217ED5F1AFA5730863E /* Unicode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Unicode.swift; path = NoodleBox/Unicode.swift; sourceTree = "<group>"; };
+		0DE0BA6D262323B956B159121A3E5F54 /* NSFileManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSFileManager.swift; path = NoodleBox/NSFileManager.swift; sourceTree = "<group>"; };
+		14BC7DB5B3843A9A2E7858BF9EB4A7AF /* Notification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = NoodleBox/Notification.swift; sourceTree = "<group>"; };
+		15CEA8745DACCC3182BC439E505EB614 /* Pods-NoodleBoxExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NoodleBoxExample.debug.xcconfig"; sourceTree = "<group>"; };
+		17A185C6B9F20390CBB94EAB0FFE2C79 /* Pods-NoodleBoxExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NoodleBoxExample-frameworks.sh"; sourceTree = "<group>"; };
+		17BF4BFC16E372487DF172B8BEE75657 /* Pods_NoodleBoxExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoodleBoxExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C8CF61013C6456D6DE3BD5844EDD488 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1CA41187084FDE4ED35705860B32D014 /* UTCoreTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UTCoreTypes.swift; path = NoodleBox/UTCoreTypes.swift; sourceTree = "<group>"; };
+		1D9395A475E2063FDE73FF06A966B90F /* SortOrder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SortOrder.swift; path = NoodleBox/SortOrder.swift; sourceTree = "<group>"; };
+		1DF6ADAE5001693A1708DF36613E8AF5 /* NBBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NBBundle.swift; path = NoodleBox/NBBundle.swift; sourceTree = "<group>"; };
+		232706EA8755E7433642A7421470B9DB /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = NoodleBox/UIView.swift; sourceTree = "<group>"; };
+		23A8D9397DC82E6F2C78126E0B963920 /* NSParagraphStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSParagraphStyle.swift; path = NoodleBox/NSParagraphStyle.swift; sourceTree = "<group>"; };
+		29C7D75950957FBC53AADB154C4987BF /* NSAttributedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSAttributedString.swift; path = NoodleBox/NSAttributedString.swift; sourceTree = "<group>"; };
+		2E173F7A38C1543F51C07FF206322517 /* NoodleBox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NoodleBox-dummy.m"; sourceTree = "<group>"; };
+		35E3699E0C2D99BDF1C1B6EACDC73558 /* NBRegex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NBRegex.swift; path = NoodleBox/NBRegex.swift; sourceTree = "<group>"; };
+		3DA5AC306CE67CACF38AFDADEE1BF632 /* NBFileManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NBFileManager.swift; path = NoodleBox/NBFileManager.swift; sourceTree = "<group>"; };
+		3DB4DBD12AFED68CC8C0B258AEAB7A29 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = NoodleBox/UIViewController.swift; sourceTree = "<group>"; };
+		3E52AEA25E35C27557F1252F46A9F4BD /* NSCoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSCoder.swift; path = NoodleBox/NSCoder.swift; sourceTree = "<group>"; };
+		403D41A4F9BBA238AF06CAAD4D0D3E92 /* CGSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGSize.swift; path = NoodleBox/CGSize.swift; sourceTree = "<group>"; };
+		42E76C5F3ADFB5429B425A106B0E580D /* NSBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSBundle.swift; path = NoodleBox/NSBundle.swift; sourceTree = "<group>"; };
+		442A09581733206FBFB1D45B32396501 /* NBPopoverViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NBPopoverViewController.swift; path = NoodleBox/NBPopoverViewController.swift; sourceTree = "<group>"; };
+		449AA5CAF0692F86E43A19C91247FBCB /* CGPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGPoint.swift; path = NoodleBox/CGPoint.swift; sourceTree = "<group>"; };
+		451E47F7CBCB7199F422A026F4872656 /* SortedArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SortedArray.swift; path = NoodleBox/SortedArray.swift; sourceTree = "<group>"; };
+		457602E35C7A8AFE7D24FA438DBA80C9 /* Comparable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Comparable.swift; path = NoodleBox/Comparable.swift; sourceTree = "<group>"; };
+		46DAD304C9820EA209E61199D7AE4644 /* Thread.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Thread.swift; path = NoodleBox/Thread.swift; sourceTree = "<group>"; };
+		48CD1DD0C5A6EE0E26CE896E4EF5C3C1 /* NSDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSDate.swift; path = NoodleBox/NSDate.swift; sourceTree = "<group>"; };
+		4B59E50FCF15AD97567E7EEA0E2CE8A6 /* UIAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIAlertController.swift; path = NoodleBox/UIAlertController.swift; sourceTree = "<group>"; };
+		4B8981BB147447002A7B7EEB38423B88 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = NoodleBox/Info.plist; sourceTree = "<group>"; };
+		4D005904833DD08A37E43EF4C7050B5E /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = NoodleBox/Operators.swift; sourceTree = "<group>"; };
+		54A17172BC8AEE7A7B4621D079C9BB5D /* NoodleBox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NoodleBox.h; path = NoodleBox/NoodleBox.h; sourceTree = "<group>"; };
+		6873DFB2BE0C340708FA9114D1E014C7 /* Pods-NoodleBoxExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NoodleBoxExample-umbrella.h"; sourceTree = "<group>"; };
+		6CB637C7E42DA7E0E14C26E7142A26DA /* Pods-NoodleBoxExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NoodleBoxExample-dummy.m"; sourceTree = "<group>"; };
+		70334D78C84D4874E58CBBB225794882 /* NSStringEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSStringEncoding.swift; path = NoodleBox/NSStringEncoding.swift; sourceTree = "<group>"; };
+		716906A7C5D5373D204E85D1DC2D5FCB /* UIToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIToolbar.swift; path = NoodleBox/UIToolbar.swift; sourceTree = "<group>"; };
+		71A321A23758ABAA7EA805E3E254F48C /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = NoodleBox/Range.swift; sourceTree = "<group>"; };
+		77E469670672217000B8978376F07D57 /* UITextInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITextInput.swift; path = NoodleBox/UITextInput.swift; sourceTree = "<group>"; };
+		7A64964EEC140C8AF3D14D2244D06450 /* NoodleBox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = NoodleBox.modulemap; sourceTree = "<group>"; };
+		7B98898A2DFC57F73498BCAC7F3B5373 /* NSString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSString.swift; path = NoodleBox/NSString.swift; sourceTree = "<group>"; };
+		7BD6C4A209B3C1598881739016704844 /* Pods-NoodleBoxExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NoodleBoxExample.release.xcconfig"; sourceTree = "<group>"; };
+		819A6C12B44F353EAE01425B1146007F /* UINavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UINavigationController.swift; path = NoodleBox/UINavigationController.swift; sourceTree = "<group>"; };
+		831B4A166CC62C2A1889E3CCB722F771 /* SortedDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SortedDictionary.swift; path = NoodleBox/SortedDictionary.swift; sourceTree = "<group>"; };
+		83216BF6A144C83FB2FFD617614E1640 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIBarButtonItem.swift; path = NoodleBox/UIBarButtonItem.swift; sourceTree = "<group>"; };
+		833EB299A2FFBB62CB2BB9F7D34D4321 /* NSObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSObject.swift; path = NoodleBox/NSObject.swift; sourceTree = "<group>"; };
+		84BCC9D2B55788D6A5BD980D86BF7435 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85F7D06A54250455B17155070E6BC72C /* OptionSetType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionSetType.swift; path = NoodleBox/OptionSetType.swift; sourceTree = "<group>"; };
+		88489307FD993EA774D2DCA59E6AA938 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSMutableAttributedString.swift; path = NoodleBox/NSMutableAttributedString.swift; sourceTree = "<group>"; };
+		8BA8A354107D51B065AC444D51D8D5CF /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8FA0D20D6015E5D5D2E8322E87DB0EED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		913927693B2254ADBA579AF90C58DAEE /* UIZoomingScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIZoomingScrollView.swift; path = NoodleBox/UIZoomingScrollView.swift; sourceTree = "<group>"; };
+		918427799C8A5680DD44289AFD55EE68 /* NoodleBox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NoodleBox.xcconfig; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94B3A3A7C843E13760F3C2D16BE572EA /* Dictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary.swift; path = NoodleBox/Dictionary.swift; sourceTree = "<group>"; };
+		94C2AC687E2BCA8FB8CEA28563643C55 /* CGRect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGRect.swift; path = NoodleBox/CGRect.swift; sourceTree = "<group>"; };
+		95A551B30A8054CBEEDAC7EEC4FF2E3D /* NoodleBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoodleBox.swift; path = NoodleBox/NoodleBox.swift; sourceTree = "<group>"; };
+		968378D580AD24B4E2CA2ECCBA8CB8A7 /* NSStringLineEnding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSStringLineEnding.swift; path = NoodleBox/NSStringLineEnding.swift; sourceTree = "<group>"; };
+		96F3E85BAD444E430C4014DCDA08A5B7 /* Any.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Any.swift; path = NoodleBox/Any.swift; sourceTree = "<group>"; };
+		97FF1E5B59388D3D874998FFE66F2FF2 /* SeparableOptionSetType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SeparableOptionSetType.swift; path = NoodleBox/SeparableOptionSetType.swift; sourceTree = "<group>"; };
+		983228E8F3765A2087D11A244E0B89BA /* UIDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIDevice.swift; path = NoodleBox/UIDevice.swift; sourceTree = "<group>"; };
+		986083808FB00E092DB84B92B405CB54 /* Bool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bool.swift; path = NoodleBox/Bool.swift; sourceTree = "<group>"; };
+		98B75772698CF07DA6DB355E0D90B472 /* NoodleBox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NoodleBox-umbrella.h"; sourceTree = "<group>"; };
+		9A0A83E3BC05B504AA3E5C0C46021465 /* Pods-NoodleBoxExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NoodleBoxExample-resources.sh"; sourceTree = "<group>"; };
+		9A181685684332A5819C4EBC5BEB52B7 /* NoodleBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoodleBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A4FBDE03D60D0CC0ABBC085E09EBD14 /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Array.swift; path = NoodleBox/Array.swift; sourceTree = "<group>"; };
+		9E4219654DE2C79F71FD13772FE0E416 /* NoodleBox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NoodleBox-prefix.pch"; sourceTree = "<group>"; };
+		A18522749FF4CE2921E41A71DF895249 /* Pods-NoodleBoxExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NoodleBoxExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A6204D7924FF31188259E7B8357EFE9D /* UITableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewCell.swift; path = NoodleBox/UITableViewCell.swift; sourceTree = "<group>"; };
+		AE0A325AC799BB288CD2EEEEDF08BE93 /* LocalizedStrings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalizedStrings.swift; path = NoodleBox/LocalizedStrings.swift; sourceTree = "<group>"; };
+		B372B0E5B1C8B6AD1A84EAA6A8DB0B7F /* UIFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIFont.swift; path = NoodleBox/UIFont.swift; sourceTree = "<group>"; };
+		B4FBAC54AD6496EE679C9973BE9A1663 /* UIInterfaceOrientation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIInterfaceOrientation.swift; path = NoodleBox/UIInterfaceOrientation.swift; sourceTree = "<group>"; };
+		B7653B2216FEC30A8263ABA83D40EC74 /* NBStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NBStackView.swift; path = NoodleBox/NBStackView.swift; sourceTree = "<group>"; };
+		BA107919090E3483205E647421B7B47B /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSLayoutConstraint.swift; path = NoodleBox/NSLayoutConstraint.swift; sourceTree = "<group>"; };
+		BA2DD6644EACF2DDF4A2BB0148A7A54E /* MIMEType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MIMEType.swift; path = NoodleBox/MIMEType.swift; sourceTree = "<group>"; };
+		BBCD700AD34865FBE473735E47869BFB /* URL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URL.swift; path = NoodleBox/URL.swift; sourceTree = "<group>"; };
+		BF3075DAC28D1DC9B654214FEAC62870 /* CountableRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountableRange.swift; path = NoodleBox/CountableRange.swift; sourceTree = "<group>"; };
+		BF3B224224FDA0A2C98CECB0336E1C8B /* UIApplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIApplication.swift; path = NoodleBox/UIApplication.swift; sourceTree = "<group>"; };
+		C0946531D58E2C3F60EAE2A8CD499892 /* NSSearchOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSSearchOptions.swift; path = NoodleBox/NSSearchOptions.swift; sourceTree = "<group>"; };
+		C1B40DEBB6FF3D4BC453F9FCC9BB3F79 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = String.swift; path = NoodleBox/String.swift; sourceTree = "<group>"; };
+		C9B45FB7CC5EBAB79A5064A03A435E60 /* NSURL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSURL.swift; path = NoodleBox/NSURL.swift; sourceTree = "<group>"; };
+		CB5A7C319A78419F632EEC439C2BDFCD /* NSMetadataItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSMetadataItem.swift; path = NoodleBox/NSMetadataItem.swift; sourceTree = "<group>"; };
+		CD256080B3DFD8774ABC0F148A0096F1 /* CFRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CFRepresentable.swift; path = NoodleBox/CFRepresentable.swift; sourceTree = "<group>"; };
+		CDC47B1DB03E093142D09BAA7DDB8B95 /* Pods-NoodleBoxExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NoodleBoxExample.modulemap"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CF11C2B389908080DE176D7C7A7F09F5 /* UIFilterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIFilterView.swift; path = NoodleBox/UIFilterView.swift; sourceTree = "<group>"; };
+		CF271341B49298A401252E156DCD4E33 /* UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = NoodleBox/UIImage.swift; sourceTree = "<group>"; };
+		CF5DD8C3B56B8440925BDCE92AA4AD16 /* Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Math.swift; path = NoodleBox/Math.swift; sourceTree = "<group>"; };
+		D763B66875468AF4D79FAEC7DAD608BD /* Hashable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hashable.swift; path = NoodleBox/Hashable.swift; sourceTree = "<group>"; };
+		DA533DF1DA0A506CF4F9EC785C2442BC /* UInt256.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UInt256.swift; path = NoodleBox/UInt256.swift; sourceTree = "<group>"; };
+		DB86EBCB5B57131C59AEE9AF1FC85890 /* UIPaddedTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIPaddedTextField.swift; path = NoodleBox/UIPaddedTextField.swift; sourceTree = "<group>"; };
+		DCACC0C65F2486D4C93C7488BC9E15AC /* TryOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TryOperation.h; path = NoodleBox/TryOperation.h; sourceTree = "<group>"; };
+		E373D761DE9EAB40973FADAFC4B4DF9F /* UITableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = NoodleBox/UITableView.swift; sourceTree = "<group>"; };
+		ED1AF71C8B6BC4F05D9383FD15122F0D /* NSSortedArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSSortedArray.swift; path = NoodleBox/NSSortedArray.swift; sourceTree = "<group>"; };
+		F084C2823FBCE4F1FAAF50502246A261 /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = NoodleBox/UIColor.swift; sourceTree = "<group>"; };
+		F61BF686821B4BFA69CC09D8E4CD74CA /* UITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITextView.swift; path = NoodleBox/UITextView.swift; sourceTree = "<group>"; };
+		FADB2E4233292CE1C4AB22C381CC9499 /* NSRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSRange.swift; path = NoodleBox/NSRange.swift; sourceTree = "<group>"; };
+		FC9EB60F9EA31A13ED5399A18D886227 /* NSSortedDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSSortedDictionary.swift; path = NoodleBox/NSSortedDictionary.swift; sourceTree = "<group>"; };
+		FCD0B6C90FB6954E5B083F754C824007 /* UIScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIScreen.swift; path = NoodleBox/UIScreen.swift; sourceTree = "<group>"; };
+		FCDEE93DF79B67676D60F8F8917F6649 /* Pods-NoodleBoxExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NoodleBoxExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		FECC2DC9D6B03A0D28552436AD71E1AE /* TryOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TryOperation.m; path = NoodleBox/TryOperation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		544EF452297358D05A4AD1DD0E158258 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B03D4942C2DD13505133189A4C98D689 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9452CDF915763A90D28F200567DE285B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BCA0F9C2150C9EF6A4CA660625A90CA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EEE06CC3375C7F94C15E7D0E478BB4E /* Pods-NoodleBoxExample */ = {
+			isa = PBXGroup;
+			children = (
+				84BCC9D2B55788D6A5BD980D86BF7435 /* Info.plist */,
+				CDC47B1DB03E093142D09BAA7DDB8B95 /* Pods-NoodleBoxExample.modulemap */,
+				A18522749FF4CE2921E41A71DF895249 /* Pods-NoodleBoxExample-acknowledgements.markdown */,
+				FCDEE93DF79B67676D60F8F8917F6649 /* Pods-NoodleBoxExample-acknowledgements.plist */,
+				6CB637C7E42DA7E0E14C26E7142A26DA /* Pods-NoodleBoxExample-dummy.m */,
+				17A185C6B9F20390CBB94EAB0FFE2C79 /* Pods-NoodleBoxExample-frameworks.sh */,
+				9A0A83E3BC05B504AA3E5C0C46021465 /* Pods-NoodleBoxExample-resources.sh */,
+				6873DFB2BE0C340708FA9114D1E014C7 /* Pods-NoodleBoxExample-umbrella.h */,
+				15CEA8745DACCC3182BC439E505EB614 /* Pods-NoodleBoxExample.debug.xcconfig */,
+				7BD6C4A209B3C1598881739016704844 /* Pods-NoodleBoxExample.release.xcconfig */,
+			);
+			name = "Pods-NoodleBoxExample";
+			path = "Target Support Files/Pods-NoodleBoxExample";
+			sourceTree = "<group>";
+		};
+		2FDCE5A94772EA65E1315C611ADA8021 /* NoodleBox */ = {
+			isa = PBXGroup;
+			children = (
+				96F3E85BAD444E430C4014DCDA08A5B7 /* Any.swift */,
+				9A4FBDE03D60D0CC0ABBC085E09EBD14 /* Array.swift */,
+				986083808FB00E092DB84B92B405CB54 /* Bool.swift */,
+				CD256080B3DFD8774ABC0F148A0096F1 /* CFRepresentable.swift */,
+				014BDC514667C8CCC006DC7FC7363724 /* CGColor.swift */,
+				449AA5CAF0692F86E43A19C91247FBCB /* CGPoint.swift */,
+				94C2AC687E2BCA8FB8CEA28563643C55 /* CGRect.swift */,
+				403D41A4F9BBA238AF06CAAD4D0D3E92 /* CGSize.swift */,
+				457602E35C7A8AFE7D24FA438DBA80C9 /* Comparable.swift */,
+				BF3075DAC28D1DC9B654214FEAC62870 /* CountableRange.swift */,
+				94B3A3A7C843E13760F3C2D16BE572EA /* Dictionary.swift */,
+				D763B66875468AF4D79FAEC7DAD608BD /* Hashable.swift */,
+				4B8981BB147447002A7B7EEB38423B88 /* Info.plist */,
+				E39C045D47C9AB3B1F1A5C2476CA372A /* Localizable.strings */,
+				AE0A325AC799BB288CD2EEEEDF08BE93 /* LocalizedStrings.swift */,
+				CF5DD8C3B56B8440925BDCE92AA4AD16 /* Math.swift */,
+				BA2DD6644EACF2DDF4A2BB0148A7A54E /* MIMEType.swift */,
+				1DF6ADAE5001693A1708DF36613E8AF5 /* NBBundle.swift */,
+				3DA5AC306CE67CACF38AFDADEE1BF632 /* NBFileManager.swift */,
+				442A09581733206FBFB1D45B32396501 /* NBPopoverViewController.swift */,
+				35E3699E0C2D99BDF1C1B6EACDC73558 /* NBRegex.swift */,
+				B7653B2216FEC30A8263ABA83D40EC74 /* NBStackView.swift */,
+				54A17172BC8AEE7A7B4621D079C9BB5D /* NoodleBox.h */,
+				95A551B30A8054CBEEDAC7EEC4FF2E3D /* NoodleBox.swift */,
+				14BC7DB5B3843A9A2E7858BF9EB4A7AF /* Notification.swift */,
+				29C7D75950957FBC53AADB154C4987BF /* NSAttributedString.swift */,
+				0A14CE7E53AE55CC343CE7B6EACF1AB8 /* NSAttributeName.swift */,
+				42E76C5F3ADFB5429B425A106B0E580D /* NSBundle.swift */,
+				3E52AEA25E35C27557F1252F46A9F4BD /* NSCoder.swift */,
+				48CD1DD0C5A6EE0E26CE896E4EF5C3C1 /* NSDate.swift */,
+				0DE0BA6D262323B956B159121A3E5F54 /* NSFileManager.swift */,
+				BA107919090E3483205E647421B7B47B /* NSLayoutConstraint.swift */,
+				CB5A7C319A78419F632EEC439C2BDFCD /* NSMetadataItem.swift */,
+				88489307FD993EA774D2DCA59E6AA938 /* NSMutableAttributedString.swift */,
+				833EB299A2FFBB62CB2BB9F7D34D4321 /* NSObject.swift */,
+				23A8D9397DC82E6F2C78126E0B963920 /* NSParagraphStyle.swift */,
+				FADB2E4233292CE1C4AB22C381CC9499 /* NSRange.swift */,
+				C0946531D58E2C3F60EAE2A8CD499892 /* NSSearchOptions.swift */,
+				ED1AF71C8B6BC4F05D9383FD15122F0D /* NSSortedArray.swift */,
+				FC9EB60F9EA31A13ED5399A18D886227 /* NSSortedDictionary.swift */,
+				7B98898A2DFC57F73498BCAC7F3B5373 /* NSString.swift */,
+				70334D78C84D4874E58CBBB225794882 /* NSStringEncoding.swift */,
+				968378D580AD24B4E2CA2ECCBA8CB8A7 /* NSStringLineEnding.swift */,
+				C9B45FB7CC5EBAB79A5064A03A435E60 /* NSURL.swift */,
+				4D005904833DD08A37E43EF4C7050B5E /* Operators.swift */,
+				85F7D06A54250455B17155070E6BC72C /* OptionSetType.swift */,
+				71A321A23758ABAA7EA805E3E254F48C /* Range.swift */,
+				97FF1E5B59388D3D874998FFE66F2FF2 /* SeparableOptionSetType.swift */,
+				451E47F7CBCB7199F422A026F4872656 /* SortedArray.swift */,
+				831B4A166CC62C2A1889E3CCB722F771 /* SortedDictionary.swift */,
+				1D9395A475E2063FDE73FF06A966B90F /* SortOrder.swift */,
+				C1B40DEBB6FF3D4BC453F9FCC9BB3F79 /* String.swift */,
+				46DAD304C9820EA209E61199D7AE4644 /* Thread.swift */,
+				DCACC0C65F2486D4C93C7488BC9E15AC /* TryOperation.h */,
+				FECC2DC9D6B03A0D28552436AD71E1AE /* TryOperation.m */,
+				4B59E50FCF15AD97567E7EEA0E2CE8A6 /* UIAlertController.swift */,
+				BF3B224224FDA0A2C98CECB0336E1C8B /* UIApplication.swift */,
+				83216BF6A144C83FB2FFD617614E1640 /* UIBarButtonItem.swift */,
+				F084C2823FBCE4F1FAAF50502246A261 /* UIColor.swift */,
+				983228E8F3765A2087D11A244E0B89BA /* UIDevice.swift */,
+				CF11C2B389908080DE176D7C7A7F09F5 /* UIFilterView.swift */,
+				B372B0E5B1C8B6AD1A84EAA6A8DB0B7F /* UIFont.swift */,
+				CF271341B49298A401252E156DCD4E33 /* UIImage.swift */,
+				B4FBAC54AD6496EE679C9973BE9A1663 /* UIInterfaceOrientation.swift */,
+				0AB895A5649FCA4E510287ACBFA07D96 /* UILabel.swift */,
+				819A6C12B44F353EAE01425B1146007F /* UINavigationController.swift */,
+				DA533DF1DA0A506CF4F9EC785C2442BC /* UInt256.swift */,
+				DB86EBCB5B57131C59AEE9AF1FC85890 /* UIPaddedTextField.swift */,
+				FCD0B6C90FB6954E5B083F754C824007 /* UIScreen.swift */,
+				E373D761DE9EAB40973FADAFC4B4DF9F /* UITableView.swift */,
+				A6204D7924FF31188259E7B8357EFE9D /* UITableViewCell.swift */,
+				77E469670672217000B8978376F07D57 /* UITextInput.swift */,
+				F61BF686821B4BFA69CC09D8E4CD74CA /* UITextView.swift */,
+				716906A7C5D5373D204E85D1DC2D5FCB /* UIToolbar.swift */,
+				232706EA8755E7433642A7421470B9DB /* UIView.swift */,
+				3DB4DBD12AFED68CC8C0B258AEAB7A29 /* UIViewController.swift */,
+				913927693B2254ADBA579AF90C58DAEE /* UIZoomingScrollView.swift */,
+				0BF6965E73510217ED5F1AFA5730863E /* Unicode.swift */,
+				BBCD700AD34865FBE473735E47869BFB /* URL.swift */,
+				0BAB772513F6BBA0D109B671FEFEEFF4 /* UserDefaults.swift */,
+				1CA41187084FDE4ED35705860B32D014 /* UTCoreTypes.swift */,
+				FF06FCE5562AFF711683C0476047AF83 /* Support Files */,
+			);
+			path = NoodleBox;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C533D15E1825EA942C2F526A03034C38 /* Pods */,
+				EE0E159623047E4EA714051D895E6AFA /* Products */,
+				DC15BB64B9B5C1A09D1F74D2F778C53D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C533D15E1825EA942C2F526A03034C38 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FDCE5A94772EA65E1315C611ADA8021 /* NoodleBox */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DC15BB64B9B5C1A09D1F74D2F778C53D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE06CC3375C7F94C15E7D0E478BB4E /* Pods-NoodleBoxExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		EE0E159623047E4EA714051D895E6AFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A181685684332A5819C4EBC5BEB52B7 /* NoodleBox.framework */,
+				17BF4BFC16E372487DF172B8BEE75657 /* Pods_NoodleBoxExample.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF06FCE5562AFF711683C0476047AF83 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8FA0D20D6015E5D5D2E8322E87DB0EED /* Info.plist */,
+				7A64964EEC140C8AF3D14D2244D06450 /* NoodleBox.modulemap */,
+				918427799C8A5680DD44289AFD55EE68 /* NoodleBox.xcconfig */,
+				2E173F7A38C1543F51C07FF206322517 /* NoodleBox-dummy.m */,
+				9E4219654DE2C79F71FD13772FE0E416 /* NoodleBox-prefix.pch */,
+				98B75772698CF07DA6DB355E0D90B472 /* NoodleBox-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NoodleBox";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4744FB904D0AF2C234571D6FB741CC00 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB3D39DBCFB768FBA22968801F8D0554 /* NoodleBox-umbrella.h in Headers */,
+				A179F73F6DC56B28FD88CAA384127E00 /* NoodleBox.h in Headers */,
+				8360166136B9A7591EDE64778D08D088 /* TryOperation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90B5A07C0A2B6361AABAA178E39E37D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612C7747EC26C62662FCBB1CCA745990 /* Pods-NoodleBoxExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3B8F9D3D568F28CADF583D83310324CF /* Pods-NoodleBoxExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAE6CAA35E3311538F938973064610FE /* Build configuration list for PBXNativeTarget "Pods-NoodleBoxExample" */;
+			buildPhases = (
+				59295EE63350EE4DCE78A113DB91E907 /* Sources */,
+				544EF452297358D05A4AD1DD0E158258 /* Frameworks */,
+				E90B5A07C0A2B6361AABAA178E39E37D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7ADBA85DEDBA029F049662F93D15B741 /* PBXTargetDependency */,
+			);
+			name = "Pods-NoodleBoxExample";
+			productName = "Pods-NoodleBoxExample";
+			productReference = 17BF4BFC16E372487DF172B8BEE75657 /* Pods_NoodleBoxExample.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9F8FDC6353668659F24591889813533B /* NoodleBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97367BB2D1E09F6BA51BAA6241F18C46 /* Build configuration list for PBXNativeTarget "NoodleBox" */;
+			buildPhases = (
+				EADC82E1B0F7E473F18C8C156A80FBE3 /* Sources */,
+				9452CDF915763A90D28F200567DE285B /* Frameworks */,
+				4744FB904D0AF2C234571D6FB741CC00 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoodleBox;
+			productName = NoodleBox;
+			productReference = 9A181685684332A5819C4EBC5BEB52B7 /* NoodleBox.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0810;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = EE0E159623047E4EA714051D895E6AFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F8FDC6353668659F24591889813533B /* NoodleBox */,
+				3B8F9D3D568F28CADF583D83310324CF /* Pods-NoodleBoxExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59295EE63350EE4DCE78A113DB91E907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD1EBA85DD0AEEE421E5D6F10D4501EF /* Pods-NoodleBoxExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EADC82E1B0F7E473F18C8C156A80FBE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEF01F91A2921C619459057D0423A8D0 /* Any.swift in Sources */,
+				6F1E226742418119B4A4DECCFBE41BB5 /* Array.swift in Sources */,
+				1CCB50BF07D5D04FFC7A678E18DA6E4E /* Bool.swift in Sources */,
+				1E01F1D3112C31E3D91ABE6007B8111E /* CFRepresentable.swift in Sources */,
+				405ECDFB888F67F6B12DE7334319EF5B /* CGColor.swift in Sources */,
+				F239F94DF32FDDF6469A923CD8A4EAB8 /* CGPoint.swift in Sources */,
+				7EA2E2DE8ED19CB7DD89136B35C72949 /* CGRect.swift in Sources */,
+				6B932F203FC3A84B6F61A136F22DFB46 /* CGSize.swift in Sources */,
+				C7AB436B991EE4C88370F5A11E2E69D1 /* Comparable.swift in Sources */,
+				822AFC4D4C57624488A1EDA6A6B0CB9B /* CountableRange.swift in Sources */,
+				A15FBD4305590AEF285FFF0CEEA34943 /* Dictionary.swift in Sources */,
+				42FB85D7C9F75223F8662CA1DF70553E /* Hashable.swift in Sources */,
+				14D3BCEAA91C242C3265E4318E8F6DF0 /* Info.plist in Sources */,
+				0F1B1FB1223F0B67C69F679A829D146F /* Localizable.strings in Sources */,
+				7B5B54865772FE43A597EF5A880D46B1 /* Localizable.strings in Sources */,
+				4851A698F80EADD7A0BE5CF025B1E630 /* LocalizedStrings.swift in Sources */,
+				8248B7AA77A39EA769B93AE38FB9E80E /* Math.swift in Sources */,
+				060E8FD656D4ED2D7F680DD90DE78B18 /* MIMEType.swift in Sources */,
+				C810427BAE476DB3E406F442D0972CD2 /* NBBundle.swift in Sources */,
+				B8F2E787DD70953DB3624BB9F8E4F224 /* NBFileManager.swift in Sources */,
+				BC1D26A29F3B991CAE5DC13FBF1D8F9F /* NBPopoverViewController.swift in Sources */,
+				F52F8B4F7A882F724BFCE4E73419C4A8 /* NBRegex.swift in Sources */,
+				C2558817AB9FCA79A826B27D3C16EA0E /* NBStackView.swift in Sources */,
+				316328C359F565A28EB833FE9935C87C /* NoodleBox-dummy.m in Sources */,
+				2A87AEE756201FE44E29D15947BB1E35 /* NoodleBox.swift in Sources */,
+				8B65E5F64AAD645F948633012266D3E5 /* Notification.swift in Sources */,
+				65035D876AFC0871061AAE2E4014A0A9 /* NSAttributedString.swift in Sources */,
+				39C351243CE753393D9A5C551B258BB5 /* NSAttributeName.swift in Sources */,
+				15A596859B529E7101F69B5C213FA4B7 /* NSBundle.swift in Sources */,
+				97EC8747D554148CD8706DF2BF7AB6C2 /* NSCoder.swift in Sources */,
+				5DA83F8BAD334127A2E74CBCB0A0129B /* NSDate.swift in Sources */,
+				580AA231C8455EEA8070311F6F068B6E /* NSFileManager.swift in Sources */,
+				B02CB11D775583978560C74A0237E4BB /* NSLayoutConstraint.swift in Sources */,
+				D122C637BAE4C0D482099154843FAF23 /* NSMetadataItem.swift in Sources */,
+				B6119901BFCC691FE4823464159E9579 /* NSMutableAttributedString.swift in Sources */,
+				84D503629DDAEB1645E70E43F8623E2A /* NSObject.swift in Sources */,
+				B2EF4F9AE2CBF6D2B15779128472AEDE /* NSParagraphStyle.swift in Sources */,
+				6828D7C30AEF9DAA1AF2AC332C2F8BD1 /* NSRange.swift in Sources */,
+				A09A662485CD2E9DB35BF93A9020DB3F /* NSSearchOptions.swift in Sources */,
+				E316224EBD66F930BC91A277DB9DAE8C /* NSSortedArray.swift in Sources */,
+				5F16CC08F4D3B8DF1C8D35E6DD296519 /* NSSortedDictionary.swift in Sources */,
+				626754264D1AB4E32F035514D491CAF2 /* NSString.swift in Sources */,
+				215BE5C099A9B06E2A17B53EC02C3AB3 /* NSStringEncoding.swift in Sources */,
+				5C88F6136D6D28DA03FEDEDA65F86ACD /* NSStringLineEnding.swift in Sources */,
+				62B33B65032FB24A13B4D18E2448E445 /* NSURL.swift in Sources */,
+				19DB7B714C7C773928C66DC4905D4857 /* Operators.swift in Sources */,
+				A2927BC18D2C5E52510CA276A8BED1D9 /* OptionSetType.swift in Sources */,
+				EAB515A38B2BE2934134693CC05A4351 /* Range.swift in Sources */,
+				5F1D238821F50B4A42DEDE89A7BCE345 /* SeparableOptionSetType.swift in Sources */,
+				4117FD4E8F3641A45B04F1038DD5D3F6 /* SortedArray.swift in Sources */,
+				72EFEB2A83B513B57F5E23ADCFE67480 /* SortedDictionary.swift in Sources */,
+				C25072C472CFBCB78D06408CE1D98B70 /* SortOrder.swift in Sources */,
+				1E2C9D8A35BE0507B4A521F74D2D956F /* String.swift in Sources */,
+				CA09A21954B3B90E2C7699FFD33864E4 /* Thread.swift in Sources */,
+				72D525A159CB124813047A55DCC30D54 /* TryOperation.m in Sources */,
+				9E41DF8AA6FB305736402F5BC8D591D3 /* UIAlertController.swift in Sources */,
+				471E7ED9834C38A923F7B073F8F57FA0 /* UIApplication.swift in Sources */,
+				224A4E4650511625BE097EB30C51A42E /* UIBarButtonItem.swift in Sources */,
+				E9BF7A52169AAB4FA4403929B3D28D64 /* UIColor.swift in Sources */,
+				118BBB0617D94409298E097BCB99D2CA /* UIDevice.swift in Sources */,
+				C94D555505E7007757ACE37CAA375CD0 /* UIFilterView.swift in Sources */,
+				54CD365E69FBF8CAE9D617E451028B85 /* UIFont.swift in Sources */,
+				1F81068E442D45727641B268FBD61F64 /* UIImage.swift in Sources */,
+				183B947A1EA0340455CB5F3A2D2E60E9 /* UIInterfaceOrientation.swift in Sources */,
+				E13FDC2496F67D1A597397A27B9B024B /* UILabel.swift in Sources */,
+				DE470BF557B41D74137043190285D8CA /* UINavigationController.swift in Sources */,
+				28FA718F22C738C826572B5ED65C586F /* UInt256.swift in Sources */,
+				FCB86428624EE3C9B206FE3FB25E1443 /* UIPaddedTextField.swift in Sources */,
+				7369AF3717F7E0E4439BEA95A6BF0898 /* UIScreen.swift in Sources */,
+				C9C9BF91B5C1D40B573CC914DDF632AE /* UITableView.swift in Sources */,
+				C26F2B7796E42E2DC49E49F5564267BD /* UITableViewCell.swift in Sources */,
+				0E4E82DAD2C4A5DD61C2529ACA707BD5 /* UITextInput.swift in Sources */,
+				9DC0747048D4D9171C912349A1A010F0 /* UITextView.swift in Sources */,
+				F7B737D84414444CFE47F3677355561B /* UIToolbar.swift in Sources */,
+				C9B95415B20AAF633ACF265C93030EB7 /* UIView.swift in Sources */,
+				296E60E937FAFC80F304AF28FEBE182F /* UIViewController.swift in Sources */,
+				86943116AABBC71465E48EC28CF974DF /* UIZoomingScrollView.swift in Sources */,
+				14F0FAD8ACEF5C6425F913C2C0E817D8 /* Unicode.swift in Sources */,
+				3B16343B4754E469F3B4B58D081AE580 /* URL.swift in Sources */,
+				BCCFC4D66515FDC9687D0EF8E26DDC98 /* UserDefaults.swift in Sources */,
+				626E3FD2684636E76EFFBD642D144B43 /* UTCoreTypes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7ADBA85DEDBA029F049662F93D15B741 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NoodleBox;
+			target = 9F8FDC6353668659F24591889813533B /* NoodleBox */;
+			targetProxy = BC0E4E1BAAF9AA1DEFAC2B996E22C491 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E39C045D47C9AB3B1F1A5C2476CA372A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C8CF61013C6456D6DE3BD5844EDD488 /* Localizable.strings */,
+				8BA8A354107D51B065AC444D51D8D5CF /* Localizable.strings */,
+			);
+			name = Localizable.strings;
+			path = NoodleBox;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24BC59706D6DA26F5C044C293B8CC47A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BD6C4A209B3C1598881739016704844 /* Pods-NoodleBoxExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-NoodleBoxExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NoodleBoxExample/Pods-NoodleBoxExample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_NoodleBoxExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		503CCEBA0FAE50FF2983BF2129B98C72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 918427799C8A5680DD44289AFD55EE68 /* NoodleBox.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NoodleBox/NoodleBox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NoodleBox/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NoodleBox/NoodleBox.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = NoodleBox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8C625B657C9E779D1C2F279F8164297E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15CEA8745DACCC3182BC439E505EB614 /* Pods-NoodleBoxExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-NoodleBoxExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NoodleBoxExample/Pods-NoodleBoxExample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_NoodleBoxExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8C95CA5CDF4DE7D80E04F0288ADE9783 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 918427799C8A5680DD44289AFD55EE68 /* NoodleBox.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NoodleBox/NoodleBox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NoodleBox/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NoodleBox/NoodleBox.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = NoodleBox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47BEF9D903506B003EA5C2B249729489 /* Debug */,
+				AAF678CED40D3499169D10F63CA0719E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97367BB2D1E09F6BA51BAA6241F18C46 /* Build configuration list for PBXNativeTarget "NoodleBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C95CA5CDF4DE7D80E04F0288ADE9783 /* Debug */,
+				503CCEBA0FAE50FF2983BF2129B98C72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAE6CAA35E3311538F938973064610FE /* Build configuration list for PBXNativeTarget "Pods-NoodleBoxExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C625B657C9E779D1C2F279F8164297E /* Debug */,
+				24BC59706D6DA26F5C044C293B8CC47A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

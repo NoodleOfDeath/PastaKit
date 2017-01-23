@@ -16,10 +16,10 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        view.backgroundColor = .whiteColor()
+        view.backgroundColor = .white
         
         let innerView = UIView()
-        innerView.backgroundColor = .blueColor()
+        innerView.backgroundColor = .blue
         
         // This must be called on every subview being constrained
         // when programmatically setting layout constraints
@@ -35,8 +35,8 @@ class ViewController: UIViewController {
         let topInnerView = UIView()
         let bottomInnerView = UIView()
         
-        topInnerView.backgroundColor = .redColor()
-        bottomInnerView.backgroundColor = .greenColor()
+        topInnerView.backgroundColor = .red
+        bottomInnerView.backgroundColor = .green
         
         topInnerView.translatesAutoresizingMaskIntoConstraints = false
         bottomInnerView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 
