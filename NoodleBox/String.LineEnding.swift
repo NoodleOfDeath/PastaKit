@@ -18,37 +18,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-/// 
-public enum NSStringLineEnding: String {
-    
-    public typealias Value = String
+extension String {
 
-    case CR
-    case LF
-    case CRLF
-    
-    public var value: Value {
-        switch self {
-        case .CR:
-            return "\r"
-        case .LF:
-            return "\n"
-        case .CRLF:
-            return "\r\n"
+    ///
+    public enum LineEnding: String {
+        
+        public typealias Value = String
+
+        case CR
+        case LF
+        case CRLF
+        
+        public var value: Value {
+            switch self {
+            case .CR:
+                return "\r"
+            case .LF:
+                return "\n"
+            case .CRLF:
+                return "\r\n"
+            }
         }
+        
+        fileprivate static func values() -> [String: LineEnding] {
+            return [
+                CR.rawValue     : CR,
+                LF.rawValue     : LF,
+                CRLF.rawValue   : CRLF,
+            ]
+        }
+        
+        public init(stringValue: String?) {
+            guard let stringValue = stringValue else { self = .LF; return }
+            self = LineEnding.values()[stringValue] ?? .LF
+        }
+        
     }
-    
-    fileprivate static func values() -> [String: NSStringLineEnding] {
-        return [
-            CR.rawValue     : CR,
-            LF.rawValue     : LF,
-            CRLF.rawValue   : CRLF,
-        ]
-    }
-    
-    public init(stringValue: String?) {
-        guard let stringValue = stringValue else { self = .LF; return }
-        self = NSStringLineEnding.values()[stringValue] ?? .LF
-    }
-    
+
 }
