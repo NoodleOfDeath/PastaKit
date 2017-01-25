@@ -30,6 +30,6 @@ Swift library with convenience extensions and custom data structures to save dev
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'NoodleBox/*'
+  s.source_files = 'NoodleBox/**/*'
 
 end
