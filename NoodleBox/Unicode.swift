@@ -14,9 +14,9 @@ public struct Unicode {
     public static let Tab = "\t"
     public static let Space = " "
     
-    public static let CR = String.LineEnding.CR.value
-    public static let LF = String.LineEnding.LF.value
-    public static let CRLF = String.LineEnding.CRLF.value
+    public static let CR = "\r"
+    public static let LF = "\n"
+    public static let CRLF = "\r\n"
     
     public static let OpenedCurlyBracket = "{"
     public static let ClosedCurlyBracket = "}"
