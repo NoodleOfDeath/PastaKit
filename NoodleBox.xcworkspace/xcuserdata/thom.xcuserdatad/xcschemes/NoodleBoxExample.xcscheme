@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B8F9D3D568F28CADF583D83310324CF"
+               BlueprintIdentifier = "46EF2A27A96E7FD6E8E0456B8917C5ED"
                BuildableName = "Pods_NoodleBoxExample.framework"
                BlueprintName = "Pods-NoodleBoxExample"
                ReferencedContainer = "container:Example/Pods/Pods.xcodeproj">
