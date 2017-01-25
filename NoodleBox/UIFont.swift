@@ -21,7 +21,7 @@
 public let CTFontFamily = "CTFontFamily"
 public let CTFontSize = "CTFontSize"
 
-// MARK: - ** UIFont Extension **
+// MARK: - UIFont Extension
 
 extension UIFont {
 

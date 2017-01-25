@@ -20,14 +20,14 @@
 
 public let NBBundleResourcePath: String = NSResourcePath +/ "Bundles"
 
-// MARK: - ** NBBundle Class **
+// MARK: - NBBundle Class
 
 /// Composite class for `NSBundle` that can be overridden and used to
 /// represent a group of bundles in a directory with similar extension and
 /// functionality
 open class NBBundle : NSObject, NSCoding {
     
-    // MARK: - ** Static Properties **
+    // MARK: - Static Properties
     
     /// Encoding/decoding keys
     fileprivate struct CodingKeys {
@@ -62,7 +62,7 @@ open class NBBundle : NSObject, NSCoding {
         return "bundle"
     }
 
-    // MARK: - **  Internal Properties **
+    // MARK: -  Internal Properties
     
     // MARK: - Get-Only
     
@@ -90,7 +90,7 @@ open class NBBundle : NSObject, NSCoding {
             ((bundle?.bundleURL +/ "Contents/Info.plist")?.dateModified.format()
                 ?? Date.distantPast.format()) }
 
-    // MARK: - ** Constructor Methods **
+    // MARK: - Constructor Methods
     
     public override init() {
         name = type(of: self).defaultName
@@ -126,13 +126,13 @@ open class NBBundle : NSObject, NSCoding {
         self.init(name: name, bundlePath: bundlePath, bundleExtension: bundleExtension)
     }
 
-    // MARK: - ** Deconstructor **
+    // MARK: - Deconstructor
     
     deinit {
         
     }
     
-    // MARK: - ** Protocol Methods **
+    // MARK: - Protocol Methods
     
     // MARK: - NSCoding
     
@@ -142,7 +142,7 @@ open class NBBundle : NSObject, NSCoding {
         aCoder.encode(bundleExtension, forKey: CodingKeys.BundleExtension)
     }
     
-    // MARK: - ** Internal Methods **
+    // MARK: - Internal Methods
     
     /// Constructs the absolute bundle path of a bundle in the directory
     /// `bundlePath` named `name` and with the extension `bundleExtension`.

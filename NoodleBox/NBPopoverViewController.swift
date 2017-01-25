@@ -62,7 +62,7 @@ extension NBPopoverViewControllerDelegate {
     public func popoverViewControllerDidResign(_ popoverViewController: NBPopoverViewController) {}
 }
 
-// MARK: - ** NBPopoverViewController Class **
+// MARK: - NBPopoverViewController Class
 
 ///
 open class NBPopoverViewController: UIViewController, UIPopoverPresentationControllerDelegate {
@@ -71,7 +71,7 @@ open class NBPopoverViewController: UIViewController, UIPopoverPresentationContr
     
     open weak var delegate: NBPopoverViewControllerDelegate?
     
-    // MARK: - ** Get-Only Properties **
+    // MARK: - Get-Only Properties
     
     open var name: String! = ""
     
@@ -101,7 +101,7 @@ open class NBPopoverViewController: UIViewController, UIPopoverPresentationContr
     
     open var userInfo: Any?
     
-    // MARK: - ** Private Properties **
+    // MARK: - Private Properties
     
     fileprivate lazy var cancelButton: UIBarButtonItem = {
         let cancelButton = UIBarButtonItem(
@@ -130,7 +130,7 @@ open class NBPopoverViewController: UIViewController, UIPopoverPresentationContr
         return doneButton
     }()
     
-    // MARK: - ** Superclass/Protocol Methods **
+    // MARK: - Superclass/Protocol Methods
     
     public convenience init(view: UIView?, responder: AnyObject?) {
         self.init()
@@ -147,7 +147,7 @@ open class NBPopoverViewController: UIViewController, UIPopoverPresentationContr
         beginObservations()
     }
     
-    // MARK: - ** Internal Methods **
+    // MARK: - Internal Methods
     
     open func updateActions() {
         
@@ -213,9 +213,9 @@ open class NBPopoverViewController: UIViewController, UIPopoverPresentationContr
         }
     }
     
-    // MARK: - ** Private Methods **
+    // MARK: - Private Methods
     
-    // MARK: - ** Action Handlers **
+    // MARK: - Action Handlers
     
     @objc
     fileprivate func didPressCancelBarButtonItem(_ barButtonItem: UIBarButtonItem) {
@@ -234,7 +234,7 @@ open class NBPopoverViewController: UIViewController, UIPopoverPresentationContr
         if !overrideDimiss { dismiss() }
     }
     
-    // MARK: - ** Notification Handlers **
+    // MARK: - Notification Handlers
     
     @objc
     fileprivate func didUpdateUserInfo(_ notification: Notification) {

@@ -20,7 +20,7 @@
 
 extension UITextInput {
     
-    // MARK: - ** Protocol Methods **
+    // MARK: - Protocol Methods
     
     // MARK: - UIKeyboardInput
     
@@ -59,7 +59,7 @@ extension UITextInput {
         replace(range, withText: "")
     }
     
-    // MARK: - ** Public Methods **
+    // MARK: - Public Methods
     
     // MARK: -
     

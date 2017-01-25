@@ -24,7 +24,7 @@ fileprivate struct CodingKeys {
     static let Surjective = "Surjective"
 }
 
-// MARK: - ** NSSortedArray Class **
+// MARK: - NSSortedArray Class
 
 /// An array class that automatically places elements in order as
 /// they added to the collection.
@@ -57,7 +57,7 @@ public class NSSortedArray <Element: Comparable> : NSObject, Collection, NSCodin
     /// 
     fileprivate var backingStorage: BackingStorage
     
-    // MARK: - ** Constructor Methods **
+    // MARK: - Constructor Methods
     
     // MARK: - NSSortedArray
     

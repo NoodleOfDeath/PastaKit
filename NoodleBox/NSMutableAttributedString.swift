@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// MARK: - ** NSMutableAttributedString (General Convenience Extensions) **
+// MARK: - NSMutableAttributedString (General Convenience Extensions)
 /// NSMutableAttributedString (General Convenience Extensions)
  /// */
 extension NSMutableAttributedString {

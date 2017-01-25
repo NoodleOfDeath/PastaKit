@@ -72,7 +72,7 @@ extension UInt {
 
 }
 
-// MARK: - ** Int Extension **
+// MARK: - Int Extension
 extension Int {
     
     public var inverse: Double {
@@ -389,7 +389,7 @@ extension UInt64 {
     
 }
 
-// MARK: - ** Double Extension **
+// MARK: - Double Extension
 extension Double {
     
     public static var min: Double {

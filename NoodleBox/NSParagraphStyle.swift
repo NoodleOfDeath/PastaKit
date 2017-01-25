@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// MARK: - ** NSParagraphStyle Extension **
+// MARK: - NSParagraphStyle Extension
 extension NSParagraphStyle {
 
     /// Provide a preset [NSMutableParagraphStyle](xdoc://) instance with a specific tab span

@@ -20,13 +20,13 @@
 
 import CoreGraphics
 
-// MARK: - ** Convenicence CGPoint Construction from 2-tuple **
+// MARK: - Convenicence CGPoint Construction from 2-tuple
 
 public postfix func * (argument: (x: Int, y: Int)) -> CGPoint {
     return CGPoint(x: CGFloat(argument.x), y: CGFloat(argument.y))
 }
 
-// MARK: - ** Public Operations **
+// MARK: - Public Operations
 
 // MARK: - Additive Operations
 
@@ -74,7 +74,7 @@ public func - (lhs: CGPoint, x: CGFloat) -> CGPoint {
     return CGPoint(x: lhs.x - x, y: lhs.y)
 }
 
-// MARK: - ** Additive Assignment Operations **
+// MARK: - Additive Assignment Operations
 
 public func += (lhs: inout CGPoint, rhs: CGPoint) {
     lhs = lhs + rhs

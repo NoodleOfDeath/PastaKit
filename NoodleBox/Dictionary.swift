@@ -111,7 +111,7 @@ public postfix func * <T: ExpressibleByDictionaryLiteral>(argument: T) -> NSDict
     return argument as! NSDictionary
 }
 
-// MARK: - ** Dictionary Subscripting Extensions ** -
+// MARK: - Dictionary Subscripting Extensions -
 
 extension Dictionary {
 

@@ -39,7 +39,7 @@ public func += (lhs: inout UserDefaults, rhs: [String : Any]) {
     for (k, v) in rhs { lhs[k] = v }
 }
 
-// MARK: - ** NSUserDefaults Subscripting ** -
+// MARK: - NSUserDefaults Subscripting -
 
 extension UserDefaults {
 

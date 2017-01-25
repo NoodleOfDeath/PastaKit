@@ -26,7 +26,7 @@ public enum NBStackViewAlignment : Int {
     case vertical
 }
 
-// MARK: - ** NBStackView Class ** -
+// MARK: - NBStackView Class -
 
 /// A `UIView` subclass that stacks subviews using auto-layout.
 ///
@@ -62,7 +62,7 @@ public enum NBStackViewAlignment : Int {
 /// ````
 open class NBStackView : UIView {
     
-    // MARK: - ** Static Properties ** -
+    // MARK: - Static Properties -
     
     /// Encoding/decoding keys.
     fileprivate struct CodingKeys {
@@ -70,7 +70,7 @@ open class NBStackView : UIView {
         static let Alignment = "Alignment"
     }
     
-    // MARK: - ** Public Properties **
+    // MARK: - Public Properties
     
     // MARK: - Get-Only
     
@@ -92,7 +92,7 @@ open class NBStackView : UIView {
         }
     }
     
-    // MARK: - ** Private Properties **
+    // MARK: - Private Properties
     
     // MARK: - Layout Constraints
     
@@ -106,7 +106,7 @@ open class NBStackView : UIView {
     /// subview, or the bottom layout constaint of the last subview.
     fileprivate var constraintB = NSLayoutConstraint()
     
-    // MARK: - ** Constructor Methods ** -
+    // MARK: - Constructor Methods -
     
     public required init?(coder aDecoder: NSCoder) {
         guard let alignment =
@@ -128,7 +128,7 @@ open class NBStackView : UIView {
         super.init(frame: CGRect.zero)
     }
     
-    // MARK: - ** Superclass/Protocol Methods **
+    // MARK: - Superclass/Protocol Methods
     
     // MARK: - NSCoding
     
@@ -137,7 +137,7 @@ open class NBStackView : UIView {
         aCoder.encode(alignment.rawValue, forKey: CodingKeys.Alignment)
     }
     
-    // MARK: - ** Public Methods ** -
+    // MARK: - Public Methods -
     
     /// Pushes a subview onto the end of stack.
     /// - parameter view: The subview to push onto the stack.

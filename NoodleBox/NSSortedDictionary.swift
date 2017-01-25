@@ -48,7 +48,7 @@ public class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection,
     /// 
     fileprivate var backingStorage: BackingStorage
     
-    // MARK: - ** Constructor Methods **
+    // MARK: - Constructor Methods
     
     /// 
     public init(keys: SortedArray<Key>? = nil, values: [Value] = [], sortOrder: SortOrder = .ascending) {
@@ -97,7 +97,7 @@ public class NSSortedDictionary <Key: Comparable, Value> : NSObject, Collection,
         return backingStorage.index(after: i)
     }
     
-    // MARK: - ** Subscript Methods **
+    // MARK: - Subscript Methods
     
     /// 
     public subscript (position: Index) -> Element {

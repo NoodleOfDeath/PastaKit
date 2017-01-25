@@ -24,7 +24,7 @@ public protocol UIZoomingScrollViewDelegate : NSObjectProtocol {
     func scrollViewDidScroll(_ scrollView: UIScrollView)
 }
 
-// MARK: - ** UIZoomingScrollView - UIScrollView Composite Class ** -
+// MARK: - UIZoomingScrollView - UIScrollView Composite Class -
 
 /// A `UIView` class that enables zooming for a custome scroll view
 ///
@@ -44,7 +44,7 @@ public protocol UIZoomingScrollViewDelegate : NSObjectProtocol {
 /// ````
 open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     
-    // MARK: - ** Static Properties ** -
+    // MARK: - Static Properties -
     
     /// The default minimum zoom scale
     static let DefaultMinimumZoomScale: CGFloat = 0.25
@@ -52,7 +52,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     /// The default maximum zoom scale
     static let DefaultMaximumZoomScale: CGFloat = 4.0
     
-    // MARK: - ** Internal Properties **
+    // MARK: - Internal Properties
     
     // MARK: - Weak References
     
@@ -161,7 +161,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
         }
     }
     
-    // MARK: - ** Private Properties **
+    // MARK: - Private Properties
     
     // MARK: - Stored
     
@@ -256,7 +256,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
             self.scrollIndicatorHeight)
     }()
     
-    // MARK: - ** Constructor Methods ** -
+    // MARK: - Constructor Methods -
     
     public convenience init() {
         
@@ -288,7 +288,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
         self.scrollView = scrollView
     }
     
-    // MARK: - ** Superclass/Protocol Methods **
+    // MARK: - Superclass/Protocol Methods
     
     // MARK: - UIView
     
@@ -306,7 +306,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
         return view
     }
     
-    // MARK: - ** Protocol Methods **
+    // MARK: - Protocol Methods
     
     // MARK: - UIScrollViewDelegate
     
@@ -334,7 +334,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
         }
     }
     
-    // MARK: - ** Public Methods **
+    // MARK: - Public Methods
     
     // MARK: - Composite (UIScrollView)
     
@@ -344,7 +344,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
         contentScrollView.scrollRectToVisible(rect, animated: animated)
     }
     
-    // MARK: - ** Private Methods ** -
+    // MARK: - Private Methods -
     
     /// Updates the dimensions of the vertical scroll indicator
     fileprivate func updateScrollIndicator() {

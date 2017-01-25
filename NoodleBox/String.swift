@@ -146,7 +146,7 @@ public func +> (lhs: String, rhs: String) -> String? {
     return lhs.appendingPathExtension(rhs)
 }
 
-// MARK: - ** String General Properties **
+// MARK: - String General Properties
 
 extension String {
     
@@ -173,7 +173,7 @@ extension String {
     
 }
 
-// MARK: - ** String Path Properties **
+// MARK: - String Path Properties
 
 extension String {
 
@@ -194,7 +194,7 @@ extension String {
     
 }
 
-// MARK: - ** String Character Properties **
+// MARK: - String Character Properties
 
 extension String {
     
@@ -234,7 +234,7 @@ extension String {
     
 }
 
-// MARK: - ** String Pattern Matching Methods **
+// MARK: - String Pattern Matching Methods
 
 extension String {
     
@@ -383,7 +383,7 @@ extension String {
     
 }
 
-// MARK: - ** String Substrings **
+// MARK: - String Substrings
 
 extension String {
     
@@ -443,7 +443,7 @@ extension String {
     
 }
 
-// MARK: - ** String Paragraph Ranges **
+// MARK: - String Paragraph Ranges
 
 extension String {
     
@@ -480,7 +480,7 @@ extension String {
     
 }
 
-// MARK: - ** String Substring Enumeration **
+// MARK: - String Substring Enumeration
 
 extension String {
     
@@ -544,7 +544,7 @@ extension String {
     
 }
 
-// MARK: - ** String Substring Replacement **
+// MARK: - String Substring Replacement
 
 extension String {
     
@@ -555,7 +555,7 @@ extension String {
     
 }
 
-// MARK: - ** String Exploding **
+// MARK: - String Exploding
 
 extension String {
 
@@ -592,7 +592,7 @@ extension String {
     
 }
 
-// MARK: - ** String Escaping **
+// MARK: - String Escaping
 
 extension String {
     
@@ -623,7 +623,7 @@ extension String {
     
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
 
@@ -643,7 +643,7 @@ extension String {
     
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
     
@@ -668,7 +668,7 @@ extension String {
     
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
     
@@ -700,7 +700,7 @@ extension String {
     
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
 
@@ -711,7 +711,7 @@ extension String {
     
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
 
@@ -739,7 +739,7 @@ extension String {
     
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
     
@@ -753,7 +753,7 @@ extension String {
     
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
 
@@ -794,7 +794,7 @@ extension String {
 
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
     
@@ -820,7 +820,7 @@ extension String {
     
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
     
@@ -852,9 +852,9 @@ extension String {
     
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
     
@@ -872,7 +872,7 @@ extension String {
     
 }
 
-// MARK: - ** String (General Convenience Extensions) **
+// MARK: - String (General Convenience Extensions)
 
 extension String {
     
@@ -885,7 +885,7 @@ extension String {
     
 }
 
-// MARK: - ** Localization **
+// MARK: - Localization
 
 extension String {
     
@@ -929,7 +929,7 @@ extension String {
     
 }
 
-// MARK: - ** String Extension (Regular Expression) **
+// MARK: - String Extension (Regular Expression)
 
 extension String {
     

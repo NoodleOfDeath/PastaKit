@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// MARK: - ** UIBarButtonItem Extension **
+// MARK: - UIBarButtonItem Extension
 extension UIBarButtonItem {
 
     public convenience init(title: String?, target: Any? = nil, action: Selector? = nil) {

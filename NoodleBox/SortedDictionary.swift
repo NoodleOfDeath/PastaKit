@@ -40,7 +40,7 @@ public struct SortedDictionary <Key: Comparable, Value> : Collection, _Objective
     /// 
     public let sortOrder: SortOrder
     
-    // MARK: - ** Constructor Methods **
+    // MARK: - Constructor Methods
     
     /// 
     public init(keys: SortedArray<Key>? = nil, values: [Value] = [], sortOrder: SortOrder = .ascending) {
@@ -84,7 +84,7 @@ public struct SortedDictionary <Key: Comparable, Value> : Collection, _Objective
         values.removeAll(keepingCapacity: keepCapacity)
     }
     
-    // MARK: - ** Subscript Methods **
+    // MARK: - Subscript Methods
     
     /// 
     public subscript (key: Key) -> Value? {
@@ -110,7 +110,7 @@ public struct SortedDictionary <Key: Comparable, Value> : Collection, _Objective
         }
     }
     
-    // MARK: - ** Protocol Methods (_ObjectiveCBridgeable) **
+    // MARK: - Protocol Methods (_ObjectiveCBridgeable)
     
     public static func _isBridgedToObjectiveC() -> Bool {
         return true

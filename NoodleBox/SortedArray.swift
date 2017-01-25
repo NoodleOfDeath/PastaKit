@@ -44,7 +44,7 @@ public func + <T: Comparable>(lhs: SortedArray<T>, rhs: T) -> SortedArray<T> {
     return arr
 }
 
-// MARK: - ** SortedArray Structure **
+// MARK: - SortedArray Structure
 
 /// An array data structure that automatically places elements in order as
 /// they added to the collection.
@@ -82,7 +82,7 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     /// Whether or not this set is surjective, default value is false.
     public let surjective: Bool
     
-    // MARK: - ** Constructor Methods **
+    // MARK: - Constructor Methods
     
     // MARK: - SortedArray
     
@@ -121,7 +121,7 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
         surjective = sortedArray.surjective
     }
     
-    // MARK: - ** Public Methods **
+    // MARK: - Public Methods
     
     // MARK: - _ObjectiveCBridgeable
     

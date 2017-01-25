@@ -34,7 +34,7 @@ extension UTType {
     
 }
 
-// MARK: - ** Public Operations ** -
+// MARK: - Public Operations -
 
 public func == (lhs: UTType, rhs: UTType) -> Bool {
     return lhs.rawValue == rhs.rawValue
@@ -44,14 +44,14 @@ public func != (lhs: UTType, rhs: UTType) -> Bool {
     return lhs.rawValue != rhs.rawValue
 }
 
-// MARK: - ** Protocols **
+// MARK: - Protocols
 
 /// A simple protocol in which an object has a `uttype`.
 public protocol UTTypeProtocol {
     var uttype: UTType { get }
 }
 
-// MARK: - ** UTType Structure ** -
+// MARK: - UTType Structure -
 
 /// A bridging structure that converts all `"kUTType.*"` constants and
 /// modularizes them into a `UTType` static constant.
@@ -59,19 +59,19 @@ public protocol UTTypeProtocol {
 /// **Example:** `kUTTypeBMP` is modularized to `UTType.BMP`.
 public struct UTType : CFRawRepresentable, Equatable {
     
-    // MARK: - ** Type Aliases **
+    // MARK: - Type Aliases
     
     public typealias RawValue = String
     public typealias CoreValue = CFString
     
-    // MARK: - ** Public Variables **
+    // MARK: - Public Variables
     
     // MARK: - Get-Only
     
     public let rawValue: RawValue
     public var coreValue: CoreValue { return rawValue as UTType.CoreValue }
     
-    // MARK: - ** Static Properties **
+    // MARK: - Static Properties
     
     // MARK: - Get-Only
     
@@ -1422,7 +1422,7 @@ public struct UTType : CFRawRepresentable, Equatable {
     @available(iOS 8.0, *)
     public static let Log = UTType(kUTTypeLog)
     
-    // MARK: - ** Constructor Methods ** -
+    // MARK: - Constructor Methods -
     
     public init(rawValue: RawValue) {
         self.rawValue = rawValue
@@ -1440,7 +1440,7 @@ public struct UTType : CFRawRepresentable, Equatable {
         rawValue = coreValue as String
     }
     
-    // MARK: - ** Public Methods ** -
+    // MARK: - Public Methods -
     
     /// Returns whether or not `self` is an unknown UTType.
     /// - returns: `true` if `self == UTType.Unknown`; `false` otherwise.

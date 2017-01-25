@@ -24,12 +24,12 @@
 /// Foundation `CoreValue` associated type.
 public protocol CFRawRepresentable : RawRepresentable {
     
-    // MARK: - ** Associated Types **
+    // MARK: - Associated Types
     
     /// A Core Foundation data structure type (i.e. CFString)
     associatedtype CoreValue
     
-    // MARK: - ** Static Properties **
+    // MARK: - Static Properties
     
     /// The default Swift form of this data structure
     static var DefaultRawValue: RawValue { get}
@@ -37,12 +37,12 @@ public protocol CFRawRepresentable : RawRepresentable {
     /// The default Core Foundation form of this data structure
     static var DefaultCoreValue: CoreValue { get}
     
-    // MARK: ** Public Properties **
+    // MARK: Public Properties
     
     /// The Core Foundation form of this data structure
     var coreValue: CoreValue { get }
     
-    // MARK: - ** Constructor Methods **
+    // MARK: - Constructor Methods
     
     /// Convenience constructor method
     /// - parameter rawValue: The Swift `RawValue` form of this data structure

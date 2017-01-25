@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// MARK: - ** SortOrder Enumeration **
+// MARK: - SortOrder Enumeration
 
 /// Ascending or descending sort order enumerations
 public enum SortOrder : Int {

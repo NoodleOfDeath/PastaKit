@@ -20,7 +20,7 @@
 
 import CoreGraphics
 
-// MARK: - ** UIColor equivalence methods for completeness ** -
+// MARK: - UIColor equivalence methods for completeness -
 
 extension CGColor {
 

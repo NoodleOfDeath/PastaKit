@@ -54,7 +54,7 @@ extension UITextView {
         return locationOfNextNonWhitespaceCharacter != NSNotFound ? text.substring(with: NSMakeRange(locationOfNextNonWhitespaceCharacter, 1)) : nil
     }
     
-    // MARK: - ** Protocol Methods **
+    // MARK: - Protocol Methods
     
     // MARK: - Public Methods
     

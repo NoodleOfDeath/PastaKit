@@ -20,7 +20,7 @@
 
 import CoreGraphics
 
-// MARK: - ** Convenience Operations **
+// MARK: - Convenience Operations
 
 // MARK: - Additive Operations
 
@@ -195,11 +195,11 @@ public func += (augend: inout CGRect, addend: (CGFloat, CGFloat, CGFloat, CGFloa
     augend = augend + addend
 }
 
-// MARK: - ** CGRect - Extension (Convenient Dimensions) **
+// MARK: - CGRect - Extension (Convenient Dimensions)
 
 extension CGRect {
     
-    // MARK: - ** Public Properties **
+    // MARK: - Public Properties
     
     // MARK: - Composite
 

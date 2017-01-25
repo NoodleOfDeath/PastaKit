@@ -6,11 +6,11 @@
 // Copyright © 2016 NoodleNation. All rights reserved.
 //
 
-// MARK: - ** Import Modules **
+// MARK: - Import Modules
 
 import UIKit
 
-// MARK: - ** Public Enumerations **
+// MARK: - Public Enumerations
 
 // MARK: - NSOverwriteAction Enumeration **
 
@@ -37,7 +37,7 @@ public enum NSOverwriteAction : Int {
 /// structure commit an action on the item at the target path/url.
 public struct NBFileManager {
     
-    // MARK: -- ** Public Static Properties ** -
+    // MARK: -- Public Static Properties -
     
     /// This closure should (must) be set to propertly handle thrown errors.
     /// The default implementation only prints the error to the console.
@@ -45,12 +45,12 @@ public struct NBFileManager {
     /// to `nil` before launching a release.
     public static var errorHandler: ((_ error: Error) -> ())?
     
-    // MARK: - ** Private Static Properties ** -
+    // MARK: - Private Static Properties -
     
     /// The shared default `NSFileManager` instance
     fileprivate static var fileManager = FileManager.default
     
-    // MARK: - ** Private Static Methods ** -
+    // MARK: - Private Static Methods -
     
     fileprivate static func getURL(_ url: URL, forOverwriteAction action: NSOverwriteAction) -> URL? {
         
@@ -94,7 +94,7 @@ public struct NBFileManager {
     
 }
 
-// MARK: - ** File Exists Methods ** -
+// MARK: - File Exists Methods -
 
 extension NBFileManager {
     
@@ -114,7 +114,7 @@ extension NBFileManager {
     
 }
 
-// MARK: - ** Fetch Directory Contents Methods ** -
+// MARK: - Fetch Directory Contents Methods -
 
 extension NBFileManager {
     
@@ -167,7 +167,7 @@ extension NBFileManager {
     
 }
 
-// MARK: - ** Create Directory Methods ** -
+// MARK: - Create Directory Methods -
 
 extension NBFileManager {
     
@@ -211,7 +211,7 @@ extension NBFileManager {
     
 }
 
-// MARK: - ** Create Symbolic Link Methods ** -
+// MARK: - Create Symbolic Link Methods -
 
 extension NBFileManager {
     
@@ -251,7 +251,7 @@ extension NBFileManager {
     
 }
 
-// MARK: - ** Move File Methods **
+// MARK: - Move File Methods
 
 extension NBFileManager {
     
@@ -288,7 +288,7 @@ extension NBFileManager {
     
 }
 
-// MARK: - ** Copy File Methods **
+// MARK: - Copy File Methods
 
 extension NBFileManager {
     
@@ -326,7 +326,7 @@ extension NBFileManager {
     
 }
 
-// MARK: - ** Remove File Methods **
+// MARK: - Remove File Methods
 
 extension NBFileManager {
     
@@ -358,7 +358,7 @@ extension NBFileManager {
     
 }
 
-// MARK: - ** Error Handling **
+// MARK: - Error Handling
 
 private var FileManagerDidPresentWarning = false
 
