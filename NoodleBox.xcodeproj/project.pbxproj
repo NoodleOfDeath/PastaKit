@@ -277,11 +277,11 @@
 		CDD116641D592A9D004A9DBC /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				CDD116001D592A93004A9DBC /* NSAttributedString.swift */,
 				CDD116011D592A93004A9DBC /* Bundle.swift */,
-				CD2907E51D627836000DD8B7 /* NSCoder.swift */,
 				CDD116021D592A93004A9DBC /* Date.swift */,
 				CDD116041D592A93004A9DBC /* FileManager.swift */,
+				CDD116001D592A93004A9DBC /* NSAttributedString.swift */,
+				CD2907E51D627836000DD8B7 /* NSCoder.swift */,
 				CDD116051D592A93004A9DBC /* NSLayoutConstraint.swift */,
 				CDD116061D592A93004A9DBC /* NSMetadataItem.swift */,
 				CDD116071D592A93004A9DBC /* NSMutableAttributedString.swift */,

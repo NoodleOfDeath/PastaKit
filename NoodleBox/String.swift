@@ -376,7 +376,6 @@ extension String {
     /// \
     /// The Block returns void.
     ///
-    
     public func enumerateMatches(in string: String, options: NSRegularExpression.MatchingOptions = [.withTransparentBounds], range: NSRange? = nil, usingBlock block: (NSTextCheckingResult?, NSRegularExpression.MatchingFlags, UnsafeMutablePointer<ObjCBool>) -> Void) {
         guard let expr = try? NSRegularExpression(pattern: self, options: []) else { return }
         expr.enumerateMatches(in: string, options: options, range: range ?? string.range, using: block)
@@ -859,9 +858,16 @@ extension String {
 
 extension String {
     
-    /// Determines if a file exists at the path `self`.
-    public func fileExists() -> Bool {
+    /// Returns whether or not a file exists at the path `self`.
+    public var fileExists: Bool {
         return FileManager.default.fileExists(atPath: self)
+    }
+    
+    /// Returns whether or not the file at path `self` is a directory
+    public var directory: Bool {
+        var directory: ObjCBool = false
+        FileManager.default.fileExists(atPath: self, isDirectory: &directory)
+        return directory.boolValue
     }
     
 }
