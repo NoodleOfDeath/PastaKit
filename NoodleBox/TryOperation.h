@@ -18,9 +18,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef TryOperation_h
-#define TryOperation_h
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
@@ -149,5 +146,3 @@
 - (void)run;
 
 @end
-
-#endif /* TryOperation_h */
