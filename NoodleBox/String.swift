@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// MARK: - String and NSString Casting
+// MARK: - String/NSString Casting Postfix Operators
 
 /// Casts `argument` to an Objective-C `NSString` class instance.
 public postfix func * (argument: String) -> NSString {
@@ -40,7 +40,7 @@ public postfix func * (argument: NSString?) -> String? {
     return argument as? String
 }
 
-// MARK: - String Concatenation
+// MARK: - String Concatenation Infix Operators
 
 /// Duplicates `lhs`, `rhs` times and returns the joined string.
 /// - parameter lhs: The string to duplicate.
@@ -81,7 +81,7 @@ public func + (augend: String?, addend: String?) -> String? {
     return augend + addend
 }
 
-// MARK: - Path Component Concatenation
+// MARK: - String Path Component Concatenation Infix Operators
 
 /// 
 public func +/ (lhs: String, rhs: String) -> String {
@@ -121,7 +121,7 @@ public func +/ (lhs: String!, rhs: String!) -> String {
     return lhs.appendingPathComponent(rhs)
 }
 
-// MARK: - Path Extension Concatenation
+// MARK: - String Path Extension Concatenation Infix Operators
 
 /// 
 public func +> (lhs: String?, rhs: String?) -> String? {
@@ -146,7 +146,7 @@ public func +> (lhs: String, rhs: String) -> String? {
     return lhs.appendingPathExtension(rhs)
 }
 
-// MARK: - String General Properties
+// MARK: - String Statistics
 
 extension String {
     
@@ -194,7 +194,7 @@ extension String {
     
 }
 
-// MARK: - String Character Properties
+// MARK: - String First/Last Character Getters
 
 extension String {
     
@@ -222,6 +222,8 @@ extension String {
     
 }
 
+// MARK: - String Contains
+
 extension String {
     
     public func contains(_ loc: Int) -> Bool {
@@ -234,7 +236,7 @@ extension String {
     
 }
 
-// MARK: - String Pattern Matching Methods
+// MARK: - String Pattern Matching
 
 extension String {
     
@@ -443,43 +445,6 @@ extension String {
     
 }
 
-// MARK: - String Paragraph Ranges
-
-extension String {
-    
-    /// Returns the range of characters representing the paragraph or 
-    /// paragraphs containing a given range.
-    ///
-    /// The range of characters representing the paragraph or paragraphs 
-    /// containing aRange, including the paragraph termination characters.
-    /// - parameter range: A range within the receiver. The range must not 
-    /// exceed the bounds of the receiver.
-    /// - returns: The range of characters representing the paragraph or
-    /// paragraphs containing aRange, including the paragraph termination characters.
-    @available(iOS 8.0, *)
-    
-    public func paragraphRange(for range: Range<Int>) -> NSRange {
-        return self*.paragraphRange(for: range*)
-    }
-    
-    /// Returns the range of characters representing the paragraph or 
-    /// paragraphs containing a given range.
-    ///
-    /// The range of characters representing the paragraph or paragraphs 
-    /// containing aRange, including the paragraph termination characters.
-    /// - parameter range: A range within the receiver. The range must not 
-    /// exceed the bounds of the receiver.
-    /// - returns: The range of characters representing the paragraph or
-    /// paragraphs containing aRange, including the paragraph termination characters.
-    @available(iOS 8.0, *)
-    
-    public func paragraphRange(for range: NSRange) -> NSRange {
-        guard self.range.contains(range) else { return range }
-        return self*.paragraphRange(for: range)
-    }
-    
-}
-
 // MARK: - String Substring Enumeration
 
 extension String {
@@ -544,13 +509,139 @@ extension String {
     
 }
 
-// MARK: - String Substring Replacement
+// MARK: - String Replacement
 
 extension String {
     
-    /// 
-    public func replacingOccurrences(of string: String, withString: String, options: NSString.CompareOptions, range: NSRange) -> String {
-        return self*.replacingOccurrences(of: string, with: withString, options: options, range: range)
+    /// Returns a new string in which the characters in a specified range of the receiver are replaced by a given string.
+    ///
+    /// A new string in which the characters in range of the receiver are replaced by replacement.
+    /// - parameter range: A range of characters in the receiver.
+    /// - parameter replacement: The string with which to replace the characters in range.
+    /// - returns: A new string in which the characters in range of the receiver are replaced by replacement.
+    @available(iOS 2.0, *)
+    public func replacingCharacters(in range: NSRange, withString replacement: String) -> String {
+        return self*.replacingCharacters(in: range, with: replacement)
+    }
+    
+    /// Returns a new string in which all occurrences of a target string in a specified range of the receiver are replaced by another given string.
+    /// - parameter target: The string to replace.
+    /// - parameter replacement: The string with which to replace target.
+    /// - parameter options: A mask of options to use when comparing target with the receiver. Pass 0 to specify no options.
+    /// - parameter range: The range in the receiver in which to search for target.
+    /// - returns: A new string in which all occurrences of target, matched using options, in searchRange of the receiver are replaced by replacement.
+    public func replacingOccurrences(of target: String, with replacement: String, options: NSString.CompareOptions, range: NSRange) -> String {
+        return self*.replacingOccurrences(of: target, with: replacement, options: options, range: range)
+    }
+ 
+    /// Returns a new string in which all occurrences of a target string in a specified range of the receiver are replaced by another given string.
+    /// - parameter replacements: A mapping of target-replacement strings.
+    /// - parameter options: A mask of options to use when comparing target with the receiver. Pass 0 to specify no options.
+    /// - parameter range: The range in the receiver in which to search for target.
+    /// - returns: A new string in which all occurrences of target, matched using options, in searchRange of the receiver are replaced by replacement.
+    public func replacingOccurrences(of replacements: [String : String], options: NSString.CompareOptions, range: NSRange) -> String {
+        var string = self
+        for (target, replacement) in replacements {
+            string = replacingOccurrences(of: target, with: replacement, options: options, range: range)
+        }
+        return string
+    }
+    
+    /// Returns a new string in which all occurrences of escapable characters
+    /// are replaced with literal string values.
+    /// - returns: A new string in which all occurrences of escapable characters
+    /// are replaced with literal string values.
+    public func escapingWhitespaces() -> String {
+        return replacingOccurrences(of: ["\n" : "\\n", "\t": "\\t", " " : "\\s"], options: [], range: range)
+    }
+    
+}
+
+// MARK: - String Mutating Replacements
+
+extension String {
+    
+    /// Mutates `self` in which the characters in a specified range of the `self` are replaced by a given string.
+    /// - parameter range: A range of characters in the receiver.
+    /// - parameter replacement: The string with which to replace the characters in range.
+    @available(iOS 2.0, *)
+    public mutating func replace(range: NSRange, withString replacement: String) {
+        self = self.replacingCharacters(in: range, withString: replacement)
+    }
+    
+    /// Replaces all occurrences of `target` in `self` with `replacement`.
+    /// - parameter target: The string to search for.
+    /// - parameter replacement: The string used to replace `target` with.
+    public mutating func replaceOccurrences(of target: String, with replacement: String) {
+        self = self.replacingOccurrences(of: target, with: replacement)
+    }
+    
+}
+
+// MARK: - String Escaping
+
+extension String {
+    
+    /// Removes all escaped characters/substrings with their literal value 
+    /// and returns the resultant string.
+    public var withoutEscapes: String {
+        let str = NSMutableString(string: self)
+        if let expr = try? NSRegularExpression(pattern: "\\\\([:\\-.*\\^$!?(){}\\[\\]])", options: []) {
+            expr.replaceMatches(in: str, options: [.withTransparentBounds], range: str.range, withTemplate: "$1")
+        }
+        if let expr = try? NSRegularExpression(pattern: "\\(\\?\\<\\=.*?\\)", options: []) {
+            expr.replaceMatches(in: str, options: [.withTransparentBounds], range: str.range, withTemplate: "")
+        }
+        if let expr = try? NSRegularExpression(pattern: "\\(\\?\\!.*?\\)", options: []) {
+            expr.replaceMatches(in: str, options: [.withTransparentBounds], range: str.range, withTemplate: "")
+        }
+        return str as String
+    }
+    
+    /// Generates a regular expression pattern string from `self`. 
+    /// - postcondition: The returned pattern string will match `self`.
+    public var regexPattern: String {
+        let pattern = NSMutableString(string: self)
+        let expr = try! NSRegularExpression(pattern: "([\\{\\}\\(\\)\\[\\]\\*\\|\\.\\:\\?\\!\\<\\>\\=\\+\\$\\^])", options: [])
+        expr.replaceMatches(in: pattern, options: [], range: pattern.range, withTemplate: "\\\\$1")
+        return pattern as String
+    }
+    
+}
+
+// MARK: - String Paragraph Ranges
+
+extension String {
+    
+    /// Returns the range of characters representing the paragraph or 
+    /// paragraphs containing a given range.
+    ///
+    /// The range of characters representing the paragraph or paragraphs 
+    /// containing aRange, including the paragraph termination characters.
+    /// - parameter range: A range within the receiver. The range must not 
+    /// exceed the bounds of the receiver.
+    /// - returns: The range of characters representing the paragraph or
+    /// paragraphs containing aRange, including the paragraph termination characters.
+    @available(iOS 8.0, *)
+    
+    public func paragraphRange(for range: Range<Int>) -> NSRange {
+        return self*.paragraphRange(for: range*)
+    }
+    
+    /// Returns the range of characters representing the paragraph or 
+    /// paragraphs containing a given range.
+    ///
+    /// The range of characters representing the paragraph or paragraphs 
+    /// containing aRange, including the paragraph termination characters.
+    /// - parameter range: A range within the receiver. The range must not 
+    /// exceed the bounds of the receiver.
+    /// - returns: The range of characters representing the paragraph or
+    /// paragraphs containing aRange, including the paragraph termination characters.
+    @available(iOS 8.0, *)
+    
+    public func paragraphRange(for range: NSRange) -> NSRange {
+        guard self.range.contains(range) else { return range }
+        return self*.paragraphRange(for: range)
     }
     
 }
@@ -592,38 +683,7 @@ extension String {
     
 }
 
-// MARK: - String Escaping
-
-extension String {
-    
-    /// Removes all escaped characters/substrings with their literal value 
-    /// and returns the resultant string.
-    public var withoutEscapes: String {
-        let str = NSMutableString(string: self)
-        if let expr = try? NSRegularExpression(pattern: "\\\\([:\\-.*\\^$!?(){}\\[\\]])", options: []) {
-            expr.replaceMatches(in: str, options: [.withTransparentBounds], range: str.range, withTemplate: "$1")
-        }
-        if let expr = try? NSRegularExpression(pattern: "\\(\\?\\<\\=.*?\\)", options: []) {
-            expr.replaceMatches(in: str, options: [.withTransparentBounds], range: str.range, withTemplate: "")
-        }
-        if let expr = try? NSRegularExpression(pattern: "\\(\\?\\!.*?\\)", options: []) {
-            expr.replaceMatches(in: str, options: [.withTransparentBounds], range: str.range, withTemplate: "")
-        }
-        return str as String
-    }
-    
-    /// Generates a regular expression pattern string from `self`. 
-    /// - postcondition: The returned pattern string will match `self`.
-    public var regexPattern: String {
-        let pattern = NSMutableString(string: self)
-        let expr = try! NSRegularExpression(pattern: "([\\{\\}\\(\\)\\[\\]\\*\\|\\.\\:\\?\\!\\<\\>\\=\\+\\$\\^])", options: [])
-        expr.replaceMatches(in: pattern, options: [], range: pattern.range, withTemplate: "\\\\$1")
-        return pattern as String
-    }
-    
-}
-
-// MARK: - String (General Convenience Extensions)
+// MARK: - String Whitespaces
 
 extension String {
 
@@ -643,7 +703,7 @@ extension String {
     
 }
 
-// MARK: - String (General Convenience Extensions)
+// MARK: - String Substring Indexing
 
 extension String {
     
@@ -668,7 +728,7 @@ extension String {
     
 }
 
-// MARK: - String (General Convenience Extensions)
+// MARK: - String Trimming
 
 extension String {
     
@@ -700,18 +760,18 @@ extension String {
     
 }
 
-// MARK: - String (General Convenience Extensions)
+// MARK: - String URL Casting
 
 extension String {
 
     /// Returns a `NSURL` representation of `self`.
-    public var asURL: URL {
+    public var url: URL {
         return URL(fileURLWithPath: self)
     }
     
 }
 
-// MARK: - String (General Convenience Extensions)
+// MARK: - String Path/Extension Concatentation
 
 extension String {
 
@@ -739,7 +799,7 @@ extension String {
     
 }
 
-// MARK: - String (General Convenience Extensions)
+// MARK: - String Formatting
 
 extension String {
     
@@ -753,7 +813,7 @@ extension String {
     
 }
 
-// MARK: - String (General Convenience Extensions)
+// MARK: - String Size Estimation
 
 extension String {
 
@@ -794,33 +854,7 @@ extension String {
 
 }
 
-// MARK: - String (General Convenience Extensions)
-
-extension String {
-    
-    /// Returns a new string in which the characters in a specified range of the receiver are replaced by a given string.
-    ///
-    /// A new string in which the characters in range of the receiver are replaced by replacement.
-    /// - parameter range: A range of characters in the receiver.
-    /// - parameter replacement: The string with which to replace the characters in range.
-    /// - returns: A new string in which the characters in range of the receiver are replaced by replacement.
-    @available(iOS 2.0, *)
-    
-    public func replacingCharacters(in range: NSRange, withString replacement: String) -> String {
-        return self*.replacingCharacters(in: range, with: replacement)
-    }
-    
-    /// Mutates `self` in which the characters in a specified range of the `self` are replaced by a given string.
-    /// - parameter range: A range of characters in the receiver.
-    /// - parameter replacement: The string with which to replace the characters in range.
-    @available(iOS 2.0, *)
-    public mutating func replace(range: NSRange, withString replacement: String) {
-        self = self.replacingCharacters(in: range, withString: replacement)
-    }
-    
-}
-
-// MARK: - String (General Convenience Extensions)
+// MARK: - String Image Rendering
 
 extension String {
     
@@ -852,9 +886,7 @@ extension String {
     
 }
 
-// MARK: - String (General Convenience Extensions)
-
-// MARK: - String (General Convenience Extensions)
+// MARK: - String As File Path Methods
 
 extension String {
     
@@ -872,20 +904,7 @@ extension String {
     
 }
 
-// MARK: - String (General Convenience Extensions)
-
-extension String {
-    
-    /// Replaces all occurrences of `target` in `self` with `replacement`.
-    /// - parameter target: The string to search for.
-    /// - parameter replacement: The string used to replace `target` with.
-    public mutating func replaceOccurrences(of target: String, with replacement: String) {
-        self = self.replacingOccurrences(of: target, with: replacement)
-    }
-    
-}
-
-// MARK: - Localization
+// MARK: - String Localization
 
 extension String {
     
@@ -929,7 +948,7 @@ extension String {
     
 }
 
-// MARK: - String Extension (Regular Expression)
+// MARK: - String Regular Expression Methods
 
 extension String {
     
