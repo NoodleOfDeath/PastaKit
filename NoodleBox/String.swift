@@ -552,7 +552,7 @@ extension String {
     /// - returns: A new string in which all occurrences of escapable characters
     /// are replaced with literal string values.
     public func escapingWhitespaces() -> String {
-        return replacingOccurrences(of: ["\n" : "\\n", "\t": "\\t", " " : "\\s"], options: [], range: range)
+        return replacingOccurrences(of: ["\n" : "\\n", "\t" : "\\t", " " : "\\s"], options: [.regularExpression], range: range)
     }
     
 }

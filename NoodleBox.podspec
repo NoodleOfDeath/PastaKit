@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NoodleBox'
-  s.version          = '0.1.8'
+  s.version          = '0.1.9'
   s.summary          = 'Swift library with convenience extensions and custom data structures.'
 
 # This description is used to generate tags and improve search results.
