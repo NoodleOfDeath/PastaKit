@@ -539,21 +539,32 @@ extension String {
     /// - parameter options: A mask of options to use when comparing target with the receiver. Pass 0 to specify no options.
     /// - parameter range: The range in the receiver in which to search for target.
     /// - returns: A new string in which all occurrences of target, matched using options, in searchRange of the receiver are replaced by replacement.
-    public func replacingOccurrences(of replacements: [String : String], options: NSString.CompareOptions, range: NSRange) -> String {
+    public func replacingOccurrences(of replacements: [String : String], options: NSString.CompareOptions) -> String {
         var string = self
         for (target, replacement) in replacements {
-            string = replacingOccurrences(of: target, with: replacement, options: options, range: range)
+            string = string.replacingOccurrences(of: target, with: replacement, options: options, range: string.range)
         }
         return string
     }
     
-    /// Returns a new string in which all occurrences of escapable characters
+    /// Returns a new string in which all occurrences of whitespace characters
     /// are replaced with literal string values.
     /// - returns: A new string in which all occurrences of escapable characters
     /// are replaced with literal string values.
-    public func escapingWhitespaces() -> String {
-        return replacingOccurrences(of: ["\n" : "\\n", "\t" : "\\t", " " : "\\s"], options: [.regularExpression], range: range)
+    public func replacingWhitespaces() -> String {
+        return replacingOccurrences(of: ["\n" : "\u{21B5}", "\t" : "\u{21E5}", " " : "\u{00B7}"], options: [])
     }
+    
+    /// 
+    /// 
+    /// 
+    /// 
+    public func replacingMatches(of pattern: String, with template: String) -> String {
+        let string = NSMutableString(string: self)
+        _ = try? NSRegularExpression(pattern: pattern, options: []).replaceMatches(in: string, options: [], range: string.range, withTemplate: template)
+        return string as String
+    }
+
     
 }
 
@@ -574,6 +585,14 @@ extension String {
     /// - parameter replacement: The string used to replace `target` with.
     public mutating func replaceOccurrences(of target: String, with replacement: String) {
         self = self.replacingOccurrences(of: target, with: replacement)
+    }
+    
+    /// 
+    /// 
+    /// 
+    /// 
+    public mutating func replaceMatches(of pattern: String, with template: String) {
+        self = replacingMatches(of: pattern, with: template)
     }
     
 }
@@ -661,26 +680,7 @@ extension String {
         let string = NSMutableString(string: self)
         expr.replaceMatches(in: string, options: [.withTransparentBounds], range: string.range, withTemplate: template)
         return string.components(separatedBy: template)
-    }
-    
-    /// 
-    /// 
-    /// 
-    /// 
-    public func replacingMatches(of pattern: String, with template: String) -> String {
-        let string = NSMutableString(string: self)
-        _ = try? NSRegularExpression(pattern: pattern, options: []).replaceMatches(in: string, options: [], range: string.range, withTemplate: template)
-        return string as String
-    }
-    
-    /// 
-    /// 
-    /// 
-    /// 
-    public mutating func replaceMatches(of pattern: String, with template: String) {
-        self = replacingMatches(of: pattern, with: template)
-    }
-    
+    }    
 }
 
 // MARK: - String Whitespaces
