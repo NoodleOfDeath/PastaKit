@@ -203,9 +203,9 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     
     /// Returns the position immediately after the given index.
     ///
-    /// - Parameter i: A valid index of the collection. `i` must be less than
+    /// - parameter i: A valid index of the collection. `i` must be less than
     ///  `endIndex`.
-    /// - Returns: The index value immediately after `i`.
+    /// - returns: The index value immediately after `i`.
     public func index(after i: Int) -> Int {
         return i + 1
     }
@@ -227,7 +227,7 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     ///
     /// Invalidates all indices with respect to `self`.
     ///
-    /// - complexity: O(`self.count`).
+    /// - complexity: O(*n*), where *n* is the length of the `elements`.
     public mutating func removeAtIndex(_ index: Index) -> Element {
         return elements.remove(at: index)
     }
@@ -235,8 +235,7 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     /// Remove all elements.
     ///
     /// - postcondition: `capacity == 0` iff `keepCapacity` is `false`.
-    ///
-    /// - complexity: O(`self.count`).
+    /// - complexity: O(*n*), where *n* is the length of `elements`.
     public mutating func removeAll(keepCapacity: Bool = false) {
         elements.removeAll(keepingCapacity: keepCapacity)
     }
@@ -249,14 +248,12 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     /// - note: This is a significantly less costly implementation of the
     /// default system method `indexOf(element: Element)`.
     ///
-    /// - complexity: O(`log(self.count)`)
-    ///
     /// - parameter element: The element to search for
     /// - parameter range: The range to search within. If `nil` the entire
     /// range of elements are searched.
     /// - returns: The first index where `element` appears in `self` or `nil` if
     /// `element` is not found.
-    
+    /// - complexity: O(*log*(*n*)) where *n* is the length of `elements`.
     public func indexOf(_ element: Element, searchRange range: CountableRange<Index>? = nil) -> Index? {
         
         if elements.count == 0 { return nil }
@@ -278,14 +275,12 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     /// Returns the first index where `element` would be placed in sorted order
     /// in `self`.
     ///
-    /// - complexity: O(`log(self.count)`)
-    ///
     /// - parameter element: The element to search for.
     /// - parameter range: The range to search within. If `nil` the entire
     /// range of elements are searched.
     /// - returns: Returns the first index where `element` would be placed
     /// in sorted order.
-    
+    /// - complexity: O(*log*(*n*)) where *n* is the length of `elements`.
     public func ordinalIndexForElement(_ element: Element, searchRange range: CountableRange<Index>? = nil) -> Index {
         
         if elements.count == 0 { return 0 }
@@ -309,8 +304,7 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     /// - returns: The index where `element` was inserted, or `nil` if
     /// `uniqueElements` is set to `true` and `element` already exists in
     /// `self.
-    ///
-    /// - complexity: O(`log(self.count)`)
+    /// - complexity: O(*log*(*n*)) where *n* is the length of `elements`.
     public mutating func add(_ element: Element, offset: Int = 0) -> Index? {
         var index = 0
         if elements.count == 0 { elements.append(element) }
@@ -324,10 +318,9 @@ public struct SortedArray <Element: Comparable> : Collection, _ObjectiveCBridgea
     
     /// Removes all instances of `element` from `self`
     /// - parameter element: The `element` to remove from `self`.
-    ///
-    /// - complexity: O(`log(self.count) * n`) where `n` is the number of
-    /// times `element` occurs in `self`.
-    public mutating func remove(_ element: Element){
+    /// - complexity: O(*log*(*n*) * *m*) where *n* is the length of `elements`
+    /// and *m* is the number of times `element` occurs in `elements`.
+    public mutating func remove(_ element: Element) {
         var index = indexOf(element)
         while index != nil {
             elements.remove(at: index!)
