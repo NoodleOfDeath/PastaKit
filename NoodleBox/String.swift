@@ -552,7 +552,7 @@ extension String {
     /// - returns: A new string in which all occurrences of escapable characters
     /// are replaced with literal string values.
     public func replacingWhitespacesWithUnicode() -> String {
-        return replacingOccurrences(of: ["\n" : "\u{21B5}", "\t" : "\u{21E5}", " " : "\u{00B7}"], options: [])
+        return replacingOccurrences(of: ["\n" : "\u{21B5}", "\t" : "\u{21E5}"], options: [])
     }
     
     /// 
