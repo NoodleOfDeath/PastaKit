@@ -384,7 +384,7 @@ extension UInt64 {
     }
     
     public func asDataSizeString(withFormattingOptions options: NSDataSizeFormattingOption = .Default) -> String {
-        return NSDataSize(bytes: self, options: options).asString
+        return NSDataSize(bytes: self, options: options).description
     }
     
 }
@@ -589,8 +589,17 @@ public struct NSDataSize : CustomStringConvertible {
     public let bytes: UInt64
     public let options: NSDataSizeFormattingOption
     
-    public var asString: String {
-        return "\(self)"
+    public var description: String {
+        if options.contains(.Abbreviated) {
+            let units = options.contains(.Capitalized) ?
+                suffix[1].uppercased() : suffix[1]
+            return "%.2f%@".format(size.asFloat, units)
+        } else {
+            var units = " " + suffix[0]
+            units = options.contains(.Capitalized) ? 
+                units.capitalized : units
+            return String.pluralize("%.2f \(units)", size.asFloat)
+        }
     }
     
     fileprivate (set) var suffix: [String] = ["byte", "b"]
@@ -626,19 +635,6 @@ public struct NSDataSize : CustomStringConvertible {
             break
         }
         
-    }
-    
-    public var description: String {
-        if options.contains(.Abbreviated) {
-            let units = options.contains(.Capitalized) ?
-                suffix[1].uppercased() : suffix[1]
-            return "%.2f%@".format(size.asFloat, units)
-        } else {
-            var units = " " + suffix[0]
-            units = options.contains(.Capitalized) ? 
-                units.capitalized : units
-            return String.pluralize("%.2f \(units)", size.asFloat)
-        }
     }
     
 }

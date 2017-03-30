@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CD0437751D887746007A7461 /* MIMEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0437741D887746007A7461 /* MIMEType.swift */; };
 		CD0F813D1D5F712E00736E69 /* CFRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */; };
+		CD100AA71E8D8E1600615D7D /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD100AA61E8D8E1600615D7D /* UIEdgeInsets.swift */; };
 		CD17D9551DAEA7D700580E92 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17D9541DAEA7D700580E92 /* URL.swift */; };
 		CD2907E61D627836000DD8B7 /* NSCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E51D627836000DD8B7 /* NSCoder.swift */; };
 		CD2907E81D627C61000DD8B7 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2907E71D627C61000DD8B7 /* SortedArray.swift */; };
@@ -90,6 +91,7 @@
 /* Begin PBXFileReference section */
 		CD0437741D887746007A7461 /* MIMEType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIMEType.swift; sourceTree = "<group>"; };
 		CD0F813C1D5F712E00736E69 /* CFRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CFRepresentable.swift; sourceTree = "<group>"; };
+		CD100AA61E8D8E1600615D7D /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		CD17D9541DAEA7D700580E92 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CD2907E51D627836000DD8B7 /* NSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCoder.swift; sourceTree = "<group>"; };
 		CD2907E71D627C61000DD8B7 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				CDD116281D592A93004A9DBC /* UIToolbar.swift */,
 				CDD116291D592A93004A9DBC /* UIView.swift */,
 				CDD1162A1D592A93004A9DBC /* UIViewController.swift */,
+				CD100AA61E8D8E1600615D7D /* UIEdgeInsets.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				CDD116FC1D592F54004A9DBC /* NoodleBox.swift in Sources */,
 				CDD116D51D592CDB004A9DBC /* NSRange.swift in Sources */,
 				CD4EA8D11D6BE607003B45E4 /* UITableView.swift in Sources */,
+				CD100AA71E8D8E1600615D7D /* UIEdgeInsets.swift in Sources */,
 				CD4EA91B1D6BE86A003B45E4 /* UIPaddedTextField.swift in Sources */,
 				CDD116E01D592CDF004A9DBC /* Operators.swift in Sources */,
 				CDD116C21D592CDB004A9DBC /* String.swift in Sources */,

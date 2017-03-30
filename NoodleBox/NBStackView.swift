@@ -150,32 +150,32 @@ open class NBStackView : UIView {
         subview.translatesAutoresizingMaskIntoConstraints = false
         
         if alignment == .horizontal {
-            addConstraint(subview.topLayoutConstraintRelativeToView(self))
-            addConstraint(subview.bottomLayoutConstraintRelativeToView(self))
-            addConstraint(subview.centerYLayoutConstraintRelativeToView(self))
+            addConstraint(subview.topLayoutConstraint(relativeTo: self))
+            addConstraint(subview.bottomLayoutConstraint(relativeTo: self))
+            addConstraint(subview.centerYLayoutConstraint(relativeTo: self))
         } else {
-            addConstraint(subview.leftLayoutConstraintRelativeToView(self))
-            addConstraint(subview.rightLayoutConstraintRelativeToView(self))
-            addConstraint(subview.centerXLayoutConstraintRelativeToView(self))
+            addConstraint(subview.leftLayoutConstraint(relativeTo: self))
+            addConstraint(subview.rightLayoutConstraint(relativeTo: self))
+            addConstraint(subview.centerXLayoutConstraint(relativeTo: self))
         }
         
         if first == nil {
             constraintA = alignment == .horizontal ?
-                subview.leftLayoutConstraintRelativeToView(self) :
-                subview.topLayoutConstraintRelativeToView(self)
+                subview.leftLayoutConstraint(relativeTo: self) :
+                subview.topLayoutConstraint(relativeTo: self)
             addConstraint(constraintA)
         }
         
         if let last = last {
             removeConstraint(constraintB)
             addConstraint(alignment == .horizontal ?
-                last.horizontalSpacingLayoutConstraintRelativeToView(subview, constant: -margin) :
-                last.verticalSpacingLayoutConstraintRelativeToView(subview, constant: -margin))
+                last.horizontalSpacingLayoutConstraint(relativeTo: subview, constant: -margin) :
+                last.verticalSpacingLayoutConstraint(relativeTo: subview, constant: -margin))
         }
         
         constraintB = alignment == .horizontal ?
-            subview.rightLayoutConstraintRelativeToView(self) :
-            subview.bottomLayoutConstraintRelativeToView(self)
+            subview.rightLayoutConstraint(relativeTo: self) :
+            subview.bottomLayoutConstraint(relativeTo: self)
         addConstraint(constraintB)
         
     }

@@ -19,10 +19,24 @@
 // THE SOFTWARE.
 
 public struct LocalizedStrings {
+    
+    public static let byte = "%d byte"
+    public static let file = "%d file"
+    public static let item = "%d item"
+    public static let match = "%d match"
 
-    public static let Apply    = "apply".capitalizedLocalizedString
-    public static let Cancel   = "cancel".capitalizedLocalizedString
-    public static let Done     = "done".capitalizedLocalizedString
-    public static let Edit     = "edit".capitalizedLocalizedString
+    public static let all           = "all".capitalizedLocalizedString
+    public static let apply         = "apply".capitalizedLocalizedString
+    public static let cancel        = "cancel".capitalizedLocalizedString
+    public static let compress      = "compress".capitalizedLocalizedString
+    public static let copy          = "copy".capitalizedLocalizedString
+    public static let delete        = "delete".capitalizedLocalizedString
+    public static let done          = "done".capitalizedLocalizedString
+    public static let edit          = "edit".capitalizedLocalizedString
+    public static let move          = "move".capitalizedLocalizedString
+    public static let moveToTrash   = "move to trash".capitalizedLocalizedString
+    public static let openWith      = "open with".capitalizedLocalizedString
+    public static let rename        = "rename".capitalizedLocalizedString
+    public static let renamePrompt  = "rename prompt".properLocalizedString
 
 }

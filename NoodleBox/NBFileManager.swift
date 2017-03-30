@@ -62,7 +62,8 @@ public struct NBFileManager {
     
     // MARK: - Private Static Methods -
     
-    fileprivate static func getURL(_ url: URL, forOverwriteAction action: NSOverwriteAction) -> URL? {
+    /// 
+    fileprivate static func get(url: URL, forOverwriteAction action: NSOverwriteAction) -> URL? {
         
         let baseURL = url.deletingLastPathComponent()
         let lastPathComponent = url.lastPathComponent
@@ -82,7 +83,8 @@ public struct NBFileManager {
         return url
     }
     
-    fileprivate static func getPath(_ path: String, forOverwriteAction action: NSOverwriteAction) -> String {
+    /// 
+    fileprivate static func get(path: String, forOverwriteAction action: NSOverwriteAction) -> String {
         
         let basePath = path.deletingLastPathComponent
         let lastPathComponent = path.lastPathComponent
@@ -90,10 +92,10 @@ public struct NBFileManager {
         
         var path = path
         
-        if action == .overwrite && fileExistsAtPath(path) { do { try fileManager.removeItem(atPath: path) } catch { errorHandler?(error) } }
+        if action == .overwrite && fileExists(atPath: path) { do { try fileManager.removeItem(atPath: path) } catch { errorHandler?(error) } }
         if action == .useAlternateName {
             var i = 1
-            while fileExistsAtPath(path) {
+            while fileExists(atPath: path) {
                 path = (basePath +/ (lastPathComponent.deletingPathExtension + "-\(i)" + (ext.length > 0 ? ".\(ext)" : "")))
                 i += 1
             }
@@ -111,14 +113,14 @@ extension NBFileManager {
     /// Alternate way to check if a file exists at `url`.
     /// - parameter url: The url of the target file.
     /// - returns: `true` if a file exists at `url`; `false` otherwise.
-    public static func fileExistsAtURL(_ url: URL) -> Bool {
+    public static func fileExists(at url: URL) -> Bool {
         return url.exists
     }
     
     /// Checks if a file exists at `path`.
     /// - parameter path: The path of the target file.
     /// - returns: `true` if a file exists at `path`; `false` otherwise.
-    public static func fileExistsAtPath(_ path: String) -> Bool {
+    public static func fileExists(atPath path: String) -> Bool {
         return fileManager.fileExists(atPath: path)
     }
     
@@ -149,7 +151,7 @@ extension NBFileManager {
     /// option is NSDirectoryEnumerationSkipsHiddenFiles.
     /// - returns: An array of `NSURL` objects, each of which identifies a 
     /// file, directory, or symbolic link contained in url.
-    public static func contentsOfDirectoryAtURL(_ url: URL, includingPropertiesForKeys keys: [URLResourceKey]? = nil, options mask: FileManager.DirectoryEnumerationOptions = []) -> [URL] {
+    public static func contentsOfDirectory(at url: URL, includingPropertiesForKeys keys: [URLResourceKey]? = nil, options mask: FileManager.DirectoryEnumerationOptions = []) -> [URL] {
         do {
             return try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: keys, options: mask)
         } catch { errorHandler?(error) }
@@ -168,7 +170,7 @@ extension NBFileManager {
     /// to enumerate.
     /// - returns: An array of NSString objects, each of which identifies a 
     /// file, directory, or symbolic link contained in path.
-    public static func contentsOfDirectoryAtPath(_ path: String) -> [String] {
+    public static func contentsOfDirectory(atPath path: String) -> [String] {
         do {
             return try fileManager.contentsOfDirectory(atPath: path)
         } catch { errorHandler?(error) }
@@ -193,8 +195,8 @@ extension NBFileManager {
     /// - parameter createIntermediates: If true, this method creates any non-existent parent directories as part of creating the directory in url. If false, this method fails if any of the intermediate parent directories does not exist. Default is `true`.
     /// - parameter attributes: The file attributes for the new directory. You can set the owner and group numbers, file permissions, and modification date. If you specify nil for this parameter, the directory is created according to the umask(2) Mac OS X Developer Tools Manual Page of the process. The Constants section lists the global constants used as keys in the attributes dictionary. Some of the keys, such as NSFileHFSCreatorCode and NSFileHFSTypeCode, do not apply to directories. Default is `nil`.
     /// - returns: `true` if the directory was created, `true` if createIntermediates is set and the directory already exists, or `false` if an error occurred.
-    public static func createDirectoryAtURL(_ url: URL, forOverwriteAction action: NSOverwriteAction = .none, withIntermediateDirectories createIntermediates: Bool = true, attributes: [String : Any]? = nil) -> URL? {
-        guard let url = getURL(url, forOverwriteAction: action) else { return nil }
+    public static func createDirectory(at url: URL, forOverwriteAction action: NSOverwriteAction = .none, withIntermediateDirectories createIntermediates: Bool = true, attributes: [String : Any]? = nil) -> URL? {
+        guard let url = get(url: url, forOverwriteAction: action) else { return nil }
         do {
             try fileManager.createDirectory(at: url, withIntermediateDirectories: createIntermediates, attributes: attributes)
             return url
@@ -210,8 +212,8 @@ extension NBFileManager {
     /// - parameter createIntermediates: If `true`, this method creates any non-existent parent directories as part of creating the directory in url. If `false`, this method fails if any of the intermediate parent directories does not exist. Default is `true`.
     /// - parameter attributes: The file attributes for the new directory. You can set the owner and group numbers, file permissions, and modification date. If you specify nil for this parameter, the directory is created according to the umask(2) Mac OS X Developer Tools Manual Page of the process. The Constants section lists the global constants used as keys in the attributes dictionary. Some of the keys, such as NSFileHFSCreatorCode and NSFileHFSTypeCode, do not apply to directories. Default is `nil`.
     /// - returns: `true` if the directory was created, `true` if createIntermediates is set and the directory already exists, or `false` if an error occurred.
-    public static func createDirectoryAtPath(_ path: String, forOverwriteAction action: NSOverwriteAction = .none, withIntermediateDirectories createIntermediates: Bool = true, attributes: [String : Any]? = nil) -> String? {
-        let path = getPath(path, forOverwriteAction: action)
+    public static func createDirectory(atPath path: String, forOverwriteAction action: NSOverwriteAction = .none, withIntermediateDirectories createIntermediates: Bool = true, attributes: [String : Any]? = nil) -> String? {
+        let path = get(path: path, forOverwriteAction: action)
         do {
             try fileManager.createDirectory(atPath: path, withIntermediateDirectories: createIntermediates, attributes: attributes)
             return path
@@ -232,9 +234,9 @@ extension NBFileManager {
     /// - parameter destURL: The file URL that contains the item to be pointed to by the link. In other words, this is the destination of the link.
     /// - parameter action: The writing action to take if a file already exists at `url`. Default is `NSOverwriteAction.None` which means the file writing action will fail if a file exists at `url`.
     /// - returns: `true` if the symbolic link was created or `false` if an error occurred.
-    public static func createSymbolicLinkAtURL(_ url: URL, withDestinationURL destURL: URL?, forOverwriteAction action: NSOverwriteAction = .none) -> URL? {
+    public static func createSymbolicLink(at url: URL, withDestinationURL destURL: URL?, forOverwriteAction action: NSOverwriteAction = .none) -> URL? {
         guard let destURL = destURL else { return nil }
-        guard let url = getURL(url, forOverwriteAction: action) else { return nil }
+        guard let url = get(url: url, forOverwriteAction: action) else { return nil }
         do {
             try fileManager.createSymbolicLink(at: url, withDestinationURL: destURL)
             return url
@@ -249,9 +251,9 @@ extension NBFileManager {
     /// - parameter destPath: The path that contains the item to be pointed to by the link. In other words, this is the destination of the link.
     /// - parameter action: The writing action to take if a file already exists at `path`. Default is `NSOverwriteAction.None` which means the file writing action will fail if a file exists at `path`.
     /// - returns: `true` if the symbolic link was created or `false` if an error occurred.
-    public static func createSymbolicLinkAtPath(_ path: String, withDestinationPath destPath: String?, forOverwriteAction action: NSOverwriteAction = .none) -> String? {
+    public static func createSymbolicLink(atPath path: String, withDestinationPath destPath: String?, forOverwriteAction action: NSOverwriteAction = .none) -> String? {
         guard let destPath = destPath else { return nil }
-        let path = getPath(path, forOverwriteAction: action)
+        let path = get(path: path, forOverwriteAction: action)
         do {
             try fileManager.createSymbolicLink(atPath: path, withDestinationPath: destPath)
             return path
@@ -272,8 +274,8 @@ extension NBFileManager {
     /// - parameter dstURL: The new location for the item in srcURL. The URL in this parameter must not be a file reference URL and must include the name of the file or directory in its new location. This parameter must not be `nil`.
     /// - parameter action: The writing action to take if a file already exists at `url`. Default is `NSOverwriteAction.None`, which means the file writing action will fail if a file exists at `url`.
     /// - returns: `true` if the item was moved successfully or the file manager’s delegate stopped the operation deliberately.
-    public static func moveItemAtURL(_ srcURL: URL, toURL dstURL: URL, forOverwriteAction action: NSOverwriteAction = .none) -> URL? {
-        guard let dstURL = getURL(dstURL, forOverwriteAction: action) else { return nil }
+    public static func moveItem(at srcURL: URL, toURL dstURL: URL, forOverwriteAction action: NSOverwriteAction = .none) -> URL? {
+        guard let dstURL = get(url: dstURL, forOverwriteAction: action) else { return nil }
         do {
             try fileManager.moveItem(at: srcURL, to: dstURL)
             return dstURL
@@ -287,8 +289,8 @@ extension NBFileManager {
     /// - parameter srcPath: The path to the file or directory you want to move. This parameter must not be `nil`.
     /// - parameter dstPath: The new path for the item in `srcPath`. This path must include the name of the file or directory in its new location. This parameter must not be `nil`.
     /// - returns: `true` if the item was moved successfully or the file manager’s delegate stopped the operation deliberately.
-    public static func moveItemAtPath(_ srcPath: String, toPath dstPath: String, forOverwriteAction action: NSOverwriteAction = .none) -> String? {
-        let dstPath = getPath(dstPath, forOverwriteAction: action)
+    public static func moveItem(atPath srcPath: String, toPath dstPath: String, forOverwriteAction action: NSOverwriteAction = .none) -> String? {
+        let dstPath = get(path: dstPath, forOverwriteAction: action)
         do {
             try fileManager.moveItem(atPath: srcPath, toPath: dstPath)
             return dstPath
@@ -309,8 +311,8 @@ extension NBFileManager {
     /// - parameter dstURL: The URL at which to place the copy of srcURL. The URL in this parameter must not be a file reference URL and must include the name of the file in its new location. This parameter must not be nil.
     /// - parameter action: action: The writing action to take if a file already exists at `url`. Default is `NSOverwriteAction.None`, which means the file writing action will fail if a file exists at `url`.
     /// - returns: `true` if the item was copied successfully or the file manager’s delegate stopped the operation deliberately.
-    public static func copyItemAtURL(_ srcURL: URL, toURL dstURL: URL, forOverwriteAction action: NSOverwriteAction = .none) -> URL? {
-        guard let dstURL = getURL(dstURL, forOverwriteAction: action) else { return nil }
+    public static func copyItem(at srcURL: URL, toURL dstURL: URL, forOverwriteAction action: NSOverwriteAction = .none) -> URL? {
+        guard let dstURL = get(url: dstURL, forOverwriteAction: action) else { return nil }
         do {
             try fileManager.copyItem(at: srcURL, to: dstURL)
             return dstURL
@@ -325,8 +327,8 @@ extension NBFileManager {
     /// - parameter dstPath: The path at which to place the copy of `srcPath`. This path must include the name of the file or directory in its new location. This parameter must not be `nil`.
     /// - parameter action: action: The writing action to take if a file already exists at `path`. Default is `NSOverwriteAction.None`, which means the file writing action will fail if a file exists at `path`.
     /// - returns: `true` if the item was copied successfully or the file manager’s delegate stopped the operation deliberately.
-    public static func copyItemAtPath(_ srcPath: String, toPath dstPath: String, forOverwriteAction action: NSOverwriteAction = .none) -> String? {
-        let dstPath = getPath(dstPath, forOverwriteAction: action)
+    public static func copyItem(atPath srcPath: String, toPath dstPath: String, forOverwriteAction action: NSOverwriteAction = .none) -> String? {
+        let dstPath = get(path: dstPath, forOverwriteAction: action)
         do {
             try fileManager.copyItem(atPath: srcPath, toPath: dstPath)
             return dstPath
@@ -345,7 +347,7 @@ extension NBFileManager {
     /// `true` if the item was removed successfully or if URL was `nil`. Returns `false` if an error occurred. If the delegate stops the operation for a file, this method returns `true`. However, if the delegate stops the operation for a directory, this method returns `false`.
     /// - parameter url: A file URL specifying the file or directory to remove. If the URL specifies a directory, the contents of that directory are recursively removed. You may specify `nil` for this parameter.
     /// - returns: `true` if the item was removed successfully or if URL was `nil`.
-    public static func removeItemAtURL(_ url: URL) -> Bool {
+    public static func removeItem(at url: URL) -> Bool {
         do {
             try fileManager.removeItem(at: url)
             return true
@@ -358,7 +360,7 @@ extension NBFileManager {
     /// `true` if the item was removed successfully or if path was `nil`. Returns `false` if an error occurred. If the delegate stops the operation for a file, this method returns `true`. However, if the delegate stops the operation for a directory, this method returns `false`.
     /// - parameter path: A path string indicating the file or directory to remove. If the path specifies a directory, the contents of that directory are recursively removed. You may specify `nil` for this parameter.
     /// - returns: `true` if the item was removed successfully or if path was `nil`.
-    public static func removeItemAtPath(_ path: String) -> Bool {
+    public static func removeItem(atPath path: String) -> Bool {
         do {
             try fileManager.removeItem(atPath: path)
             return true

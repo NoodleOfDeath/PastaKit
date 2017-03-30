@@ -238,7 +238,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
     
     /// Scroll indicator y coordinate constraint
     fileprivate lazy var scrollIndicatorTopLayoutConstraint: NSLayoutConstraint = {
-        return self.scrollIndicator.topLayoutConstraintRelativeToView(
+        return self.scrollIndicator.topLayoutConstraint(relativeTo: 
             self, constant: self.scrollIndicatorVerticalOffset)
     }()
     
@@ -274,7 +274,7 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
         scrollIndicator.addConstraint(scrollIndicatorHeightLayoutConstraint)
         
         addConstraint(scrollIndicatorTopLayoutConstraint)
-        addConstraint(scrollIndicator.rightLayoutConstraintRelativeToView(self,
+        addConstraint(scrollIndicator.rightLayoutConstraint(relativeTo: self,
             constant: -4.0))
         
     }
@@ -416,8 +416,8 @@ open class UIZoomingScrollView : UIView, UIScrollViewDelegate {
             scaleViewVisible = true
             
             addSubview(scaleView)
-            addConstraint(scaleView.centerXLayoutConstraintRelativeToView(self))
-            addConstraint(scaleView.centerYLayoutConstraintRelativeToView(self))
+            addConstraint(scaleView.centerXLayoutConstraint(relativeTo: self))
+            addConstraint(scaleView.centerYLayoutConstraint(relativeTo: self))
             
             scaleView.alpha = 0.0
             
