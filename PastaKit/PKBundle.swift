@@ -18,14 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-public let NBBundleResourcePath: String = NSResourcePath +/ "Bundles"
+public let PKBundleResourcePath: String = NSResourcePath +/ "Bundles"
 
-// MARK: - NBBundle Class
+// MARK: - PKBundle Class
 
 /// Composite class for `NSBundle` that can be overridden and used to
 /// represent a group of bundles in a directory with similar extension and
 /// functionality
-open class NBBundle : NSObject, NSCoding {
+open class PKBundle : NSObject, NSCoding {
     
     // MARK: - Static Properties
     
@@ -54,7 +54,7 @@ open class NBBundle : NSObject, NSCoding {
     
     /// Default directory path for all bundles of this type
     open class var defaultBundlePath: String {
-        return NBBundleResourcePath
+        return PKBundleResourcePath
     }
     
     /// Default extension for all bundles of this type
@@ -72,10 +72,10 @@ open class NBBundle : NSObject, NSCoding {
     /// Embedded `NSBundle` instance
     fileprivate (set) var bundle: Bundle?
     
-    /// Bundle dirctory path of this `NBBundle` instance
+    /// Bundle dirctory path of this `PKBundle` instance
     fileprivate (set) var bundlePath: String!
     
-    /// Bundle extension of this `NBBundle` instance
+    /// Bundle extension of this `PKBundle` instance
     fileprivate (set) var bundleExtension: String!
     
     // MARK: - Composite (NSBundle)
@@ -190,7 +190,7 @@ open class NBBundle : NSObject, NSCoding {
     /// used instead
     /// - returns: The version of the bundle as a string
     open static func versionForBundleNamed(_ name: String, bundlePath: String? = nil, bundleExtension: String? = nil) -> String? {
-        return NBBundle(name: name, bundlePath: bundlePath ?? defaultBundlePath, bundleExtension: bundleExtension ?? defaultBundleExtension).version
+        return PKBundle(name: name, bundlePath: bundlePath ?? defaultBundlePath, bundleExtension: bundleExtension ?? defaultBundleExtension).version
     }
     
     /// Returns an image resource contained in this wrapped `NSBundle`
