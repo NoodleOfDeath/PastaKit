@@ -21,12 +21,12 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-//! Project version number for NoodleBox.
-FOUNDATION_EXPORT double NoodleBoxVersionNumber;
+//! Project version number for PastaKit.
+FOUNDATION_EXPORT double PastaKitVersionNumber;
 
-//! Project version string for NoodleBox.
-FOUNDATION_EXPORT const unsigned char NoodleBoxVersionString[];
+//! Project version string for PastaKit.
+FOUNDATION_EXPORT const unsigned char PastaKitVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <NoodleBox/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <PastaKit/PublicHeader.h>
 
-#import <NoodleBox/TryOperation.h>
+#import <PastaKit/TryOperation.h>

@@ -393,11 +393,11 @@ extension UInt64 {
 extension Double {
     
     public static var min: Double {
-        return DBL_MIN
+        return Double.leastNormalMagnitude
     }
     
     public static var max: Double {
-        return DBL_MAX
+        return Double.greatestFiniteMagnitude
     }
     
     public var asInt: Int {
@@ -453,11 +453,11 @@ extension Double {
 extension Float {
     
     public static var min: Float {
-        return FLT_MIN
+        return Float.leastNormalMagnitude
     }
     
     public static var max: Float {
-        return FLT_MAX
+        return Float.greatestFiniteMagnitude
     }
     
     public var asInt: Int {

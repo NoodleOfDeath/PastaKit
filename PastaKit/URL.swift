@@ -95,36 +95,40 @@ public func +> (lhs: URL?, rhs: String?) -> URL? {
 
 extension URL {
     
+    // MARK: - 
+    
     /// `true` iff a resource exists at `self`.
-    public var exists: Bool {
+    public var fileExists: Bool {
         return self*.checkResourceIsReachableAndReturnError(nil)
     }
     
     /// `true` iff this resource is a local document resource.
-    public var local: Bool {
+    public var isLocal: Bool {
         return path.contains(NSDocumentPath)
     }
     
     /// `true` iff this resource is an iCloud resource. 
-    public var ubiquitous: Bool {
+    public var isUbiquitous: Bool {
         guard let NSUbiquityPath = NSUbiquityPath else { return false }
         return path.contains(NSUbiquityPath)
     }
     
     /// `true` iff this resource is a regular file, or symbolic link to a regular file.
-    public var regularFile: Bool {
+    public var isRegularFile: Bool {
         return (self[URLResourceKey.isRegularFileKey.rawValue] as? NSNumber)?.boolValue ?? false
     }
     
     /// `true` iff this resource is a directory, or symbolic link to a directory.
-    public var directory: Bool {
+    public var isDirectory: Bool {
         return (self[URLResourceKey.isDirectoryKey.rawValue] as? NSNumber)?.boolValue ?? false
     }
     
     /// `true` iff this resource is a symbolic link.
-    public var symbolicLink: Bool {
+    public var isSymbolicLink: Bool {
         return (self[URLResourceKey.isSymbolicLinkKey.rawValue] as? NSNumber)?.boolValue ?? false
     }
+    
+    // MARK: - 
     
     /// The file size of this resource, iff it is not a directory.
     public var fileSize: UInt64 {
@@ -164,6 +168,7 @@ extension URL {
         return resource
     }
     
+    /// 
     public func getResourceValue(_ value: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey key: URLResourceKey) {
         do {
             try self*.getResourceValue(value, forKey: key)

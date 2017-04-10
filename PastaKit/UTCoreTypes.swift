@@ -57,7 +57,7 @@ public protocol UTTypeProtocol {
 /// modularizes them into a `UTType` static constant.
 ///
 /// **Example:** `kUTTypeBMP` is modularized to `UTType.BMP`.
-public struct UTType : CFRawRepresentable, Equatable {
+public struct UTType : CFRawRepresentable, Equatable, Hashable {
     
     // MARK: - Type Aliases
     
@@ -70,6 +70,8 @@ public struct UTType : CFRawRepresentable, Equatable {
     
     public let rawValue: RawValue
     public var coreValue: CoreValue { return rawValue as UTType.CoreValue }
+    
+    public var hashValue: Int { return rawValue.hashValue }
     
     // MARK: - Static Properties
     
@@ -369,7 +371,7 @@ public struct UTType : CFRawRepresentable, Equatable {
      *
      */
     @available(iOS 3.0, *)
-    public static let text = UTType(kUTTypeText)
+    public static let Text = UTType(kUTTypeText)
     @available(iOS 3.0, *)
     public static let PlainText = UTType(kUTTypePlainText)
     @available(iOS 3.0, *)
@@ -1457,7 +1459,7 @@ public struct UTType : CFRawRepresentable, Equatable {
     /// Checks whether or not `self` conforms to `uttype`.
     /// - parameter uttype: The UTType to compare against.
     /// - returns: `true` if `self` conforms to `uttype`; `false` otherwise.
-    public func conformsTo(_ uttype: UTType) -> Bool {
+    public func conforms(to uttype: UTType) -> Bool {
         return UTTypeConformsTo(coreValue, uttype.coreValue)
     }
     

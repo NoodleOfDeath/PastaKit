@@ -22,10 +22,12 @@ import CoreImage
 
 extension UIImage {
     
+    /// Width of the image.
     open var width: CGFloat {
         return size.width
     }
     
+    /// Height of the image.
     open var height: CGFloat {
         return size.height
     }
@@ -35,7 +37,10 @@ extension UIImage {
 
 extension UIImage {
     
-    open func imageByCroppingToRect(_ rect: CGRect) -> UIImage? {
+    /// Returns an copt of this image that is cropped to a specified rect.
+    /// - parameter rect: Rect to crop this image to.
+    /// - returns: A copy of this image that is cropped to fit `rect`.
+    open func cropping(to rect: CGRect) -> UIImage? {
         if let image = self.cgImage?.cropping(to: rect) {
             return UIImage(cgImage: image)
         } else if let image = (self.ciImage)?.cropping(to: rect) {
@@ -44,7 +49,11 @@ extension UIImage {
         return nil
     }
     
-    open func imageByScalingAndCroppingForSize(_ targetSize: CGSize) -> UIImage? {
+    /// Returns an image that is scaled and cropped to a target size.
+    /// - parameter targetSize: Size to scale and/or crop this image to.
+    /// - returns: A copy of this image that is scaled and cropped to a 
+    /// target size.
+    open func scalingAndCropping(to targetSize: CGSize) -> UIImage? {
         
         let sourceImage = self
         

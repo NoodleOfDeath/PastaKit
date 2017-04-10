@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint NoodleBox.podspec' to ensure this is a
+# Be sure to run `pod lib lint PastaKit.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'NoodleBox'
+  s.name             = 'PastaKit'
   s.version          = '0.1.9'
   s.summary          = 'Swift library with convenience extensions and custom data structures.'
 
@@ -21,15 +21,15 @@ Pod::Spec.new do |s|
 Swift library with convenience extensions and custom data structures to save developer headaches.
                        DESC
 
-  s.homepage         = 'https://github.com/NoodleOfDeath/NoodleBox'
+  s.homepage         = 'https://github.com/NoodleOfDeath/PastaKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'NoodleOfDeath' => 'noodlebox@noodlenation.net' }
-  s.source           = { :git => 'https://github.com/NoodleOfDeath/NoodleBox.git', :tag => s.version.to_s }
+  s.author           = { 'NoodleOfDeath' => 'pastakit@noodlenation.net' }
+  s.source           = { :git => 'https://github.com/NoodleOfDeath/PastaKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/Noodle_of_Death'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'NoodleBox/**/*'
+  s.source_files = 'PastaKit/**/*'
 
 end

@@ -20,8 +20,8 @@
 
 /// A composite protocol of the `UIScrollViewDelegate` that sends events
 /// from the embedded custom scroll view to a delegate object.
-public protocol UIZoomingScrollViewDelegate : NSObjectProtocol {
-    func scrollViewDidScroll(_ scrollView: UIScrollView)
+public protocol UIZoomingScrollViewDelegate : UIScrollViewDelegate {
+    
 }
 
 // MARK: - UIZoomingScrollView - UIScrollView Composite Class -
@@ -30,7 +30,7 @@ public protocol UIZoomingScrollViewDelegate : NSObjectProtocol {
 ///
 /// **Example:**
 /// ````
-/// import NoodleBox
+/// import PastaKit
 /// ...
 /// override func viewDidLoad() {
 ///    super.viewDidLoad()

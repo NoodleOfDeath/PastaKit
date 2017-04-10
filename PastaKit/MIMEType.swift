@@ -21,15 +21,31 @@
 /// 
 public enum MIMEType : String {
     
+    /// 
     case JPEG       = "image/jpeg"
+    
+    /// 
     case PNG        = "image/png"
+    
+    /// 
     case GIF        = "image/gig"
+    
+    /// 
     case TIFF       = "image/tiff"
+    
+    /// 
     case PDF        = "application/pdf"
+    
+    /// 
     case VND        = "application/vnd"
+    
+    /// 
     case PlainText  = "text/plain"
+    
+    /// 
     case Binary     = "application/octet-stream"
     
+    /// 
     public init(byteOffset: UInt8) {
         
         switch (byteOffset) {
