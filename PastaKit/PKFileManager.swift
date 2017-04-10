@@ -26,14 +26,14 @@ import UIKit
 
 /// File writing actions
 public enum NSOverwriteAction : Int {
-    /// Indicates to the `NBFileManager` that if a file already exists that is
+    /// Indicates to the `PKFileManager` that if a file already exists that is
     /// trying to be saved or moved, to do nothing causing the file action to
     /// fail.
     case none = 0
-    /// Indicates to the `NBFileManager` that if a file already exists that is
+    /// Indicates to the `PKFileManager` that if a file already exists that is
     /// trying to be saved or moved, to overwrite that file.
     case overwrite
-    /// Indicates to the `NBFileManager` that if a file already exists that is
+    /// Indicates to the `PKFileManager` that if a file already exists that is
     /// trying to be saved or moved, to use an alternate name instead.
     case useAlternateName
 }
@@ -45,7 +45,7 @@ public enum NSOverwriteAction : Int {
 /// such as checking whether, or not, a file exists at a particular path/url,
 /// _before_ trying to use any of the static methods provided by this data 
 /// structure commit an action on the item at the target path/url.
-public struct NBFileManager {
+public struct PKFileManager {
     
     // MARK: -- Public Static Properties -
     
@@ -108,7 +108,7 @@ public struct NBFileManager {
 
 // MARK: - File Exists Methods -
 
-extension NBFileManager {
+extension PKFileManager {
     
     /// Alternate way to check if a file exists at `url`.
     /// - parameter url: The url of the target file.
@@ -128,7 +128,7 @@ extension NBFileManager {
 
 // MARK: - Fetch Directory Contents Methods -
 
-extension NBFileManager {
+extension PKFileManager {
     
     /// Performs a shallow search of the specified directory and returns 
     /// URLs for the contained items.
@@ -181,7 +181,7 @@ extension NBFileManager {
 
 // MARK: - Create Directory Methods -
 
-extension NBFileManager {
+extension PKFileManager {
     
     /// Creates a directory with the given attributes at the specified URL.
     ///
@@ -225,7 +225,7 @@ extension NBFileManager {
 
 // MARK: - Create Symbolic Link Methods -
 
-extension NBFileManager {
+extension PKFileManager {
     
     /// Creates a symbolic link at the specified URL that points to an item at the given URL.
     ///
@@ -265,7 +265,7 @@ extension NBFileManager {
 
 // MARK: - Move File Methods
 
-extension NBFileManager {
+extension PKFileManager {
     
     /// Moves the file or directory at the specified URL to a new location synchronously.
     ///
@@ -302,7 +302,7 @@ extension NBFileManager {
 
 // MARK: - Copy File Methods
 
-extension NBFileManager {
+extension PKFileManager {
     
     /// Copies the file at the specified URL to a new location synchronously.
     ///
@@ -340,7 +340,7 @@ extension NBFileManager {
 
 // MARK: - Remove File Methods
 
-extension NBFileManager {
+extension PKFileManager {
     
     /// Removes the file or directory at the specified URL.
     ///
@@ -374,7 +374,7 @@ extension NBFileManager {
 
 private var FileManagerDidPresentWarning = false
 
-extension NBFileManager {
+extension PKFileManager {
     
     /// Default error handler.
     /// - parameter error: The error to handle
@@ -384,7 +384,7 @@ extension NBFileManager {
         get { return
             { (error: Error) -> () in
                 if !FileManagerDidPresentWarning {
-                    print("WARNING: Using the default error handler! Your application should override this static property of the NBFileManager class. This warning will only be presented once per session.")
+                    print("WARNING: Using the default error handler! Your application should override this static property of the PKFileManager class. This warning will only be presented once per session.")
                     FileManagerDidPresentWarning = true
                 }
                 let error = error as NSError

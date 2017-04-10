@@ -18,15 +18,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// MARK: - NBStackViewAlignment Enumeration
+// MARK: - PKStackViewAlignment Enumeration
 
-/// Possible stacking alignments for a `NBStackView`.
-public enum NBStackViewAlignment : Int {
+/// Possible stacking alignments for a `PKStackView`.
+public enum PKStackViewAlignment : Int {
     case horizontal
     case vertical
 }
 
-// MARK: - NBStackView Class -
+// MARK: - PKStackView Class -
 
 /// A `UIView` subclass that stacks subviews using auto-layout.
 ///
@@ -52,7 +52,7 @@ public enum NBStackViewAlignment : Int {
 ///    label.text = "This is a label"
 ///    label.addConstraint(label.widthLayoutConstraint(100.0))
 ///
-///    let stack = NBStackView()
+///    let stack = PKStackView()
 ///    stack.push(viewA, viewB, label)
 ///
 ///    view.addSubview(stack)
@@ -60,7 +60,7 @@ public enum NBStackViewAlignment : Int {
 /// }
 /// ...
 /// ````
-open class NBStackView : UIView {
+open class PKStackView : UIView {
     
     // MARK: - Static Properties -
     
@@ -75,7 +75,7 @@ open class NBStackView : UIView {
     // MARK: - Get-Only
     
     /// `Horizontal` or `Vertical` stacking of views. Default is `Horizontal`.
-    open let alignment: NBStackViewAlignment
+    open let alignment: PKStackViewAlignment
     
     // MARK: - Stored
     
@@ -110,20 +110,20 @@ open class NBStackView : UIView {
     
     public required init?(coder aDecoder: NSCoder) {
         guard let alignment =
-            NBStackViewAlignment(rawValue:
+            PKStackViewAlignment(rawValue:
                 aDecoder.decodeInteger(forKey: CodingKeys.Alignment))
             else { return nil }
         self.alignment = alignment
         super.init(coder: aDecoder)
     }
     
-    /// Instantiates a new `NBStackView` that stacks subviews according to
+    /// Instantiates a new `PKStackView` that stacks subviews according to
     /// `alignment`.
     /// - parameter alignment: The orientation the stack view should stack
     /// subviews.
-    /// - returns: A `NBStackView` instance that stacks subviews according to
+    /// - returns: A `PKStackView` instance that stacks subviews according to
     /// `alignment`.
-    public required init(alignment: NBStackViewAlignment = .horizontal) {
+    public required init(alignment: PKStackViewAlignment = .horizontal) {
         self.alignment = alignment
         super.init(frame: CGRect.zero)
     }

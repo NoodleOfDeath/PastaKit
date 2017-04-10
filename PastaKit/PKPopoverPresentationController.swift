@@ -19,31 +19,31 @@
 // THE SOFTWARE.
 
 /// 
-public func == (lhs: NBPopoverAction, rhs: NBPopoverAction) -> Bool {
+public func == (lhs: PKPopoverAction, rhs: PKPopoverAction) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
 
 /// 
-public struct NBPopoverAction : OptionSet, Hashable {
+public struct PKPopoverAction : OptionSet, Hashable {
         
     public typealias RawValue = Int
     
     public var rawValue: RawValue = 0
     
     /// 
-    public static let `default`: NBPopoverAction = [.cancel, .done]
+    public static let `default`: PKPopoverAction = [.cancel, .done]
     
     /// 
-    public static let cancel = NBPopoverAction(1 << 0)
+    public static let cancel = PKPopoverAction(1 << 0)
     
     /// 
-    public static let apply = NBPopoverAction(1 << 1)
+    public static let apply = PKPopoverAction(1 << 1)
     
     /// 
-    public static let done = NBPopoverAction(1 << 2)
+    public static let done = PKPopoverAction(1 << 2)
     
     /// 
-    public static let reverse = NBPopoverAction(1 << 10)
+    public static let reverse = PKPopoverAction(1 << 10)
     
     public var hashValue: Int {
         return rawValue.hashValue
@@ -61,39 +61,39 @@ public struct NBPopoverAction : OptionSet, Hashable {
 }
 
 /// 
-public protocol NBPopoverPresentationControllerDelegate : UIPopoverPresentationControllerDelegate {
+public protocol PKPopoverPresentationControllerDelegate : UIPopoverPresentationControllerDelegate {
     
     /// 
     func present(_ viewController: UIViewController, animated flag: Bool, completion: (() -> Void)?)
     
     /// 
     
-    func popoverPresentationController(_ popoverPresentationController: NBPopoverPresentationController, didRequestAction action: NBPopoverAction, userInfo: Any?, responder: Any?)
+    func popoverPresentationController(_ popoverPresentationController: PKPopoverPresentationController, didRequestAction action: PKPopoverAction, userInfo: Any?, responder: Any?)
     
     /// 
-    func popoverPresentationControllerDidResign(_ popoverPresentationController: NBPopoverPresentationController)
+    func popoverPresentationControllerDidResign(_ popoverPresentationController: PKPopoverPresentationController)
     
 }
 
 /// 
-extension NBPopoverPresentationControllerDelegate {
+extension PKPopoverPresentationControllerDelegate {
     
     /// 
-    public func popoverPresentationController(_ popoverPresentationController: NBPopoverPresentationController, didRequestAction action: NBPopoverAction, userInfo: Any?, responder: Any?) {}
+    public func popoverPresentationController(_ popoverPresentationController: PKPopoverPresentationController, didRequestAction action: PKPopoverAction, userInfo: Any?, responder: Any?) {}
     
     /// 
-    public func popoverPresentationControllerDidResign(_ popoverPresentationController: NBPopoverPresentationController) {}
+    public func popoverPresentationControllerDidResign(_ popoverPresentationController: PKPopoverPresentationController) {}
     
 }
 
 ///
-open class NBPopoverPresentationController : UIViewController, UIPopoverPresentationControllerDelegate {
+open class PKPopoverPresentationController : UIViewController, UIPopoverPresentationControllerDelegate {
     
     /// 
-    open static let DidUpdateUserInfoNotification = "NBPopoverPresentationControllerDidUpdateUserInfoNotification"
+    open static let DidUpdateUserInfoNotification = "PKPopoverPresentationControllerDidUpdateUserInfoNotification"
     
     /// 
-    open weak var delegate: NBPopoverPresentationControllerDelegate?
+    open weak var delegate: PKPopoverPresentationControllerDelegate?
     
     /// 
     open weak var responder: AnyObject?
@@ -102,7 +102,7 @@ open class NBPopoverPresentationController : UIViewController, UIPopoverPresenta
     open var name: String! = ""
     
     /// 
-    open var actions: NBPopoverAction = [.done] {
+    open var actions: PKPopoverAction = [.done] {
         didSet { updateActions() }
     }
     
@@ -110,7 +110,7 @@ open class NBPopoverPresentationController : UIViewController, UIPopoverPresenta
     open var overrideDimiss: Bool = false
     
     /// 
-    open var actionTitles: [NBPopoverAction : String] = [
+    open var actionTitles: [PKPopoverAction : String] = [
             .cancel : LocalizedStrings.cancel,
             .apply  : LocalizedStrings.apply,
             .done   : LocalizedStrings.done,
@@ -119,7 +119,7 @@ open class NBPopoverPresentationController : UIViewController, UIPopoverPresenta
     }
     
     /// 
-    open var actionsEnabled: [NBPopoverAction : Bool] = [
+    open var actionsEnabled: [PKPopoverAction : Bool] = [
             .cancel : true,
             .apply  : false,
             .done   : true,
@@ -218,13 +218,13 @@ open class NBPopoverPresentationController : UIViewController, UIPopoverPresenta
         
         beginObserving(
             selector: #selector(didUpdateUserInfo(_:)), 
-            name: NBPopoverPresentationController.DidUpdateUserInfoNotification, 
+            name: PKPopoverPresentationController.DidUpdateUserInfoNotification, 
             object: userInfo)
         
     }
     
     /// 
-    open func presentWithDelegate(_ delegate: NBPopoverPresentationControllerDelegate, barButtonItem: UIBarButtonItem? = nil, completion: (() -> Void)? = nil) {
+    open func presentWithDelegate(_ delegate: PKPopoverPresentationControllerDelegate, barButtonItem: UIBarButtonItem? = nil, completion: (() -> Void)? = nil) {
         
         let nav = embeddedInsideNavigationController()
         nav.modalPresentationStyle = .popover
